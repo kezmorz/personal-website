@@ -1,0 +1,27 @@
+import { useState, useCallback } from "react";
+import AppBar from "@/components/AppBar";
+import SettingsDrawer from "@/components/SettingsDrawer";
+
+const Layout = ({ children }) => {
+  const [settingsDrawerOpen, setSettingsDrawerOpen] = useState(false);
+
+  const handleSettingsDrawerOpen = () => {
+    setSettingsDrawerOpen(true);
+  };
+  const handleSettingsDrawerClose = useCallback(() => {
+    setSettingsDrawerOpen(false);
+  }, []);
+
+  return (
+    <>
+      <AppBar onSettingsClick={handleSettingsDrawerOpen} />
+      {children}
+      <SettingsDrawer
+        open={settingsDrawerOpen}
+        onClose={handleSettingsDrawerClose}
+      />
+    </>
+  );
+};
+
+export default Layout;
