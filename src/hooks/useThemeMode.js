@@ -19,7 +19,7 @@ const useThemeMode = () => {
       }
       setDarkMode(newMode === "dark" ? true : false);
     };
-  });
+  }, [removeDarKMode, setDarkMode]);
 
   return {
     mode: mode,

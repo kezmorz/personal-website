@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import PropTypes from "prop-types";
 import AppBar from "@/components/AppBar";
 import SettingsDrawer from "@/components/SettingsDrawer";
 
@@ -22,6 +23,13 @@ const Layout = ({ children }) => {
       />
     </>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
 };
 
 export default Layout;

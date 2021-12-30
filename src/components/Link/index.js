@@ -30,6 +30,20 @@ const NextLinkComposed = React.forwardRef(
   }
 );
 
+NextLinkComposed.displayName = "NextLinkComposed";
+
+NextLinkComposed.propTypes = {
+  to: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+  linkAs: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  href: PropTypes.any,
+  replace: PropTypes.bool,
+  scroll: PropTypes.bool,
+  shallow: PropTypes.bool,
+  prefetch: PropTypes.bool,
+  locale: PropTypes.string,
+  passHref: PropTypes.bool,
+}
+
 const Link = React.forwardRef(
   (
     {
@@ -86,6 +100,8 @@ const Link = React.forwardRef(
     );
   }
 );
+
+Link.displayName = "Link";
 
 Link.propTypes = {
   as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),

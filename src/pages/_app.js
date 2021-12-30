@@ -23,7 +23,7 @@ const MyApp = ({
   const { isDarkMode } = useThemeMode();
 
   const theme = useMemo(() =>
-    systemTheme({ mode: isDarkMode ? "dark" : "light" }, [isDarkMode])
+    systemTheme({ mode: isDarkMode ? "dark" : "light" }), [isDarkMode]
   );
 
   const getLayout = Component.getLayout || ((page) => page);
