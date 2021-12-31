@@ -11,7 +11,7 @@ class MyDocument extends Document {
 
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App) => 
+        enhanceApp: (App) =>
           function EnhanceApp(props) {
             return <App emotionCache={cache} {...props} />;
           },
