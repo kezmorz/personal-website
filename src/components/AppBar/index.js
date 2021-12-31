@@ -39,6 +39,9 @@ const AppBar = ({ onSettingsClick }) => {
     <>
       <MuiAppBar position="fixed">
         <Toolbar>
+          <Link href="/" underline="none">
+            Home
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           {/* <Link href="/contact" underline="none">
             Contact
@@ -56,7 +59,7 @@ const AppBar = ({ onSettingsClick }) => {
           </Button> */}
           <Tooltip title="Change language">
             <IconButton
-              color="primary"
+              color="default"
               aria-label="change language"
               aria-owns={languageMenu ? "language-menu" : undefined}
               aria-haspopup="true"
