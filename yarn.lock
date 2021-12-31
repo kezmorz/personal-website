@@ -305,10 +305,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/roboto@npm:^4.5.1":
-  version: 4.5.1
-  resolution: "@fontsource/roboto@npm:4.5.1"
-  checksum: dddc5b883e0355096ebb8944a6ad8ec5fec583482e96b22c2b2b7e83d3a538a85586c379b9471db117f934bfcea981c273c153bdf55a33f5c44a39837dc6fa97
+"@fontsource/rubik@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@fontsource/rubik@npm:4.5.0"
+  checksum: 8d7b50b26d4640a3a0b6a8a111d3c5a63a3eaaa71f3e5447c42b749a372f3eed258d4c29822f81c24cea5b749ac81bc23c18b194a14aecc2daba9d80a92d800f
   languageName: node
   linkType: hard
 
@@ -5478,7 +5478,7 @@ __metadata:
     "@emotion/react": ^11.7.1
     "@emotion/server": ^11.4.0
     "@emotion/styled": ^11.6.0
-    "@fontsource/roboto": ^4.5.1
+    "@fontsource/rubik": ^4.5.0
     "@mui/icons-material": ^5.2.5
     "@mui/material": ^5.2.6
     clsx: ^1.1.1

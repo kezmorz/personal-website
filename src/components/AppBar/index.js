@@ -78,32 +78,29 @@ const AppBar = ({ onSettingsClick }) => {
             MenuListProps={{ "aria-labelledby": "language-menu" }}
           >
             {locales.map((locale) => (
-              <Link
+              <MenuItem
                 key={locale}
+                component={Link}
                 href={{ pathname, query }}
-                as={asPath}
                 underline="none"
                 locale={locale}
+                selected={activeLocale === locale}
+                onClick={handleLanguageMenuClose}
               >
-                <MenuItem
-                  selected={activeLocale === locale}
-                  onClick={handleLanguageMenuClose}
-                >
-                  <ListItemIcon>
-                    <Flag
-                      code={LANGUAGE_OPTIONS[locale].flag}
-                      height="24"
-                      width="24"
-                    />
-                  </ListItemIcon>
-                  {LANGUAGE_OPTIONS[locale].label}
-                </MenuItem>
-              </Link>
+                <ListItemIcon>
+                  <Flag
+                    code={LANGUAGE_OPTIONS[locale].flag}
+                    height="24"
+                    width="24"
+                  />
+                </ListItemIcon>
+                {LANGUAGE_OPTIONS[locale].label}
+              </MenuItem>
             ))}
           </Menu>
           <Tooltip title="Open settings drawer">
             <IconButton
-              color="primary"
+              color="default"
               edge="end"
               aria-label="open settings drawer"
               onClick={onSettingsClick}

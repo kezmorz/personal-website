@@ -9,10 +9,10 @@ import systemTheme from "@/theme/index";
 import useThemeMode from "@/hooks/useThemeMode";
 import Analytics from "@/components/Analytics";
 
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import "@fontsource/rubik/300.css";
+import "@fontsource/rubik/400.css";
+import "@fontsource/rubik/500.css";
+import "@fontsource/rubik/700.css";
 
 const clientSideEmotionCache = createEmotionCache();
 

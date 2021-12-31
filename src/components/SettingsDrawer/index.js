@@ -43,7 +43,7 @@ const SettingsDrawer = ({ open, onClose }) => {
         <Typography variant="h6">Settings</Typography>
         <Tooltip title="Close settings drawer">
           <IconButton
-            color="primary"
+            color="default"
             edge="end"
             aria-label="close settings drawer"
             onClick={onClose}
