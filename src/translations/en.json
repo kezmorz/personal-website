@@ -1,5 +1,8 @@
 {
   "index": {
     "hello": "hello"
+  },
+  "resume": {
+    "heading": "Résumé"
   }
 }

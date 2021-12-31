@@ -1,5 +1,8 @@
 {
   "index": {
     "hello": "helo"
+  },
+  "resume": {
+    "heading": "Crynodeb"
   }
 }
