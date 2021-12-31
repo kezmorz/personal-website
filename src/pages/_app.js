@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
+import { NextIntlProvider } from "next-intl";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
@@ -18,12 +19,13 @@ const clientSideEmotionCache = createEmotionCache();
 const MyApp = ({
   Component,
   emotionCache = clientSideEmotionCache,
-  pageProps,
+  pageProps: { messages, now, ...pageProps },
 }) => {
   const { isDarkMode } = useThemeMode();
 
-  const theme = useMemo(() =>
-    systemTheme({ mode: isDarkMode ? "dark" : "light" }), [isDarkMode]
+  const theme = useMemo(
+    () => systemTheme({ mode: isDarkMode ? "dark" : "light" }),
+    [isDarkMode]
   );
 
   const getLayout = Component.getLayout || ((page) => page);
@@ -31,10 +33,25 @@ const MyApp = ({
   return (
     <CacheProvider value={emotionCache}>
       <Analytics />
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {getLayout(<Component {...pageProps} />)}
-      </ThemeProvider>
+      <NextIntlProvider
+        formats={{
+          dateTime: {
+            short: {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            },
+          },
+        }}
+        messages={messages}
+        now={new Date(now)}
+        timeZone="Europe/Dublin"
+      >
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {getLayout(<Component {...pageProps} />)}
+        </ThemeProvider>
+      </NextIntlProvider>
     </CacheProvider>
   );
 };
