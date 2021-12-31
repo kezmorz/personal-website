@@ -1,10 +1,13 @@
+import { useTranslations } from "use-intl";
 import Typography from "@mui/material/Typography";
 import Layout from "@/components/Layout";
 
 const Home = () => {
+  const t = useTranslations("index");
+
   return (
     <div>
-      <Typography variant="h1">Hello</Typography>
+      <Typography variant="h1">{t("hello")}</Typography>
     </div>
   );
 };
@@ -16,5 +19,13 @@ Home.getLayout = (page) => {
     </Layout>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: (await import(`../translations/${locale}.json`)).default,
+    },
+  };
+}
 
 export default Home;

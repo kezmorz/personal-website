@@ -42,7 +42,7 @@ NextLinkComposed.propTypes = {
   prefetch: PropTypes.bool,
   locale: PropTypes.string,
   passHref: PropTypes.bool,
-}
+};
 
 const Link = React.forwardRef(
   (
