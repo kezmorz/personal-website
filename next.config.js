@@ -4,14 +4,6 @@ module.exports = {
     locales: ["en", "cy"],
     defaultLocale: "en",
   },
-  rewrites: async () => {
-    return [
-      {
-        source: "/api/:route((?!v\\d+).*)",
-        destination: "/api/v1/:route",
-      },
-    ];
-  },
   eslint: {
     dirs: [
       "src/components",

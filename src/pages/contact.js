@@ -30,7 +30,7 @@ const Contact = () => {
       message: yup.string().required(t("form.messageRequired")),
     }),
     onSubmit: async (values) => {
-      const response = await fetch("api/mail", { method: "POST" });
+      const response = await fetch("/api/mail", { method: "POST" });
       if (response.ok) {
         console.log("Everything is okay");
       }

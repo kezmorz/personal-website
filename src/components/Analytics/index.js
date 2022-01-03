@@ -11,7 +11,7 @@ const Analytics = () => {
 
   useEffect(() => {
     const setClientId = async () => {
-      const response = await fetch("/api/v1/analytics/client-id");
+      const response = await fetch("/api/analytics/client-id");
       if (response.ok) {
         const { id } = await response.json();
         initialiseAnalytics({
