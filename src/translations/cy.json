@@ -4,5 +4,24 @@
   },
   "resume": {
     "heading": "Crynodeb"
+  },
+  "contact": {
+    "description": {
+      "heading": "Email me",
+      "paragraph": ""
+    },
+    "form": {
+      "nameLabel": "Enw",
+      "nameRequired": "Mae angen enw",
+      "emailLabel": "Ebost",
+      "emailValid": "Nodwch ebost dilys",
+      "emailRequired": "Mae angen ebost",
+      "subjectLabel": "Pwnc",
+      "subjectRequired": "Mae angen pwnc",
+      "messageLabel": "Neges",
+      "messageRequired": "Mae angen neges",
+      "reset": "Ail Gychwyn",
+      "submit": "Cyflwyno"
+    }
   }
 }

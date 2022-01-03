@@ -1,3 +1,7 @@
+// show my resume here - maybe do this using markdown
+// have some links to be able to download the cv
+// no personal details on here except e-mail
+
 import { useTranslations } from "use-intl";
 import Typography from "@mui/material/Typography";
 import Layout from "@/components/Layout";

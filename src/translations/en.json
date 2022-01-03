@@ -4,5 +4,24 @@
   },
   "resume": {
     "heading": "Résumé"
+  },
+  "contact": {
+    "description": {
+      "heading": "Email me",
+      "paragraph": "Send me something funny"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "nameRequired": "Name is required",
+      "emailLabel": "Email",
+      "emailValid": "Enter a valid email",
+      "emailRequired": "Email is required",
+      "subjectLabel": "Subject",
+      "subjectRequired": "Subject is required",
+      "messageLabel": "Message",
+      "messageRequired": "Message is required",
+      "reset": "Reset",
+      "submit": "Submit"
+    }
   }
 }
