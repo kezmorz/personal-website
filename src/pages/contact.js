@@ -30,7 +30,10 @@ const Contact = () => {
       message: yup.string().required(t("form.messageRequired")),
     }),
     onSubmit: async (values) => {
-      const response = await fetch("/api/mail", { method: "POST" });
+      const response = await fetch("/api/mail", {
+        method: "POST",
+        body: JSON.stringify(values),
+      });
       if (response.ok) {
         console.log("Everything is okay");
       }
@@ -56,7 +59,7 @@ const Contact = () => {
         </Box>
         <Box component="form" onSubmit={formik.handleSubmit}>
           <TextField
-            id="name"
+            id="contact-form-name"
             name="name"
             label={t("form.nameLabel")}
             fullWidth
@@ -67,7 +70,7 @@ const Contact = () => {
             helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
-            id="email"
+            id="contact-form-email"
             name="email"
             label={t("form.emailLabel")}
             fullWidth
@@ -78,7 +81,7 @@ const Contact = () => {
             helperText={formik.touched.email && formik.errors.email}
           />
           <TextField
-            id="subject"
+            id="contact-form-subject"
             name="subject"
             label={t("form.subjectLabel")}
             fullWidth
@@ -89,7 +92,7 @@ const Contact = () => {
             helperText={formik.touched.subject && formik.errors.subject}
           />
           <TextField
-            id="message"
+            id="contact-form-message"
             name="message"
             label={t("form.messageLabel")}
             fullWidth
