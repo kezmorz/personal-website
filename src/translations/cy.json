@@ -21,7 +21,11 @@
       "messageLabel": "Neges",
       "messageRequired": "Mae angen neges",
       "reset": "Ail Gychwyn",
-      "submit": "Cyflwyno"
+      "send": "Anfon neges"
+    },
+    "snackbar": {
+      "success": "Neges wedi'i hanfon!",
+      "error": "Neges wedi'i methu. Ceisiwch eto mewn 5 eiliad."
     }
   }
 }

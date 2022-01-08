@@ -21,7 +21,11 @@
       "messageLabel": "Message",
       "messageRequired": "Message is required",
       "reset": "Reset",
-      "submit": "Submit"
+      "send": "Send message"
+    },
+    "snackbar": {
+      "success": "Message sent!",
+      "error": "Message failed. Please try again in 5 seconds."
     }
   }
 }

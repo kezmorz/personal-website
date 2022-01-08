@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "use-intl";
 import { useFormik } from "formik";
@@ -6,11 +6,14 @@ import * as yup from "yup";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Layout from "@/components/Layout";
 
 const Contact = () => {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const { locale } = useRouter();
   const t = useTranslations("contact");
   const formik = useFormik({
@@ -19,6 +22,9 @@ const Contact = () => {
       email: "",
       subject: "",
       message: "",
+    },
+    initialStatus: {
+      submissionSent: false,
     },
     validationSchema: yup.object({
       name: yup.string().required(t("form.nameRequired")),
@@ -35,10 +41,20 @@ const Contact = () => {
         body: JSON.stringify(values),
       });
       if (response.ok) {
-        console.log("Everything is okay");
+        formik.setStatus({
+          submissionSent: true,
+        });
       }
+      setSnackbarOpen(true);
     },
   });
+
+  const handleSnackbarClose = (_, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setSnackbarOpen(false);
+  };
 
   useEffect(() => {
     Object.keys(formik.errors).forEach((fieldName) => {
@@ -64,6 +80,7 @@ const Contact = () => {
             label={t("form.nameLabel")}
             fullWidth
             margin="normal"
+            disabled={formik.isSubmitting || formik.status.submissionSent}
             value={formik.values.name}
             onChange={formik.handleChange}
             error={formik.touched.name && Boolean(formik.errors.name)}
@@ -75,6 +92,7 @@ const Contact = () => {
             label={t("form.emailLabel")}
             fullWidth
             margin="normal"
+            disabled={formik.isSubmitting || formik.status.submissionSent}
             value={formik.values.email}
             onChange={formik.handleChange}
             error={formik.touched.email && Boolean(formik.errors.email)}
@@ -86,6 +104,7 @@ const Contact = () => {
             label={t("form.subjectLabel")}
             fullWidth
             margin="normal"
+            disabled={formik.isSubmitting || formik.status.submissionSent}
             value={formik.values.subject}
             onChange={formik.handleChange}
             error={formik.touched.subject && Boolean(formik.errors.subject)}
@@ -99,30 +118,56 @@ const Contact = () => {
             multiline
             rows={4}
             margin="normal"
+            disabled={formik.isSubmitting || formik.status.submissionSent}
             value={formik.values.message}
             onChange={formik.handleChange}
             error={formik.touched.message && Boolean(formik.errors.message)}
             helperText={formik.touched.message && formik.errors.message}
           />
           <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={formik.resetForm}
-            >
-              {t("form.reset")}
-            </Button>
-            <Button
-              color="primary"
-              variant="contained"
-              type="submit"
-              sx={{ ml: 2 }}
-            >
-              {t("form.submit")}
-            </Button>
+            {formik.status.submissionSent ? (
+              <Typography>Submission Sent</Typography>
+            ) : (
+              <>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  disabled={formik.isSubmitting}
+                  onClick={formik.resetForm}
+                >
+                  {t("form.reset")}
+                </Button>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  type="submit"
+                  disabled={formik.isSubmitting}
+                  sx={{ ml: 2 }}
+                >
+                  {t("form.send")}
+                </Button>
+              </>
+            )}
           </Box>
         </Box>
       </Container>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={5000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert
+          severity={formik.status.submissionSent ? "success" : "error"}
+          variant="filled"
+          elevation={6}
+          onClose={handleSnackbarClose}
+          sx={{ width: "100%" }}
+        >
+          {formik.status.submissionSent
+            ? t("snackbar.success")
+            : t("snackbar.error")}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
