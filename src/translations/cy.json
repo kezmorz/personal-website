@@ -1,5 +1,32 @@
 {
   "index": {
     "hello": "helo"
+  },
+  "resume": {
+    "heading": "Crynodeb"
+  },
+  "contact": {
+    "description": {
+      "heading": "Ebostiwch fi",
+      "paragraph": "Os hoffech chi sgwrsio am prosiect, gyfle gwaith posib, neu unrhyw beth yn gyffredinol, llenwch y ffurflen isod a gwnaf fy ngorau i ymateb o fewn 1-2 ddiwrnod."
+    },
+    "form": {
+      "nameLabel": "Enw",
+      "nameRequired": "Mae angen enw",
+      "emailLabel": "Ebost",
+      "emailValid": "Nodwch ebost dilys",
+      "emailRequired": "Mae angen ebost",
+      "subjectLabel": "Pwnc",
+      "subjectRequired": "Mae angen pwnc",
+      "messageLabel": "Neges",
+      "messageRequired": "Mae angen neges",
+      "reset": "Ail Gychwyn",
+      "send": "Anfon neges",
+      "success": "Yay, mae eich neges wedi'i hanfon!"
+    },
+    "snackbar": {
+      "success": "Neges wedi'i hanfon!",
+      "error": "Neges wedi'i methu. Ceisiwch eto mewn 5 eiliad."
+    }
   }
 }
