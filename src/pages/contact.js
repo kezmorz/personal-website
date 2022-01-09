@@ -10,6 +10,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
 const Contact = () => {
@@ -126,7 +127,10 @@ const Contact = () => {
           />
           <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
             {formik.status.submissionSent ? (
-              <Typography>Submission Sent</Typography>
+              <Typography variant="body1">
+                {`${t("form.success")} `}
+                <Emoji symbol="🥳" label="party face emoji" />
+              </Typography>
             ) : (
               <>
                 <Button

@@ -8,7 +8,7 @@
   "contact": {
     "description": {
       "heading": "Email me",
-      "paragraph": "Placeholder description text."
+      "paragraph": "If you'd like to chat about a project, a potential job opportunity, or just anything in general really, then please fill in the form below and I'll do my best to respond within 1-2 days."
     },
     "form": {
       "nameLabel": "Name",
@@ -21,7 +21,8 @@
       "messageLabel": "Message",
       "messageRequired": "Message is required",
       "reset": "Reset",
-      "send": "Send message"
+      "send": "Send message",
+      "success": "Yay, your message has been sent!"
     },
     "snackbar": {
       "success": "Message sent!",

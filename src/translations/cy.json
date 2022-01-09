@@ -7,8 +7,8 @@
   },
   "contact": {
     "description": {
-      "heading": "Email me",
-      "paragraph": "Placeholder description text."
+      "heading": "Ebostiwch fi",
+      "paragraph": "Os hoffech chi sgwrsio am prosiect, gyfle gwaith posib, neu unrhyw beth yn gyffredinol, llenwch y ffurflen isod a gwnaf fy ngorau i ymateb o fewn 1-2 ddiwrnod."
     },
     "form": {
       "nameLabel": "Enw",
@@ -21,7 +21,8 @@
       "messageLabel": "Neges",
       "messageRequired": "Mae angen neges",
       "reset": "Ail Gychwyn",
-      "send": "Anfon neges"
+      "send": "Anfon neges",
+      "success": "Yay, mae eich neges wedi'i hanfon!"
     },
     "snackbar": {
       "success": "Neges wedi'i hanfon!",
