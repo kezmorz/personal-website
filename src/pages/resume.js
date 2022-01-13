@@ -1,7 +1,4 @@
-// show my resume here - maybe do this using markdown
-// have some links to be able to download the cv
-// no personal details on here except e-mail
-
+import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
 import { useTranslations } from "use-intl";
@@ -9,30 +6,32 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { formatDate } from "@/utils/date";
 import Layout from "@/components/Layout";
 
 const components = {
-  h1: (props) => <Typography variant="h1" {...props} />,
-  h2: (props) => <Typography variant="h2" {...props} />,
   h3: (props) => <Typography variant="h3" {...props} />,
-  h4: (props) => <Typography variant="h4" {...props} />,
-  h5: (props) => <Typography variant="h5" {...props} />,
   h6: (props) => <Typography variant="h6" {...props} />,
   p: (props) => <Typography variant="body1" {...props} />,
+  hr: (props) => <Divider sx={{ mt: 1, mb: 2 }} {...props} />,
 };
 
 const Resume = ({ source, frontMatter }) => {
+  const { locale } = useRouter();
   const t = useTranslations("resume");
 
   return (
     <div>
-      {/* <Typography variant="h1">{t("heading")}</Typography> */}
-      <Container maxWidth="md">
+      <Container component="section" maxWidth="md">
         <MDXRemote components={components} {...source} />
-        <Typography variant="caption">
-          Updated at: {frontMatter.updatedAt}
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+          <Typography variant="body2">
+            Updated at: {formatDate(frontMatter.updatedAt, locale)}
+          </Typography>
+        </Box>
       </Container>
     </div>
   );

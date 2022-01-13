@@ -65,7 +65,7 @@ const Contact = () => {
 
   return (
     <div>
-      <Container maxWidth="md">
+      <Container component="section" maxWidth="md">
         <Box>
           <Typography variant="h3" gutterBottom>
             {t("description.heading")}
