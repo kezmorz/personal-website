@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import {
+  AppBar as MuiAppBar,
+  Toolbar,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  IconButton,
+  Tooltip,
+  Box,
+} from "@mui/material";
 // import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { SettingsOutlined as SettingsOutlinedIcon } from "@mui/icons-material";
 import Flag from "react-world-flags";
 import Link from "@/components/Link";
 import { LANGUAGE_OPTIONS } from "src/constants/languages";

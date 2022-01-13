@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import MuiLink from "@mui/material/Link";
+import { Link as MuiLink } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import clsx from "clsx";
 

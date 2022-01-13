@@ -5207,6 +5207,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"personal-website@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "personal-website@workspace:."
+  dependencies:
+    "@emotion/cache": ^11.7.1
+    "@emotion/react": ^11.7.1
+    "@emotion/server": ^11.4.0
+    "@emotion/styled": ^11.6.0
+    "@fontsource/rubik": ^4.5.0
+    "@mui/icons-material": ^5.2.5
+    "@mui/material": ^5.2.6
+    "@sendgrid/mail": ^7.6.0
+    clsx: ^1.1.1
+    date-fns: ^2.28.0
+    eslint: 8.5.0
+    eslint-config-next: 12.0.7
+    eslint-config-prettier: ^8.3.0
+    formik: ^2.2.9
+    gray-matter: ^4.0.3
+    husky: ^7.0.4
+    lint-staged: ^12.1.4
+    next: 12.0.7
+    next-intl: ^2.3.3
+    next-mdx-remote: ^3.0.8
+    prettier: ^2.5.1
+    prop-types: ^15.8.0
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-world-flags: ^1.4.0
+    yup: ^0.32.11
+  languageName: unknown
+  linkType: soft
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
@@ -6751,39 +6784,6 @@ __metadata:
   checksum: ee5726e10d170472cde778fc22e0f7499caa096eb85babea5d0ce0941455b721037ee1c9e6ae506ca2803250acd313d0f464328ead0b55cfe7cb6315f1b462d6
   languageName: node
   linkType: hard
-
-"virtual-engage@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "virtual-engage@workspace:."
-  dependencies:
-    "@emotion/cache": ^11.7.1
-    "@emotion/react": ^11.7.1
-    "@emotion/server": ^11.4.0
-    "@emotion/styled": ^11.6.0
-    "@fontsource/rubik": ^4.5.0
-    "@mui/icons-material": ^5.2.5
-    "@mui/material": ^5.2.6
-    "@sendgrid/mail": ^7.6.0
-    clsx: ^1.1.1
-    date-fns: ^2.28.0
-    eslint: 8.5.0
-    eslint-config-next: 12.0.7
-    eslint-config-prettier: ^8.3.0
-    formik: ^2.2.9
-    gray-matter: ^4.0.3
-    husky: ^7.0.4
-    lint-staged: ^12.1.4
-    next: 12.0.7
-    next-intl: ^2.3.3
-    next-mdx-remote: ^3.0.8
-    prettier: ^2.5.1
-    prop-types: ^15.8.0
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-world-flags: ^1.4.0
-    yup: ^0.32.11
-  languageName: unknown
-  linkType: soft
 
 "vm-browserify@npm:1.1.2":
   version: 1.1.2

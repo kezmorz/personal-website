@@ -1,4 +1,4 @@
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery } from "@mui/material";
 import { useMemo } from "react";
 import useLocalStorage from "./useLocalStorage";
 

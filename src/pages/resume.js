@@ -5,10 +5,7 @@ import { useTranslations } from "use-intl";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { Container, Divider, Typography, Box } from "@mui/material";
 import { formatDate } from "@/utils/date";
 import Layout from "@/components/Layout";
 

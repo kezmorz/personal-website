@@ -3,13 +3,15 @@ import { useRouter } from "next/router";
 import { useTranslations } from "use-intl";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import {
+  Container,
+  TextField,
+  Button,
+  Snackbar,
+  Alert,
+  Typography,
+  Box,
+} from "@mui/material";
 import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
