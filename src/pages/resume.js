@@ -5,12 +5,13 @@ import { useTranslations } from "use-intl";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { Container, Divider, Typography, Box } from "@mui/material";
+import { Container, Grid, Divider, Typography, Box } from "@mui/material";
 import { formatDate } from "@/utils/date";
 import Layout from "@/components/Layout";
+import MediaCard from "@/components/MediaCard";
 
 const components = {
-  h3: (props) => <Typography variant="h3" {...props} />,
+  h4: (props) => <Typography variant="h4" {...props} />,
   h6: (props) => <Typography variant="h6" {...props} />,
   p: (props) => <Typography variant="body1" {...props} />,
   hr: (props) => <Divider sx={{ mt: 1, mb: 2 }} {...props} />,
@@ -23,12 +24,56 @@ const Resume = ({ source, frontMatter }) => {
   return (
     <div>
       <Container component="section" maxWidth="md">
-        <MDXRemote components={components} {...source} />
-        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
-          <Typography variant="body2">
-            Updated at: {formatDate(frontMatter.updatedAt, locale)}
-          </Typography>
-        </Box>
+        <Typography variant="h3" gutterBottom>
+          {t("description.heading")}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {t("description.paragraph")}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          {t("description.update")}: {formatDate(frontMatter.updatedAt, locale)}
+        </Typography>
+      </Container>
+      {/* Using box here so we can change the background colour */}
+      <Box
+        component="section"
+        sx={{ mt: { xs: 3, sm: 6 }, py: { xs: 2, sm: 3 } }}
+      >
+        <Container maxWidth="md">
+          <MDXRemote components={components} {...source} />
+        </Container>
+      </Box>
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 3, sm: 6 } }}
+      >
+        <Typography variant="h3" gutterBottom>
+          {t("formats.heading")}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {t("formats.paragraph")}
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <MediaCard
+              title="This is a title"
+              // description="This is something"
+              href="https://tfn-freight.virtual-engage.com/content/Welcome.pdf"
+              alt="microsoft word"
+              sx={{ height: "100%" }}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MediaCard
+              title="This is a title"
+              description="This is something and I want to make the longest sentence possible so we can see how the height will behave"
+              href="https://tfn-freight.virtual-engage.com/content/Welcome.pdf"
+              alt="microsoft word"
+              sx={{ height: "100%" }}
+            />
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );

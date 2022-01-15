@@ -3,7 +3,15 @@
     "hello": "hello"
   },
   "resume": {
-    "heading": "Résumé"
+    "description": {
+      "heading": "Résumé",
+      "paragraph": "This is the paragraph",
+      "update": "Updated"
+    },
+    "formats": {
+      "heading": "Alternative Formats",
+      "paragraph": "You can find alternative formats of my cv below"
+    }
   },
   "contact": {
     "description": {

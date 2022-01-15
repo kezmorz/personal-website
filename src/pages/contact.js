@@ -68,14 +68,12 @@ const Contact = () => {
   return (
     <div>
       <Container component="section" maxWidth="md">
-        <Box>
-          <Typography variant="h3" gutterBottom>
-            {t("description.heading")}
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            {t("description.paragraph")}
-          </Typography>
-        </Box>
+        <Typography variant="h3" gutterBottom>
+          {t("description.heading")}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {t("description.paragraph")}
+        </Typography>
         <Box component="form" onSubmit={formik.handleSubmit}>
           <TextField
             id="contact-form-name"

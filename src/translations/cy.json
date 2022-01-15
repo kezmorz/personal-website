@@ -3,7 +3,15 @@
     "hello": "helo"
   },
   "resume": {
-    "heading": "Crynodeb"
+    "description": {
+      "heading": "Crynodeb",
+      "paragraph": "This is the paragraph",
+      "update": "Diweddarwyd"
+    },
+    "formats": {
+      "heading": "Fformatau Arall",
+      "paragraph": "You can download my cv here"
+    }
   },
   "contact": {
     "description": {
