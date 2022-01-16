@@ -10,7 +10,15 @@
     },
     "formats": {
       "heading": "Fformatau Arall",
-      "paragraph": "You can download my cv here"
+      "paragraph": "You can download my cv here",
+      "word": {
+        "title": "Microsoft Word",
+        "description": ""
+      },
+      "pdf": {
+        "title": "PDF",
+        "description": ""
+      }
     }
   },
   "contact": {

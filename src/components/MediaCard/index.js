@@ -5,7 +5,6 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Box,
 } from "@mui/material";
 import Link from "@/components/Link";
 
@@ -21,39 +20,48 @@ const MediaCard = ({
   return (
     <Card
       component="article"
-      sx={[{ display: "flex" }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[
+        { height: 120, display: "flex" },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
     >
       <CardActionArea
         component={Link}
         href={href}
         target={target}
         sx={{
-          minHeight: 96,
           display: "flex",
           justifyContent: "flex-start",
-          alignItems: "flex-start",
+          alignItems: "stretch",
         }}
       >
-        <CardMedia
-          component="img"
-          image={image}
-          alt={alt}
-          sx={{ width: 128 }}
-        />
-        <Box sx={{ flex: "1 0" }}>
-          <CardContent
+        <CardMedia component="img" image={image} alt={alt} sx={{ width: 96 }} />
+        <CardContent>
+          <Typography
+            variant="h6"
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 1,
+              overflow: "hidden",
             }}
           >
-            <Typography variant="h6">{title}</Typography>
-            {description && (
-              <Typography variant="body1">{description}</Typography>
-            )}
-          </CardContent>
-        </Box>
+            {title}
+          </Typography>
+          {description && (
+            <Typography
+              variant="body1"
+              sx={{
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 2,
+                overflow: "hidden",
+              }}
+            >
+              {description}
+            </Typography>
+          )}
+        </CardContent>
       </CardActionArea>
     </Card>
   );

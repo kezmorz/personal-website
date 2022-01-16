@@ -54,23 +54,23 @@ const Resume = ({ source, frontMatter }) => {
         <Typography variant="body1" gutterBottom>
           {t("formats.paragraph")}
         </Typography>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{ mt: { xs: 1, sm: 2 } }}>
           <Grid item xs={12} md={6}>
             <MediaCard
-              title="This is a title"
-              // description="This is something"
-              href="https://tfn-freight.virtual-engage.com/content/Welcome.pdf"
+              title={t("formats.word.title")}
+              description={t("formats.word.description")}
+              href="#"
+              image="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg/258px-Microsoft_Office_Word_%282019%E2%80%93present%29.svg.png"
               alt="microsoft word"
-              sx={{ height: "100%" }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
             <MediaCard
-              title="This is a title"
-              description="This is something and I want to make the longest sentence possible so we can see how the height will behave"
-              href="https://tfn-freight.virtual-engage.com/content/Welcome.pdf"
-              alt="microsoft word"
-              sx={{ height: "100%" }}
+              title={t("formats.pdf.title")}
+              description={t("formats.pdf.description")}
+              href="#"
+              image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/195px-PDF_file_icon.svg.png"
+              alt="pdf"
             />
           </Grid>
         </Grid>

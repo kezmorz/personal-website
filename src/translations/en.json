@@ -10,7 +10,15 @@
     },
     "formats": {
       "heading": "Alternative Formats",
-      "paragraph": "You can find alternative formats of my cv below"
+      "paragraph": "You can find alternative formats of my cv below",
+      "word": {
+        "title": "Microsoft Word",
+        "description": "This is a description for the word document"
+      },
+      "pdf": {
+        "title": "PDF",
+        "description": ""
+      }
     }
   },
   "contact": {
