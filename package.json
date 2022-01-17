@@ -28,6 +28,7 @@
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
+    "git-jiggy": "^1.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
     "prettier": "^2.5.1"
@@ -38,7 +39,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,json}\""
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "mdx-update-frontmatter": "node ./scripts/mdx-update-frontmatter.js"
   },
   "packageManager": "yarn@3.1.0"
 }
