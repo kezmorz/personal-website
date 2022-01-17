@@ -40,7 +40,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,json}\"",
-    "mdx-update-frontmatter": "node ./scripts/mdx-update-frontmatter.js"
+    "mdx-update-frontmatter": "node scripts/mdx-update-frontmatter.js"
   },
   "packageManager": "yarn@3.1.0"
 }

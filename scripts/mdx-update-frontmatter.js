@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const { writeFile } = require("fs/promises");
 const { parse, resolve } = require("path");
 const { add, getStagedFiles } = require("git-jiggy");
