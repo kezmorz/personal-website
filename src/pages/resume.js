@@ -40,7 +40,7 @@ const Resume = ({ source, frontMatter }) => {
         <Typography variant="body1" gutterBottom>
           {t("description.paragraph.line2")}
         </Typography>
-        <Typography variant="body2" gutterBottom>
+        <Typography variant="caption" gutterBottom>
           {t("description.update")}: {formatDate(frontMatter.updatedAt, locale)}
         </Typography>
         <Alert severity="info" sx={{ mt: { xs: 2, sm: 4 } }}>
