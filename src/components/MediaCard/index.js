@@ -6,17 +6,8 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import Link from "@/components/Link";
 
-const MediaCard = ({
-  title,
-  description,
-  image,
-  alt,
-  href,
-  target,
-  sx = [],
-}) => {
+const MediaCard = ({ title, description, href, image, alt, sx = [] }) => {
   return (
     <Card
       component="article"
@@ -26,9 +17,9 @@ const MediaCard = ({
       ]}
     >
       <CardActionArea
-        component={Link}
         href={href}
-        target={target}
+        target="_blank"
+        rel="noopener"
         sx={{
           display: "flex",
           justifyContent: "flex-start",
@@ -70,10 +61,9 @@ const MediaCard = ({
 MediaCard.propType = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
+  href: PropTypes.any,
   image: PropTypes.any.isRequired,
   alt: PropTypes.string,
-  href: PropTypes.any,
-  target: PropTypes.string,
   sx: PropTypes.oneOfType([
     PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
