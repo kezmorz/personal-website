@@ -5,8 +5,12 @@
   "resume": {
     "description": {
       "heading": "Crynodeb",
-      "paragraph": "This is the paragraph",
-      "update": "Diweddarwyd"
+      "paragraph": {
+        "line1": "Roeddwn i eisiau rhywle hygyrch i gadw fy nghrynodeb generig a pha le gwell nag ar fy ngwefan fy hun! Ar gyfer rhai ceisiadau efallai y byddaf yn ei deilwra i weddu i'r rôl ond mae llawer o'r wybodaeth graidd yn aros yr un fath.",
+        "line2": "Put something here"
+      },
+      "update": "Diweddarwyd",
+      "info": "Rwyf am bwysleisio mai fformat 2 dudalen yn unig yw hwn. Fe’i bwriedir fel trosolwg ac i annog trafodaethau."
     },
     "formats": {
       "heading": "Fformatau Arall",

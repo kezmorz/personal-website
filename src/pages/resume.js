@@ -5,7 +5,14 @@ import { useTranslations } from "use-intl";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { Container, Grid, Divider, Typography, Box } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Divider,
+  Alert,
+  Typography,
+  Box,
+} from "@mui/material";
 import { formatDate } from "@/utils/date";
 import Layout from "@/components/Layout";
 import MediaCard from "@/components/MediaCard";
@@ -28,11 +35,17 @@ const Resume = ({ source, frontMatter }) => {
           {t("description.heading")}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          {t("description.paragraph")}
+          {t("description.paragraph.line1")}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {t("description.paragraph.line2")}
         </Typography>
         <Typography variant="body2" gutterBottom>
           {t("description.update")}: {formatDate(frontMatter.updatedAt, locale)}
         </Typography>
+        <Alert severity="info" sx={{ mt: { xs: 2, sm: 4 } }}>
+          {t("description.info")}
+        </Alert>
       </Container>
       {/* Using box here so we can change the background colour */}
       <Box

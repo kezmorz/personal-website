@@ -5,8 +5,12 @@
   "resume": {
     "description": {
       "heading": "Résumé",
-      "paragraph": "This is the paragraph",
-      "update": "Updated"
+      "paragraph": {
+        "line1": "I wanted somewhere accessible to keep my generic resume and what better place than on my own website!  For certain applications I may tailor it to suit the role but a lot of the core information remains the same.",
+        "line2": "Put something here"
+      },
+      "update": "Updated",
+      "info": "I want to stress that this is purely a 2 page format. It’s intended as an overview and to encourage discussions."
     },
     "formats": {
       "heading": "Alternative Formats",
