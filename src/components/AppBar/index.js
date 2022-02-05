@@ -1,32 +1,39 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-// import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import Box from "@mui/material/Box";
+import {
+  AppBar as MuiAppBar,
+  Toolbar,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  IconButton,
+  Tooltip,
+  Box,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import {
+  LightModeOutlined as LightModeOutlinedIcon,
+  DarkModeOutlined as DarkModeOutlinedIcon,
+} from "@mui/icons-material";
 import Flag from "react-world-flags";
+import { LANGUAGE_OPTIONS } from "@/constants/languages";
+import useThemeMode from "@/hooks/useThemeMode";
 import Link from "@/components/Link";
-import { LANGUAGE_OPTIONS } from "src/constants/languages";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
-const AppBar = ({ onSettingsClick }) => {
+const AppBar = () => {
   const [languageMenu, setLanguageMenu] = useState(null);
-  const {
-    pathname,
-    query,
-    asPath,
-    locales,
-    locale: activeLocale,
-  } = useRouter();
+  const { pathname, query, locales, locale: activeLocale } = useRouter();
+  const { isDarkMode, setMode } = useThemeMode();
+
+  const handleChangeThemeMode = (newMode) => () => {
+    if (newMode === null) {
+      return;
+    }
+    setMode(newMode);
+  };
 
   const handleLanguageMenuClick = (event) => {
     setLanguageMenu(event.currentTarget);
@@ -42,21 +49,14 @@ const AppBar = ({ onSettingsClick }) => {
           <Link href="/" underline="none">
             Home
           </Link>
-          <Box sx={{ flexGrow: 1 }} />
-          {/* <Link href="/contact" underline="none">
-            Contact
-          </Link>
-          <Link href="/login" underline="none" sx={{ ml: 2 }}>
-            Login
-          </Link>
-          <Button
-            component={Link}
-            variant="contained"
-            href="/signup"
-            sx={{ ml: 2 }}
-          >
-            Sign Up
-          </Button> */}
+          <Box sx={{ flexGrow: 1 }}>
+            <Link href="/resume" underline="none">
+              Resume
+            </Link>
+            <Link href="/contact" underline="none">
+              Contact
+            </Link>
+          </Box>
           <Tooltip title="Change language">
             <IconButton
               color="default"
@@ -64,7 +64,6 @@ const AppBar = ({ onSettingsClick }) => {
               aria-owns={languageMenu ? "language-menu" : undefined}
               aria-haspopup="true"
               onClick={handleLanguageMenuClick}
-              sx={{ ml: 1 }}
             >
               <Flag
                 code={LANGUAGE_OPTIONS[activeLocale].flag}
@@ -101,14 +100,18 @@ const AppBar = ({ onSettingsClick }) => {
               </MenuItem>
             ))}
           </Menu>
-          <Tooltip title="Open settings drawer">
+          <Tooltip title="Toggle dark mode">
             <IconButton
               color="default"
               edge="end"
-              aria-label="open settings drawer"
-              onClick={onSettingsClick}
+              aria-label="toggle dark mode"
+              onClick={handleChangeThemeMode(isDarkMode ? "light" : "dark")}
             >
-              <SettingsOutlinedIcon />
+              {isDarkMode ? (
+                <DarkModeOutlinedIcon />
+              ) : (
+                <LightModeOutlinedIcon />
+              )}
             </IconButton>
           </Tooltip>
         </Toolbar>
@@ -118,8 +121,6 @@ const AppBar = ({ onSettingsClick }) => {
   );
 };
 
-AppBar.propTypes = {
-  onSettingsClick: PropTypes.func.isRequired,
-};
+AppBar.propTypes = {};
 
 export default AppBar;

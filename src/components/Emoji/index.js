@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 
 const Emoji = ({ symbol, label, ...props }) => {
   return (

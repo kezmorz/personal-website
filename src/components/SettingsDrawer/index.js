@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Tooltip from "@mui/material/Tooltip";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import {
+  Drawer,
+  IconButton,
+  ToggleButton,
+  ToggleButtonGroup,
+  Tooltip,
+  Divider,
+  Typography,
+  Box,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import { CloseOutlined as CloseOutlinedIcon } from "@mui/icons-material";
 import useThemeMode from "@/hooks/useThemeMode";
 
 const Heading = styled(Typography)({

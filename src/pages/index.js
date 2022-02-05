@@ -1,5 +1,5 @@
 import { useTranslations } from "use-intl";
-import Typography from "@mui/material/Typography";
+import { Typography } from "@mui/material";
 import Layout from "@/components/Layout";
 
 const Home = () => {
