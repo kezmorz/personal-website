@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { formatDate } from "@/utils/date";
 import Layout from "@/components/Layout";
+import SpotlightContainer from "@/components/SpotlightContainer";
 import MediaCard from "@/components/MediaCard";
 
 const components = {
@@ -47,15 +48,13 @@ const Resume = ({ source, frontMatter }) => {
           {t("description.info")}
         </Alert>
       </Container>
-      {/* Using box here so we can change the background colour */}
-      <Box
+      <SpotlightContainer
         component="section"
-        sx={{ mt: { xs: 3, sm: 6 }, py: { xs: 2, sm: 3 } }}
+        maxWidth="md"
+        sx={{ mt: { xs: 3, sm: 6 } }}
       >
-        <Container maxWidth="md">
-          <MDXRemote components={components} {...source} />
-        </Container>
-      </Box>
+        <MDXRemote components={components} {...source} />
+      </SpotlightContainer>
       <Container
         component="section"
         maxWidth="md"

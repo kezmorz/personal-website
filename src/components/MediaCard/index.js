@@ -11,6 +11,7 @@ const MediaCard = ({ title, description, href, image, alt, sx = [] }) => {
   return (
     <Card
       component="article"
+      raised
       sx={[
         { height: 120, display: "flex" },
         ...(Array.isArray(sx) ? sx : [sx]),
