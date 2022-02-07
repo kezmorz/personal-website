@@ -9,8 +9,9 @@ import {
   MenuList,
   MenuItem,
   ListItemIcon,
-  FormControl,
-  Select,
+  TextField,
+  ToggleButtonGroup,
+  ToggleButton,
   IconButton,
   Tooltip,
   Divider,
@@ -41,13 +42,17 @@ const DrawerHeading = styled(Typography)({
   margin: "16px 0 8px",
 });
 
+const DrawerSubHeading = styled(Typography)({
+  margin: "8px 0 4px",
+});
+
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 const AppBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [languageMenu, setLanguageMenu] = useState(null);
   const { pathname, query, locales, locale: activeLocale } = useRouter();
-  const { isDarkMode, setMode } = useThemeMode();
+  const { mode, isDarkMode, setMode } = useThemeMode();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -60,18 +65,18 @@ const AppBar = () => {
     setDrawerOpen(open);
   };
 
-  const handleChangeThemeMode = (newMode) => () => {
-    if (newMode === null) {
-      return;
-    }
-    setMode(newMode);
-  };
-
   const handleLanguageMenuClick = (event) => {
     setLanguageMenu(event.currentTarget);
   };
   const handleLanguageMenuClose = () => {
     setLanguageMenu(null);
+  };
+
+  const handleChangeThemeMode = (newMode) => () => {
+    if (newMode === null) {
+      return;
+    }
+    setMode(newMode);
   };
 
   return (
@@ -168,11 +173,11 @@ const AppBar = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Tooltip title="Toggle drawer">
+            <Tooltip title="Open drawer">
               <IconButton
                 color="default"
                 edge="end"
-                aria-label="toggle drawer"
+                aria-label="open drawer"
                 onClick={toggleDrawer(true)}
               >
                 <MenuOutlinedIcon />
@@ -216,6 +221,7 @@ const AppBar = () => {
                       href={link}
                       underline="none"
                       divider
+                      onClick={toggleDrawer(false)}
                       sx={{ px: 0, py: 1 }}
                     >
                       {name}
@@ -225,36 +231,70 @@ const AppBar = () => {
                 <DrawerHeading variant="h4" gutterBottom>
                   Settings
                 </DrawerHeading>
-                <FormControl sx={{ width: "100%", py: 1 }}>
-                  <Select
-                    value={activeLocale}
-                    inputProps={{
-                      "aria-label": "Language",
-                      sx: { display: "flex", alignItems: "center" },
-                    }}
+                <DrawerSubHeading variant="h6" gutterBottom>
+                  Language
+                </DrawerSubHeading>
+                <TextField
+                  id="appbar-drawer-language-select"
+                  select
+                  fullWidth
+                  hiddenLabel
+                  value={activeLocale}
+                  inputProps={{ sx: { display: "flex", alignItems: "center" } }}
+                >
+                  {locales.map((locale) => (
+                    <MenuItem
+                      key={locale}
+                      component={Link}
+                      href={{ pathname, query }}
+                      underline="none"
+                      locale={locale}
+                      value={locale}
+                      selected={activeLocale === locale}
+                    >
+                      <ListItemIcon sx={{ minWidth: 36 }}>
+                        <Flag
+                          code={LANGUAGE_OPTIONS[locale].flag}
+                          height="24"
+                          width="24"
+                        />
+                      </ListItemIcon>
+                      {LANGUAGE_OPTIONS[locale].label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <DrawerSubHeading
+                  id="appbar-drawer-subheading-theme"
+                  variant="h6"
+                  gutterBottom
+                >
+                  Theme
+                </DrawerSubHeading>
+                <ToggleButtonGroup
+                  value={mode}
+                  exclusive
+                  fullWidth
+                  color="primary"
+                  aria-labelledby="appbar-drawer-subheading-theme"
+                  onChange={(event) =>
+                    handleChangeThemeMode(event.target.value)()
+                  }
+                >
+                  <ToggleButton
+                    value="light"
+                    aria-label="set theme mode light"
+                    sx={{ textTransform: "none" }}
                   >
-                    {locales.map((locale) => (
-                      <MenuItem
-                        key={locale}
-                        component={Link}
-                        href={{ pathname, query }}
-                        underline="none"
-                        locale={locale}
-                        value={locale}
-                        selected={activeLocale === locale}
-                      >
-                        <ListItemIcon sx={{ minWidth: 36 }}>
-                          <Flag
-                            code={LANGUAGE_OPTIONS[locale].flag}
-                            height="24"
-                            width="24"
-                          />
-                        </ListItemIcon>
-                        {LANGUAGE_OPTIONS[locale].label}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
+                    Light
+                  </ToggleButton>
+                  <ToggleButton
+                    value="dark"
+                    aria-label="set theme mode dark"
+                    sx={{ textTransform: "none" }}
+                  >
+                    Dark
+                  </ToggleButton>
+                </ToggleButtonGroup>
               </Box>
             </Drawer>
           </Box>
