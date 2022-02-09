@@ -38,12 +38,22 @@ const pages = [
   { name: "contact", link: "/contact" },
 ];
 
-const DrawerHeading = styled(Typography)({
+const Heading = styled(Typography)({
   margin: "16px 0 8px",
 });
 
-const DrawerSubHeading = styled(Typography)({
+const SubHeading = styled(Typography)({
   margin: "8px 0 4px",
+});
+
+const IconToggleButton = styled(ToggleButton)({
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+  textTransform: "none",
+  "& > *": {
+    marginRight: "8px",
+  },
 });
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
@@ -72,11 +82,11 @@ const AppBar = () => {
     setLanguageMenu(null);
   };
 
-  const handleChangeThemeMode = (newMode) => () => {
-    if (newMode === null) {
+  const handleChangeThemeMode = (event) => {
+    if (event.currentTarget.value === null) {
       return;
     }
-    setMode(newMode);
+    setMode(event.currentTarget.value);
   };
 
   return (
@@ -155,8 +165,9 @@ const AppBar = () => {
               <IconButton
                 color="default"
                 edge="end"
+                value={isDarkMode ? "light" : "dark"}
                 aria-label="toggle dark mode"
-                onClick={handleChangeThemeMode(isDarkMode ? "light" : "dark")}
+                onClick={handleChangeThemeMode}
               >
                 {isDarkMode ? (
                   <DarkModeOutlinedIcon />
@@ -210,9 +221,9 @@ const AppBar = () => {
               </Box>
               <Divider />
               <Box sx={{ px: 2 }}>
-                <DrawerHeading variant="h4" gutterBottom>
+                <Heading variant="h4" gutterBottom>
                   Navigation
-                </DrawerHeading>
+                </Heading>
                 <MenuList>
                   {pages.map(({ name, link }) => (
                     <MenuItem
@@ -228,12 +239,12 @@ const AppBar = () => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <DrawerHeading variant="h4" gutterBottom>
+                <Heading variant="h4" gutterBottom>
                   Settings
-                </DrawerHeading>
-                <DrawerSubHeading variant="h6" gutterBottom>
+                </Heading>
+                <SubHeading variant="h6" gutterBottom>
                   Language
-                </DrawerSubHeading>
+                </SubHeading>
                 <TextField
                   id="appbar-drawer-language-select"
                   select
@@ -263,37 +274,35 @@ const AppBar = () => {
                     </MenuItem>
                   ))}
                 </TextField>
-                <DrawerSubHeading
+                <SubHeading
                   id="appbar-drawer-subheading-theme"
                   variant="h6"
                   gutterBottom
                 >
                   Theme
-                </DrawerSubHeading>
+                </SubHeading>
                 <ToggleButtonGroup
                   value={mode}
                   exclusive
                   fullWidth
                   color="primary"
                   aria-labelledby="appbar-drawer-subheading-theme"
-                  onChange={(event) =>
-                    handleChangeThemeMode(event.target.value)()
-                  }
+                  onChange={handleChangeThemeMode}
                 >
-                  <ToggleButton
+                  <IconToggleButton
                     value="light"
                     aria-label="set theme mode light"
-                    sx={{ textTransform: "none" }}
                   >
+                    <LightModeOutlinedIcon fontSize="small" />
                     Light
-                  </ToggleButton>
-                  <ToggleButton
+                  </IconToggleButton>
+                  <IconToggleButton
                     value="dark"
                     aria-label="set theme mode dark"
-                    sx={{ textTransform: "none" }}
                   >
+                    <DarkModeOutlinedIcon fontSize="small" />
                     Dark
-                  </ToggleButton>
+                  </IconToggleButton>
                 </ToggleButtonGroup>
               </Box>
             </Drawer>
