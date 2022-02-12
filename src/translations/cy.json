@@ -48,5 +48,26 @@
       "success": "Neges wedi'i hanfon!",
       "error": "Neges wedi'i methu. Ceisiwch eto mewn 5 eiliad."
     }
+  },
+  "appbar": {
+    "navigation": {
+      "heading": "Llywio",
+      "pages": {
+        "home": "Cartref",
+        "about": "About",
+        "resume": "Crynodeb",
+        "snippets": "Pytiau",
+        "contact": "Cyswllt"
+      }
+    },
+    "settings": {
+      "heading": "Gosodiadau",
+      "language": "Iaith",
+      "theme": {
+        "heading": "Thema",
+        "light": "Golau",
+        "dark": "Tywyll"
+      }
+    }
   }
 }

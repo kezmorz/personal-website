@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import PropTypes from "prop-types";
+import { useTranslations } from "use-intl";
 import {
   AppBar as MuiAppBar,
   Toolbar,
@@ -33,8 +33,8 @@ import Link from "@/components/Link";
 const pages = [
   { name: "home", link: "/" },
   { name: "about", link: "/about" },
-  { name: "snippets", link: "/snippets" },
   { name: "resume", link: "/resume" },
+  { name: "snippets", link: "/snippets" },
   { name: "contact", link: "/contact" },
 ];
 
@@ -62,6 +62,7 @@ const AppBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [languageMenu, setLanguageMenu] = useState(null);
   const { pathname, query, locales, locale: activeLocale } = useRouter();
+  const t = useTranslations("appbar");
   const { mode, isDarkMode, setMode } = useThemeMode();
 
   const toggleDrawer = (open) => (event) => {
@@ -107,7 +108,7 @@ const AppBar = () => {
           >
             {pages.map(({ name, link }) => (
               <Link key={name} href={link} underline="none" sx={{ my: 2 }}>
-                {name}
+                {t(`navigation.pages.${name}`)}
               </Link>
             ))}
           </Box>
@@ -222,7 +223,7 @@ const AppBar = () => {
               <Divider />
               <Box sx={{ px: 2 }}>
                 <Heading variant="h4" gutterBottom>
-                  Navigation
+                  {t("navigation.heading")}
                 </Heading>
                 <MenuList>
                   {pages.map(({ name, link }) => (
@@ -235,15 +236,15 @@ const AppBar = () => {
                       onClick={toggleDrawer(false)}
                       sx={{ px: 0, py: 1 }}
                     >
-                      {name}
+                      {t(`navigation.pages.${name}`)}
                     </MenuItem>
                   ))}
                 </MenuList>
                 <Heading variant="h4" gutterBottom>
-                  Settings
+                  {t("settings.heading")}
                 </Heading>
                 <SubHeading variant="h6" gutterBottom>
-                  Language
+                  {t("settings.language")}
                 </SubHeading>
                 <TextField
                   id="appbar-drawer-language-select"
@@ -279,7 +280,7 @@ const AppBar = () => {
                   variant="h6"
                   gutterBottom
                 >
-                  Theme
+                  {t("settings.theme.heading")}
                 </SubHeading>
                 <ToggleButtonGroup
                   value={mode}
@@ -294,14 +295,14 @@ const AppBar = () => {
                     aria-label="set theme mode light"
                   >
                     <LightModeOutlinedIcon fontSize="small" />
-                    Light
+                    {t("settings.theme.light")}
                   </IconToggleButton>
                   <IconToggleButton
                     value="dark"
                     aria-label="set theme mode dark"
                   >
                     <DarkModeOutlinedIcon fontSize="small" />
-                    Dark
+                    {t("settings.theme.dark")}
                   </IconToggleButton>
                 </ToggleButtonGroup>
               </Box>
@@ -313,6 +314,8 @@ const AppBar = () => {
     </>
   );
 };
+
+AppBar.messages = ["appbar"];
 
 AppBar.propTypes = {};
 

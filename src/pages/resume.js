@@ -14,6 +14,7 @@ import {
   Box,
 } from "@mui/material";
 import { formatDate } from "@/utils/date";
+import { pick } from "@/utils/misc";
 import Layout from "@/components/Layout";
 import SpotlightContainer from "@/components/SpotlightContainer";
 import MediaCard from "@/components/MediaCard";
@@ -99,6 +100,8 @@ Resume.getLayout = (page) => {
   );
 };
 
+Resume.messages = ["resume", ...Layout.messages];
+
 export async function getStaticProps({ locale }) {
   const filepath = path.join(process.cwd(), `src/content/${locale}/resume.mdx`);
   const source = fs.readFileSync(filepath);
@@ -109,7 +112,10 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      messages: (await import(`../translations/${locale}.json`)).default,
+      messages: pick(
+        await import(`../translations/${locale}.json`),
+        Resume.messages
+      ),
       source: mdxSource,
       frontMatter: data,
     },
