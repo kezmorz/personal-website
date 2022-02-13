@@ -10,6 +10,8 @@ const Layout = ({ children }) => {
   );
 };
 
+Layout.messages = [...AppBar.messages];
+
 Layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

@@ -1,5 +1,6 @@
 import { useTranslations } from "use-intl";
 import { Typography } from "@mui/material";
+import { pick } from "@/utils/misc";
 import Layout from "@/components/Layout";
 
 const Home = () => {
@@ -20,10 +21,15 @@ Home.getLayout = (page) => {
   );
 };
 
+Home.messages = ["index", ...Layout.messages];
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      messages: (await import(`../translations/${locale}.json`)).default,
+      messages: pick(
+        await import(`../translations/${locale}.json`),
+        Home.messages
+      ),
     },
   };
 }

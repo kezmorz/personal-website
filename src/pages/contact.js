@@ -12,6 +12,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { pick } from "@/utils/misc";
 import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
@@ -184,10 +185,15 @@ Contact.getLayout = (page) => {
   );
 };
 
+Contact.messages = ["contact", ...Layout.messages];
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      messages: (await import(`../translations/${locale}.json`)).default,
+      messages: pick(
+        await import(`../translations/${locale}.json`),
+        Contact.messages
+      ),
     },
   };
 }

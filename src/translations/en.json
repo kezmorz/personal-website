@@ -48,5 +48,26 @@
       "success": "Message sent!",
       "error": "Message failed. Please try again in 5 seconds."
     }
+  },
+  "appbar": {
+    "navigation": {
+      "heading": "Navigation",
+      "pages": {
+        "home": "Home",
+        "about": "About",
+        "resume": "Resume",
+        "snippets": "Snippets",
+        "contact": "Contact"
+      }
+    },
+    "settings": {
+      "heading": "Settings",
+      "language": "Language",
+      "theme": {
+        "heading": "Theme",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    }
   }
 }
