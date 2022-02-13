@@ -107,7 +107,34 @@ const AppBar = () => {
             }}
           >
             {pages.map(({ name, link }) => (
-              <Link key={name} href={link} underline="none" sx={{ my: 2 }}>
+              <Link
+                key={name}
+                href={link}
+                underline="none"
+                sx={[
+                  {
+                    mx: 1,
+                    display: "block",
+                    position: "relative",
+                  },
+                  (theme) => ({
+                    "&::after": {
+                      width: "100%",
+                      content: "''",
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      height: "0.1em",
+                      backgroundColor: theme.palette.primary.main,
+                      transform: "scale(0)",
+                      transformOrigin: "center",
+                      transition: "opacity 300ms, transform 300ms",
+                    },
+                    "&:hover::after": { transform: "scale(1)" },
+                    "&:focus::after": { transform: "scale(1)" },
+                  }),
+                ]}
+              >
                 {t(`navigation.pages.${name}`)}
               </Link>
             ))}
