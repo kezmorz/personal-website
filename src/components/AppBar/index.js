@@ -8,6 +8,9 @@ import {
   Menu,
   MenuList,
   MenuItem,
+  List,
+  ListItem,
+  ListItemButton,
   ListItemIcon,
   TextField,
   ToggleButtonGroup,
@@ -17,6 +20,7 @@ import {
   Divider,
   Typography,
   Box,
+  ListItemText,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import {
@@ -106,38 +110,51 @@ const AppBar = () => {
               justifyContent: "center",
             }}
           >
-            {pages.map(({ name, link }) => (
-              <Link
-                key={name}
-                href={link}
-                underline="none"
-                sx={[
-                  {
-                    mx: 1,
-                    display: "block",
-                    position: "relative",
-                  },
-                  (theme) => ({
-                    "&::after": {
-                      width: "100%",
-                      content: "''",
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      height: "0.1em",
-                      backgroundColor: theme.palette.primary.main,
-                      transform: "scale(0)",
-                      transformOrigin: "center",
-                      transition: "opacity 300ms, transform 300ms",
-                    },
-                    "&:hover::after": { transform: "scale(1)" },
-                    "&:focus::after": { transform: "scale(1)" },
-                  }),
-                ]}
-              >
-                {t(`navigation.pages.${name}`)}
-              </Link>
-            ))}
+            <List disablePadding sx={{ display: "flex" }}>
+              {pages.map(({ name, link }) => (
+                <ListItem key={name} disablePadding>
+                  <ListItemButton
+                    component={Link}
+                    href={link}
+                    underline="none"
+                    disableRipple
+                    disableTouchRipple
+                    sx={[
+                      {
+                        p: 0,
+                        mx: 2,
+                        display: "block",
+                        position: "relative",
+                        "&.Mui-focusVisible": {
+                          bgcolor: "unset",
+                        },
+                        "&:hover": {
+                          bgcolor: "unset",
+                        },
+                      },
+                      (theme) => ({
+                        "&::after": {
+                          width: "100%",
+                          content: "''",
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          height: "0.1em",
+                          backgroundColor: theme.palette.primary.main,
+                          transform: "scale(0)",
+                          transformOrigin: "center",
+                          transition: "opacity 300ms, transform 300ms",
+                        },
+                        "&:hover::after": { transform: "scale(1)" },
+                        "&:focus::after": { transform: "scale(1)" },
+                      }),
+                    ]}
+                  >
+                    <ListItemText primary={t(`navigation.pages.${name}`)} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
           </Box>
           <Box
             sx={{
@@ -252,21 +269,21 @@ const AppBar = () => {
                 <Heading variant="h4" gutterBottom>
                   {t("navigation.heading")}
                 </Heading>
-                <MenuList>
+                <List>
                   {pages.map(({ name, link }) => (
-                    <MenuItem
-                      key={name}
-                      component={Link}
-                      href={link}
-                      underline="none"
-                      divider
-                      onClick={toggleDrawer(false)}
-                      sx={{ px: 0, py: 1 }}
-                    >
-                      {t(`navigation.pages.${name}`)}
-                    </MenuItem>
+                    <ListItem key={name} disablePadding divider>
+                      <ListItemButton
+                        component={Link}
+                        href={link}
+                        underline="none"
+                        onClick={toggleDrawer(false)}
+                        sx={{ px: 0, py: 1 }}
+                      >
+                        <ListItemText primary={t(`navigation.pages.${name}`)} />
+                      </ListItemButton>
+                    </ListItem>
                   ))}
-                </MenuList>
+                </List>
                 <Heading variant="h4" gutterBottom>
                   {t("settings.heading")}
                 </Heading>
