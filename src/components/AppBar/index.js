@@ -6,7 +6,6 @@ import {
   Toolbar,
   Drawer,
   Menu,
-  MenuList,
   MenuItem,
   List,
   ListItem,
@@ -110,15 +109,16 @@ const AppBar = () => {
               justifyContent: "center",
             }}
           >
-            <List disablePadding sx={{ display: "flex" }}>
+            <List disablePadding role="menubar" sx={{ display: "flex" }}>
               {pages.map(({ name, link }) => (
-                <ListItem key={name} disablePadding>
+                <ListItem key={name} disablePadding role="none">
                   <ListItemButton
                     component={Link}
                     href={link}
                     underline="none"
                     disableRipple
                     disableTouchRipple
+                    role="menuitem"
                     sx={[
                       {
                         p: 0,
@@ -145,8 +145,9 @@ const AppBar = () => {
                           transformOrigin: "center",
                           transition: "opacity 300ms, transform 300ms",
                         },
-                        "&:hover::after": { transform: "scale(1)" },
-                        "&:focus::after": { transform: "scale(1)" },
+                        "&.active::after, &:hover::after, &:focus::after": {
+                          transform: "scale(1)",
+                        },
                       }),
                     ]}
                   >
@@ -182,8 +183,9 @@ const AppBar = () => {
               id="language-menu"
               anchorEl={languageMenu}
               open={Boolean(languageMenu)}
-              onClose={handleLanguageMenuClose}
+              role="menu"
               MenuListProps={{ "aria-labelledby": "language-menu" }}
+              onClose={handleLanguageMenuClose}
             >
               {locales.map((locale) => (
                 <MenuItem
@@ -193,6 +195,7 @@ const AppBar = () => {
                   underline="none"
                   locale={locale}
                   selected={activeLocale === locale}
+                  role="menuitem"
                   onClick={handleLanguageMenuClose}
                 >
                   <ListItemIcon>
@@ -296,6 +299,7 @@ const AppBar = () => {
                   fullWidth
                   hiddenLabel
                   value={activeLocale}
+                  role="listbox"
                   inputProps={{ sx: { display: "flex", alignItems: "center" } }}
                 >
                   {locales.map((locale) => (
@@ -307,6 +311,7 @@ const AppBar = () => {
                       locale={locale}
                       value={locale}
                       selected={activeLocale === locale}
+                      role="option"
                     >
                       <ListItemIcon sx={{ minWidth: 36 }}>
                         <Flag
