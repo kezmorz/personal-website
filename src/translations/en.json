@@ -69,5 +69,19 @@
         "dark": "Dark"
       }
     }
+  },
+  "footer": {
+    "tagline": "Full time software developer",
+    "sitemap": {
+      "heading": "Sitemap",
+      "pages": {
+        "home": "Home",
+        "about": "About",
+        "resume": "Resume",
+        "snippets": "Snippets",
+        "contact": "Contact"
+      }
+    },
+    "copyright": ""
   }
 }
