@@ -6,8 +6,10 @@ import {
   Toolbar,
   Drawer,
   Menu,
-  MenuList,
   MenuItem,
+  List,
+  ListItem,
+  ListItemButton,
   ListItemIcon,
   TextField,
   ToggleButtonGroup,
@@ -17,6 +19,7 @@ import {
   Divider,
   Typography,
   Box,
+  ListItemText,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import {
@@ -63,7 +66,7 @@ const AppBar = () => {
   const [languageMenu, setLanguageMenu] = useState(null);
   const { pathname, query, locales, locale: activeLocale } = useRouter();
   const t = useTranslations("appbar");
-  const { mode, isDarkMode, setMode } = useThemeMode();
+  const { isDarkMode, setMode } = useThemeMode();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -106,38 +109,53 @@ const AppBar = () => {
               justifyContent: "center",
             }}
           >
-            {pages.map(({ name, link }) => (
-              <Link
-                key={name}
-                href={link}
-                underline="none"
-                sx={[
-                  {
-                    mx: 1,
-                    display: "block",
-                    position: "relative",
-                  },
-                  (theme) => ({
-                    "&::after": {
-                      width: "100%",
-                      content: "''",
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      height: "0.1em",
-                      backgroundColor: theme.palette.primary.main,
-                      transform: "scale(0)",
-                      transformOrigin: "center",
-                      transition: "opacity 300ms, transform 300ms",
-                    },
-                    "&:hover::after": { transform: "scale(1)" },
-                    "&:focus::after": { transform: "scale(1)" },
-                  }),
-                ]}
-              >
-                {t(`navigation.pages.${name}`)}
-              </Link>
-            ))}
+            <List disablePadding role="menubar" sx={{ display: "flex" }}>
+              {pages.map(({ name, link }) => (
+                <ListItem key={name} disablePadding role="none">
+                  <ListItemButton
+                    component={Link}
+                    href={link}
+                    underline="none"
+                    disableRipple
+                    disableTouchRipple
+                    role="menuitem"
+                    sx={[
+                      {
+                        p: 0,
+                        mx: 2,
+                        display: "block",
+                        position: "relative",
+                        "&.Mui-focusVisible": {
+                          bgcolor: "unset",
+                        },
+                        "&:hover": {
+                          bgcolor: "unset",
+                        },
+                      },
+                      (theme) => ({
+                        "&::after": {
+                          width: "100%",
+                          content: "''",
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          height: "0.1em",
+                          backgroundColor: theme.palette.primary.main,
+                          transform: "scale(0)",
+                          transformOrigin: "center",
+                          transition: "opacity 300ms, transform 300ms",
+                        },
+                        "&.active::after, &:hover::after, &:focus::after": {
+                          transform: "scale(1)",
+                        },
+                      }),
+                    ]}
+                  >
+                    <ListItemText primary={t(`navigation.pages.${name}`)} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
           </Box>
           <Box
             sx={{
@@ -163,10 +181,12 @@ const AppBar = () => {
             </Tooltip>
             <Menu
               id="language-menu"
+              disablePortal
               anchorEl={languageMenu}
               open={Boolean(languageMenu)}
-              onClose={handleLanguageMenuClose}
+              role="menu"
               MenuListProps={{ "aria-labelledby": "language-menu" }}
+              onClose={handleLanguageMenuClose}
             >
               {locales.map((locale) => (
                 <MenuItem
@@ -176,6 +196,7 @@ const AppBar = () => {
                   underline="none"
                   locale={locale}
                   selected={activeLocale === locale}
+                  role="menuitem"
                   onClick={handleLanguageMenuClose}
                 >
                   <ListItemIcon>
@@ -224,6 +245,7 @@ const AppBar = () => {
             </Tooltip>
             <Drawer
               anchor="top"
+              disablePortal
               open={drawerOpen}
               onClose={toggleDrawer(false)}
               PaperProps={{ sx: { width: "auto", height: "100%" } }}
@@ -252,21 +274,21 @@ const AppBar = () => {
                 <Heading variant="h4" gutterBottom>
                   {t("navigation.heading")}
                 </Heading>
-                <MenuList>
+                <List>
                   {pages.map(({ name, link }) => (
-                    <MenuItem
-                      key={name}
-                      component={Link}
-                      href={link}
-                      underline="none"
-                      divider
-                      onClick={toggleDrawer(false)}
-                      sx={{ px: 0, py: 1 }}
-                    >
-                      {t(`navigation.pages.${name}`)}
-                    </MenuItem>
+                    <ListItem key={name} disablePadding divider>
+                      <ListItemButton
+                        component={Link}
+                        href={link}
+                        underline="none"
+                        onClick={toggleDrawer(false)}
+                        sx={{ px: 0, py: 1 }}
+                      >
+                        <ListItemText primary={t(`navigation.pages.${name}`)} />
+                      </ListItemButton>
+                    </ListItem>
                   ))}
-                </MenuList>
+                </List>
                 <Heading variant="h4" gutterBottom>
                   {t("settings.heading")}
                 </Heading>
@@ -279,6 +301,7 @@ const AppBar = () => {
                   fullWidth
                   hiddenLabel
                   value={activeLocale}
+                  role="listbox"
                   inputProps={{ sx: { display: "flex", alignItems: "center" } }}
                 >
                   {locales.map((locale) => (
@@ -290,6 +313,7 @@ const AppBar = () => {
                       locale={locale}
                       value={locale}
                       selected={activeLocale === locale}
+                      role="option"
                     >
                       <ListItemIcon sx={{ minWidth: 36 }}>
                         <Flag
@@ -310,7 +334,7 @@ const AppBar = () => {
                   {t("settings.theme.heading")}
                 </SubHeading>
                 <ToggleButtonGroup
-                  value={mode}
+                  value={isDarkMode ? "dark" : "light"}
                   exclusive
                   fullWidth
                   color="primary"
