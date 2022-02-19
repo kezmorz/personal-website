@@ -66,7 +66,7 @@ const AppBar = () => {
   const [languageMenu, setLanguageMenu] = useState(null);
   const { pathname, query, locales, locale: activeLocale } = useRouter();
   const t = useTranslations("appbar");
-  const { mode, isDarkMode, setMode } = useThemeMode();
+  const { isDarkMode, setMode } = useThemeMode();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -181,6 +181,7 @@ const AppBar = () => {
             </Tooltip>
             <Menu
               id="language-menu"
+              disablePortal
               anchorEl={languageMenu}
               open={Boolean(languageMenu)}
               role="menu"
@@ -244,6 +245,7 @@ const AppBar = () => {
             </Tooltip>
             <Drawer
               anchor="top"
+              disablePortal
               open={drawerOpen}
               onClose={toggleDrawer(false)}
               PaperProps={{ sx: { width: "auto", height: "100%" } }}
@@ -332,7 +334,7 @@ const AppBar = () => {
                   {t("settings.theme.heading")}
                 </SubHeading>
                 <ToggleButtonGroup
-                  value={mode}
+                  value={isDarkMode ? "dark" : "light"}
                   exclusive
                   fullWidth
                   color="primary"
