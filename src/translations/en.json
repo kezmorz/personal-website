@@ -71,7 +71,7 @@
     }
   },
   "footer": {
-    "tagline": "Full time software developer",
+    "tagline": "Full time software developer. Full time software developer. Full time software developer.",
     "sitemap": {
       "heading": "Sitemap",
       "pages": {
@@ -82,6 +82,6 @@
         "contact": "Contact"
       }
     },
-    "copyright": ""
+    "copyright": "© {year} Ceri Morse. All Rights Reserved."
   }
 }
