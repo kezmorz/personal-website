@@ -59,13 +59,26 @@ const Footer = () => {
               {t("tagline")}
             </Typography>
             <Box sx={{ display: "flex" }}>
-              <IconButton sx={{ ml: -1 }}>
+              <IconButton
+                href="https://github.com/kezmorz"
+                target="_blank"
+                rel="noopener"
+                sx={{ ml: -1 }}
+              >
                 <GithubIcon />
               </IconButton>
-              <IconButton>
+              <IconButton
+                href="https://www.linkedin.com/in/cerimorse"
+                target="_blank"
+                rel="noopener"
+              >
                 <LinkedInIcon />
               </IconButton>
-              <IconButton>
+              <IconButton
+                href="mailto:enterprise@mxrse.com"
+                target="_blank"
+                rel="noopener"
+              >
                 <EmailOutlinedIcon />
               </IconButton>
             </Box>
@@ -131,6 +144,8 @@ const Footer = () => {
               <Accordion disableGutters square elevation={0}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreOutlinedIcon />}
+                  aria-controls="sitemap-content"
+                  id="sitemap-header"
                   sx={{ p: 0 }}
                 >
                   <Typography variant="h5">{t("sitemap.heading")}</Typography>
