@@ -1,10 +1,25 @@
 import { useTranslations } from "use-intl";
-import { Box, Container, Divider, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  IconButton,
+  Divider,
+  Typography,
+} from "@mui/material";
 import {
   GitHub as GithubIcon,
   LinkedIn as LinkedInIcon,
   EmailOutlined as EmailOutlinedIcon,
+  ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
+import Link from "@/components/Link";
 import FancyLink from "@/components/FancyLink";
 
 const pages = {
@@ -56,56 +71,100 @@ const Footer = () => {
             </Box>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-            <Typography variant="h5" gutterBottom>
-              {t("sitemap.heading")}
-            </Typography>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "repeat(12, 1fr)",
-                gap: { xs: 2, md: 4 },
-              }}
-            >
-              <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
-                {pages.info.map(({ name, link }) => (
-                  <FancyLink
-                    key={name}
-                    href={link}
-                    color="textPrimary"
-                    sx={{
-                      width: "fit-content",
-                      "&.active::after": {
-                        transform: "scale(0)",
-                      },
-                      "&:hover::after, &:focus::after": {
-                        transform: "scale(1)",
-                      },
-                    }}
-                  >
-                    {t(`sitemap.pages.${name}`)}
-                  </FancyLink>
-                ))}
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Typography variant="h5" gutterBottom>
+                {t("sitemap.heading")}
+              </Typography>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(12, 1fr)",
+                  gap: { xs: 2, md: 4 },
+                }}
+              >
+                <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
+                  {pages.info.map(({ name, link }) => (
+                    <FancyLink
+                      key={name}
+                      href={link}
+                      color="textPrimary"
+                      sx={{
+                        width: "fit-content",
+                        mb: 1,
+                        "&.active::after": {
+                          transform: "scale(0)",
+                        },
+                        "&:hover::after, &:focus::after": {
+                          transform: "scale(1)",
+                        },
+                      }}
+                    >
+                      {t(`sitemap.pages.${name}`)}
+                    </FancyLink>
+                  ))}
+                </Box>
+                <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
+                  {pages.misc.map(({ name, link }) => (
+                    <FancyLink
+                      key={name}
+                      href={link}
+                      color="textPrimary"
+                      sx={{
+                        width: "fit-content",
+                        mb: 1,
+                        "&.active::after": {
+                          transform: "scale(0)",
+                        },
+                        "&:hover::after, &:focus::after": {
+                          transform: "scale(1)",
+                        },
+                      }}
+                    >
+                      {t(`sitemap.pages.${name}`)}
+                    </FancyLink>
+                  ))}
+                </Box>
               </Box>
-              <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
-                {pages.misc.map(({ name, link }) => (
-                  <FancyLink
-                    key={name}
-                    href={link}
-                    color="textPrimary"
-                    sx={{
-                      width: "fit-content",
-                      "&.active::after": {
-                        transform: "scale(0)",
-                      },
-                      "&:hover::after, &:focus::after": {
-                        transform: "scale(1)",
-                      },
-                    }}
-                  >
-                    {t(`sitemap.pages.${name}`)}
-                  </FancyLink>
-                ))}
-              </Box>
+            </Box>
+            <Box sx={{ display: { xs: "block", md: "none" } }}>
+              <Divider />
+              <Accordion disableGutters square elevation={0}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreOutlinedIcon />}
+                  sx={{ p: 0 }}
+                >
+                  <Typography variant="h5">{t("sitemap.heading")}</Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ pt: 0, px: 0 }}>
+                  <List>
+                    {pages.info.map(({ name, link }) => (
+                      <ListItem key={name} disablePadding>
+                        <ListItemButton
+                          component={Link}
+                          href={link}
+                          underline="none"
+                          sx={{ px: 0, py: 1 }}
+                        >
+                          <ListItemText primary={t(`sitemap.pages.${name}`)} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                    {pages.misc.map(({ name, link }) => (
+                      <ListItem key={name} disablePadding>
+                        <ListItemButton
+                          component={Link}
+                          href={link}
+                          underline="none"
+                          sx={{ px: 0, py: 1 }}
+                        >
+                          <ListItemText primary={t(`sitemap.pages.${name}`)} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </AccordionDetails>
+              </Accordion>
+              <Divider />
             </Box>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
