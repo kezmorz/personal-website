@@ -83,6 +83,7 @@ const AppBar = () => {
   const handleLanguageMenuClick = (event) => {
     setLanguageMenu(event.currentTarget);
   };
+
   const handleLanguageMenuClose = () => {
     setLanguageMenu(null);
   };
@@ -91,6 +92,7 @@ const AppBar = () => {
     if (event.currentTarget.value === null) {
       return;
     }
+
     setMode(event.currentTarget.value);
   };
 
@@ -155,6 +157,7 @@ const AppBar = () => {
                   code={LANGUAGE_OPTIONS[activeLocale].flag}
                   height="24"
                   width="24"
+                  alt={LANGUAGE_OPTIONS[activeLocale].label}
                 />
               </IconButton>
             </Tooltip>
@@ -183,6 +186,7 @@ const AppBar = () => {
                       code={LANGUAGE_OPTIONS[locale].flag}
                       height="24"
                       width="24"
+                      alt={LANGUAGE_OPTIONS[locale].label}
                     />
                   </ListItemIcon>
                   {LANGUAGE_OPTIONS[locale].label}
@@ -299,6 +303,7 @@ const AppBar = () => {
                           code={LANGUAGE_OPTIONS[locale].flag}
                           height="24"
                           width="24"
+                          alt={LANGUAGE_OPTIONS[locale].label}
                         />
                       </ListItemIcon>
                       {LANGUAGE_OPTIONS[locale].label}

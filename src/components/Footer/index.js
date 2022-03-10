@@ -63,6 +63,7 @@ const Footer = () => {
                 href="https://github.com/kezmorz"
                 target="_blank"
                 rel="noopener"
+                aria-label="go to github profile"
                 sx={{ ml: -1 }}
               >
                 <GithubIcon />
@@ -71,6 +72,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/cerimorse"
                 target="_blank"
                 rel="noopener"
+                aria-label="go to linkedin profile"
               >
                 <LinkedInIcon />
               </IconButton>
@@ -78,6 +80,7 @@ const Footer = () => {
                 href="mailto:enterprise@mxrse.com"
                 target="_blank"
                 rel="noopener"
+                aria-label="send email"
               >
                 <EmailOutlinedIcon />
               </IconButton>
@@ -143,9 +146,9 @@ const Footer = () => {
               <Divider />
               <Accordion disableGutters square elevation={0}>
                 <AccordionSummary
+                  id="sitemap-header"
                   expandIcon={<ExpandMoreOutlinedIcon />}
                   aria-controls="sitemap-content"
-                  id="sitemap-header"
                   sx={{ p: 0 }}
                 >
                   <Typography variant="h5">{t("sitemap.heading")}</Typography>

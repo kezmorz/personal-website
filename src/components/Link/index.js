@@ -50,7 +50,6 @@ const Link = React.forwardRef(
       as: linkAs,
       href,
       noLinkStyle,
-      role,
       activeClassName = "active",
       className: classNameProps,
       ...props
@@ -107,7 +106,6 @@ Link.propTypes = {
   as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   href: PropTypes.any,
   noLinkStyle: PropTypes.bool,
-  role: PropTypes.string,
   activeClassName: PropTypes.string,
   className: PropTypes.string,
 };
