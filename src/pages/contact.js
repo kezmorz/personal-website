@@ -187,7 +187,7 @@ Contact.getLayout = (page) => {
 
 Contact.messages = ["contact", ...Layout.messages];
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       messages: pick(
@@ -196,6 +196,6 @@ export async function getStaticProps({ locale }) {
       ),
     },
   };
-}
+};
 
 export default Contact;

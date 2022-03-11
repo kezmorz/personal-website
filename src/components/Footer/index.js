@@ -86,7 +86,7 @@ const Footer = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
             <Box sx={{ display: { xs: "none", md: "block" } }}>
               <Typography variant="h5" gutterBottom>
                 {t("sitemap.heading")}
@@ -94,7 +94,7 @@ const Footer = () => {
               <Box
                 sx={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(12, 1fr)",
+                  gridTemplateColumns: "repeat(8, 1fr)",
                   gap: { xs: 2, md: 4 },
                 }}
               >
@@ -184,6 +184,11 @@ const Footer = () => {
               </Accordion>
               <Divider />
             </Box>
+          </Box>
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 2" } }}>
+            <Typography variant="h5" gutterBottom>
+              {t("art")}
+            </Typography>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
             <Typography>

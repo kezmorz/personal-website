@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 const Anchor = styled("a")({});
 
-const NextLinkComposed = React.forwardRef(
+const NextLinkComposed = forwardRef(
   (
     { to, linkAs, href, replace, scroll, shallow, prefetch, locale, ...props },
     ref
@@ -44,7 +44,7 @@ NextLinkComposed.propTypes = {
   passHref: PropTypes.bool,
 };
 
-const Link = React.forwardRef(
+const Link = forwardRef(
   (
     {
       as: linkAs,
