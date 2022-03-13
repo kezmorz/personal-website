@@ -89,7 +89,7 @@ const Footer = () => {
                 <EmailOutlinedIcon />
               </IconButton>
             </Box>
-            <Box sx={{ display: "inline-flex" }}>
+            <Box sx={{ width: "100%", display: "inline-flex" }}>
               <Box
                 component="span"
                 sx={{ display: "inline-flex", ml: -1, p: 1 }}
@@ -100,7 +100,13 @@ const Footer = () => {
                 <Typography
                   component="span"
                   variant="body1"
-                  sx={{ pt: 1, pl: 1 }}
+                  sx={{
+                    pt: 1,
+                    pl: 1,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
                 >
                   <Link
                     href={data.songUrl}
@@ -116,7 +122,13 @@ const Footer = () => {
                 <Typography
                   component="span"
                   variant="body1"
-                  sx={{ pt: 1, pl: 1 }}
+                  sx={{
+                    pt: 1,
+                    pl: 1,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
                 >
                   {t("notPlaying")}
                 </Typography>
