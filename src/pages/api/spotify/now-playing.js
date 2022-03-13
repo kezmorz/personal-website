@@ -5,21 +5,22 @@ const nowPlaying = async (req, res) => {
 
   if (method === "GET") {
     const response = await getNowPlaying();
-    const data = await response.json();
 
-    console.log({ data });
-
-    const isPlaying = data.is_playing;
-    const title = data.item.name;
-    const artist = data.item.artists.map((_artist) => _artist.name).join(", ");
-    const album = data.item.album.name;
-    const albumImageUrl = data.item.album.images[0].url;
-    const songUrl = data.item.external_urls.spotify;
-
-    console.log({ isPlaying, title, artist, album, albumImageUrl, songUrl });
-
-    res.status(200);
-    res.json({ isPlaying, title, artist, album, albumImageUrl, songUrl });
+    if (response.status === 204 || response.status > 400) {
+      res.status(200);
+      res.json({ isPlaying: false });
+    } else {
+      const { is_playing, item } = await response.json();
+      res.status(200);
+      res.json({
+        isPlaying: is_playing,
+        title: item.name,
+        artist: item.artists.map((_artist) => _artist.name).join(", "),
+        album: item.album_name,
+        albumImageUrl: item.album.images[0].url,
+        songUrl: item.external_urls.spotify,
+      });
+    }
   } else {
     res.status(405);
     res.setHeader("Allow", ["GET"]);

@@ -28,7 +28,7 @@ const mail = async (req, res) => {
     }
   } else {
     res.status(405);
-    res.setHeader("Allow", ["GET"]);
+    res.setHeader("Allow", ["POST"]);
     res.end(`Method ${method} not allowed.`);
   }
 };
