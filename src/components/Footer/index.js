@@ -1,3 +1,4 @@
+import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import {
   Box,
@@ -19,6 +20,8 @@ import {
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
+import fetcher from "@/services/fetcher";
+import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
 import FancyLink from "@/components/FancyLink";
 
@@ -35,6 +38,7 @@ const pages = {
 };
 
 const Footer = () => {
+  const { data } = useSwr("/api/spotify/now-playing", fetcher);
   const t = useTranslations("footer");
 
   return (
@@ -58,7 +62,7 @@ const Footer = () => {
             <Typography variant="body1" gutterBottom>
               {t("tagline")}
             </Typography>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", mb: "0.35em" }}>
               <IconButton
                 href="https://github.com/kezmorz"
                 target="_blank"
@@ -84,6 +88,39 @@ const Footer = () => {
               >
                 <EmailOutlinedIcon />
               </IconButton>
+            </Box>
+            <Box sx={{ display: "inline-flex" }}>
+              <Box
+                component="span"
+                sx={{ display: "inline-flex", ml: -1, p: 1 }}
+              >
+                <SpotifyIcon />
+              </Box>
+              {data?.isPlaying ? (
+                <Typography
+                  component="span"
+                  variant="body1"
+                  sx={{ pt: 1, pl: 1 }}
+                >
+                  <Link
+                    href={data.songUrl}
+                    target="_blank"
+                    rel="noopener"
+                    underline="hover"
+                  >
+                    {data.title}
+                  </Link>
+                  {` - ${data.artist}`}
+                </Typography>
+              ) : (
+                <Typography
+                  component="span"
+                  variant="body1"
+                  sx={{ pt: 1, pl: 1 }}
+                >
+                  Not Playing
+                </Typography>
+              )}
             </Box>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
