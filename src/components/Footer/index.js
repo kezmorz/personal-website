@@ -118,7 +118,7 @@ const Footer = () => {
                   variant="body1"
                   sx={{ pt: 1, pl: 1 }}
                 >
-                  Not Playing
+                  {t("notPlaying")}
                 </Typography>
               )}
             </Box>
