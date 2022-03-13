@@ -1,6 +1,4 @@
-import sendgrid from "@sendgrid/mail";
-
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+import { sendMail } from "@/lib/mail";
 
 const mail = async (req, res) => {
   const { method } = req;
@@ -8,18 +6,17 @@ const mail = async (req, res) => {
   if (method === "POST") {
     const { body: reqBody } = req;
     const { name, email, subject, message } = JSON.parse(reqBody);
-    const payload = {
-      to: "enterprise@mxrse.com",
-      from: {
-        name: "Personal Website Contact Form",
-        email: "contact@cerimorse.com",
-      },
-      subject: subject,
-      text: `Name: ${name} Email: ${email} Message: ${message}`,
-    };
 
     try {
-      const response = await sendgrid.send(payload);
+      const response = await sendMail({
+        to: "enterprise@mxrse.com",
+        from: {
+          name: "Personal Website Contact Form",
+          email: "contact@cerimorse.com",
+        },
+        subject: subject,
+        text: `Name: ${name} Email: ${email} Message: ${message}`,
+      });
       res.status(response[0].statusCode);
       res.end();
     } catch (error) {
