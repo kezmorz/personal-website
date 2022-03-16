@@ -1,3 +1,4 @@
+import Image from "next/image";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import {
@@ -20,6 +21,7 @@ import {
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
+import { photoLoader as flickrPhotoLoader } from "@/lib/flickr";
 import fetcher from "@/services/fetcher";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
@@ -38,8 +40,11 @@ const pages = {
 };
 
 const Footer = () => {
-  const { data } = useSwr("/api/spotify/now-playing", fetcher);
+  const { data: spotifyData } = useSwr("/api/spotify/now-playing", fetcher);
+  const { data: flickrData } = useSwr("/api/flickr/random-photo", fetcher);
   const t = useTranslations("footer");
+
+  console.log(flickrData);
 
   return (
     <Box component="footer">
@@ -96,7 +101,7 @@ const Footer = () => {
               >
                 <SpotifyIcon />
               </Box>
-              {data?.isPlaying ? (
+              {spotifyData?.isPlaying ? (
                 <Typography
                   component="span"
                   variant="body1"
@@ -109,14 +114,14 @@ const Footer = () => {
                   }}
                 >
                   <Link
-                    href={data.songUrl}
+                    href={spotifyData.songUrl}
                     target="_blank"
                     rel="noopener"
                     underline="hover"
                   >
-                    {data.title}
+                    {spotifyData.title}
                   </Link>
-                  {` - ${data.artist}`}
+                  {` - ${spotifyData.artist}`}
                 </Typography>
               ) : (
                 <Typography
@@ -238,6 +243,17 @@ const Footer = () => {
             <Typography variant="h5" gutterBottom>
               {t("art")}
             </Typography>
+            {flickrData && (
+              <Box sx={{ position: "relative", height: 96 }}>
+                <Image
+                  src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}_n.jpg`}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={flickrData.title}
+                  loader={flickrPhotoLoader}
+                />
+              </Box>
+            )}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
             <Typography>
