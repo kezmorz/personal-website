@@ -242,15 +242,21 @@ const Footer = () => {
               {t("art")}
             </Typography>
             {flickrData && (
-              <Box sx={{ position: "relative", height: 96 }}>
-                <Image
-                  src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={flickrData.title}
-                  loader={flickrPhotoLoader}
-                />
-              </Box>
+              <Link
+                href={`https://www.flickr.com/photos/${flickrData.owner}`}
+                target="_blank"
+                rel="noopener"
+              >
+                <Box sx={{ position: "relative", height: 96 }}>
+                  <Image
+                    src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={flickrData.title}
+                    loader={flickrPhotoLoader}
+                  />
+                </Box>
+              </Link>
             )}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
