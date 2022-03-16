@@ -13,15 +13,29 @@ const sizeSuffix = {
   1024: "b",
 };
 
+export const photoLoader = ({ src, width }) => {
+  const [source, format] = src.split(".");
+
+  const suffixWidth = Object.keys(sizeSuffix).reduce((a, b) => {
+    const aDiff = Math.abs(a - width);
+    const bDiff = Math.abs(b - width);
+
+    if (aDiff === bDiff) {
+      return a > b ? a : b;
+    } else {
+      return bDiff < aDiff ? b : a;
+    }
+  });
+
+  const suffix = sizeSuffix[suffixWidth];
+
+  return `https://live.staticflickr.com/${source}_${suffix}.${format}`;
+};
+
 export const getAlbumPhotos = async () => {
   const response = await fetch(
     `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=72177720297374250&format=json&nojsoncallback=1`
   );
 
   return response;
-};
-
-export const photoLoader = ({ src, width }) => {
-  console.log({ width });
-  return `https://live.staticflickr.com/${src}`;
 };

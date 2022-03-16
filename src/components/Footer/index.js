@@ -44,8 +44,6 @@ const Footer = () => {
   const { data: flickrData } = useSwr("/api/flickr/random-photo", fetcher);
   const t = useTranslations("footer");
 
-  console.log(flickrData);
-
   return (
     <Box component="footer">
       <Divider light />
@@ -246,7 +244,7 @@ const Footer = () => {
             {flickrData && (
               <Box sx={{ position: "relative", height: 96 }}>
                 <Image
-                  src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}_n.jpg`}
+                  src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
                   layout="fill"
                   objectFit="cover"
                   alt={flickrData.title}
