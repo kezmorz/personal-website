@@ -7,6 +7,9 @@ const randomPhoto = async (req, res) => {
     const response = await getAlbumPhotos();
     const data = await response.json();
 
+    console.log({ response });
+    console.log({ data });
+
     const photo = data.photoset.photo.at(
       Math.floor(Math.random() * data.photoset.photo.length)
     );
