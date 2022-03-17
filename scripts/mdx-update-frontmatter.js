@@ -31,8 +31,6 @@ const updateFrontmatter = async (paths) => {
 const updateModifiedFiles = async () => {
   const paths = await getMdxFilesFromCommit();
 
-  console.log(paths);
-
   if (paths.length) {
     await updateFrontmatter(paths);
     await add(paths);
