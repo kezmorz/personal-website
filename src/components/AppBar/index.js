@@ -31,6 +31,7 @@ import {
 import Flag from "react-world-flags";
 import { LANGUAGE_OPTIONS } from "@/constants/languages";
 import useThemeMode from "@/hooks/useThemeMode";
+import FancyLink from "@/components/FancyLink";
 import Link from "@/components/Link";
 
 const pages = [
@@ -82,6 +83,7 @@ const AppBar = () => {
   const handleLanguageMenuClick = (event) => {
     setLanguageMenu(event.currentTarget);
   };
+
   const handleLanguageMenuClose = () => {
     setLanguageMenu(null);
   };
@@ -90,6 +92,7 @@ const AppBar = () => {
     if (event.currentTarget.value === null) {
       return;
     }
+
     setMode(event.currentTarget.value);
   };
 
@@ -113,43 +116,21 @@ const AppBar = () => {
               {pages.map(({ name, link }) => (
                 <ListItem key={name} disablePadding role="none">
                   <ListItemButton
-                    component={Link}
+                    component={FancyLink}
                     href={link}
-                    underline="none"
                     disableRipple
                     disableTouchRipple
                     role="menuitem"
-                    sx={[
-                      {
-                        p: 0,
-                        mx: 2,
-                        display: "block",
-                        position: "relative",
-                        "&.Mui-focusVisible": {
-                          bgcolor: "unset",
-                        },
-                        "&:hover": {
-                          bgcolor: "unset",
-                        },
+                    sx={{
+                      p: 0,
+                      mx: 2,
+                      "&.Mui-focusVisible": {
+                        bgcolor: "unset",
                       },
-                      (theme) => ({
-                        "&::after": {
-                          width: "100%",
-                          content: "''",
-                          position: "absolute",
-                          bottom: 0,
-                          left: 0,
-                          height: "0.1em",
-                          backgroundColor: theme.palette.primary.main,
-                          transform: "scale(0)",
-                          transformOrigin: "center",
-                          transition: "opacity 300ms, transform 300ms",
-                        },
-                        "&.active::after, &:hover::after, &:focus::after": {
-                          transform: "scale(1)",
-                        },
-                      }),
-                    ]}
+                      "&:hover": {
+                        bgcolor: "unset",
+                      },
+                    }}
                   >
                     <ListItemText primary={t(`navigation.pages.${name}`)} />
                   </ListItemButton>
@@ -176,6 +157,7 @@ const AppBar = () => {
                   code={LANGUAGE_OPTIONS[activeLocale].flag}
                   height="24"
                   width="24"
+                  alt={LANGUAGE_OPTIONS[activeLocale].label}
                 />
               </IconButton>
             </Tooltip>
@@ -204,6 +186,7 @@ const AppBar = () => {
                       code={LANGUAGE_OPTIONS[locale].flag}
                       height="24"
                       width="24"
+                      alt={LANGUAGE_OPTIONS[locale].label}
                     />
                   </ListItemIcon>
                   {LANGUAGE_OPTIONS[locale].label}
@@ -320,6 +303,7 @@ const AppBar = () => {
                           code={LANGUAGE_OPTIONS[locale].flag}
                           height="24"
                           width="24"
+                          alt={LANGUAGE_OPTIONS[locale].label}
                         />
                       </ListItemIcon>
                       {LANGUAGE_OPTIONS[locale].label}

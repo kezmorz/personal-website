@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 const Anchor = styled("a")({});
 
-const NextLinkComposed = React.forwardRef(
+const NextLinkComposed = forwardRef(
   (
     { to, linkAs, href, replace, scroll, shallow, prefetch, locale, ...props },
     ref
@@ -44,13 +44,12 @@ NextLinkComposed.propTypes = {
   passHref: PropTypes.bool,
 };
 
-const Link = React.forwardRef(
+const Link = forwardRef(
   (
     {
       as: linkAs,
       href,
       noLinkStyle,
-      role,
       activeClassName = "active",
       className: classNameProps,
       ...props
@@ -107,7 +106,6 @@ Link.propTypes = {
   as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   href: PropTypes.any,
   noLinkStyle: PropTypes.bool,
-  role: PropTypes.string,
   activeClassName: PropTypes.string,
   className: PropTypes.string,
 };

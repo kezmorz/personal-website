@@ -102,7 +102,7 @@ Resume.getLayout = (page) => {
 
 Resume.messages = ["resume", ...Layout.messages];
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps = async ({ locale }) => {
   const filepath = path.join(process.cwd(), `src/content/${locale}/resume.mdx`);
   const source = fs.readFileSync(filepath);
 
@@ -120,6 +120,6 @@ export async function getStaticProps({ locale }) {
       frontMatter: data,
     },
   };
-}
+};
 
 export default Resume;

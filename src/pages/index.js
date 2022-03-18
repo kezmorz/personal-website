@@ -23,7 +23,7 @@ Home.getLayout = (page) => {
 
 Home.messages = ["index", ...Layout.messages];
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       messages: pick(
@@ -32,6 +32,6 @@ export async function getStaticProps({ locale }) {
       ),
     },
   };
-}
+};
 
 export default Home;

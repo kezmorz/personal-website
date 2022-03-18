@@ -69,5 +69,21 @@
         "dark": "Dark"
       }
     }
+  },
+  "footer": {
+    "tagline": "Designing and developing full stack software solutions that are responsive and accessible.",
+    "notPlaying": "Not Playing",
+    "sitemap": {
+      "heading": "Sitemap",
+      "pages": {
+        "home": "Home",
+        "about": "About",
+        "resume": "Resume",
+        "snippets": "Snippets",
+        "contact": "Contact"
+      }
+    },
+    "art": "Art",
+    "copyright": "© {year} Ceri Morse. All Rights Reserved."
   }
 }
