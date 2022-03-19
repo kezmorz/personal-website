@@ -13,6 +13,7 @@ import {
   Box,
 } from "@mui/material";
 import { pick } from "@/utils/misc";
+import Header from "@/components/Header";
 import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
@@ -67,7 +68,12 @@ const Contact = () => {
   }, [locale]);
 
   return (
-    <div>
+    <>
+      <Header
+        heading={t("heading")}
+        subheading={t("subheading")}
+        direction="ltr"
+      />
       <Container component="section" maxWidth="md">
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
@@ -173,7 +179,7 @@ const Contact = () => {
             : t("snackbar.error")}
         </Alert>
       </Snackbar>
-    </div>
+    </>
   );
 };
 

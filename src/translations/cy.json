@@ -26,6 +26,8 @@
     }
   },
   "contact": {
+    "heading": "This is the heading for the page",
+    "subheading": "This is the subheading for the page",
     "description": {
       "heading": "Ebostiwch fi",
       "paragraph": "Os hoffech chi sgwrsio am prosiect, gyfle gwaith posib, neu unrhyw beth yn gyffredinol, llenwch y ffurflen isod a gwnaf fy ngorau i ymateb o fewn 1-2 ddiwrnod."
