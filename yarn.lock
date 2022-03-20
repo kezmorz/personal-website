@@ -398,6 +398,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cloudinary/url-gen@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@cloudinary/url-gen@npm:1.7.0"
+  checksum: 3d29bd0d80d4d75c46a47c698edc94b4105c0e4d1105d35cec21a2e2471535be78ae38f26c095fd593ad7c494bee857611e726212b078b6019a83075b26ede90
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.3.0":
   version: 11.7.2
   resolution: "@emotion/babel-plugin@npm:11.7.2"
@@ -5311,6 +5318,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "personal-website@workspace:."
   dependencies:
+    "@cloudinary/url-gen": ^1.7.0
     "@emotion/cache": ^11.7.1
     "@emotion/react": ^11.7.1
     "@emotion/server": ^11.4.0

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { createImageUrl } from "@/lib/cloudinary";
 
 const AnimatedTypography = styled(Typography)({
   animationName: "rotatein",
@@ -30,7 +31,7 @@ const Header = ({
     <Box component="header">
       <Container
         maxWidth="lg"
-        sx={{ mt: { xs: 2, sm: 4 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 4, sm: 8 }, mb: { xs: 8, sm: 16 } }}
       >
         <Box
           sx={{
@@ -48,7 +49,15 @@ const Header = ({
               direction === "ltr" && { gridColumnStart: { md: 7 } },
             ]}
           >
-            {/* <Image  /> */}
+            <Image
+              src={createImageUrl({
+                src: "samples/cloudinary-icon.png",
+                width: 200,
+                height: 200,
+              })}
+              width={480}
+              height={350}
+            />
           </Box>
           <Box
             sx={{
@@ -74,7 +83,8 @@ const Header = ({
 Header.propTypes = {
   heading: PropTypes.string.isRequired,
   subheading: PropTypes.string,
-  image: PropTypes.string.isRequired,
+  // image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   imageProps: PropTypes.object,
   direction: PropTypes.oneOf(["ltr", "rtl"]).isRequired,
 };

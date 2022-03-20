@@ -74,7 +74,11 @@ const Contact = () => {
         subheading={t("subheading")}
         direction="ltr"
       />
-      <Container component="section" maxWidth="md">
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mb: { xs: 8, md: 16 } }}
+      >
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
         </Typography>

@@ -31,7 +31,7 @@ const Resume = ({ source, frontMatter }) => {
   const t = useTranslations("resume");
 
   return (
-    <div>
+    <>
       <Container component="section" maxWidth="md">
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
@@ -59,7 +59,7 @@ const Resume = ({ source, frontMatter }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 3, sm: 6 } }}
+        sx={{ mt: { xs: 3, sm: 6 }, mb: { xs: 8, md: 16 } }}
       >
         <Typography variant="h3" gutterBottom>
           {t("formats.heading")}
@@ -88,7 +88,7 @@ const Resume = ({ source, frontMatter }) => {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </>
   );
 };
 
