@@ -1,18 +1,12 @@
-import { Cloudinary } from "@cloudinary/url-gen";
-import { fill } from "@cloudinary/url-gen/actions/resize";
+export const loader = ({ src, width, quality }) => {
+  const params = [
+    "f_auto",
+    "c_limit",
+    "w_" + width,
+    "q_" + (quality || "auto"),
+  ];
+  const paramsString = params.join(",") + "/";
+  const source = src[0] === "/" ? src.slice(1) : src;
 
-const cloudinary = new Cloudinary({
-  cloud: {
-    cloudName: "cerimorse-com",
-  },
-  url: {
-    secure: true,
-  },
-});
-
-export const createImageUrl = ({ src, width, height }) => {
-  const image = cloudinary.image(src);
-  image.resize(fill().width(width).height(height));
-  const imageUrl = image.toURL();
-  return imageUrl;
+  return `https://res.cloudinary.com/cerimorse-com/image/upload/${paramsString}${source}`;
 };

@@ -13,7 +13,7 @@ const sizeSuffix = {
   1024: "b",
 };
 
-export const photoLoader = ({ src, width }) => {
+export const loader = ({ src, width }) => {
   const [source, format] = src.split(".");
 
   const suffixWidth = Object.keys(sizeSuffix).reduce((a, b) => {

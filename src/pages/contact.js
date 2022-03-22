@@ -12,6 +12,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
 import Emoji from "@/components/Emoji";
@@ -72,12 +73,19 @@ const Contact = () => {
       <Header
         heading={t("heading")}
         subheading={t("subheading")}
+        imageProps={{
+          src: "samples/cloudinary-icon.png",
+          width: 480,
+          height: 350,
+          layout: "responsive",
+          loader: cloudinaryImageLoader,
+        }}
         direction="ltr"
       />
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mb: { xs: 8, md: 16 } }}
+        sx={{ mb: { xs: 8, sm: 16 } }}
       >
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
