@@ -75,6 +75,7 @@ const Contact = () => {
         subheading={t("subheading")}
         imageProps={{
           src: "samples/cloudinary-icon.png",
+          alt: "Something something something",
           width: 480,
           height: 350,
           layout: "responsive",

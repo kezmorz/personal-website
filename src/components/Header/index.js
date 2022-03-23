@@ -70,6 +70,7 @@ Header.propTypes = {
   subheading: PropTypes.string,
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
     width: PropTypes.number,
     height: PropTypes.number,
     layout: PropTypes.string,
