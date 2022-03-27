@@ -52,20 +52,25 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
               {
                 gridRowStart: { md: "1" },
                 gridColumn: { xs: "1 / span 12", md: "1 / span 6" },
+                display: "flex",
+                justifyContent: "center",
               },
               direction === "ltr" && { gridColumnStart: { md: 7 } },
             ]}
           >
-            <AnimatedImage
-              priority
-              sx={{ animationDelay: "0.5s" }}
-              {...imageProps}
-            />
+            <Box sx={{ width: "100%", maxWidth: 800, display: "block" }}>
+              <AnimatedImage
+                priority
+                sx={{ animationDelay: "0.5s" }}
+                {...imageProps}
+              />
+            </Box>
           </Box>
           <Box
             sx={{
               gridRowStart: { md: "1" },
               gridColumn: { xs: "span 12", md: "span 6" },
+              pt: { md: 8 },
             }}
           >
             <AnimatedTypography variant="h3" gutterBottom>

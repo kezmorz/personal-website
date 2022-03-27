@@ -51,9 +51,9 @@ const SubHeading = styled(Typography)({
 });
 
 const IconToggleButton = styled(ToggleButton)({
+  width: "100%",
   display: "flex",
   justifyContent: "center",
-  width: "100%",
   textTransform: "none",
   "& > *": {
     marginRight: "8px",
