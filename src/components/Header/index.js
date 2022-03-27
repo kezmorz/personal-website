@@ -19,6 +19,20 @@ const AnimatedTypography = styled(Typography)({
   },
 });
 
+const AnimatedImage = styled(Image)({
+  animationName: "fadein",
+  animationDuration: "1s",
+  animationFillMode: "both",
+  "@keyframes fadein": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
+    },
+  },
+});
+
 const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
   return (
     <Box component="header">
@@ -42,7 +56,11 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
               direction === "ltr" && { gridColumnStart: { md: 7 } },
             ]}
           >
-            <Image priority {...imageProps} />
+            <AnimatedImage
+              priority
+              sx={{ animationDelay: "0.5s" }}
+              {...imageProps}
+            />
           </Box>
           <Box
             sx={{
@@ -54,7 +72,7 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
               {heading}
             </AnimatedTypography>
             {subheading && (
-              <AnimatedTypography variant="h4" sx={{ animationDelay: "0.5s" }}>
+              <AnimatedTypography variant="h4" sx={{ animationDelay: "0.25s" }}>
                 {subheading}
               </AnimatedTypography>
             )}
