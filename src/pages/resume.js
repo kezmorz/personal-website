@@ -13,11 +13,13 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { formatDate } from "@/utils/date";
 import { pick } from "@/utils/misc";
-import Layout from "@/components/Layout";
+import Header from "@/components/Header";
 import SpotlightContainer from "@/components/SpotlightContainer";
 import MediaCard from "@/components/MediaCard";
+import Layout from "@/components/Layout";
 
 const components = {
   h4: (props) => <Typography variant="h4" {...props} />,
@@ -32,6 +34,19 @@ const Resume = ({ source, frontMatter }) => {
 
   return (
     <>
+      <Header
+        heading={t("heading")}
+        subheading={t("subheading")}
+        imageProps={{
+          src: "samples/cloudinary-icon.png",
+          alt: "Something something something",
+          width: 480,
+          height: 350,
+          layout: "responsive",
+          loader: cloudinaryImageLoader,
+        }}
+        direction="ltr"
+      />
       <Container component="section" maxWidth="md">
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}

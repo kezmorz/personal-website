@@ -3,6 +3,8 @@
     "hello": "helo"
   },
   "resume": {
+    "heading": "This is the heading for the page",
+    "subheading": "This is the subheading for the page",
     "description": {
       "heading": "Crynodeb",
       "paragraph": {
