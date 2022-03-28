@@ -57,24 +57,24 @@ const Resume = ({ source, frontMatter }) => {
         <Typography variant="body1" gutterBottom>
           {t("description.paragraph.line2")}
         </Typography>
-        <Typography variant="caption" gutterBottom>
+        <Typography variant="caption">
           {t("description.update")}: {formatDate(frontMatter.updatedAt, locale)}
         </Typography>
-        <Alert severity="info" sx={{ mt: { xs: 2, sm: 4 } }}>
+        <Alert severity="info" sx={{ mt: { xs: 3, sm: 6 } }}>
           {t("description.info")}
         </Alert>
       </Container>
       <SpotlightContainer
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 3, sm: 6 } }}
+        sx={{ mt: { xs: 4, sm: 8 } }}
       >
         <MDXRemote components={components} {...source} />
       </SpotlightContainer>
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 3, sm: 6 }, mb: { xs: 8, md: 16 } }}
+        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, md: 16 } }}
       >
         <Typography variant="h3" gutterBottom>
           {t("formats.heading")}
