@@ -23,7 +23,7 @@ body:
   - type: input
     id: operating-system
     attributes:
-      label: Operating System
+      label: Operating system
       description: What operating system did you see this problem on? Please provide the version as well.
       placeholder: macOS Catalina 10.15.7
     validations:
