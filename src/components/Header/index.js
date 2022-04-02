@@ -99,7 +99,7 @@ Header.propTypes = {
     layout: PropTypes.string,
     loader: PropTypes.func,
   }),
-  direction: PropTypes.oneOf(["ltr", "rtl"]).isRequired,
+  direction: PropTypes.oneOf(["ltr", "rtl"]),
 };
 
 export default Header;
