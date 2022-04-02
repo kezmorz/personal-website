@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 
 const AnimatedTypography = styled(Typography)({
   animationName: "rotatein",
-  animationDuration: "1s",
+  animationDuration: "0.75s",
   animationFillMode: "both",
   "@keyframes rotatein": {
     "0%": {
@@ -20,10 +20,9 @@ const AnimatedTypography = styled(Typography)({
 });
 
 const AnimatedImage = styled(Image)({
-  // animationName: "fadein",
-  animationDuration: "1.25s",
+  animationName: "fadein",
+  animationDuration: "0.75s",
   animationFillMode: "both",
-  opacity: 1,
   "@keyframes fadein": {
     "0%": {
       opacity: 0,
@@ -62,7 +61,7 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
             <Box sx={{ width: "100%", maxWidth: 800, display: "block" }}>
               <AnimatedImage
                 priority
-                sx={{ animationDelay: { md: "0s" } }}
+                sx={{ animationDelay: { md: "0.5s" } }}
                 {...imageProps}
               />
             </Box>
