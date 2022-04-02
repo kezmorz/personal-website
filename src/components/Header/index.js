@@ -21,7 +21,7 @@ const AnimatedTypography = styled(Typography)({
 
 const AnimatedImage = styled(Image)({
   animationName: "fadein",
-  animationDuration: "1s",
+  animationDuration: "1.25s",
   animationFillMode: "both",
   "@keyframes fadein": {
     "0%": {
@@ -61,7 +61,7 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
             <Box sx={{ width: "100%", maxWidth: 800, display: "block" }}>
               <AnimatedImage
                 priority
-                sx={{ animationDelay: "0.5s" }}
+                sx={{ animationDelay: { md: "0s" } }}
                 {...imageProps}
               />
             </Box>

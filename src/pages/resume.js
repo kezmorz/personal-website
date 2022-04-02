@@ -45,7 +45,7 @@ const Resume = ({ source, frontMatter }) => {
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
-        direction="ltr"
+        direction="rtl"
       />
       <Container component="section" maxWidth="md">
         <Typography variant="h3" gutterBottom>
