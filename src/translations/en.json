@@ -3,10 +3,12 @@
     "hello": "hello"
   },
   "resume": {
+    "heading": "Check out my professional résumé",
+    "subheading": "You'll find my relevant skills, work experience and more",
     "description": {
       "heading": "Résumé",
       "paragraph": {
-        "line1": "I wanted somewhere accessible to keep my generic resume and what better place than on my own website!  For certain applications I may tailor it to suit the role but a lot of the core information remains the same.",
+        "line1": "I wanted somewhere accessible to keep my generic résumé and what better place than on my own website! For certain applications I may tailor it to suit the role but a lot of the core information remains the same.",
         "line2": "Put something here"
       },
       "update": "Updated",
@@ -26,6 +28,8 @@
     }
   },
   "contact": {
+    "heading": "Feel free to send me a message",
+    "subheading": "Sometimes the old school ways are the best",
     "description": {
       "heading": "Email me",
       "paragraph": "If you'd like to chat about a project, a potential job opportunity, or just anything in general really, then please fill in the form below and I'll do my best to respond within 1-2 days."

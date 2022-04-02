@@ -4,6 +4,9 @@ module.exports = {
     locales: ["en", "cy"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
   eslint: {
     dirs: [
       "src/components",

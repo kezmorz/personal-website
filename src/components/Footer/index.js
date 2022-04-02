@@ -21,7 +21,7 @@ import {
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
-import { photoLoader as flickrPhotoLoader } from "@/lib/flickr";
+import { loader as flickrImageLoader } from "@/lib/flickr";
 import fetcher from "@/services/fetcher";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
@@ -253,7 +253,7 @@ const Footer = () => {
                     layout="fill"
                     objectFit="cover"
                     alt={flickrData.title}
-                    loader={flickrPhotoLoader}
+                    loader={flickrImageLoader}
                   />
                 </Box>
               </Link>
