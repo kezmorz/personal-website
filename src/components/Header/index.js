@@ -20,7 +20,7 @@ const AnimatedTypography = styled(Typography)({
 });
 
 const AnimatedImage = styled(Image)({
-  animationName: "fadein",
+  // animationName: "fadein",
   animationDuration: "1.25s",
   animationFillMode: "both",
   opacity: 1,
