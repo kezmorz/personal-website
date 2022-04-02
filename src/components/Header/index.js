@@ -23,6 +23,7 @@ const AnimatedImage = styled(Image)({
   animationName: "fadein",
   animationDuration: "1.25s",
   animationFillMode: "both",
+  opacity: 1,
   "@keyframes fadein": {
     "0%": {
       opacity: 0,
