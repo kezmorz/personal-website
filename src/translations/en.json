@@ -2,6 +2,10 @@
   "index": {
     "hello": "hello"
   },
+  "about": {
+    "heading": "About me",
+    "subheading": "These are things about me"
+  },
   "resume": {
     "heading": "Check out my professional résumé",
     "subheading": "You'll find my relevant skills, work experience and more",

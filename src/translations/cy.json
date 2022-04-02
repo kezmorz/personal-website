@@ -2,6 +2,10 @@
   "index": {
     "hello": "helo"
   },
+  "about": {
+    "heading": "About me",
+    "subheading": "These are things about me"
+  },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",
     "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",
