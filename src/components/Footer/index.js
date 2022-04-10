@@ -16,7 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import {
-  GitHub as GithubIcon,
+  GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
@@ -73,7 +73,7 @@ const Footer = () => {
                 aria-label="go to github profile"
                 sx={{ ml: -1 }}
               >
-                <GithubIcon />
+                <GitHubIcon />
               </IconButton>
               <IconButton
                 href="https://www.linkedin.com/in/cerimorse"
@@ -260,7 +260,7 @@ const Footer = () => {
             )}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
-            <Typography>
+            <Typography variant="body1">
               {t("copyright", { year: new Date().getFullYear() })}
             </Typography>
           </Box>

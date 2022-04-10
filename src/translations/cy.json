@@ -4,7 +4,17 @@
   },
   "about": {
     "heading": "About me",
-    "subheading": "These are things about me"
+    "subheading": "These are things about me",
+    "bitesize": {
+      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau",
+      "line2": "Rhugl yn y Gymraeg a'r Saesneg",
+      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013",
+      "line4": "Transitioned from developing desktop applications to full stack web development"
+    },
+    "history": {
+      "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pretium tellus in orci tempor, bibendum aliquam diam imperdiet. Maecenas eget sapien a lectus consequat convallis ac ac urna. Duis non quam justo. Pellentesque ut tortor vitae orci facilisis dignissim. Aenean condimentum vulputate libero, et consequat odio. Nulla malesuada enim eu sem malesuada gravida. Integer ullamcorper lobortis sapien. Etiam ultrices sapien leo, non finibus est eleifend vitae. Quisque aliquam ipsum sed cursus porta. Etiam fermentum ornare enim vel elementum. Proin ac consectetur arcu, eu laoreet ex.",
+      "paragraph2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pretium tellus in orci tempor, bibendum aliquam diam imperdiet. Maecenas eget sapien a lectus consequat convallis ac ac urna. Duis non quam justo. Pellentesque ut tortor vitae orci facilisis dignissim. Aenean condimentum vulputate libero, et consequat odio. Nulla malesuada enim eu sem malesuada gravida. Integer ullamcorper lobortis sapien. Etiam ultrices sapien leo, non finibus est eleifend vitae. Quisque aliquam ipsum sed cursus porta. Etiam fermentum ornare enim vel elementum. Proin ac consectetur arcu, eu laoreet ex."
+    }
   },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",
