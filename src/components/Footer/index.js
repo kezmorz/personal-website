@@ -2,7 +2,6 @@ import Image from "next/image";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import {
-  Box,
   Container,
   Accordion,
   AccordionSummary,
@@ -14,6 +13,7 @@ import {
   IconButton,
   Divider,
   Typography,
+  Box,
 } from "@mui/material";
 import {
   GitHub as GitHubIcon,

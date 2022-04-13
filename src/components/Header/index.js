@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const AnimatedTypography = styled(Typography)({

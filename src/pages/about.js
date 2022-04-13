@@ -1,14 +1,53 @@
 import Image from "next/image";
 import { useTranslations } from "use-intl";
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
+import SkillCard from "@/components/SkillCard";
 import Layout from "@/components/Layout";
 
-// about me
-// technical skills
-// about this website (how it was built)
+import SpotifyIcon from "@/icons/Spotify";
+
+const technology = [
+  {
+    name: "frontend",
+    experience: [
+      { name: "HTML", Icon: SpotifyIcon },
+      { name: "CSS", Icon: SpotifyIcon },
+      { name: "JavaScript", Icon: SpotifyIcon },
+      { name: "TypeScript", Icon: SpotifyIcon },
+      { name: "React", Icon: SpotifyIcon },
+      { name: "MUI", Icon: SpotifyIcon },
+      { name: "Mantine", Icon: SpotifyIcon },
+      { name: "Tailwind CSS", Icon: SpotifyIcon },
+      { name: "Next.js", Icon: SpotifyIcon },
+    ],
+  },
+  {
+    name: "backend",
+    experience: [
+      { name: "Node.js", Icon: SpotifyIcon },
+      { name: "Express.js", Icon: SpotifyIcon },
+      { name: "NestJS", Icon: SpotifyIcon },
+      { name: "Prisma", Icon: SpotifyIcon },
+      { name: "TypeORM", Icon: SpotifyIcon },
+      { name: "Strapi", Icon: SpotifyIcon },
+      { name: "PostgreSQL", Icon: SpotifyIcon },
+      { name: "MongDB", Icon: SpotifyIcon },
+    ],
+  },
+  {
+    name: "infrastructure",
+    experience: [
+      { name: "GitHub", Icon: SpotifyIcon },
+      { name: "GitHub Actions", Icon: SpotifyIcon },
+      { name: "Azure", Icon: SpotifyIcon },
+      { name: "Azure Pipelines", Icon: SpotifyIcon },
+      { name: "AWS", Icon: SpotifyIcon },
+    ],
+  },
+];
 
 const About = () => {
   const t = useTranslations("about");
@@ -78,6 +117,37 @@ const About = () => {
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
             <Typography variant="body1">{t("history.paragraph2")}</Typography>
           </Box>
+        </Box>
+      </Container>
+      <Container
+        component="section"
+        maxWidth="lg"
+        sx={{ mt: { xs: 8, sm: 16 } }}
+      >
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+          }}
+        >
+          {technology.map(({ name, experience }) => (
+            <SkillCard
+              key={name}
+              heading={t(`techstack.${name}.heading`)}
+              description={t(`techstack.${name}.description`)}
+              sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}
+            >
+              {experience.map(({ name, Icon }) => (
+                <Box key={name} sx={{ display: "inline-flex", mb: 2 }}>
+                  <Icon />
+                  <Typography variant="body1" sx={{ ml: 2 }}>
+                    {name}
+                  </Typography>
+                </Box>
+              ))}
+            </SkillCard>
+          ))}
         </Box>
       </Container>
       <Container
