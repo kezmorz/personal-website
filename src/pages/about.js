@@ -34,7 +34,7 @@ const technology = [
       { name: "TypeORM", Icon: SpotifyIcon },
       { name: "Strapi", Icon: SpotifyIcon },
       { name: "PostgreSQL", Icon: SpotifyIcon },
-      { name: "MongDB", Icon: SpotifyIcon },
+      { name: "MongoDB", Icon: SpotifyIcon },
     ],
   },
   {
@@ -139,9 +139,18 @@ const About = () => {
               sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}
             >
               {experience.map(({ name, Icon }) => (
-                <Box key={name} sx={{ display: "inline-flex", mb: 2 }}>
-                  <Icon />
-                  <Typography variant="body1" sx={{ ml: 2 }}>
+                <Box key={name} sx={{ width: "100%", display: "inline-flex" }}>
+                  <Box
+                    component="span"
+                    sx={{ display: "inline-flex", ml: -1, p: 1 }}
+                  >
+                    <Icon />
+                  </Box>
+                  <Typography
+                    component="span"
+                    variant="body1"
+                    sx={{ pt: 1, pl: 1 }}
+                  >
                     {name}
                   </Typography>
                 </Box>
