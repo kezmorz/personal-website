@@ -3,48 +3,68 @@ import { useTranslations } from "use-intl";
 import { Container, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
+import HtmlIcon from "@/icons/Html";
+import CssIcon from "@/icons/Css";
+import JavaScriptIcon from "@/icons/JavaScript";
+import TypeScriptIcon from "@/icons/TypeScript";
+import ReactIcon from "@/icons/React";
+import MuiIcon from "@/icons/MUI";
+import MantineIcon from "@/icons/Mantine";
+import TailwindIcon from "@/icons/Tailwind";
+import NextIcon from "@/icons/Next";
+import NodeIcon from "@/icons/Node";
+import ExpressIcon from "@/icons/Express";
+import NestIcon from "@/icons/Nest";
+import PrismaIcon from "@/icons/Prisma";
+import TypeormIcon from "@/icons/Typeorm";
+import StrapiIcon from "@/icons/Strapi";
+import PostgresqlIcon from "@/icons/Postgresql";
+import MongodbIcon from "@/icons/Mongodb";
+import GitHubIcon from "@/icons/Github";
+import GitHubActionsIcon from "@/icons/GithubActions";
+import AzureIcon from "@/icons/Azure";
+import AzurePipelinesIcon from "@/icons/AzurePipelines";
+import AwsIcon from "@/icons/Aws";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import Layout from "@/components/Layout";
-
-import SpotifyIcon from "@/icons/Spotify";
 
 const technology = [
   {
     name: "frontend",
     experience: [
-      { name: "HTML", Icon: SpotifyIcon },
-      { name: "CSS", Icon: SpotifyIcon },
-      { name: "JavaScript", Icon: SpotifyIcon },
-      { name: "TypeScript", Icon: SpotifyIcon },
-      { name: "React", Icon: SpotifyIcon },
-      { name: "MUI", Icon: SpotifyIcon },
-      { name: "Mantine", Icon: SpotifyIcon },
-      { name: "Tailwind CSS", Icon: SpotifyIcon },
-      { name: "Next.js", Icon: SpotifyIcon },
+      { name: "HTML", Icon: HtmlIcon },
+      { name: "CSS", Icon: CssIcon },
+      { name: "JavaScript", Icon: JavaScriptIcon },
+      { name: "TypeScript", Icon: TypeScriptIcon },
+      { name: "React", Icon: ReactIcon },
+      { name: "MUI", Icon: MuiIcon },
+      { name: "Mantine", Icon: MantineIcon },
+      { name: "Tailwind CSS", Icon: TailwindIcon },
+      { name: "Next.js", Icon: NextIcon },
     ],
   },
   {
     name: "backend",
     experience: [
-      { name: "Node.js", Icon: SpotifyIcon },
-      { name: "Express.js", Icon: SpotifyIcon },
-      { name: "NestJS", Icon: SpotifyIcon },
-      { name: "Prisma", Icon: SpotifyIcon },
-      { name: "TypeORM", Icon: SpotifyIcon },
-      { name: "Strapi", Icon: SpotifyIcon },
-      { name: "PostgreSQL", Icon: SpotifyIcon },
-      { name: "MongoDB", Icon: SpotifyIcon },
+      { name: "Node.js", Icon: NodeIcon },
+      { name: "Express.js", Icon: ExpressIcon },
+      { name: "NestJS", Icon: NestIcon },
+      { name: "Prisma", Icon: PrismaIcon },
+      { name: "TypeORM", Icon: TypeormIcon },
+      { name: "Strapi", Icon: StrapiIcon },
+      { name: "PostgreSQL", Icon: PostgresqlIcon },
+      { name: "MongoDB", Icon: MongodbIcon },
     ],
   },
   {
     name: "infrastructure",
     experience: [
-      { name: "GitHub", Icon: SpotifyIcon },
-      { name: "GitHub Actions", Icon: SpotifyIcon },
-      { name: "Azure", Icon: SpotifyIcon },
-      { name: "Azure Pipelines", Icon: SpotifyIcon },
-      { name: "AWS", Icon: SpotifyIcon },
+      { name: "GitHub", Icon: GitHubIcon },
+      { name: "GitHub Actions", Icon: GitHubActionsIcon },
+      { name: "Azure", Icon: AzureIcon },
+      { name: "Azure Pipelines", Icon: AzurePipelinesIcon },
+      { name: "AWS", Icon: AwsIcon },
     ],
   },
 ];

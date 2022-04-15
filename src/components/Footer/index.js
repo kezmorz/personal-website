@@ -16,13 +16,13 @@ import {
   Box,
 } from "@mui/material";
 import {
-  GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
 import { loader as flickrImageLoader } from "@/lib/flickr";
 import fetcher from "@/services/fetcher";
+import GitHubIcon from "@/icons/Github";
+import LinkedInIcon from "@/icons/LinkedIn";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
 import FancyLink from "@/components/FancyLink";
