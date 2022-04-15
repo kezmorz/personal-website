@@ -21,7 +21,7 @@ import {
 } from "@mui/icons-material";
 import { loader as flickrImageLoader } from "@/lib/flickr";
 import fetcher from "@/services/fetcher";
-import GitHubIcon from "@/icons/Github";
+import GitHubIcon from "@/icons/GitHub";
 import LinkedInIcon from "@/icons/LinkedIn";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
