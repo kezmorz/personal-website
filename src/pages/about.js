@@ -58,7 +58,7 @@ const technology = [
     ],
   },
   {
-    name: "infrastructure",
+    name: "devops",
     experience: [
       { name: "GitHub", Icon: GitHubIcon },
       { name: "GitHub Actions", Icon: GitHubActionsIcon },
@@ -137,6 +137,18 @@ const About = () => {
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
             <Typography variant="body1">{t("history.paragraph2")}</Typography>
           </Box>
+        </Box>
+      </Container>
+      <Container component="section" maxWidth="md">
+        <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
+          {/* <Image
+            src="pages/about/bitesize.jpg"
+            alt="Something something something"
+            width={827}
+            height={1410}
+            layout="responsive"
+            loader={cloudinaryImageLoader}
+          /> */}
         </Box>
       </Container>
       <Container

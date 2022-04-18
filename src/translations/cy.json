@@ -17,16 +17,16 @@
     },
     "techstack": {
       "frontend": {
-        "heading": "Frontend",
-        "description": "Something here about frontend"
+        "heading": "Penblaen",
+        "description": "Rwy'n cymryd llawer o falchder mewn creu cymwysiadau hygyrch; mae'r we i bawb."
       },
       "backend": {
-        "heading": "Backend",
-        "description": "Something here about backend"
+        "heading": "Pencefn",
+        "description": "Rwy'n gwerthfawrogi dylunio glân a modiwlaidd gyda ffocws ar ailddefnyddio cod a darllenadwyedd."
       },
-      "infrastructure": {
-        "heading": "Infrastructure and Deployment",
-        "description": "Something here about infrastructure"
+      "devops": {
+        "heading": "DevOps",
+        "description": "Rwy'n ceisio gwneud profiad y datblygwr ar gyfer lleoli cod mor ddi-dor â phosibl."
       }
     }
   },

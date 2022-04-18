@@ -18,15 +18,15 @@
     "techstack": {
       "frontend": {
         "heading": "Frontend",
-        "description": "Something here about frontend"
+        "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
       },
       "backend": {
         "heading": "Backend",
-        "description": "Something here about backend"
+        "description": "I value clean and modular design with a focus on code reuse and readability."
       },
-      "infrastructure": {
-        "heading": "Infrastructure and Deployment",
-        "description": "Something here about infrastructure"
+      "devops": {
+        "heading": "DevOps",
+        "description": "I try to make the developer experience for deploying code as seamless as possible."
       }
     }
   },
