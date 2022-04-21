@@ -164,9 +164,20 @@ const About = () => {
       >
         <Box
           sx={{
+            width: "100%",
+            maxWidth: 852,
+            mx: "auto",
+            boxSizing: "border-box",
+          }}
+        >
+          <Typography variant="h4">{t("techstack.description")}</Typography>
+        </Box>
+        <Box
+          sx={{
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
             gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
           }}
         >
           {technology.map(({ name, experience }) => (
