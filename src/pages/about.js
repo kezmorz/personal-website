@@ -25,6 +25,7 @@ import GitHubActionsIcon from "@/icons/GitHubActions";
 import AzureIcon from "@/icons/Azure";
 import AzurePipelinesIcon from "@/icons/AzurePipelines";
 import AwsIcon from "@/icons/Aws";
+import VercelIcon from "@/icons/Vercel";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import Layout from "@/components/Layout";
@@ -65,6 +66,7 @@ const technology = [
       { name: "Azure", Icon: AzureIcon },
       { name: "Azure Pipelines", Icon: AzurePipelinesIcon },
       { name: "AWS", Icon: AwsIcon },
+      { name: "Vercel", Icon: VercelIcon },
     ],
   },
 ];
@@ -139,7 +141,11 @@ const About = () => {
           </Box>
         </Box>
       </Container>
-      <Container component="section" maxWidth="md">
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 8, sm: 16 } }}
+      >
         <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
           {/* <Image
             src="pages/about/bitesize.jpg"
