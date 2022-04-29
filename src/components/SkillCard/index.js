@@ -21,7 +21,7 @@ const SkillCard = ({ heading, description, children, sx = [] }) => {
 };
 
 SkillCard.propType = {
-  title: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
   description: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

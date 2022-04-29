@@ -29,6 +29,21 @@
         "heading": "DevOps",
         "description": "I try to make the developer experience for deploying code as seamless as possible."
       }
+    },
+    "hobbies": {
+      "description": "Life isn't all about work.",
+      "adventuring": {
+        "heading": "Adventuring",
+        "description": "I like adventuring"
+      },
+      "sport": {
+        "heading": "Sport",
+        "description": "I like lots of different sports"
+      },
+      "gaming": {
+        "heading": "Gaming",
+        "description": "I like to play games"
+      }
     }
   },
   "resume": {

@@ -94,8 +94,8 @@ Header.propTypes = {
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
     layout: PropTypes.string,
     loader: PropTypes.func,
   }),

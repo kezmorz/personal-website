@@ -29,6 +29,21 @@
         "heading": "DevOps",
         "description": "Rwy'n ceisio gwneud profiad y datblygwr ar gyfer lleoli cod mor ddi-dor â phosibl."
       }
+    },
+    "hobbies": {
+      "description": "Life isn't all about work.",
+      "adventuring": {
+        "heading": "Anturio",
+        "description": "I like adventuring"
+      },
+      "sport": {
+        "heading": "Chwaraeon",
+        "description": "I like lots of different sports"
+      },
+      "gaming": {
+        "heading": "Gemau Fideo",
+        "description": "I like to play games"
+      }
     }
   },
   "resume": {

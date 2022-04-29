@@ -28,6 +28,7 @@ import AwsIcon from "@/icons/Aws";
 import VercelIcon from "@/icons/Vercel";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
+import HobbyCard from "@/components/HobbyCard";
 import Layout from "@/components/Layout";
 
 const technology = [
@@ -68,6 +69,30 @@ const technology = [
       { name: "AWS", Icon: AwsIcon },
       { name: "Vercel", Icon: VercelIcon },
     ],
+  },
+];
+
+const hobbies = [
+  {
+    name: "adventuring",
+    image: {
+      src: "pages/about/bitesize.jpg",
+      loader: cloudinaryImageLoader,
+    },
+  },
+  {
+    name: "sport",
+    image: {
+      src: "pages/about/bitesize.jpg",
+      loader: cloudinaryImageLoader,
+    },
+  },
+  {
+    name: "gaming",
+    image: {
+      src: "pages/about/bitesize.jpg",
+      loader: cloudinaryImageLoader,
+    },
   },
 ];
 
@@ -205,6 +230,31 @@ const About = () => {
                 </Box>
               ))}
             </SkillCard>
+          ))}
+        </Box>
+      </Container>
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 8, sm: 16 } }}
+      >
+        <Typography variant="h4">{t("hobbies.description")}</Typography>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          {hobbies.map(({ name, image }) => (
+            <HobbyCard
+              key={name}
+              heading={t(`hobbies.${name}.heading`)}
+              description={t(`hobbies.${name}.description`)}
+              imageProps={{ ...image, alt: "Something something something" }}
+              sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
+            />
           ))}
         </Box>
       </Container>
