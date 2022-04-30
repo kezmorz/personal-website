@@ -31,18 +31,18 @@
       }
     },
     "hobbies": {
-      "description": "Life isn't all about work.",
+      "description": "Nid yw bywyd i gyd yn ymwneud â gwaith. Dyma rai pethau rwy'n hoffi eu gwneud yn fy amser segur i gael hwyl ac ymlacio.",
       "adventuring": {
         "heading": "Anturio",
-        "description": "I like adventuring"
+        "description": "Dwi wir yn mwynhau mynd ar anturiaethau! Gallai hyn fod yn unrhyw beth o heicio llwybrau lleol i deithio hanner ffordd o amgylch y byd i archwilio ardaloedd newydd."
       },
       "sport": {
         "heading": "Chwaraeon",
-        "description": "I like lots of different sports"
+        "description": "With dyfu i fyny cymerais ran mewn nifer o wahanol chwaraeon unigol a thîm fel karate, golff a phêl-droed. Y dyddiau hyn dwi'n dringo ac yn chwarae amryw o chwaraeon raced fel modd o gadw'n heini."
       },
       "gaming": {
         "heading": "Gemau Fideo",
-        "description": "I like to play games"
+        "description": "Ers chwarae Duck Hunt ar fy nghonsol cyntaf, y NES, rydw i wedi mwynhau gemau fideo. Rwy'n chwarae gemau RPG yn bennaf, gyda The Elder Scrolls III: Morrowind yn ffefryn personol i mi. Team Fortress 2 ac Overwatch yw’r gemau FPS dwi'n dewis mwyaf amlaf."
       }
     }
   },

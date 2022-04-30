@@ -31,18 +31,18 @@
       }
     },
     "hobbies": {
-      "description": "Life isn't all about work.",
+      "description": "Life isn’t all about work. Here are some things I like to do in my downtime to have fun and relax.",
       "adventuring": {
         "heading": "Adventuring",
-        "description": "I like adventuring"
+        "description": "I really enjoy going on adventures! This could be anything from hiking local routes to travelling half way around the world to explore new areas."
       },
       "sport": {
         "heading": "Sport",
-        "description": "I like lots of different sports"
+        "description": "Growing up I participated in many different individual and team sports such as karate, golf and football. These days I only really climb and play various racquet sports as a means to keep fit."
       },
       "gaming": {
         "heading": "Gaming",
-        "description": "I like to play games"
+        "description": "Ever since playing Duck Hunt on my very first console, the NES, I’ve enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
       }
     }
   },
