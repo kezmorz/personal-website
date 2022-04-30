@@ -6,6 +6,7 @@ import Link from "@/components/Link";
 const FancyLinkRoot = styled(Link)(({ activeClassName }) => ({
   position: "relative",
   display: "block",
+  outline: 0,
   "&::after": {
     position: "absolute",
     width: "100%",
