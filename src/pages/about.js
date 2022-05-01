@@ -76,21 +76,21 @@ const hobbies = [
   {
     name: "adventuring",
     image: {
-      src: "pages/about/bitesize.jpg",
+      src: "pages/about/hobbies/adventuring.jpg",
       loader: cloudinaryImageLoader,
     },
   },
   {
     name: "sport",
     image: {
-      src: "pages/about/bitesize.jpg",
+      src: "pages/about/hobbies/sport.jpg",
       loader: cloudinaryImageLoader,
     },
   },
   {
     name: "gaming",
     image: {
-      src: "pages/about/bitesize.jpg",
+      src: "pages/about/hobbies/gaming.jpg",
       loader: cloudinaryImageLoader,
     },
   },
