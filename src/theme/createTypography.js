@@ -4,6 +4,9 @@ const createTypography = () => {
       ","
     ),
     fontSize: 14,
+    button: {
+      textTransform: "none",
+    },
   };
 };
 

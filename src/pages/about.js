@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "use-intl";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Button, Typography, Box } from "@mui/material";
+import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import HtmlIcon from "@/icons/Html";
@@ -29,6 +30,7 @@ import VercelIcon from "@/icons/Vercel";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import HobbyCard from "@/components/HobbyCard";
+import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
 const technology = [
@@ -164,6 +166,29 @@ const About = () => {
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
             <Typography variant="body1">{t("history.paragraph2")}</Typography>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: { md: "center" },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          <Typography variant="h5">
+            {t("history.timeline.description")}
+          </Typography>
+          <Button
+            component={Link}
+            href="/timeline"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardOutlinedIcon />}
+            sx={{ width: "fit-content", mt: { xs: 2, md: 0 } }}
+          >
+            {t("history.timeline.button")}
+          </Button>
         </Box>
       </Container>
       <Container
