@@ -37,7 +37,7 @@ import Link from "@/components/Link";
 const pages = [
   { name: "home", link: "/" },
   { name: "about", link: "/about" },
-  { name: "resume", link: "/resume" },
+  { name: "timeline", link: "/timeline" },
   { name: "snippets", link: "/snippets" },
   { name: "contact", link: "/contact" },
 ];
@@ -114,7 +114,12 @@ const AppBar = () => {
           >
             <List disablePadding role="menubar" sx={{ display: "flex" }}>
               {pages.map(({ name, link }) => (
-                <ListItem key={name} disablePadding role="none">
+                <ListItem
+                  key={name}
+                  disablePadding
+                  role="none"
+                  sx={{ flex: "0 0 fit-content" }}
+                >
                   <ListItemButton
                     component={FancyLink}
                     href={link}

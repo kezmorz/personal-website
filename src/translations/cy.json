@@ -50,6 +50,10 @@
       }
     }
   },
+  "timeline": {
+    "heading": "Hi, I'm Ceri Morse, a full stack developer",
+    "subheading": "I design and develop software solutions for everyone"
+  },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",
     "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",
@@ -107,7 +111,7 @@
       "pages": {
         "home": "Cartref",
         "about": "About",
-        "resume": "Crynodeb",
+        "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
       }
@@ -130,7 +134,7 @@
       "pages": {
         "home": "Cartref",
         "about": "About",
-        "resume": "Crynodeb",
+        "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
       }

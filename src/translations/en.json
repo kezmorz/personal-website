@@ -50,6 +50,10 @@
       }
     }
   },
+  "timeline": {
+    "heading": "Hi, I'm Ceri Morse, a full stack developer",
+    "subheading": "I design and develop software solutions for everyone"
+  },
   "resume": {
     "heading": "Check out my professional résumé",
     "subheading": "You'll find my relevant skills, work experience and more",
@@ -107,7 +111,7 @@
       "pages": {
         "home": "Home",
         "about": "About",
-        "resume": "Resume",
+        "timeline": "Timeline",
         "snippets": "Snippets",
         "contact": "Contact"
       }
@@ -130,7 +134,7 @@
       "pages": {
         "home": "Home",
         "about": "About",
-        "resume": "Resume",
+        "timeline": "Timeline",
         "snippets": "Snippets",
         "contact": "Contact"
       }

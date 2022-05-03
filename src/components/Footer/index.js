@@ -31,7 +31,7 @@ const pages = {
   info: [
     { name: "home", link: "/" },
     { name: "about", link: "/about" },
-    { name: "resume", link: "/resume" },
+    { name: "timeline", link: "/timeline" },
   ],
   misc: [
     { name: "snippets", link: "/snippets" },
