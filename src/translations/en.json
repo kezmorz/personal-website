@@ -52,7 +52,12 @@
   },
   "timeline": {
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
-    "subheading": "I design and develop software solutions for everyone"
+    "subheading": "I design and develop software solutions for everyone",
+    "events": {
+      "test": {
+        "description": "Test Description"
+      }
+    }
   },
   "resume": {
     "heading": "Check out my professional résumé",
