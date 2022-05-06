@@ -33,13 +33,14 @@ const Timeline = () => {
         direction="ltr"
       />
       <Container component="section" maxWidth="md">
-        <MuiTimeline position="alternate" sx={{ p: 0 }}>
+        <MuiTimeline sx={{ p: 0 }}>
           {events.map(({ variant, name, date }) => (
             <TimelineEvent
               key={name}
               variant={variant}
               description={t(`events.${name}.description`)}
               date={date}
+              position="alternate"
             />
           ))}
         </MuiTimeline>
