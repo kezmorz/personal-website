@@ -2,13 +2,6 @@ import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import { Paper, Chip, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import {
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineDot,
-  TimelineContent,
-} from "@mui/lab";
 import { WorkOutlineOutlined as WorkOutlineOutlinedIcon } from "@mui/icons-material";
 import { formatDate } from "@/utils/date";
 
@@ -19,25 +12,30 @@ const variants = {
   },
 };
 
-const TimelineEventRoot = styled(TimelineItem)(({ position }) => ({
-  ...(position === "right" && {
-    "&:before": {
-      display: "none",
-    },
-  }),
+const TimelineEventRoot = styled("li")(({ position }) => ({
+  listStyle: "none",
+  position: "relative",
+  minHeight: 80,
+  display: "flex",
   ...(position === "left" && {
-    "& > .MuiPaper-root > .MuiBox-root > .MuiBox-root": {
-      flexDirection: "row-reverse",
-    },
-    "&:before": {
-      display: "none",
-    },
+    flexDirection: "row-reverse",
   }),
   ...(position === "alternate" && {
-    "&:nth-of-type(even) > .MuiPaper-root > .MuiBox-root > .MuiBox-root": {
+    "&:before": {
+      content: '""',
+      flex: 1,
+      padding: "8px 16px",
+    },
+    "&:nth-of-type(even)": {
       flexDirection: "row-reverse",
     },
   }),
+}));
+
+const TimelineEventConnector = styled("span")(({ theme }) => ({
+  width: 2,
+  flexGrow: 1,
+  backgroundColor: theme.palette.grey[400],
 }));
 
 const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
@@ -49,14 +47,32 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
       position={position}
       sx={[...(Array.isArray(sx) ? sx : [sx])]}
     >
-      <TimelineSeparator>
-        <TimelineConnector />
-        <TimelineDot>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          flex: 0,
+        }}
+      >
+        <TimelineEventConnector />
+        <Box
+          component="span"
+          sx={{
+            display: "flex",
+            alignSelf: "baseline",
+            p: 1,
+            my: 1,
+            borderRadius: "50%",
+            color: "grey.50",
+            bgcolor: "grey.400",
+          }}
+        >
           <Icon />
-        </TimelineDot>
-        <TimelineConnector />
-      </TimelineSeparator>
-      <TimelineContent component={Paper} square sx={{ p: 0, mx: 2, my: 1 }}>
+        </Box>
+        <TimelineEventConnector />
+      </Box>
+      <Paper square sx={{ flex: 1, mx: 2, my: 1 }}>
         <Box square sx={{ px: 2, pt: 1, pb: 2 }}>
           <Box
             sx={{
@@ -73,7 +89,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
           </Box>
           <Typography variant="body1">{description}</Typography>
         </Box>
-      </TimelineContent>
+      </Paper>
     </TimelineEventRoot>
   );
 };

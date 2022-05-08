@@ -1,6 +1,5 @@
 import { useTranslations } from "use-intl";
-import { Container } from "@mui/material";
-import { Timeline as MuiTimeline } from "@mui/lab";
+import { Container, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
@@ -33,7 +32,34 @@ const Timeline = () => {
         direction="ltr"
       />
       <Container component="section" maxWidth="md">
-        <MuiTimeline sx={{ p: 0 }}>
+        <Box
+          component="ul"
+          sx={{
+            display: { xs: "flex", md: "none" },
+            flexDirection: "column",
+            m: 0,
+            p: 0,
+          }}
+        >
+          {events.map(({ variant, name, date }) => (
+            <TimelineEvent
+              key={name}
+              variant={variant}
+              description={t(`events.${name}.description`)}
+              date={date}
+              position="right"
+            />
+          ))}
+        </Box>
+        <Box
+          component="ul"
+          sx={{
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            m: 0,
+            p: 0,
+          }}
+        >
           {events.map(({ variant, name, date }) => (
             <TimelineEvent
               key={name}
@@ -43,7 +69,7 @@ const Timeline = () => {
               position="alternate"
             />
           ))}
-        </MuiTimeline>
+        </Box>
       </Container>
     </>
   );
