@@ -1,4 +1,4 @@
-import { createSvgIcon } from "@mui/material";
+import { createSvgIcon } from "@mui/material/utils";
 
 const VercelSvgIcon = createSvgIcon(
   <path d="M24 22.525H0l12-21.05 12 21.05z" />,
