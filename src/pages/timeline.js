@@ -7,10 +7,15 @@ import TimelineEvent from "@/components/TimelineEvent";
 import Layout from "@/components/Layout";
 
 const events = [
-  { variant: "work", name: "test", date: "2022-04-01" },
-  { variant: "work", name: "test", date: "2022-04-01" },
-  { variant: "work", name: "test", date: "2022-04-01" },
-  { variant: "work", name: "test", date: "2022-04-01" },
+  { variant: "work", name: "arupSenior", date: "2022-04-01" },
+  { variant: "work", name: "arupStart", date: "2019-10-01" },
+  { variant: "work", name: "astraOnline", date: "2017-05-01" },
+  { variant: "work", name: "astraMid", date: "2015-01-01" },
+  { variant: "work", name: "astraStart", date: "2013-09-01" },
+  { variant: "education", name: "uniGraduate", date: "2013-07-01" },
+  { variant: "education", name: "uniReturn", date: "2012-09-01" },
+  { variant: "work", name: "cassidianPlacement", date: "2011-09-01" },
+  { variant: "education", name: "uniStart", date: "2009-09-01" },
 ];
 
 const Timeline = () => {
@@ -45,7 +50,7 @@ const Timeline = () => {
             <TimelineEvent
               key={name}
               variant={variant}
-              description={t(`events.${name}.description`)}
+              description={t(`events.${name}`)}
               date={date}
               position="right"
             />
@@ -64,7 +69,7 @@ const Timeline = () => {
             <TimelineEvent
               key={name}
               variant={variant}
-              description={t(`events.${name}.description`)}
+              description={t(`events.${name}`)}
               date={date}
               position="alternate"
             />

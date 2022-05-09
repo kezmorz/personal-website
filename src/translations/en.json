@@ -54,9 +54,15 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "events": {
-      "test": {
-        "description": "Test Description"
-      }
+      "arupSenior": "Promoted to Senior Software Developer at Arup",
+      "arupStart": "Started a new role at Arup as a Software Developer",
+      "astraOnline": "Lead a newly created team at Astra Games developing content for an online platform",
+      "astraMid": "Promoted to Mid Level Software Engineer at Astra Games",
+      "astraStart": "Began my working career at Astra Games as a Junior Software Engineer",
+      "uniGraduate": "Graduated from Cardiff University with a 2:1 degree",
+      "uniReturn": "Returned to Cardiff University to complete the final year of my degree",
+      "cassidianPlacement": "Spent my industrial placement year at Airbus Defence and Space developing with the Unity game engine",
+      "uniStart": "Started my Bachelor of Science in Mathematics and its Applications degree at Cardiff University"
     }
   },
   "resume": {

@@ -54,9 +54,15 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "events": {
-      "test": {
-        "description": "Test Description"
-      }
+      "arupSenior": "Dyrchafu i Uwch Ddatblygwr Meddalwedd yn Arup",
+      "arupStart": "Dechreuais rôl newydd yn Arup fel Datblygwr Meddalwedd",
+      "astraOnline": "Arwain tîm sydd newydd ei greu yn Astra Games i ddatblygu cynnwys ar gyfer platfform ar-lein",
+      "astraMid": "Dyrchafu i Beiriannydd Meddalwedd Lefel Ganol yn Astra Games",
+      "astraStart": "Dechreuais fy ngyrfa waith yn Astra Games fel Peiriannydd Meddalwedd Iau",
+      "uniGraduate": "Graddiais o Brifysgol Caerdydd gyda gradd 2:1",
+      "uniReturn": "Dychwelais i Brifysgol Caerdydd i gwblhau blwyddyn olaf fy ngradd",
+      "cassidianPlacement": "Treuliais fy mlwyddyn lleoliad diwydiannol yn Airbus Defence and Space yn datblygu gyda'r injan gêm Unity",
+      "uniStart": "Dechreuais fy ngradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau ym Mhrifysgol Caerdydd"
     }
   },
   "resume": {

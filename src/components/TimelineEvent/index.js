@@ -2,7 +2,10 @@ import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import { Paper, Chip, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { WorkOutlineOutlined as WorkOutlineOutlinedIcon } from "@mui/icons-material";
+import {
+  WorkOutlineOutlined as WorkOutlineOutlinedIcon,
+  SchoolOutlined as SchoolOutlinedIcon,
+} from "@mui/icons-material";
 import { formatDate } from "@/utils/date";
 
 const variants = {
@@ -10,9 +13,17 @@ const variants = {
     tag: "work",
     Icon: WorkOutlineOutlinedIcon,
   },
+  education: {
+    tag: "education",
+    Icon: SchoolOutlinedIcon,
+  },
 };
 
-const TimelineEventRoot = styled("li")(({ position }) => ({
+const TimelineEventRoot = styled("li", {
+  shouldForwardProp: (prop) => prop !== "position" && prop !== "sx",
+  name: "TimelineEvent",
+  slot: "Root",
+})(({ position }) => ({
   listStyle: "none",
   position: "relative",
   minHeight: 80,
@@ -29,10 +40,16 @@ const TimelineEventRoot = styled("li")(({ position }) => ({
     "&:nth-of-type(even)": {
       flexDirection: "row-reverse",
     },
+    // [`${TimelineEventConnector}`]: {
+    //   backgroundColor: "red"
+    // },
   }),
 }));
 
-const TimelineEventConnector = styled("span")(({ theme }) => ({
+const TimelineEventConnector = styled("span", {
+  name: "TimelineEvent",
+  slot: "Connector",
+})(({ theme }) => ({
   width: 2,
   flexGrow: 1,
   backgroundColor: theme.palette.grey[400],
@@ -87,7 +104,9 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
             </Typography>
             <Chip label={tag} />
           </Box>
-          <Typography variant="body1">{description}</Typography>
+          <Typography variant="body1" sx={{ maxWidth: 560 }}>
+            {description}
+          </Typography>
         </Box>
       </Paper>
     </TimelineEventRoot>
