@@ -1,5 +1,5 @@
 import { useTranslations } from "use-intl";
-import { Container, Box } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
@@ -76,6 +76,13 @@ const Timeline = () => {
             />
           ))}
         </Box>
+      </Container>
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+      >
+        <Typography>The final section</Typography>
       </Container>
     </>
   );
