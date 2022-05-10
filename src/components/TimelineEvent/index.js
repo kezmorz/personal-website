@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import {
   WorkOutlineOutlined as WorkOutlineOutlinedIcon,
   SchoolOutlined as SchoolOutlinedIcon,
+  EmojiEventsOutlined as EmojiEventsOutlinedIcon,
 } from "@mui/icons-material";
 import { formatDate } from "@/utils/date";
 
@@ -17,12 +18,14 @@ const variants = {
     tag: "education",
     Icon: SchoolOutlinedIcon,
   },
+  award: {
+    tag: "award",
+    Icon: EmojiEventsOutlinedIcon,
+  },
 };
 
 const TimelineEventRoot = styled("li", {
   shouldForwardProp: (prop) => prop !== "position" && prop !== "sx",
-  name: "TimelineEvent",
-  slot: "Root",
 })(({ position }) => ({
   listStyle: "none",
   position: "relative",
@@ -30,6 +33,15 @@ const TimelineEventRoot = styled("li", {
   display: "flex",
   ...(position === "left" && {
     flexDirection: "row-reverse",
+    "& .MuiPaper-root > .MuiBox-root": {
+      "& .MuiBox-root": {
+        flexDirection: "row-reverse",
+      },
+      "& .MuiTypography-root": {
+        marginLeft: "auto",
+        textAlign: "right",
+      },
+    },
   }),
   ...(position === "alternate" && {
     "&:before": {
@@ -39,17 +51,20 @@ const TimelineEventRoot = styled("li", {
     },
     "&:nth-of-type(even)": {
       flexDirection: "row-reverse",
+      "& .MuiPaper-root > .MuiBox-root": {
+        "& .MuiBox-root": {
+          flexDirection: "row-reverse",
+        },
+        "& .MuiTypography-root": {
+          marginLeft: "auto",
+          textAlign: "right",
+        },
+      },
     },
-    // [`${TimelineEventConnector}`]: {
-    //   backgroundColor: "red"
-    // },
   }),
 }));
 
-const TimelineEventConnector = styled("span", {
-  name: "TimelineEvent",
-  slot: "Connector",
-})(({ theme }) => ({
+const TimelineEventConnector = styled("span")(({ theme }) => ({
   width: 2,
   flexGrow: 1,
   backgroundColor: theme.palette.grey[400],
@@ -102,7 +117,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
             <Typography component="time" variant="caption" dateTime={date}>
               {formatDate(new Date(date), "PPP", locale)}
             </Typography>
-            <Chip label={tag} />
+            <Chip label={tag} sx={{ transition: "none" }} />
           </Box>
           <Typography variant="body1" sx={{ maxWidth: 560 }}>
             {description}

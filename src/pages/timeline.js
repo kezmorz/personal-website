@@ -8,14 +8,15 @@ import Layout from "@/components/Layout";
 
 const events = [
   { variant: "work", name: "arupSenior", date: "2022-04-01" },
-  { variant: "work", name: "arupStart", date: "2019-10-01" },
-  { variant: "work", name: "astraOnline", date: "2017-05-01" },
+  { variant: "award", name: "arupVirtualEngageAward", date: "2020-11-23" },
+  { variant: "work", name: "arupStart", date: "2019-10-14" },
+  { variant: "work", name: "astraOnline", date: "2017-05-08" },
   { variant: "work", name: "astraMid", date: "2015-01-01" },
-  { variant: "work", name: "astraStart", date: "2013-09-01" },
-  { variant: "education", name: "uniGraduate", date: "2013-07-01" },
-  { variant: "education", name: "uniReturn", date: "2012-09-01" },
+  { variant: "work", name: "astraStart", date: "2013-09-16" },
+  { variant: "education", name: "uniGraduate", date: "2013-05-31" },
+  { variant: "education", name: "uniReturn", date: "2012-10-01" },
   { variant: "work", name: "cassidianPlacement", date: "2011-09-01" },
-  { variant: "education", name: "uniStart", date: "2009-09-01" },
+  { variant: "education", name: "uniStart", date: "2009-09-28" },
 ];
 
 const Timeline = () => {

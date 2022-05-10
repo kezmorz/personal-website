@@ -6,8 +6,8 @@ const locales = {
   cy: cy,
 };
 
-export const formatDate = (dateString, pattern, locale = "en") => {
-  return format(dateString, pattern, {
+export const formatDate = (date, pattern, locale = "en") => {
+  return format(date, pattern, {
     locale: locales[locale],
   });
 };
