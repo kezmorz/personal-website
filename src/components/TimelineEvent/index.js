@@ -34,10 +34,10 @@ const TimelineEventRoot = styled("li", {
   ...(position === "left" && {
     flexDirection: "row-reverse",
     "& .MuiPaper-root > .MuiBox-root": {
-      "& .MuiBox-root": {
+      "& > .MuiBox-root": {
         flexDirection: "row-reverse",
       },
-      "& .MuiTypography-root": {
+      "& > .MuiTypography-root": {
         marginLeft: "auto",
         textAlign: "right",
       },
@@ -52,10 +52,10 @@ const TimelineEventRoot = styled("li", {
     "&:nth-of-type(even)": {
       flexDirection: "row-reverse",
       "& .MuiPaper-root > .MuiBox-root": {
-        "& .MuiBox-root": {
+        "& > .MuiBox-root": {
           flexDirection: "row-reverse",
         },
-        "& .MuiTypography-root": {
+        "& > .MuiTypography-root": {
           marginLeft: "auto",
           textAlign: "right",
         },
