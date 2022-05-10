@@ -100,7 +100,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
             }}
           >
             <Typography component="time" variant="caption" dateTime={date}>
-              {formatDate(new Date(date), locale)}
+              {formatDate(new Date(date), "PPP", locale)}
             </Typography>
             <Chip label={tag} />
           </Box>

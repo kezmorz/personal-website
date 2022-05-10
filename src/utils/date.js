@@ -1,4 +1,4 @@
-import { format, add, parseJSON } from "date-fns";
+import { format } from "date-fns";
 import { enGB, cy } from "date-fns/locale";
 
 const locales = {
@@ -6,14 +6,8 @@ const locales = {
   cy: cy,
 };
 
-export const formatDate = (dateString, locale = "en") => {
-  return format(
-    add(parseJSON(dateString), {
-      minutes: new Date().getTimezoneOffset(),
-    }),
-    "PPP",
-    {
-      locale: locales[locale],
-    }
-  );
+export const formatDate = (dateString, pattern, locale = "en") => {
+  return format(dateString, pattern, {
+    locale: locales[locale],
+  });
 };
