@@ -11,15 +11,15 @@ import { formatDate } from "@/utils/date";
 
 const variants = {
   work: {
-    tag: "work",
+    label: "work",
     Icon: WorkOutlineOutlinedIcon,
   },
   education: {
-    tag: "education",
+    label: "education",
     Icon: SchoolOutlinedIcon,
   },
   award: {
-    tag: "award",
+    label: "award",
     Icon: EmojiEventsOutlinedIcon,
   },
 };
@@ -72,7 +72,7 @@ const TimelineEventConnector = styled("span")(({ theme }) => ({
 
 const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
   const { locale } = useRouter();
-  const { tag, Icon } = variants[variant];
+  const { label, Icon } = variants[variant];
 
   return (
     <TimelineEventRoot
@@ -117,7 +117,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
             <Typography component="time" variant="caption" dateTime={date}>
               {formatDate(new Date(date), "PPP", locale)}
             </Typography>
-            <Chip label={tag} sx={{ transition: "none" }} />
+            <Chip label={label} sx={{ transition: "none" }} />
           </Box>
           <Typography variant="body1" sx={{ maxWidth: 560 }}>
             {description}
@@ -129,7 +129,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
 };
 
 TimelineEvent.propType = {
-  variant: PropTypes.oneOf(["work", "award"]).isRequired,
+  variant: PropTypes.oneOf(["work", "education", "award"]).isRequired,
   position: PropTypes.oneOf(["right", "left", "alternate"]),
   description: PropTypes.string,
   date: PropTypes.string,
