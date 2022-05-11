@@ -1,5 +1,12 @@
+import { useState } from "react";
 import { useTranslations } from "use-intl";
-import { Container, Typography, Box } from "@mui/material";
+import {
+  Container,
+  Autocomplete,
+  TextField,
+  Typography,
+  Box,
+} from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
@@ -20,7 +27,10 @@ const events = [
 ];
 
 const Timeline = () => {
+  const [categories, setCategories] = useState([]);
   const t = useTranslations("timeline");
+
+  const categoryOptions = [...new Set(events.map((event) => event.variant))];
 
   return (
     <>
@@ -38,43 +48,66 @@ const Timeline = () => {
         direction="ltr"
       />
       <Container component="section" maxWidth="md">
+        <Typography variant="h4">{t("description")}</Typography>
+        <Autocomplete
+          id="timeline-categories"
+          multiple
+          fullWidth
+          options={categoryOptions}
+          value={categories}
+          onChange={(_, newValue) => {
+            setCategories(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} label="Categories" />}
+          sx={{ mt: { xs: 4, md: 8 } }}
+        />
         <Box
           component="ul"
           sx={{
             display: { xs: "flex", md: "none" },
             flexDirection: "column",
-            m: 0,
+            mt: { xs: 4, md: 8 },
             p: 0,
           }}
         >
-          {events.map(({ variant, name, date }) => (
-            <TimelineEvent
-              key={name}
-              variant={variant}
-              description={t(`events.${name}`)}
-              date={date}
-              position="right"
-            />
-          ))}
+          {events
+            .filter(
+              ({ variant }) =>
+                !categories.length || categories.includes(variant)
+            )
+            .map(({ variant, name, date }) => (
+              <TimelineEvent
+                key={name}
+                variant={variant}
+                description={t(`events.${name}`)}
+                date={date}
+                position="alternate"
+              />
+            ))}
         </Box>
         <Box
           component="ul"
           sx={{
             display: { xs: "none", md: "flex" },
             flexDirection: "column",
-            m: 0,
+            mt: { xs: 4, md: 8 },
             p: 0,
           }}
         >
-          {events.map(({ variant, name, date }) => (
-            <TimelineEvent
-              key={name}
-              variant={variant}
-              description={t(`events.${name}`)}
-              date={date}
-              position="alternate"
-            />
-          ))}
+          {events
+            .filter(
+              ({ variant }) =>
+                !categories.length || categories.includes(variant)
+            )
+            .map(({ variant, name, date }) => (
+              <TimelineEvent
+                key={name}
+                variant={variant}
+                description={t(`events.${name}`)}
+                date={date}
+                position="alternate"
+              />
+            ))}
         </Box>
       </Container>
       <Container

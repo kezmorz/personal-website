@@ -53,6 +53,7 @@
   "timeline": {
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
+    "description": "Put a description here about the timeline",
     "events": {
       "arupSenior": "Promoted to Senior Software Developer at Arup",
       "arupVirtualEngageAward": "",
