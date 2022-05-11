@@ -88,7 +88,7 @@ const Timeline = () => {
                 variant={variant}
                 description={t(`events.${name}`)}
                 date={date}
-                position="alternate"
+                position="right"
               />
             ))}
         </Box>
