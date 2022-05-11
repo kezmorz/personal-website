@@ -45,7 +45,7 @@ const Timeline = () => {
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
-        direction="ltr"
+        direction="rtl"
       />
       <Container
         component="section"
