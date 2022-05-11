@@ -182,6 +182,7 @@ const AppBar = () => {
                   href={{ pathname, query }}
                   underline="none"
                   locale={locale}
+                  scroll={false}
                   selected={activeLocale === locale}
                   role="menuitem"
                   onClick={handleLanguageMenuClose}
@@ -300,6 +301,7 @@ const AppBar = () => {
                       underline="none"
                       locale={locale}
                       value={locale}
+                      scroll={false}
                       selected={activeLocale === locale}
                       role="option"
                     >
