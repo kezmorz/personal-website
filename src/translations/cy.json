@@ -54,6 +54,14 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "description": "Put a description here about the timeline",
+    "categories": {
+      "label": "Categorïau",
+      "values": {
+        "work": "gwaith",
+        "award": "gwobr",
+        "education": "addysg"
+      }
+    },
     "events": {
       "arupSenior": "Dyrchafu i Uwch Ddatblygwr Meddalwedd yn Arup",
       "arupVirtualEngageAward": "",
@@ -138,6 +146,11 @@
         "dark": "Tywyll"
       }
     }
+  },
+  "timelineevent": {
+    "work": "gwaith",
+    "award": "gwobr",
+    "education": "addysg"
   },
   "footer": {
     "tagline": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch.",

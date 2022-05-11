@@ -54,6 +54,14 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "description": "Put a description here about the timeline",
+    "categories": {
+      "label": "Categories",
+      "values": {
+        "work": "work",
+        "award": "award",
+        "education": "education"
+      }
+    },
     "events": {
       "arupSenior": "Promoted to Senior Software Developer at Arup",
       "arupVirtualEngageAward": "",
@@ -138,6 +146,11 @@
         "dark": "Dark"
       }
     }
+  },
+  "timelineevent": {
+    "work": "work",
+    "award": "award",
+    "education": "education"
   },
   "footer": {
     "tagline": "Designing and developing full stack software solutions that are responsive and accessible.",

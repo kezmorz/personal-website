@@ -47,7 +47,11 @@ const Timeline = () => {
         }}
         direction="ltr"
       />
-      <Container component="section" maxWidth="md">
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mb: { xs: 8, sm: 16 } }}
+      >
         <Typography variant="h4">{t("description")}</Typography>
         <Autocomplete
           id="timeline-categories"
@@ -55,10 +59,13 @@ const Timeline = () => {
           fullWidth
           options={categoryOptions}
           value={categories}
+          getOptionLabel={(option) => t(`categories.values.${option}`)}
           onChange={(_, newValue) => {
             setCategories(newValue);
           }}
-          renderInput={(params) => <TextField {...params} label="Categories" />}
+          renderInput={(params) => (
+            <TextField {...params} label={t("categories.label")} />
+          )}
           sx={{ mt: { xs: 4, md: 8 } }}
         />
         <Box
@@ -110,13 +117,6 @@ const Timeline = () => {
             ))}
         </Box>
       </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-      >
-        <Typography>The final section</Typography>
-      </Container>
     </>
   );
 };
@@ -129,7 +129,7 @@ Timeline.getLayout = (page) => {
   );
 };
 
-Timeline.messages = ["timeline", ...Layout.messages];
+Timeline.messages = ["timeline", ...TimelineEvent.messages, ...Layout.messages];
 
 export const getStaticProps = async ({ locale }) => {
   return {

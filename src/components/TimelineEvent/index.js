@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
+import { useTranslations } from "use-intl";
 import { Paper, Chip, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import {
@@ -72,6 +73,8 @@ const TimelineEventConnector = styled("span")(({ theme }) => ({
 
 const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
   const { locale } = useRouter();
+  const t = useTranslations("timelineevent");
+
   const { label, Icon } = variants[variant];
 
   return (
@@ -117,7 +120,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
             <Typography component="time" variant="caption" dateTime={date}>
               {formatDate(new Date(date), "PPP", locale)}
             </Typography>
-            <Chip label={label} sx={{ transition: "none" }} />
+            <Chip label={t(label)} sx={{ transition: "none" }} />
           </Box>
           <Typography variant="body1" sx={{ maxWidth: 560 }}>
             {description}
@@ -127,6 +130,8 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
     </TimelineEventRoot>
   );
 };
+
+TimelineEvent.messages = ["timelineevent"];
 
 TimelineEvent.propType = {
   variant: PropTypes.oneOf(["work", "education", "award"]).isRequired,
