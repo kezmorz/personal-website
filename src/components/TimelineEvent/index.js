@@ -6,6 +6,8 @@ import { styled } from "@mui/material/styles";
 import {
   WorkOutlineOutlined as WorkOutlineOutlinedIcon,
   SchoolOutlined as SchoolOutlinedIcon,
+  LocalLibraryOutlined as LocalLibraryOutlinedIcon,
+  ConnectWithoutContactOutlined as ConnectWithoutContactOutlinedIcon,
   EmojiEventsOutlined as EmojiEventsOutlinedIcon,
 } from "@mui/icons-material";
 import { formatDate } from "@/utils/date";
@@ -18,6 +20,14 @@ const variants = {
   education: {
     label: "education",
     Icon: SchoolOutlinedIcon,
+  },
+  training: {
+    label: "training",
+    Icon: LocalLibraryOutlinedIcon,
+  },
+  mentor: {
+    label: "mentor",
+    Icon: ConnectWithoutContactOutlinedIcon,
   },
   award: {
     label: "award",

@@ -59,14 +59,36 @@
       "values": {
         "work": "gwaith",
         "award": "gwobr",
+        "training": "hyfforddiant",
+        "mentor": "mentor",
         "education": "addysg"
       }
     },
     "events": {
       "arupSenior": "Dyrchafu i Uwch Ddatblygwr Meddalwedd yn Arup",
-      "arupVirtualEngageAward": "",
+      "arupReactCommunity": "Deuthum yn un o sylfaenwyr cymuned React yn Arup",
+      "arupPeiLutonAirport": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan adroddiad gwybodaeth amgylcheddol ragarweiniol ddigidol arall ar gyfer ehangu Maes Awyr Luton Llundain",
+      "arupPeiA66": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan adroddiad gwybodaeth amgylcheddol ragarweiniol ddigidol arall ar gyfer gwelliannau A66 Northern Trans-Pennine",
+      "arupPublicInquiryA55": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan ymchwiliad cyhoeddus arall ar gyfer y gwelliannau i’r A55 a arweiniodd at fwy o elw",
+      "arupVirtualEngageAward": "Gwobr Cynnyrch Digidol y Flwyddyn yn y Gwobrau Trawsnewid Digidol mewnol yn Arup am Virtual Engage",
+      "arupPeiTemplate": "Troais wefan yr adroddiad gwybodaeth amgylcheddol ragarweiniol digidol yn dempled ar gyfer ymateb cyflym i geisiadau cleientiaid",
+      "arupPeiA417": "Datblygais yr adroddiad gwybodaeth amgylcheddol rhagarweiniol digidol cyntaf yn y DU fel gwefan hygyrch ar gyfer cynllun A417 missing link",
+      "arupTrainingAzure": "Treuliais wythnos yn dysgu am hanfodion Microsoft Azure",
+      "arupMentor": "Dechreuais fentora datblygwyr meddalwedd iau o fewn y tîm",
+      "arupVirtualEngage": "Arweinydd technegol ar gyfer cynnyrch Arup Virtual Engage",
+      "arupGitHub": "Deuthum yn weinyddwr ac yn eiriolwr i sefydliad GitHub Arup",
+      "arupTrainingReact": "Treuliais wythnos yn dysgu am hanfodion React",
+      "arupPublicInquiryTemplate": "Troais gwefan ymholiad cyhoeddus WordPress yn dempled ar gyfer ymateb cyflym i geisiadau cleientiaid",
+      "arupPublicInquiryA40": "Gweithiais gyda Llywodraeth Cymru i ddatblygu gwefan WordPress ar gyfer rheoli ymchwiliad lleol cyhoeddus gwelliannau’r A40",
+      "arupTrainingAws": "Treuliais wythnos yn dysgu am hanfodion Amazon Web Services",
+      "arupDigitalSurgeries": "Helpais i redeg gweithdai digidol ar draws y DU yn egluro pwysigrwydd digidol o fewn Arup",
       "arupStart": "Dechreuais rôl newydd yn Arup fel Datblygwr Meddalwedd",
+      "astraOnlineTrainingSofia": "Treuliais wythnos yn Sofia gyda Red Tiger Gaming yn deall eu platfform ar-lein",
+      "astraOnlineTrainingGreentubeTwo": "Treuliais bythefnos arall yn Fienna gyda Greentube ar gwrs novoSDK uwch",
+      "astraOnlineGame": "Datblygais gêm ar-lein gyntaf erioed Astra Games gan ddefnyddio'r novoSDK",
+      "astraOnlineTrainingGreentubeOne": "Treuliais dair wythnos yn Fienna gyda Greentube yn dysgu am eu novoSDK",
       "astraOnline": "Arwain tîm sydd newydd ei greu yn Astra Games i ddatblygu cynnwys ar gyfer platfform ar-lein",
+      "astraRouletteGame": "Datblygais gêm roulette a welodd gynnydd o 700% yng ngwerth y cyfanswm",
       "astraMid": "Dyrchafu i Beiriannydd Meddalwedd Lefel Ganol yn Astra Games",
       "astraStart": "Dechreuais fy ngyrfa waith yn Astra Games fel Peiriannydd Meddalwedd Iau",
       "uniGraduate": "Graddiais o Brifysgol Caerdydd gyda gradd 2:1",
@@ -150,6 +172,8 @@
   "timelineevent": {
     "work": "gwaith",
     "award": "gwobr",
+    "training": "hyfforddiant",
+    "mentor": "mentor",
     "education": "addysg"
   },
   "footer": {

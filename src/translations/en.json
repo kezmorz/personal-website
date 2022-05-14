@@ -59,14 +59,36 @@
       "values": {
         "work": "work",
         "award": "award",
+        "training": "training",
+        "mentor": "mentor",
         "education": "education"
       }
     },
     "events": {
       "arupSenior": "Promoted to Senior Software Developer at Arup",
-      "arupVirtualEngageAward": "",
+      "arupReactCommunity": "Became a founding member of the React community within Arup",
+      "arupPeiLutonAirport": "Used the previously created template to create another digital preliminary environmental information report website for the London Luton Airport expansion",
+      "arupPeiA66": "Used the previously created template to create another digital preliminary environmental information report website for the A66 Northern Trans-Pennine improvements",
+      "arupPublicInquiryA55": "Used the previously created template to create another public inquiry website for the A55 improvements that led to increased profits",
+      "arupVirtualEngageAward": "Awarded Digital Product of the Year at the internal Digital Transformation Awards at Arup for Virtual Engage",
+      "arupPeiTemplate": "Turned the digital preliminary environmental information report website in to a template for rapid response to client requests",
+      "arupPeiA417": "Developed the first digital preliminary environmental information report in the UK as an accessible website for the A417 missing link scheme",
+      "arupTrainingAzure": "Spent a week learning about the basics of Microsoft Azure",
+      "arupMentor": "Started mentoring junior software developers within the team",
+      "arupVirtualEngage": "Technical lead for Arup's Virtual Engage product",
+      "arupGitHub": "Became an administrator and advocate for Arup's GitHub organisation",
+      "arupTrainingReact": "Spent a week learning about the basics of React",
+      "arupPublicInquiryTemplate": "Turned the public inquiry WordPress website in to a template for rapid response to client requests",
+      "arupPublicInquiryA40": "Worked with Welsh Government to develop a WordPress website for managing the A40 improvements public local inquiry",
+      "arupTrainingAws": "Spent a week learning about the basics of Amazon Web Services",
+      "arupDigitalSurgeries": "Helped run digital workshops across the UK explaining the importance of digital within Arup",
       "arupStart": "Started a new role at Arup as a Software Developer",
+      "astraOnlineTrainingSofia": "Spent a week in Sofia with Red Tiger Gaming understanding their online platform",
+      "astraOnlineTrainingGreentubeTwo": "Spent a further two weeks in Vienna with Greentube on an advanced novoSDK course",
+      "astraOnlineGame": "Developed Astra Games' first ever online game using the novoSDK",
+      "astraOnlineTrainingGreentubeOne": "Spent three weeks in Vienna with Greentube learning about their novoSDK",
       "astraOnline": "Lead a newly created team at Astra Games developing content for an online platform",
+      "astraRouletteGame": "Developed a roulette game that saw a total value played increase of 700%",
       "astraMid": "Promoted to Mid Level Software Engineer at Astra Games",
       "astraStart": "Began my working career at Astra Games as a Junior Software Engineer",
       "uniGraduate": "Graduated from Cardiff University with a 2:1 degree",
@@ -150,6 +172,8 @@
   "timelineevent": {
     "work": "work",
     "award": "award",
+    "training": "training",
+    "mentor": "mentor",
     "education": "education"
   },
   "footer": {
