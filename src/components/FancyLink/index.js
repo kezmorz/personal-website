@@ -4,12 +4,13 @@ import { styled } from "@mui/material/styles";
 import Link from "@/components/Link";
 
 const FancyLinkRoot = styled(Link)(({ activeClassName }) => ({
-  display: "block",
   position: "relative",
+  display: "block",
+  outline: 0,
   "&::after": {
+    position: "absolute",
     width: "100%",
     content: "''",
-    position: "absolute",
     bottom: 0,
     left: 0,
     height: "0.1em",

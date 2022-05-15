@@ -34,18 +34,18 @@ const MyApp = ({
     <CacheProvider value={emotionCache}>
       <Analytics />
       <NextIntlProvider
-        formats={{
-          dateTime: {
-            short: {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            },
-          },
-        }}
+        // formats={{
+        //   dateTime: {
+        //     short: {
+        //       day: "numeric",
+        //       month: "short",
+        //       year: "numeric",
+        //     },
+        //   },
+        // }}
         messages={messages}
-        now={new Date(now)}
-        timeZone="Europe/Dublin"
+        // now={new Date(now)}
+        // timeZone="Europe/Dublin"
       >
         <ThemeProvider theme={theme}>
           <CssBaseline />

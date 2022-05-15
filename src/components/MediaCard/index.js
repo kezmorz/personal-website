@@ -59,7 +59,7 @@ const MediaCard = ({ title, description, href, image, alt, sx = [] }) => {
   );
 };
 
-MediaCard.propType = {
+MediaCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   href: PropTypes.any,

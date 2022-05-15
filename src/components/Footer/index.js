@@ -2,7 +2,6 @@ import Image from "next/image";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import {
-  Box,
   Container,
   Accordion,
   AccordionSummary,
@@ -14,15 +13,16 @@ import {
   IconButton,
   Divider,
   Typography,
+  Box,
 } from "@mui/material";
 import {
-  GitHub as GithubIcon,
-  LinkedIn as LinkedInIcon,
   EmailOutlined as EmailOutlinedIcon,
   ExpandMoreOutlined as ExpandMoreOutlinedIcon,
 } from "@mui/icons-material";
 import { loader as flickrImageLoader } from "@/lib/flickr";
 import fetcher from "@/services/fetcher";
+import GitHubIcon from "@/icons/GitHub";
+import LinkedInIcon from "@/icons/LinkedIn";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
 import FancyLink from "@/components/FancyLink";
@@ -31,7 +31,7 @@ const pages = {
   info: [
     { name: "home", link: "/" },
     { name: "about", link: "/about" },
-    { name: "resume", link: "/resume" },
+    { name: "timeline", link: "/timeline" },
   ],
   misc: [
     { name: "snippets", link: "/snippets" },
@@ -73,7 +73,7 @@ const Footer = () => {
                 aria-label="go to github profile"
                 sx={{ ml: -1 }}
               >
-                <GithubIcon />
+                <GitHubIcon />
               </IconButton>
               <IconButton
                 href="https://www.linkedin.com/in/cerimorse"
@@ -260,7 +260,7 @@ const Footer = () => {
             )}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12" } }}>
-            <Typography>
+            <Typography variant="body1">
               {t("copyright", { year: new Date().getFullYear() })}
             </Typography>
           </Box>

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const AnimatedTypography = styled(Typography)({
@@ -94,8 +94,8 @@ Header.propTypes = {
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
     layout: PropTypes.string,
     loader: PropTypes.func,
   }),

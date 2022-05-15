@@ -2,6 +2,101 @@
   "index": {
     "hello": "hello"
   },
+  "about": {
+    "heading": "Hi, I'm Ceri Morse, a full stack developer",
+    "subheading": "I design and develop software solutions for everyone",
+    "bitesize": {
+      "line1": "Born and raised in Wales, the land of dragons",
+      "line2": "Fluent in both Welsh and English",
+      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013",
+      "line4": "Transitioned from developing standalone applications to full stack web development"
+    },
+    "history": {
+      "paragraph1": "My interest in creating software solutions started all the way back in secondary school. I built an application for a shop system using Microsoft Access as part of a project. Seeing the interface and experience change through modifying a few lines of code was fascinating to me. I went on to study Mathematics at university but took as many Computer Science modules as possible. I built my first Java application, a hangman game, and used C++ to learn about parallel processing and image processing. I had a really exciting final year project working with the Welsh Rugby Union modelling line-out strategies using game theory, Monte Carlo simulation and Python.",
+      "paragraph2": "Fresh from university, I started my career as a C++ developer at a gambling games company creating virtual casino games. I created a roulette game that saw a total value played increase of 700% when compared to the average game. I moved in to a lead position in a newly created online development team within the company and that’s where my interest in web development began. The more I explored the rich ecosystem of web technologies, the more I realised this was the path for me. I was offered a new role at a consultancy firm and led the development of a virtual engagement product that allowed mandatory public consultations to continue throughout the COVID-19 pandemic, culminating in an internal award for digital product of the year.",
+      "timeline": {
+        "description": "You'll find more information available on my timeline",
+        "button": "Visit timeline"
+      }
+    },
+    "techstack": {
+      "description": "I’ve used a lot of different technologies during my time as a developer. Here's what I enjoy the most and use on a day-to-day basis.",
+      "frontend": {
+        "heading": "Frontend",
+        "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
+      },
+      "backend": {
+        "heading": "Backend",
+        "description": "I value clean and modular design with a focus on code reuse and readability."
+      },
+      "devops": {
+        "heading": "DevOps",
+        "description": "I try to make the developer experience for deploying code as seamless as possible."
+      }
+    },
+    "hobbies": {
+      "description": "Life isn’t all about work. Here are some things I like to do in my downtime to have fun and relax.",
+      "adventuring": {
+        "heading": "Adventuring",
+        "description": "I really enjoy going on adventures! This could be anything from hiking local routes to travelling half way around the world to explore new areas."
+      },
+      "sport": {
+        "heading": "Sport",
+        "description": "Growing up I participated in many different individual and team sports such as karate, golf and football. These days I only really climb and play various racquet sports as a means to keep fit."
+      },
+      "gaming": {
+        "heading": "Gaming",
+        "description": "Ever since playing Duck Hunt on my very first console, the NES, I’ve enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
+      }
+    }
+  },
+  "timeline": {
+    "heading": "The story so far",
+    "subheading": "Check out some of my significant moments",
+    "description": "Here are a collection of events from my professional career. You can browse through them in their entirety, or filter them by category.",
+    "categories": {
+      "label": "Categories",
+      "values": {
+        "work": "work",
+        "award": "award",
+        "training": "training",
+        "mentor": "mentor",
+        "education": "education"
+      }
+    },
+    "events": {
+      "arupSenior": "Promoted to Senior Software Developer at Arup",
+      "arupReactCommunity": "Became a founding member of the React community within Arup",
+      "arupPeiLutonAirport": "Used the previously created template to create another digital preliminary environmental information report website for the London Luton Airport expansion",
+      "arupPeiA66": "Used the previously created template to create another digital preliminary environmental information report website for the A66 Northern Trans-Pennine improvements",
+      "arupPublicInquiryA55": "Used the previously created template to create another public inquiry website for the A55 improvements that led to increased profits",
+      "arupVirtualEngageAward": "Awarded Digital Product of the Year at the internal Digital Transformation Awards at Arup for Virtual Engage",
+      "arupPeiTemplate": "Turned the digital preliminary environmental information report website in to a template for rapid response to client requests",
+      "arupPeiA417": "Developed the first digital preliminary environmental information report in the UK as an accessible website for the A417 missing link scheme",
+      "arupTrainingAzure": "Spent a week learning about the basics of Microsoft Azure",
+      "arupMentor": "Started mentoring junior software developers within the team",
+      "arupVirtualEngage": "Technical lead for Arup's Virtual Engage product",
+      "arupGitHub": "Became an administrator and advocate for Arup's GitHub organisation",
+      "arupTrainingReact": "Spent a week learning about the basics of React",
+      "arupPublicInquiryTemplate": "Turned the public inquiry WordPress website in to a template for rapid response to client requests",
+      "arupPublicInquiryA40": "Worked with Welsh Government to develop a WordPress website for managing the A40 improvements public local inquiry",
+      "arupTrainingAws": "Spent a week learning about the basics of Amazon Web Services",
+      "arupDigitalSurgeries": "Helped run digital workshops across the UK explaining the importance of digital within Arup",
+      "arupStart": "Started a new role at Arup as a Software Developer",
+      "astraOnlineTrainingSofia": "Spent a week in Sofia with Red Tiger Gaming understanding their online platform",
+      "astraOnlineTrainingGreentubeTwo": "Spent a further two weeks in Vienna with Greentube on an advanced novoSDK course",
+      "astraOnlineGame": "Developed Astra Games' first ever online game using the novoSDK",
+      "astraOnlineTrainingGreentubeOne": "Spent three weeks in Vienna with Greentube learning about their novoSDK",
+      "astraOnline": "Lead a newly created team at Astra Games developing content for an online platform",
+      "astraRouletteGame": "Developed a roulette game that saw a total value played increase of 700%",
+      "astraMid": "Promoted to Mid Level Software Engineer at Astra Games",
+      "astraStart": "Began my working career at Astra Games as a Junior Software Engineer",
+      "uniGraduate": "Graduated from Cardiff University with a 2:1 degree",
+      "uniReturn": "Returned to Cardiff University to complete the final year of my degree",
+      "cassidianPlacement": "Spent my industrial placement year at Airbus Defence and Space developing with the Unity game engine",
+      "uniStart": "Started my Bachelor of Science in Mathematics and its Applications degree at Cardiff University"
+    }
+  },
   "resume": {
     "heading": "Check out my professional résumé",
     "subheading": "You'll find my relevant skills, work experience and more",
@@ -59,7 +154,7 @@
       "pages": {
         "home": "Home",
         "about": "About",
-        "resume": "Resume",
+        "timeline": "Timeline",
         "snippets": "Snippets",
         "contact": "Contact"
       }
@@ -74,6 +169,13 @@
       }
     }
   },
+  "timelineevent": {
+    "work": "work",
+    "award": "award",
+    "training": "training",
+    "mentor": "mentor",
+    "education": "education"
+  },
   "footer": {
     "tagline": "Designing and developing full stack software solutions that are responsive and accessible.",
     "notPlaying": "Not Playing",
@@ -82,7 +184,7 @@
       "pages": {
         "home": "Home",
         "about": "About",
-        "resume": "Resume",
+        "timeline": "Timeline",
         "snippets": "Snippets",
         "contact": "Contact"
       }

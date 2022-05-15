@@ -5,14 +5,7 @@ import { useTranslations } from "use-intl";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import {
-  Container,
-  Grid,
-  Divider,
-  Alert,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Container, Grid, Divider, Alert, Typography } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { formatDate } from "@/utils/date";
 import { pick } from "@/utils/misc";
@@ -58,7 +51,8 @@ const Resume = ({ source, frontMatter }) => {
           {t("description.paragraph.line2")}
         </Typography>
         <Typography variant="caption">
-          {t("description.update")}: {formatDate(frontMatter.updatedAt, locale)}
+          {t("description.update")}:{" "}
+          {formatDate(new Date(frontMatter.updatedAt), "PPP", locale)}
         </Typography>
         <Alert severity="info" sx={{ mt: { xs: 3, sm: 6 } }}>
           {t("description.info")}
@@ -74,7 +68,7 @@ const Resume = ({ source, frontMatter }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, md: 16 } }}
+        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
       >
         <Typography variant="h3" gutterBottom>
           {t("formats.heading")}

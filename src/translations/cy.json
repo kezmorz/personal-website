@@ -2,6 +2,101 @@
   "index": {
     "hello": "helo"
   },
+  "about": {
+    "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
+    "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
+    "bitesize": {
+      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau",
+      "line2": "Rhugl yn y Gymraeg a'r Saesneg",
+      "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013",
+      "line4": "Wedi'i drawsnewid o ddatblygu cymwysiadau annibynnol i ddatblygiad gwe stac llawn"
+    },
+    "history": {
+      "paragraph1": "Dechreuodd fy niddordeb mewn creu datrysiadau meddalwedd yr holl ffordd yn ôl yn yr ysgol uwchradd. Adeiladais cymwysiad ar gyfer system siop gan ddefnyddio Microsoft Access fel rhan o brosiect. Roedd gweld y rhyngwyneb a'r profiad yn newid trwy addasu ychydig linellau o god yn hynod ddiddorol i mi. Es i ymlaen i astudio Mathemateg yn y brifysgol ond cymerais gymaint o fodiwlau Cyfrifiadureg â phosib. Adeiladais fy cymwys Java cyntaf, gêm hangman, a defnyddio C++ i ddysgu am brosesu cyfochrog a phrosesu delweddau. Cefais brosiect cyffrous yn fy mlwyddyn olaf yn gweithio gydag Undeb Rygbi Cymru yn modelu strategaethau y lein gan ddefnyddio theori gêm, efelychiad Monte Carlo a Python.",
+      "paragraph2": "Yn ffres o'r brifysgol, dechreuais fy ngyrfa fel datblygwr C++ mewn cwmni gemau gamblo yn creu gemau casino rhithwir. Fe wnes i greu gêm roulette a welodd gynnydd o 700% mewn cyfanswm gwerth o'i gymharu â gêmau gyfartalog. Symudais i swydd arweiniol mewn tîm datblygu ar-lein newydd o fewn y cwmni a dyna lle dechreuodd fy niddordeb mewn datblygu ar gyfer y we. Po fwyaf y gwnes i archwilio'r ecosystem gyfoethog o dechnolegau gwe, y mwyaf y sylweddolais mai dyma'r llwybr i mi. Cynigiwyd rôl newydd i mi mewn cwmni ymgynghori ac fe wnes i arwain y gwaith o ddatblygu cynnyrch ymgysylltu rhithwir a oedd yn caniatáu i ymgynghoriadau cyhoeddus gorfodol barhau drwy’r pandemig COVID-19, gan arwain at wobr mewnol cynnyrch digidol y flwyddyn.",
+      "timeline": {
+        "description": "Mae mwy o wybodaeth ar gael ar fy llinell amser",
+        "button": "Ymweld â'r llinell amser"
+      }
+    },
+    "techstack": {
+      "description": "Rwyf wedi defnyddio llawer o wahanol dechnolegau yn ystod fy amser fel datblygwr. Dyma beth rwy'n ei fwynhau fwyaf ac yn ei ddefnyddio o ddydd i ddydd.",
+      "frontend": {
+        "heading": "Penblaen",
+        "description": "Rwy'n cymryd llawer o falchder mewn creu cymwysiadau hygyrch; mae'r we i bawb."
+      },
+      "backend": {
+        "heading": "Pencefn",
+        "description": "Rwy'n gwerthfawrogi dylunio glân a modiwlaidd gyda ffocws ar ailddefnyddio cod a darllenadwyedd."
+      },
+      "devops": {
+        "heading": "DevOps",
+        "description": "Rwy'n ceisio gwneud profiad y datblygwr ar gyfer lleoli cod mor ddi-dor â phosibl."
+      }
+    },
+    "hobbies": {
+      "description": "Nid yw bywyd i gyd yn ymwneud â gwaith. Dyma rai pethau rwy'n hoffi eu gwneud yn fy amser segur i gael hwyl ac ymlacio.",
+      "adventuring": {
+        "heading": "Anturio",
+        "description": "Dwi wir yn mwynhau mynd ar anturiaethau! Gallai hyn fod yn unrhyw beth o heicio llwybrau lleol i deithio hanner ffordd o amgylch y byd i archwilio ardaloedd newydd."
+      },
+      "sport": {
+        "heading": "Chwaraeon",
+        "description": "With dyfu i fyny cymerais ran mewn nifer o wahanol chwaraeon unigol a thîm fel karate, golff a phêl-droed. Y dyddiau hyn dwi'n dringo ac yn chwarae amryw o chwaraeon raced fel modd o gadw'n heini."
+      },
+      "gaming": {
+        "heading": "Gemau Fideo",
+        "description": "Ers chwarae Duck Hunt ar fy nghonsol cyntaf, y NES, rydw i wedi mwynhau gemau fideo. Rwy'n chwarae gemau RPG yn bennaf, gyda The Elder Scrolls III: Morrowind yn ffefryn personol i mi. Team Fortress 2 ac Overwatch yw’r gemau FPS dwi'n dewis mwyaf amlaf."
+      }
+    }
+  },
+  "timeline": {
+    "heading": "Y stori hyd yn hyn",
+    "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
+    "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu eu hidlo yn ôl categori.",
+    "categories": {
+      "label": "Categorïau",
+      "values": {
+        "work": "gwaith",
+        "award": "gwobr",
+        "training": "hyfforddiant",
+        "mentor": "mentor",
+        "education": "addysg"
+      }
+    },
+    "events": {
+      "arupSenior": "Dyrchafu i Uwch Ddatblygwr Meddalwedd yn Arup",
+      "arupReactCommunity": "Deuthum yn un o sylfaenwyr cymuned React yn Arup",
+      "arupPeiLutonAirport": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan adroddiad gwybodaeth amgylcheddol ragarweiniol ddigidol arall ar gyfer ehangu Maes Awyr Luton Llundain",
+      "arupPeiA66": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan adroddiad gwybodaeth amgylcheddol ragarweiniol ddigidol arall ar gyfer gwelliannau A66 Northern Trans-Pennine",
+      "arupPublicInquiryA55": "Defnyddiais y templed a grëwyd yn flaenorol i greu gwefan ymchwiliad cyhoeddus arall ar gyfer y gwelliannau i’r A55 a arweiniodd at fwy o elw",
+      "arupVirtualEngageAward": "Gwobr Cynnyrch Digidol y Flwyddyn yn y Gwobrau Trawsnewid Digidol mewnol yn Arup am Virtual Engage",
+      "arupPeiTemplate": "Troais wefan yr adroddiad gwybodaeth amgylcheddol ragarweiniol digidol yn dempled ar gyfer ymateb cyflym i geisiadau cleientiaid",
+      "arupPeiA417": "Datblygais yr adroddiad gwybodaeth amgylcheddol rhagarweiniol digidol cyntaf yn y DU fel gwefan hygyrch ar gyfer cynllun A417 missing link",
+      "arupTrainingAzure": "Treuliais wythnos yn dysgu am hanfodion Microsoft Azure",
+      "arupMentor": "Dechreuais fentora datblygwyr meddalwedd iau o fewn y tîm",
+      "arupVirtualEngage": "Arweinydd technegol ar gyfer cynnyrch Arup Virtual Engage",
+      "arupGitHub": "Deuthum yn weinyddwr ac yn eiriolwr i sefydliad GitHub Arup",
+      "arupTrainingReact": "Treuliais wythnos yn dysgu am hanfodion React",
+      "arupPublicInquiryTemplate": "Troais gwefan ymholiad cyhoeddus WordPress yn dempled ar gyfer ymateb cyflym i geisiadau cleientiaid",
+      "arupPublicInquiryA40": "Gweithiais gyda Llywodraeth Cymru i ddatblygu gwefan WordPress ar gyfer rheoli ymchwiliad lleol cyhoeddus gwelliannau’r A40",
+      "arupTrainingAws": "Treuliais wythnos yn dysgu am hanfodion Amazon Web Services",
+      "arupDigitalSurgeries": "Helpais i redeg gweithdai digidol ar draws y DU yn egluro pwysigrwydd digidol o fewn Arup",
+      "arupStart": "Dechreuais rôl newydd yn Arup fel Datblygwr Meddalwedd",
+      "astraOnlineTrainingSofia": "Treuliais wythnos yn Sofia gyda Red Tiger Gaming yn deall eu platfform ar-lein",
+      "astraOnlineTrainingGreentubeTwo": "Treuliais bythefnos arall yn Fienna gyda Greentube ar gwrs novoSDK uwch",
+      "astraOnlineGame": "Datblygais gêm ar-lein gyntaf erioed Astra Games gan ddefnyddio'r novoSDK",
+      "astraOnlineTrainingGreentubeOne": "Treuliais dair wythnos yn Fienna gyda Greentube yn dysgu am eu novoSDK",
+      "astraOnline": "Arwain tîm sydd newydd ei greu yn Astra Games i ddatblygu cynnwys ar gyfer platfform ar-lein",
+      "astraRouletteGame": "Datblygais gêm roulette a welodd gynnydd o 700% yng ngwerth y cyfanswm",
+      "astraMid": "Dyrchafu i Beiriannydd Meddalwedd Lefel Ganol yn Astra Games",
+      "astraStart": "Dechreuais fy ngyrfa waith yn Astra Games fel Peiriannydd Meddalwedd Iau",
+      "uniGraduate": "Graddiais o Brifysgol Caerdydd gyda gradd 2:1",
+      "uniReturn": "Dychwelais i Brifysgol Caerdydd i gwblhau blwyddyn olaf fy ngradd",
+      "cassidianPlacement": "Treuliais fy mlwyddyn lleoliad diwydiannol yn Airbus Defence and Space yn datblygu gyda'r injan gêm Unity",
+      "uniStart": "Dechreuais fy ngradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau ym Mhrifysgol Caerdydd"
+    }
+  },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",
     "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",
@@ -59,7 +154,7 @@
       "pages": {
         "home": "Cartref",
         "about": "About",
-        "resume": "Crynodeb",
+        "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
       }
@@ -74,6 +169,13 @@
       }
     }
   },
+  "timelineevent": {
+    "work": "gwaith",
+    "award": "gwobr",
+    "training": "hyfforddiant",
+    "mentor": "mentor",
+    "education": "addysg"
+  },
   "footer": {
     "tagline": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch.",
     "notPlaying": "Ddim yn Chwarae",
@@ -82,7 +184,7 @@
       "pages": {
         "home": "Cartref",
         "about": "About",
-        "resume": "Crynodeb",
+        "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
       }

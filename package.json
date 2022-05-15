@@ -15,10 +15,10 @@
     "date-fns": "^2.28.0",
     "formik": "^2.2.9",
     "gray-matter": "^4.0.3",
-    "next": "12.0.7",
+    "next": "^12.1.6",
     "next-intl": "^2.3.3",
     "next-mdx-remote": "^3.0.8",
-    "prop-types": "^15.8.0",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-world-flags": "^1.4.0",
@@ -26,13 +26,13 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "eslint": "8.5.0",
-    "eslint-config-next": "12.0.7",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-prettier": "^8.5.0",
     "git-jiggy": "^1.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.2"
   },
   "scripts": {
     "postinstall": "husky install",

@@ -11,6 +11,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
+  ListItemText,
   TextField,
   ToggleButtonGroup,
   ToggleButton,
@@ -19,7 +20,6 @@ import {
   Divider,
   Typography,
   Box,
-  ListItemText,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import {
@@ -37,7 +37,7 @@ import Link from "@/components/Link";
 const pages = [
   { name: "home", link: "/" },
   { name: "about", link: "/about" },
-  { name: "resume", link: "/resume" },
+  { name: "timeline", link: "/timeline" },
   { name: "snippets", link: "/snippets" },
   { name: "contact", link: "/contact" },
 ];
@@ -114,7 +114,12 @@ const AppBar = () => {
           >
             <List disablePadding role="menubar" sx={{ display: "flex" }}>
               {pages.map(({ name, link }) => (
-                <ListItem key={name} disablePadding role="none">
+                <ListItem
+                  key={name}
+                  disablePadding
+                  role="none"
+                  sx={{ flex: "0 0 fit-content" }}
+                >
                   <ListItemButton
                     component={FancyLink}
                     href={link}
@@ -177,6 +182,7 @@ const AppBar = () => {
                   href={{ pathname, query }}
                   underline="none"
                   locale={locale}
+                  scroll={false}
                   selected={activeLocale === locale}
                   role="menuitem"
                   onClick={handleLanguageMenuClose}
@@ -295,6 +301,7 @@ const AppBar = () => {
                       underline="none"
                       locale={locale}
                       value={locale}
+                      scroll={false}
                       selected={activeLocale === locale}
                       role="option"
                     >
