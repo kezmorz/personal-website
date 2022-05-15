@@ -28,7 +28,7 @@ const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
   );
 };
 
-HobbyCard.propType = {
+HobbyCard.propTypes = {
   heading: PropTypes.string.isRequired,
   description: PropTypes.string,
   imageProps: PropTypes.shape({

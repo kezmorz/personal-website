@@ -118,7 +118,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
         <TimelineEventConnector />
       </Box>
       <Paper square sx={{ flex: 1, mx: 2, my: 1 }}>
-        <Box square sx={{ px: 2, pt: 1, pb: 2 }}>
+        <Box sx={{ px: 2, pt: 1, pb: 2 }}>
           <Box
             sx={{
               display: "flex",
@@ -143,8 +143,9 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
 
 TimelineEvent.messages = ["timelineevent"];
 
-TimelineEvent.propType = {
-  variant: PropTypes.oneOf(["work", "education", "award"]).isRequired,
+TimelineEvent.propTypes = {
+  variant: PropTypes.oneOf(["work", "education", "training", "mentor", "award"])
+    .isRequired,
   position: PropTypes.oneOf(["right", "left", "alternate"]),
   description: PropTypes.string,
   date: PropTypes.string,

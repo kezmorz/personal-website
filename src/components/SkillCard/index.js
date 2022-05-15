@@ -20,7 +20,7 @@ const SkillCard = ({ heading, description, children, sx = [] }) => {
   );
 };
 
-SkillCard.propType = {
+SkillCard.propTypes = {
   heading: PropTypes.string.isRequired,
   description: PropTypes.string,
   children: PropTypes.oneOfType([
