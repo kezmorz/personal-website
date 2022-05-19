@@ -99,8 +99,10 @@
   },
   "snippets": {
     "heading": "Snippets",
-    "subheading": "All the good snippets"
+    "subheading": "All the good snippets",
+    "description": "Something very long and interesting should go in here about what snippets are why I've added them to my website"
   },
+  "snippet": {},
   "resume": {
     "heading": "Check out my professional résumé",
     "subheading": "You'll find my relevant skills, work experience and more",
