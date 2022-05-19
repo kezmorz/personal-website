@@ -9,6 +9,7 @@ const Snippet = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
+    tags: { type: "list", of: { type: "string" }, required: true },
     publishedAt: { type: "string", required: true },
   },
   computedFields: {

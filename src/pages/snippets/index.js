@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
-import { Container, TextField, Typography, Box } from "@mui/material";
+import { Container, TextField, Chip, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
@@ -10,16 +10,26 @@ import Layout from "@/components/Layout";
 
 const Snippets = ({ snippets }) => {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedTags, setSelectedTags] = useState([]);
   const t = useTranslations("snippets");
 
   const handleSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
 
+  const handleTagToggle = (tag) => () => {
+    // setSelectedTags(prevSelectedTags => {
+    //   const tags = prevSelectedTags.includes(tag) ?
+    // })
+  };
+
+  const tags = [...new Set(snippets.flatMap(({ tags }) => tags))];
+
   const filteredSnippets = snippets.filter(
-    ({ title, description }) =>
-      title.toLowerCase().includes(searchValue.toLowerCase()) ||
-      description.toLowerCase().includes(searchValue.toLowerCase())
+    ({ title, description, tags }) =>
+      (title.toLowerCase().includes(searchValue.toLowerCase()) ||
+        description.toLowerCase().includes(searchValue.toLowerCase())) &&
+      (!selectedTags.length || selectedTags.every((tag) => tags.includes(tag)))
   );
 
   return (
@@ -46,11 +56,28 @@ const Snippets = ({ snippets }) => {
         <TextField
           id="snippet-search-value"
           fullWidth
-          label="Search snippets"
+          label={t("search")}
           value={searchValue}
           onChange={handleSearchValueChange}
           sx={{ mt: { xs: 4, md: 8 } }}
         />
+        <Box sx={{ mt: { xs: 2, md: 4 } }}>
+          <Typography variant="body1" marginBottom>
+            {t("tags")}
+          </Typography>
+          <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            {tags.map((tag) => (
+              <Chip
+                key={tag}
+                label={tag}
+                color="secondary"
+                variant="outlined"
+                onClick={handleTagToggle(tag)}
+                sx={{ mr: 1, mb: 1 }}
+              />
+            ))}
+          </Box>
+        </Box>
         <Box
           sx={{
             display: "grid",
@@ -90,9 +117,10 @@ export const getStaticProps = async ({ locale }) => {
     props: {
       snippets: allSnippets
         .filter(({ locale: snippetLocale }) => snippetLocale === locale)
-        .map(({ title, description, publishedAt, slug }) => ({
+        .map(({ title, description, tags, publishedAt, slug }) => ({
           title,
           description,
+          tags,
           publishedAt,
           slug,
         }))

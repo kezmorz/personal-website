@@ -100,7 +100,9 @@
   "snippets": {
     "heading": "Snippets",
     "subheading": "All the good snippets",
-    "description": "Something very long and interesting should go in here about what snippets are why I've added them to my website"
+    "description": "Something very long and interesting should go in here about what snippets are why I've added them to my website",
+    "search": "Chwilio pytiau",
+    "tags": "Chwilio pytiau yn ôl tag"
   },
   "snippet": {},
   "resume": {
