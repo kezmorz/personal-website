@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, TextField, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Header from "@/components/Header";
@@ -8,7 +9,18 @@ import SnippetCard from "@/components/SnippetCard";
 import Layout from "@/components/Layout";
 
 const Snippets = ({ snippets }) => {
+  const [searchValue, setSearchValue] = useState("");
   const t = useTranslations("snippets");
+
+  const handleSearchValueChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const filteredSnippets = snippets.filter(
+    ({ title, description }) =>
+      title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      description.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <>
@@ -31,6 +43,14 @@ const Snippets = ({ snippets }) => {
         sx={{ mb: { xs: 8, sm: 16 } }}
       >
         <Typography variant="h4">{t("description")}</Typography>
+        <TextField
+          id="snippet-search-value"
+          fullWidth
+          label="Search snippets"
+          value={searchValue}
+          onChange={handleSearchValueChange}
+          sx={{ mt: { xs: 4, md: 8 } }}
+        />
         <Box
           sx={{
             display: "grid",
@@ -39,7 +59,7 @@ const Snippets = ({ snippets }) => {
             mt: { xs: 4, md: 8 },
           }}
         >
-          {snippets.map(({ title, description, publishedAt, slug }) => (
+          {filteredSnippets.map(({ title, description, publishedAt, slug }) => (
             <SnippetCard
               key={slug}
               heading={title}

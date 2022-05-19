@@ -55,7 +55,7 @@
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
     "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu eu hidlo yn ôl categori.",
     "categories": {
-      "label": "Categorïau",
+      "label": "Dewis categorïau",
       "values": {
         "work": "gwaith",
         "award": "gwobr",

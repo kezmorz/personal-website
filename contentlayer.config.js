@@ -1,4 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import remarkGfm from "remark-gfm";
+import rehypePrism from "rehype-prism-plus";
 
 const Snippet = defineDocumentType(() => ({
   name: "Snippet",
@@ -27,6 +29,10 @@ const Snippet = defineDocumentType(() => ({
 const contentlayerConfig = makeSource({
   contentDirPath: "src/content",
   documentTypes: [Snippet],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypePrism],
+  },
 });
 
 export default contentlayerConfig;

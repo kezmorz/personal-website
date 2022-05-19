@@ -34,7 +34,9 @@
     "git-jiggy": "^1.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "rehype-prism-plus": "^1.4.0",
+    "remark-gfm": "^3.0.1"
   },
   "scripts": {
     "postinstall": "husky install",

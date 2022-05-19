@@ -1,11 +1,17 @@
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
-import { Container } from "@mui/material";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { Container, Typography } from "@mui/material";
 import { pick } from "@/utils/misc";
 import Layout from "@/components/Layout";
 
+const components = {
+  p: (props) => <Typography variant="body1" gutterBottom {...props} />,
+};
+
 const Snippet = ({ snippet }) => {
   const t = useTranslations("snippet");
+  const MdxComponent = useMDXComponent(snippet.body.code);
 
   console.log(snippet);
 
@@ -15,7 +21,9 @@ const Snippet = ({ snippet }) => {
         component="section"
         maxWidth="md"
         sx={{ mb: { xs: 8, sm: 16 } }}
-      ></Container>
+      >
+        <MdxComponent components={components} />
+      </Container>
     </>
   );
 };
