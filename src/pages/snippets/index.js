@@ -39,8 +39,6 @@ const Snippets = ({ snippets }) => {
     ...new Set(filteredSnippets.flatMap(({ tags }) => tags)),
   ];
 
-  console.log(availableTags);
-
   return (
     <>
       <Header
@@ -80,7 +78,8 @@ const Snippets = ({ snippets }) => {
                 key={tag}
                 label={tag}
                 color="secondary"
-                variant="outlined"
+                variant={selectedTags.includes(tag) ? "filled" : "outlined"}
+                disabled={!availableTags.includes(tag)}
                 onClick={handleTagToggle(tag)}
                 sx={{ mr: 1, mb: 1 }}
               />
