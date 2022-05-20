@@ -35,6 +35,12 @@ const Snippets = ({ snippets }) => {
       (!selectedTags.length || selectedTags.every((tag) => tags.includes(tag)))
   );
 
+  const availableTags = [
+    ...new Set(filteredSnippets.flatMap(({ tags }) => tags)),
+  ];
+
+  console.log(availableTags);
+
   return (
     <>
       <Header
