@@ -104,7 +104,13 @@
     "search": "Chwilio pytiau",
     "filter": "Hidlo pytiau yn ôl tag"
   },
-  "snippet": {},
+  "snippet": {
+    "information": {
+      "button": "Yn ôl i bytiau",
+      "views": "o olygfeydd"
+    },
+    "related": "If you found this snippet helpful, you might find these useful too"
+  },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",
     "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",

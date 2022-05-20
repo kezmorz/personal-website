@@ -77,7 +77,7 @@ const Snippets = ({ snippets }) => {
               <Chip
                 key={tag}
                 label={tag}
-                color="secondary"
+                color="primary"
                 variant={selectedTags.includes(tag) ? "filled" : "outlined"}
                 disabled={!availableTags.includes(tag)}
                 onClick={handleTagToggle(tag)}

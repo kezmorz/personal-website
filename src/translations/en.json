@@ -104,7 +104,13 @@
     "search": "Search snippets",
     "filter": "Filter snippets by tag"
   },
-  "snippet": {},
+  "snippet": {
+    "information": {
+      "button": "Back to snippets",
+      "views": "views"
+    },
+    "related": "If you found this snippet helpful, you might find these useful too"
+  },
   "resume": {
     "heading": "Check out my professional résumé",
     "subheading": "You'll find my relevant skills, work experience and more",
