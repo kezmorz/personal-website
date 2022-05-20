@@ -18,9 +18,12 @@ const Snippets = ({ snippets }) => {
   };
 
   const handleTagToggle = (tag) => () => {
-    // setSelectedTags(prevSelectedTags => {
-    //   const tags = prevSelectedTags.includes(tag) ?
-    // })
+    setSelectedTags((prevSelectedTags) => {
+      const tagIndex = prevSelectedTags.findIndex((prevTag) => prevTag === tag);
+      return tagIndex === -1
+        ? [...prevSelectedTags, tag]
+        : prevSelectedTags.filter((prevTag) => prevTag !== tag);
+    });
   };
 
   const tags = [...new Set(snippets.flatMap(({ tags }) => tags))];
