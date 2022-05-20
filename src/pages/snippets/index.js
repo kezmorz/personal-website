@@ -70,7 +70,7 @@ const Snippets = ({ snippets }) => {
         />
         <Box sx={{ mt: { xs: 2, md: 4 } }}>
           <Typography variant="body1" marginBottom>
-            {t("tags")}
+            {t("filter")}
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap" }}>
             {tags.map((tag) => (
