@@ -133,9 +133,12 @@ export const getStaticProps = async ({ locale }) => {
           slug,
         }))
         .sort(
-          (snippetOne, snippetTwo) =>
-            Number(new Date(snippetTwo.publishedAt)) -
-            Number(new Date(snippetOne.publishedAt))
+          (
+            { publishedAt: snippetOnePublishedAt },
+            { publishedAt: snippetTwoPublishedAt }
+          ) =>
+            Number(new Date(snippetTwoPublishedAt)) -
+            Number(new Date(snippetOnePublishedAt))
         ),
       messages: pick(
         await import(`../../translations/${locale}.json`),

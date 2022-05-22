@@ -8,10 +8,8 @@ const getMdxFilesFromCommit = async () => {
     return resolve(process.cwd(), file);
   });
 
-  console.log(files);
-
   return files.filter(
-    (file) => parse(file).ext === ".mdx" && file.includes("src/content/en")
+    (file) => parse(file).ext === ".mdx" && file.includes("src/content/en") // CERI - fix this (shouldn't have /en but breaks if a .md is deleted and committed)
   );
 };
 

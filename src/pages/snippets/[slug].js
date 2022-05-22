@@ -5,6 +5,7 @@ import { Container, Button, Typography, Box } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import { pick } from "@/utils/misc";
 import { Heading4, Paragraph, Anchor, Pre } from "@/components/Markdown";
+import SnippetCard from "@/components/SnippetCard";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -15,11 +16,9 @@ const components = {
   pre: (props) => <Pre {...props} />,
 };
 
-const Snippet = ({ snippet }) => {
+const Snippet = ({ snippet, relatedSnippets }) => {
   const t = useTranslations("snippet");
   const MdxComponent = useMDXComponent(snippet.body.code);
-
-  console.log(snippet);
 
   return (
     <>
@@ -66,6 +65,25 @@ const Snippet = ({ snippet }) => {
         sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
       >
         <Typography variant="h4">{t("related")}</Typography>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          {relatedSnippets.map(({ title, description, publishedAt, slug }) => (
+            <SnippetCard
+              key={slug}
+              heading={title}
+              description={description}
+              date={publishedAt}
+              href={`/snippets/${slug}`}
+              sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
+            />
+          ))}
+        </Box>
       </Container>
     </>
   );
@@ -93,22 +111,56 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params, locale }) => {
   const snippet = allSnippets.find(
-    (snippet) => snippet.slug === params.slug && snippet.locale === locale
+    ({ slug, locale: snippetLocale }) =>
+      slug === params.slug && snippetLocale === locale
   );
 
-  // go through other snippets and work out the number of matching tags with the chosen snippet
-  // pick two that have the highest number of matching tags
-  // if there are more than two with highest number of matching tags, pick them at random
-  // add a related snippets prop below
+  const relatedSnippets = allSnippets
+    .filter(
+      ({ slug, locale: snippetLocale }) =>
+        slug !== params.slug && snippetLocale === locale
+    )
+    .map(({ title, description, tags, publishedAt, slug }) => ({
+      title,
+      description,
+      publishedAt,
+      slug,
+      similarity: snippet.tags.reduce((a, b) => a + tags.includes(b), 0),
+    }))
+    .reduce(
+      (a, b) =>
+        b.similarity > a[0].similarity
+          ? [b, a[1]]
+          : b.similarity > a[1].similarity
+          ? [a[0], b]
+          : b.similarity === a[0].similarity && b.similarity === a[1].similarity
+          ? Math.random() < 0.5
+            ? Math.random() < 0.5
+              ? [b, a[1]]
+              : [a[0], b]
+            : a
+          : b.similarity === a[0].similarity
+          ? Math.random() < 0.5
+            ? [b, a[1]]
+            : a
+          : b.similarity === a[1].similarity
+          ? Math.random() < 0.5
+            ? [a[0], b]
+            : a
+          : a,
+      [{ similarity: -1 }, { similarity: -1 }]
+    );
 
   return {
     props: {
       snippet: snippet,
+      relatedSnippets: relatedSnippets,
       messages: pick(
         await import(`../../translations/${locale}.json`),
         Snippet.messages
       ),
     },
+    revalidate: 60,
   };
 };
 
