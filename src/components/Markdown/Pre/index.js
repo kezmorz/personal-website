@@ -1,0 +1,140 @@
+import { styled } from "@mui/material/styles";
+
+const PreRoot = styled("pre")(({ theme }) => ({
+  overflowX: "auto",
+  '&[class*="language-"], & code[class*="language-"]': {
+    color: theme.palette.mode === "dark" ? "#D6DEEB" : "#403F53",
+    backgroundColor: theme.palette.mode === "dark" ? "#011627" : "#F0F0F0",
+    fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
+    textAlign: "left",
+    whiteSpace: "pre",
+    wordSpacing: "normal",
+    wordBreak: "normal",
+    wordWrap: "normal",
+    lineHeight: "1.5",
+    fontSize: "1em",
+    tabSize: 4,
+    MozTabSize: 4,
+    hyphens: "none",
+    MozHyphens: "none",
+    WebkitHyphens: "none",
+    msHyphens: "none",
+  },
+  '&[class*="language-"]::selection, &[class*="language-"] ::selection, & code[class*="language-"]::selection, & code[class*="language-"] ::selection':
+    {
+      background:
+        theme.palette.mode === "dark"
+          ? "rgba(29, 59, 83, 0.99)"
+          : "rgba(122, 129, 129, 0.68)",
+      textShadow: "none",
+    },
+  '&[class*="language-"]::-moz-selection, &[class*="language-"] ::-moz-selection, & code[class*="language-"]::-moz-selection, & code[class*="language-"] ::-moz-selection':
+    {
+      background:
+        theme.palette.mode === "dark"
+          ? "rgba(29, 59, 83, 0.99)"
+          : "rgba(122, 129, 129, 0.68)",
+      textShadow: "none",
+    },
+  '&[class*="language-"]': {
+    padding: "1em",
+    margin: "0.5em 0",
+    overflow: "auto",
+  },
+  "& .token.comment, & .token.prolog, & .token.cdata": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(99, 119, 119)"
+        : "rgb(152, 159, 177)",
+    fontStyle: "italic",
+  },
+  "& .token.punctuation": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(199, 146, 234)"
+        : "rgb(153, 76, 195)",
+  },
+  "& .token.deleted": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgba(239, 83, 80, 0.56)"
+        : "rgba(239, 83, 80, 0.56)",
+    fontStyle: "italic",
+  },
+  "& .token.symbol, & .token.property": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(128, 203, 196)"
+        : "rgb(12, 150, 155)",
+  },
+  "& .token.tag, & .token.operator, & .token.keyword": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(127, 219, 202)"
+        : "rgb(12, 150, 155)",
+  },
+  "& .token.boolean": {
+    color:
+      theme.palette.mode === "dark" ? "rgb(255, 88, 116)" : "rgb(188, 84, 84)",
+  },
+  "& .token.number": {
+    color:
+      theme.palette.mode === "dark" ? "rgb(247, 140, 108)" : "rgb(170, 9, 130)",
+  },
+  "& .token.constant, & .token.function, & .token.builtin, & .token.char": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(130, 170, 255)"
+        : "rgb(72, 118, 214)",
+  },
+  "& .token.selector, & .token.doctype": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(99, 146, 234)"
+        : "rgb(199, 146, 234)",
+    fontStyle: "italic",
+  },
+  "& .token.attr-name, & .token.inserted": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(173, 219, 103)"
+        : "rgb(197, 228, 120)",
+    fontStyle: "italic",
+  },
+  "& .token.class-name, & .token.atrule, & .token.attr-value": {
+    color:
+      theme.palette.mode === "dark" ? "rgb(255, 203, 139)" : "rgb(17, 17, 17)",
+  },
+  "& .token.regex, & .token.important, & .token.variable": {
+    color:
+      theme.palette.mode === "dark" ? "rgb(214, 222, 235)" : "rgb(64, 63, 83)",
+  },
+  "& .token.important, & .token.bold": {
+    fontStyle: "bold",
+  },
+  "& .token.italic": {
+    fontStyle: "italic",
+  },
+  "& .token.string, & .token.url, & .token.entity, & .language-css .token.string, & .style .token.string":
+    {
+      color:
+        theme.palette.mode === "dark"
+          ? "rgb(173, 219, 103)"
+          : "rgb(72, 118, 214)",
+    },
+  "& .namespace": {
+    color:
+      theme.palette.mode === "dark"
+        ? "rgb(178, 204, 214)"
+        : "rgb(12, 150, 155)",
+  },
+  "@media print": {
+    '&[class*="language-"], & code[class*="language-"]': {
+      textShadow: "none",
+    },
+  },
+}));
+
+const Pre = (props) => <PreRoot {...props} />;
+
+export default Pre;

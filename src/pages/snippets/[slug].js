@@ -5,10 +5,13 @@ import { Container, Button, Typography, Box } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import { pick } from "@/utils/misc";
 import Link from "@/components/Link";
+import Pre from "@/components/Markdown/Pre";
 import Layout from "@/components/Layout";
 
 const components = {
+  h4: (props) => <Typography variant="h4" gutterBottom {...props} />,
   p: (props) => <Typography variant="body1" gutterBottom {...props} />,
+  pre: (props) => <Pre {...props} />,
 };
 
 const Snippet = ({ snippet }) => {
@@ -88,11 +91,18 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params, locale }) => {
+  const snippet = allSnippets.find(
+    (snippet) => snippet.slug === params.slug && snippet.locale === locale
+  );
+
+  // go through other snippets and work out the number of matching tags with the chosen snippet
+  // pick two that have the highest number of matching tags
+  // if there are more than two with highest number of matching tags, pick them at random
+  // add a related snippets prop below
+
   return {
     props: {
-      snippet: allSnippets.find(
-        (snippet) => snippet.slug === params.slug && snippet.locale === locale
-      ),
+      snippet: snippet,
       messages: pick(
         await import(`../../translations/${locale}.json`),
         Snippet.messages
