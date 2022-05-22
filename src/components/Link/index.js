@@ -59,7 +59,10 @@ const Link = forwardRef(
     const router = useRouter();
     const pathname = typeof href === "string" ? href : href.pathname;
     const className = clsx(classNameProps, {
-      [activeClassName]: router.pathname === pathname && activeClassName,
+      [activeClassName]:
+        (router.pathname === pathname ||
+          router.pathname.startsWith(`${pathname}/`)) &&
+        activeClassName,
     });
 
     const isExternal =
