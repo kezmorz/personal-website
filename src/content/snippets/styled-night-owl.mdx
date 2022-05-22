@@ -1,3 +1,19 @@
+---
+title: Styled Night Owl
+description: Styled component implementation of the pre html element for MDX using the night owl theme
+tags:
+  - javascript
+  - react
+  - mui
+  - emotion
+  - styled
+publishedAt: 2022-05-17T00:00:00.000Z
+updatedAt: '2022-05-22T09:19:06.583Z'
+---
+
+Using [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus), a rehype plugin to highlight code blocks in HTML with prism, leads to a certain set of class names being generated depending on the code used. The following [MUI](https://mui.com/) styled component targets those classes and styles them based on the [night owl theme](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl&WT.mc_id=twitter-social-sdras). It accounts for light mode and dark mode.
+
+```js
 import { styled } from "@mui/material/styles";
 
 const PreRoot = styled("pre")(({ theme }) => ({
@@ -40,10 +56,10 @@ const PreRoot = styled("pre")(({ theme }) => ({
     padding: 8,
     margin: "24px 0",
     overflow: "auto",
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up('sm')]: {
       padding: 16,
       margin: "48px 0",
-    },
+    }
   },
   "& .token.comment, & .token.prolog, & .token.cdata": {
     color:
@@ -142,3 +158,4 @@ const PreRoot = styled("pre")(({ theme }) => ({
 const Pre = (props) => <PreRoot {...props} />;
 
 export default Pre;
+```

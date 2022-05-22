@@ -8,8 +8,10 @@ const getMdxFilesFromCommit = async () => {
     return resolve(process.cwd(), file);
   });
 
+  console.log(files);
+
   return files.filter(
-    (file) => parse(file).ext === ".mdx" && file.includes("src/content")
+    (file) => parse(file).ext === ".mdx" && file.includes("src/content/en")
   );
 };
 

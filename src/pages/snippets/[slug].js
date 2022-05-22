@@ -4,13 +4,14 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { Container, Button, Typography, Box } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import { pick } from "@/utils/misc";
+import { Heading4, Paragraph, Anchor, Pre } from "@/components/Markdown";
 import Link from "@/components/Link";
-import Pre from "@/components/Markdown/Pre";
 import Layout from "@/components/Layout";
 
 const components = {
-  h4: (props) => <Typography variant="h4" gutterBottom {...props} />,
-  p: (props) => <Typography variant="body1" gutterBottom {...props} />,
+  h4: (props) => <Heading4 {...props} />,
+  p: (props) => <Paragraph {...props} />,
+  a: (props) => <Anchor {...props} />,
   pre: (props) => <Pre {...props} />,
 };
 
@@ -25,7 +26,7 @@ const Snippet = ({ snippet }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 4, sm: 8 } }}
+        sx={{ mt: { xs: 8, sm: 16 } }}
       >
         <Box
           sx={{
@@ -50,12 +51,12 @@ const Snippet = ({ snippet }) => {
         </Box>
       </Container>
       <Container
-        component="section"
+        component="article"
         maxWidth="md"
-        sx={{ mt: { xs: 4, sm: 8 } }}
+        sx={{ mt: { xs: 8, sm: 16 } }}
       >
         <Typography variant="h3">{snippet.title}</Typography>
-        <Box sx={{ mt: { xs: 2, sm: 4 } }}>
+        <Box sx={{ mt: { xs: 4, sm: 8 } }}>
           <MdxComponent components={components} />
         </Box>
       </Container>
