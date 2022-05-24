@@ -1,8 +1,10 @@
+import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Container, Button, Typography, Box } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
+import fetcher from "@/services/fetcher";
 import { pick } from "@/utils/misc";
 import { Heading4, Paragraph, Anchor, Pre } from "@/components/Markdown";
 import SnippetCard from "@/components/SnippetCard";
@@ -17,6 +19,10 @@ const components = {
 };
 
 const Snippet = ({ snippet, relatedSnippets }) => {
+  const { data: analyticsData } = useSwr(
+    `/api/analytics/page-views?slug=/snippets/${snippet.slug}`,
+    fetcher
+  );
   const t = useTranslations("snippet");
   const MdxComponent = useMDXComponent(snippet.body.code);
 
@@ -44,9 +50,11 @@ const Snippet = ({ snippet, relatedSnippets }) => {
           >
             {t("information.button")}
           </Button>
-          <Typography variant="body1">{`1000 ${t(
-            "information.views"
-          )}`}</Typography>
+          {analyticsData && (
+            <Typography variant="body1">{`${analyticsData.views} ${t(
+              "information.views"
+            )}`}</Typography>
+          )}
         </Box>
       </Container>
       <Container

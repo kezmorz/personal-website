@@ -1,0 +1,39 @@
+---
+title: Analytics Client ID
+description: Styled component implementation of the pre html element for MDX using the night owl theme.
+tags:
+  - javascript
+  - node
+  - api
+publishedAt: 2022-05-24
+---
+
+Using [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus), a rehype plugin to highlight code blocks in HTML with prism, leads to a certain set of class names being generated depending on the code used. The following [MUI](https://mui.com/) styled component targets those classes and styles them based on the [night owl theme](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl&WT.mc_id=twitter-social-sdras). It accounts for light mode and dark mode.
+
+```js
+import { createHash } from "crypto";
+
+const clientId = async (req, res) => {
+  const { method, socket, headers } = req;
+
+  if (method === "GET") {
+    const clientIP = socket.remoteAddress;
+    const host = headers.host;
+    const userAgent = headers["user-agent"];
+    const acceptLanguage = headers["accept-language"];
+
+    const id = createHash("md5")
+      .update(`${clientIP}|${host}|${userAgent}|${acceptLanguage}`)
+      .digest("hex");
+
+    res.status(200);
+    res.json({ id: id });
+  } else {
+    res.status(405);
+    res.setHeader("Allow", ["GET"]);
+    res.end(`Method ${method} not allowed.`);
+  }
+};
+
+export default clientId;
+```
