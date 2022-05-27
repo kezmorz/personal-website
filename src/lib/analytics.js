@@ -20,3 +20,30 @@ export const initialise = ({ clientId }) => {
     client_id: clientId,
   });
 };
+
+export const getPageViews = async ({ dataClient, startDate, slug }) => {
+  const response = dataClient.runReport({
+    property: "properties/297972468",
+    dateRanges: [
+      {
+        startDate: startDate,
+        endDate: "today",
+      },
+    ],
+    metrics: [
+      {
+        name: "screenPageViews",
+      },
+    ],
+    dimensionFilter: {
+      filter: {
+        fieldName: "pagePath",
+        stringFilter: {
+          value: slug,
+        },
+      },
+    },
+  });
+
+  return response;
+};
