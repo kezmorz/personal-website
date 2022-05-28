@@ -53,7 +53,7 @@
   "timeline": {
     "heading": "Y stori hyd yn hyn",
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
-    "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu eu hidlo yn ôl categori.",
+    "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu ddewis is-set o gategorïau.",
     "categories": {
       "label": "Dewis categorïau",
       "values": {
@@ -98,9 +98,9 @@
     }
   },
   "snippets": {
-    "heading": "Snippets",
-    "subheading": "All the good snippets",
-    "description": "Something very long and interesting should go in here about what snippets are why I've added them to my website",
+    "heading": "Pytiau côd o fy ngwaith personol",
+    "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
+    "description": "Rwyf wedi bod yn ysgrifennu cod ers amser maith. Mae'r pytiau cod hyn yn cwmpasu'r pentwr technoleg cyfan ac maent wedi bod yn ddefnyddiol ar fwy nag un achlysur.",
     "search": "Chwilio pytiau",
     "filter": "Hidlo pytiau yn ôl tag"
   },

@@ -20,7 +20,7 @@
       }
     },
     "techstack": {
-      "description": "I’ve used a lot of different technologies during my time as a developer. Here's what I enjoy the most and use on a day-to-day basis.",
+      "description": "I've used a lot of different technologies during my time as a developer. Here's what I enjoy the most and use on a day-to-day basis.",
       "frontend": {
         "heading": "Frontend",
         "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
@@ -46,7 +46,7 @@
       },
       "gaming": {
         "heading": "Gaming",
-        "description": "Ever since playing Duck Hunt on my very first console, the NES, I’ve enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
+        "description": "Ever since playing Duck Hunt on my very first console, the NES, I've enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
       }
     }
   },
@@ -98,9 +98,9 @@
     }
   },
   "snippets": {
-    "heading": "Snippets",
-    "subheading": "All the good snippets",
-    "description": "Something very long and interesting should go in here about what snippets are why I've added them to my website",
+    "heading": "Code snippets from my personal work",
+    "subheading": "Why reinvent the wheel when you can copy and paste?",
+    "description": "I've been writing code for a long time. These code snippets cover the entire tech stack and have been useful on more than one occasion.",
     "search": "Search snippets",
     "filter": "Filter snippets by tag"
   },
