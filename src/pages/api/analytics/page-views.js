@@ -24,8 +24,13 @@ const pageViews = async (req, res) => {
       slug,
     });
 
+    const views =
+      response.rows.length > 0
+        ? Number(response.rows[0].metricValues[0].value)
+        : 0;
+
     res.status(200);
-    res.json({ views: Number(response.rows[0].metricValues[0].value) });
+    res.json({ views: views });
   } else {
     res.status(405);
     res.setHeader("Allow", ["GET"]);
