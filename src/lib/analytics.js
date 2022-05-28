@@ -19,7 +19,6 @@ export const initialise = ({ clientId }) => {
   });
   window.analytics("config", "G-NJ8JT0DJWJ", {
     send_page_view: false,
-    anonymize_ip: true,
     client_id: clientId,
   });
 };

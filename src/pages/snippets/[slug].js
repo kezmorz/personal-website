@@ -2,7 +2,13 @@ import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Container, Button, Typography, Box } from "@mui/material";
+import {
+  Container,
+  Button,
+  LinearProgress,
+  Typography,
+  Box,
+} from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import fetcher from "@/services/fetcher";
 import { pick } from "@/utils/misc";
@@ -50,11 +56,16 @@ const Snippet = ({ snippet, relatedSnippets }) => {
           >
             {t("information.button")}
           </Button>
-          {analyticsData && (
+          {analyticsData ? (
             <Typography variant="body1">{`${analyticsData.views} ${t(
               "information.views"
             )}`}</Typography>
+          ) : (
+            <Box sx={{ width: 80 }}>
+              <LinearProgress />
+            </Box>
           )}
+          {/* <Typography variant="body1">{`${analyticsData ? analyticsData.views : "----"} ${t("information.views")}`}</Typography> */}
         </Box>
       </Container>
       <Container
