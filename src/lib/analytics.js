@@ -13,8 +13,11 @@ export const event = ({ action, category, label, value }) => {
 };
 
 export const initialise = ({ clientId }) => {
+  window.analytics("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+  });
   window.analytics("config", "G-NJ8JT0DJWJ", {
-    client_storage: "none",
     send_page_view: false,
     anonymize_ip: true,
     client_id: clientId,
