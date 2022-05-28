@@ -65,7 +65,6 @@ const Snippet = ({ snippet, relatedSnippets }) => {
               <LinearProgress />
             </Box>
           )}
-          {/* <Typography variant="body1">{`${analyticsData ? analyticsData.views : "----"} ${t("information.views")}`}</Typography> */}
         </Box>
       </Container>
       <Container
