@@ -12,16 +12,25 @@ import {
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import fetcher from "@/services/fetcher";
 import { pick } from "@/utils/misc";
-import { Heading4, Paragraph, Anchor, Pre } from "@/components/Markdown";
+import {
+  Heading4 as MdxHeading4,
+  Paragraph as MdxParagraph,
+  List as MdxList,
+  ListItem as MdxListItem,
+  Anchor as MdxAnchor,
+  Pre as MdxPre,
+} from "@/components/Markdown";
 import SnippetCard from "@/components/SnippetCard";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
 const components = {
-  h4: (props) => <Heading4 {...props} />,
-  p: (props) => <Paragraph {...props} />,
-  a: (props) => <Anchor {...props} />,
-  pre: (props) => <Pre {...props} />,
+  h4: (props) => <MdxHeading4 {...props} />,
+  p: (props) => <MdxParagraph {...props} />,
+  ul: (props) => <MdxList {...props} />,
+  li: (props) => <MdxListItem {...props} />,
+  a: (props) => <MdxAnchor {...props} />,
+  pre: (props) => <MdxPre {...props} />,
 };
 
 const Snippet = ({ snippet, relatedSnippets }) => {
