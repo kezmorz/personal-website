@@ -15,7 +15,8 @@ import { pick } from "@/utils/misc";
 import {
   Heading4 as MdxHeading4,
   Paragraph as MdxParagraph,
-  List as MdxList,
+  OrderedList as MdxOrderedList,
+  UnorderedList as MdxUnorderedList,
   ListItem as MdxListItem,
   Anchor as MdxAnchor,
   Pre as MdxPre,
@@ -27,7 +28,8 @@ import Layout from "@/components/Layout";
 const components = {
   h4: (props) => <MdxHeading4 {...props} />,
   p: (props) => <MdxParagraph {...props} />,
-  ul: (props) => <MdxList {...props} />,
+  ol: (props) => <MdxOrderedList {...props} />,
+  ul: (props) => <MdxUnorderedList {...props} />,
   li: (props) => <MdxListItem {...props} />,
   a: (props) => <MdxAnchor {...props} />,
   pre: (props) => <MdxPre {...props} />,
