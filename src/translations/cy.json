@@ -109,6 +109,10 @@
       "button": "Yn ôl i bytiau",
       "views": "o olygfeydd"
     },
+    "social": {
+      "tweet": "Tweet y pyt hwn",
+      "edit": "Golygu ar GitHub"
+    },
     "related": "Os oedd y pyt hwn yn ddefnyddiol i chi, dylech edrych ar rai o'r rhain hefyd!"
   },
   "resume": {

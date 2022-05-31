@@ -109,6 +109,10 @@
       "button": "Back to snippets",
       "views": "views"
     },
+    "social": {
+      "tweet": "Tweet this snippet",
+      "edit": "Edit on GitHub"
+    },
     "related": "If you found this snippet helpful, you should check out some of these too!"
   },
   "resume": {

@@ -6,6 +6,7 @@ import {
   Container,
   Button,
   LinearProgress,
+  Divider,
   Typography,
   Box,
 } from "@mui/material";
@@ -42,6 +43,17 @@ const Snippet = ({ snippet, relatedSnippets }) => {
   );
   const t = useTranslations("snippet");
   const MdxComponent = useMDXComponent(snippet.body.code);
+
+  const tweetUrl = `https://twitter.com/intent/tweet?${new URLSearchParams({
+    url: `https://cerimorse.com/${
+      snippet.locale === "en" ? "" : snippet.locale
+    }/snippets/${snippet.slug}`,
+    text: "",
+  })}`;
+
+  const editUrl = `https://github.com/kezmorz/personal-website/edit/main/src/content/snippets/${
+    snippet.slug
+  }.${snippet.locale === "en" ? "mdx" : `${snippet.locale}.mdx`}`;
 
   return (
     <>
@@ -86,6 +98,30 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         <Typography variant="h3">{snippet.title}</Typography>
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
           <MdxComponent components={components} />
+        </Box>
+        <Box sx={{ mt: { xs: 4, sm: 8 } }}>
+          <Divider />
+          <Box sx={{ display: "flex", mt: { xs: 1, sm: 2 } }}>
+            <Link
+              href={tweetUrl}
+              target="_blank"
+              rel="noopener"
+              underline="hover"
+            >
+              {t("social.tweet")}
+            </Link>
+            <Typography component="span" variant="body1" sx={{ mx: 1 }}>
+              •
+            </Typography>
+            <Link
+              href={editUrl}
+              target="_blank"
+              rel="noopener"
+              underline="hover"
+            >
+              {t("social.edit")}
+            </Link>
+          </Box>
         </Box>
       </Container>
       <Container
