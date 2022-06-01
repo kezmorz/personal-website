@@ -52,7 +52,7 @@ const Snippets = ({ snippets }) => {
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
-        direction="rtl"
+        direction="ltr"
       />
       <Container
         component="section"
