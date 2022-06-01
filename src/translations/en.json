@@ -110,7 +110,10 @@
       "views": "views"
     },
     "social": {
-      "tweet": "Tweet this snippet",
+      "tweet": {
+        "link": "Tweet this snippet",
+        "text": "I found this {title} snippet by @kezmorz really useful!"
+      },
       "edit": "Edit on GitHub"
     },
     "related": "If you found this snippet helpful, you should check out some of these too!"

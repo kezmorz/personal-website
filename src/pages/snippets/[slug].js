@@ -48,7 +48,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
     url: `https://cerimorse.com/${
       snippet.locale === "en" ? "" : snippet.locale
     }/snippets/${snippet.slug}`,
-    text: "",
+    text: t("social.tweet.text", { title: snippet.title }),
   })}`;
 
   const editUrl = `https://github.com/kezmorz/personal-website/edit/main/src/content/snippets/${
@@ -108,7 +108,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
               rel="noopener"
               underline="hover"
             >
-              {t("social.tweet")}
+              {t("social.tweet.link")}
             </Link>
             <Typography component="span" variant="body1" sx={{ mx: 1 }}>
               •

@@ -110,7 +110,10 @@
       "views": "o olygfeydd"
     },
     "social": {
-      "tweet": "Tweet y pyt hwn",
+      "tweet": {
+        "link": "Tweet y pyt hwn",
+        "text": "I found this {title} snippet by @kezmorz really useful!"
+      },
       "edit": "Golygu ar GitHub"
     },
     "related": "Os oedd y pyt hwn yn ddefnyddiol i chi, dylech edrych ar rai o'r rhain hefyd!"
