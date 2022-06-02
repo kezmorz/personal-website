@@ -53,9 +53,9 @@
   "timeline": {
     "heading": "Y stori hyd yn hyn",
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
-    "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu eu hidlo yn ôl categori.",
+    "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu ddewis is-set o gategorïau.",
     "categories": {
-      "label": "Categorïau",
+      "label": "Dewis categorïau",
       "values": {
         "work": "gwaith",
         "award": "gwobr",
@@ -96,6 +96,27 @@
       "cassidianPlacement": "Treuliais fy mlwyddyn lleoliad diwydiannol yn Airbus Defence and Space yn datblygu gyda'r injan gêm Unity",
       "uniStart": "Dechreuais fy ngradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau ym Mhrifysgol Caerdydd"
     }
+  },
+  "snippets": {
+    "heading": "Pytiau côd o fy ngwaith personol",
+    "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
+    "description": "Rwyf wedi bod yn ysgrifennu cod ers amser maith. Mae'r pytiau cod hyn yn cwmpasu'r pentwr technoleg cyfan ac maent wedi bod yn ddefnyddiol ar fwy nag un achlysur.",
+    "search": "Chwilio pytiau",
+    "filter": "Hidlo pytiau yn ôl tag"
+  },
+  "snippet": {
+    "information": {
+      "button": "Yn ôl i bytiau",
+      "views": "o olygfeydd"
+    },
+    "social": {
+      "tweet": {
+        "link": "Tweet y pyt hwn",
+        "text": "I found this {title} snippet by @kezmorz really useful!"
+      },
+      "edit": "Golygu ar GitHub"
+    },
+    "related": "Os oedd y pyt hwn yn ddefnyddiol i chi, dylech edrych ar rai o'r rhain hefyd!"
   },
   "resume": {
     "heading": "Edrychwch are fy nghrynodeb proffesiynol",

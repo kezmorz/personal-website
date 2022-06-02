@@ -81,7 +81,7 @@ const Contact = () => {
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
-        direction="ltr"
+        direction="rtl"
       />
       <Container
         component="section"

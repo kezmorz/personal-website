@@ -60,6 +60,10 @@ const Timeline = () => {
 
   const categoryOptions = [...new Set(events.map((event) => event.variant))];
 
+  const selectedEvents = events.filter(
+    ({ variant }) => !categories.length || categories.includes(variant)
+  );
+
   return (
     <>
       <Header
@@ -89,7 +93,7 @@ const Timeline = () => {
           value={categories}
           getOptionLabel={(option) => t(`categories.values.${option}`)}
           onChange={(_, newValue) => {
-            setCategories(newValue);
+            setCategories(newValue); // maybe change this so it's a defined function (same as everything else)
           }}
           renderInput={(params) => (
             <TextField {...params} label={t("categories.label")} />
@@ -105,20 +109,15 @@ const Timeline = () => {
             p: 0,
           }}
         >
-          {events
-            .filter(
-              ({ variant }) =>
-                !categories.length || categories.includes(variant)
-            )
-            .map(({ variant, name, date }) => (
-              <TimelineEvent
-                key={name}
-                variant={variant}
-                description={t(`events.${name}`)}
-                date={date}
-                position="right"
-              />
-            ))}
+          {selectedEvents.map(({ variant, name, date }) => (
+            <TimelineEvent
+              key={name}
+              variant={variant}
+              description={t(`events.${name}`)}
+              date={date}
+              position="right"
+            />
+          ))}
         </Box>
         <Box
           component="ul"
@@ -129,20 +128,15 @@ const Timeline = () => {
             p: 0,
           }}
         >
-          {events
-            .filter(
-              ({ variant }) =>
-                !categories.length || categories.includes(variant)
-            )
-            .map(({ variant, name, date }) => (
-              <TimelineEvent
-                key={name}
-                variant={variant}
-                description={t(`events.${name}`)}
-                date={date}
-                position="alternate"
-              />
-            ))}
+          {selectedEvents.map(({ variant, name, date }) => (
+            <TimelineEvent
+              key={name}
+              variant={variant}
+              description={t(`events.${name}`)}
+              date={date}
+              position="alternate"
+            />
+          ))}
         </Box>
       </Container>
     </>

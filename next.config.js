@@ -1,4 +1,6 @@
-module.exports = {
+const { withContentlayer } = require("next-contentlayer");
+
+module.exports = withContentlayer({
   reactStrictMode: true,
   i18n: {
     locales: ["en", "cy"],
@@ -30,4 +32,4 @@ module.exports = {
     },
   },
   swcMinify: true,
-};
+});

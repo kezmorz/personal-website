@@ -20,7 +20,7 @@
       }
     },
     "techstack": {
-      "description": "I’ve used a lot of different technologies during my time as a developer. Here's what I enjoy the most and use on a day-to-day basis.",
+      "description": "I've used a lot of different technologies during my time as a developer. Here's what I enjoy the most and use on a day-to-day basis.",
       "frontend": {
         "heading": "Frontend",
         "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
@@ -46,7 +46,7 @@
       },
       "gaming": {
         "heading": "Gaming",
-        "description": "Ever since playing Duck Hunt on my very first console, the NES, I’ve enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
+        "description": "Ever since playing Duck Hunt on my very first console, the NES, I've enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
       }
     }
   },
@@ -55,7 +55,7 @@
     "subheading": "Check out some of my significant moments",
     "description": "Here are a collection of events from my professional career. You can browse through them in their entirety, or filter them by category.",
     "categories": {
-      "label": "Categories",
+      "label": "Select categories",
       "values": {
         "work": "work",
         "award": "award",
@@ -96,6 +96,27 @@
       "cassidianPlacement": "Spent my industrial placement year at Airbus Defence and Space developing with the Unity game engine",
       "uniStart": "Started my Bachelor of Science in Mathematics and its Applications degree at Cardiff University"
     }
+  },
+  "snippets": {
+    "heading": "Code snippets from my personal work",
+    "subheading": "Why reinvent the wheel when you can copy and paste?",
+    "description": "I've been writing code for a long time. These code snippets cover the entire tech stack and have been useful on more than one occasion.",
+    "search": "Search snippets",
+    "filter": "Filter snippets by tag"
+  },
+  "snippet": {
+    "information": {
+      "button": "Back to snippets",
+      "views": "views"
+    },
+    "social": {
+      "tweet": {
+        "link": "Tweet this snippet",
+        "text": "I found this {title} snippet by @kezmorz really useful!"
+      },
+      "edit": "Edit on GitHub"
+    },
+    "related": "If you found this snippet helpful, you should check out some of these too!"
   },
   "resume": {
     "heading": "Check out my professional résumé",

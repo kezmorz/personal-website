@@ -2,15 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/constants/*": ["src/constants/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/icons/*": ["src/icons/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/pages/*": ["src/pages/*"],
-      "@/services/*": ["src/services/*"],
-      "@/theme/*": ["src/theme/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/icons/*": ["./src/icons/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/theme/*": ["./src/theme/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   }
 }

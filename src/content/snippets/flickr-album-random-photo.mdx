@@ -1,0 +1,58 @@
+---
+title: Flickr Album Random Photo
+description: Styled component implementation of the pre html element for MDX using the night owl theme
+tags:
+  - javascript
+  - node
+  - api
+  - flickr
+publishedAt: 2022-05-22T00:00:00.000Z
+---
+
+Using [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus), a rehype plugin to highlight code blocks in HTML with prism, leads to a certain set of class names being generated depending on the code used. The following [MUI](https://mui.com/) styled component targets those classes and styles them based on the [night owl theme](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl&WT.mc_id=twitter-social-sdras). It accounts for light mode and dark mode.
+
+```js
+const apiKey = process.env.FLICKR_API_KEY;
+const photosetId = process.env.FLICKR_PHOTOSET_ID;
+
+const randomPhoto = async (req, res) => {
+  const { method } = req;
+
+  if (method === "GET") {
+    const response = await fetch(
+      `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${photosetId}&format=json&nojsoncallback=1`
+    );
+    const data = await response.json();
+
+    const photo =
+      data.photoset.photo[
+        Math.floor(Math.random() * data.photoset.photo.length)
+      ];
+
+    res.status(200);
+    res.json({
+      id: photo.id,
+      secret: photo.secret,
+      server: photo.server,
+      title: photo.title,
+      owner: data.photoset.owner,
+    });
+    res.end();
+  } else {
+    res.status(405);
+    res.setHeader("Allow", ["GET"]);
+    res.end(`Method ${method} not allowed.`);
+  }
+};
+
+export default randomPhoto;
+```
+
+#### How to use
+
+1. Sign up for a [Flickr account](https://identity.flickr.com/sign-up).
+2. Create an app in [The App Garden](https://www.flickr.com/services/apps/create/apply/) and apply for a non-commercial key.
+3. After filling in some information about your app you will be presented with your key. Don't worry if you forget to save your key, you can return here at any point.
+4. Retrieve the ID of the album from which you wish to select a random photo.
+5. Set the value of the FLICKR_API_KEY environment variable as the key created in step 3.
+6. Set the value of the FLICKR_PHOTOSET_ID environment variable as the id of the album.
