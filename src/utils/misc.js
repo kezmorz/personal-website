@@ -10,3 +10,9 @@ export const pick = (object, keys) => {
       return obj;
     }, {});
 };
+
+export const urlBuilder = (domain, locale, defaultLocale, pathname) => {
+  return `https://${domain}${
+    locale === defaultLocale ? "" : `/${locale}`
+  }${pathname}`;
+};

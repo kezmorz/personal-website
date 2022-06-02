@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { urlBuilder } from "@/utils/misc";
 
 const openGraphLocale = {
   en: "en_US",
@@ -20,28 +21,35 @@ const Meta = ({
 }) => {
   const { pathname, locale, locales, defaultLocale } = useRouter();
 
-  const url = `https://cerimorse.com${
-    locale === defaultLocale ? "" : `/${locale}`
-  }${pathname}`;
-
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
+      <link
+        rel="canonical"
+        href={urlBuilder("cerimorse.com", locale, defaultLocale, pathname)}
+      />
       {locales.map((alternateLocale) => (
         <link
           key={alternateLocale}
           rel="alternate"
-          href={`https://cerimorse.com${
-            alternateLocale === defaultLocale ? "" : `/${alternateLocale}`
-          }${pathname}`}
+          href={urlBuilder(
+            "cerimorse.com",
+            alternateLocale,
+            defaultLocale,
+            pathname
+          )}
           hrefLang={alternateLocale}
         />
       ))}
       <link
         rel="alternate"
-        href={`https://cerimorse.com${pathname}`}
+        href={urlBuilder(
+          "cerimorse.com",
+          defaultLocale,
+          defaultLocale,
+          pathname
+        )}
         hrefLang="x-default"
       />
 
@@ -49,7 +57,10 @@ const Meta = ({
       <meta property="og:site_name" content="Ceri Morse" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
+      <meta
+        property="og:url"
+        content={urlBuilder("cerimorse.com", locale, defaultLocale, pathname)}
+      />
       <meta property="og:image" content={image} />
       <meta property="og:locale" content={openGraphLocale[locale]} />
       {openGraphLocaleAlternate[locale].map((ogLocaleAlternate) => (

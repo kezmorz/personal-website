@@ -27,6 +27,7 @@ import AzureIcon from "@/icons/Azure";
 import AzurePipelinesIcon from "@/icons/AzurePipelines";
 import AwsIcon from "@/icons/Aws";
 import VercelIcon from "@/icons/Vercel";
+import Meta from "@/components/Meta";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import HobbyCard from "@/components/HobbyCard";
@@ -103,6 +104,12 @@ const About = () => {
 
   return (
     <>
+      <Meta
+        title={t("metadata.title")}
+        description={t("metadata.description")}
+        type="website"
+        image=""
+      />
       <Header
         heading={t("heading")}
         subheading={t("subheading")}

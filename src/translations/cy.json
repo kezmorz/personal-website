@@ -3,6 +3,10 @@
     "hello": "helo"
   },
   "about": {
+    "metadata": {
+      "title": "Page Title",
+      "description": "Page description"
+    },
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
     "bitesize": {
@@ -51,6 +55,10 @@
     }
   },
   "timeline": {
+    "metadata": {
+      "title": "Page Title",
+      "description": "Page description"
+    },
     "heading": "Y stori hyd yn hyn",
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
     "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu ddewis is-set o gategorïau.",
@@ -98,6 +106,10 @@
     }
   },
   "snippets": {
+    "metadata": {
+      "title": "Page Title",
+      "description": "Page description"
+    },
     "heading": "Pytiau côd o fy ngwaith personol",
     "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
     "description": "Rwyf wedi bod yn ysgrifennu cod ers amser maith. Mae'r pytiau cod hyn yn cwmpasu'r pentwr technoleg cyfan ac maent wedi bod yn ddefnyddiol ar fwy nag un achlysur.",
@@ -144,6 +156,10 @@
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Page Title",
+      "description": "Page description"
+    },
     "heading": "Croeso i chi anfon neges ataf",
     "subheading": "Weithiau yr hen ffyrdd yw'r ffyrdd gorau",
     "description": {

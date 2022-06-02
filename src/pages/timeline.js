@@ -67,7 +67,12 @@ const Timeline = () => {
 
   return (
     <>
-      <Meta />
+      <Meta
+        title={t("metadata.title")}
+        description={t("metadata.description")}
+        type="website"
+        image=""
+      />
       <Header
         heading={t("heading")}
         subheading={t("subheading")}

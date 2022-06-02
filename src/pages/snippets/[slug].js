@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import fetcher from "@/services/fetcher";
-import { pick } from "@/utils/misc";
+import { urlBuilder, pick } from "@/utils/misc";
 import {
   Heading4 as MdxHeading4,
   Paragraph as MdxParagraph,
@@ -23,6 +23,7 @@ import {
   Anchor as MdxAnchor,
   Pre as MdxPre,
 } from "@/components/Markdown";
+import Meta from "@/components/Meta";
 import SnippetCard from "@/components/SnippetCard";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -47,9 +48,12 @@ const Snippet = ({ snippet, relatedSnippets }) => {
   const MdxComponent = useMDXComponent(snippet.body.code);
 
   const tweetUrl = `https://twitter.com/intent/tweet?${new URLSearchParams({
-    url: `https://cerimorse.com/${
-      snippet.locale === defaultLocale ? "" : snippet.locale
-    }/snippets/${snippet.slug}`,
+    url: urlBuilder(
+      "cerimorse.com",
+      snippet.locale,
+      defaultLocale,
+      `/snippets/${snippet.slug}`
+    ),
     text: t("social.tweet.text", { title: snippet.title }),
   })}`;
 
@@ -59,6 +63,12 @@ const Snippet = ({ snippet, relatedSnippets }) => {
 
   return (
     <>
+      <Meta
+        title={snippet.title}
+        description={snippet.description}
+        type="article"
+        image=""
+      />
       <Container
         component="section"
         maxWidth="md"
