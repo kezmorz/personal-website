@@ -1,11 +1,15 @@
 {
   "index": {
+    "metadata": {
+      "title": "Page Title",
+      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+    },
     "hello": "helo"
   },
   "about": {
     "metadata": {
       "title": "Page Title",
-      "description": "Page description"
+      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
     },
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
@@ -56,8 +60,8 @@
   },
   "timeline": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Llinell Amser | Ceri Morse",
+      "description": "Casgliad o eiliadau arwyddocaol o fy ngyrfa brofessiynol."
     },
     "heading": "Y stori hyd yn hyn",
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
@@ -107,8 +111,8 @@
   },
   "snippets": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Pytiau | Ceri Morse",
+      "description": "Pytiau côd o fy ngwaith personol sy'n cwmpasu'r pentwr technoleg cyfan."
     },
     "heading": "Pytiau côd o fy ngwaith personol",
     "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
@@ -157,8 +161,8 @@
   },
   "contact": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Cyswllt | Ceri Morse",
+      "description": "Anfonwch neges ataf am brosiect, cyfle am gwaith, neu unrhyw beth yn gyffredinol."
     },
     "heading": "Croeso i chi anfon neges ataf",
     "subheading": "Weithiau yr hen ffyrdd yw'r ffyrdd gorau",

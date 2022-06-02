@@ -1,11 +1,15 @@
 {
   "index": {
+    "metadata": {
+      "title": "Ceri Morse",
+      "description": "Designing and developing full stack software solutions that are responsive and accessible."
+    },
     "hello": "hello"
   },
   "about": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "About | Ceri Morse",
+      "description": ""
     },
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
@@ -56,8 +60,8 @@
   },
   "timeline": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Timeline | Ceri Morse",
+      "description": "A collection of significant moments from my professional career."
     },
     "heading": "The story so far",
     "subheading": "Check out some of my significant moments",
@@ -107,8 +111,8 @@
   },
   "snippets": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Snippets | Ceri Morse",
+      "description": "Code snippets from my personal work that cover the entire tech stack."
     },
     "heading": "Code snippets from my personal work",
     "subheading": "Why reinvent the wheel when you can copy and paste?",
@@ -157,8 +161,8 @@
   },
   "contact": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Page description"
+      "title": "Contact | Ceri Morse",
+      "description": "Send me a message about a project, job opportunity, or anything in general."
     },
     "heading": "Feel free to send me a message",
     "subheading": "Sometimes the old school ways are the best",

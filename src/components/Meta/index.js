@@ -13,12 +13,7 @@ const openGraphLocaleAlternate = {
   cy: ["en_US", "en_GB"],
 };
 
-const Meta = ({
-  title = "Ceri Morse",
-  description = "",
-  type = "website",
-  image = "",
-}) => {
+const Meta = ({ title, description, type, image }) => {
   const { pathname, locale, locales, defaultLocale } = useRouter();
 
   return (
