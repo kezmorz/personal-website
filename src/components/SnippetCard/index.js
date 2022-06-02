@@ -5,7 +5,9 @@ import { styled } from "@mui/material/styles";
 import { formatDate } from "@/utils/date";
 import Link from "@/components/Link";
 
-const SnippetCardRoot = styled(Paper)(({ theme }) => ({}));
+const SnippetCardRoot = styled(Paper)(({ theme }) => ({
+  padding: 16,
+}));
 
 const SnippetCard = ({ heading, description, date, href, sx = [] }) => {
   const { locale } = useRouter();
@@ -16,7 +18,7 @@ const SnippetCard = ({ heading, description, date, href, sx = [] }) => {
       square
       href={href}
       underline="none"
-      sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}
+      sx={[...(Array.isArray(sx) ? sx : [sx])]}
     >
       <Typography component="time" variant="caption" dateTime={date}>
         {formatDate(new Date(date), "PPP", locale)}
