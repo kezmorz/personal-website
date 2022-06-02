@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
@@ -37,6 +38,7 @@ const components = {
 };
 
 const Snippet = ({ snippet, relatedSnippets }) => {
+  const { defaultLocale } = useRouter();
   const { data: analyticsData } = useSwr(
     `/api/analytics/page-views?slug=/snippets/${snippet.slug}`,
     fetcher
@@ -46,14 +48,14 @@ const Snippet = ({ snippet, relatedSnippets }) => {
 
   const tweetUrl = `https://twitter.com/intent/tweet?${new URLSearchParams({
     url: `https://cerimorse.com/${
-      snippet.locale === "en" ? "" : snippet.locale
+      snippet.locale === defaultLocale ? "" : snippet.locale
     }/snippets/${snippet.slug}`,
     text: t("social.tweet.text", { title: snippet.title }),
   })}`;
 
   const editUrl = `https://github.com/kezmorz/personal-website/edit/main/src/content/snippets/${
     snippet.slug
-  }.${snippet.locale === "en" ? "mdx" : `${snippet.locale}.mdx`}`;
+  }.${snippet.locale === defaultLocale ? "mdx" : `${snippet.locale}.mdx`}`;
 
   return (
     <>
