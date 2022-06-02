@@ -14,7 +14,11 @@ const openGraphLocaleAlternate = {
 };
 
 const Meta = ({ title, description, type, image }) => {
-  const { pathname, locale, locales, defaultLocale } = useRouter();
+  const { asPath, locale, locales, defaultLocale } = useRouter();
+
+  const [pathname] = asPath.split("?");
+
+  console.log(pathname);
 
   return (
     <Head>
@@ -47,7 +51,6 @@ const Meta = ({ title, description, type, image }) => {
         )}
         hrefLang="x-default"
       />
-
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Ceri Morse" />
       <meta property="og:title" content={title} />
@@ -65,7 +68,6 @@ const Meta = ({ title, description, type, image }) => {
           content={ogLocaleAlternate}
         />
       ))}
-
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@kezmorz" />
       <meta name="twitter:creator" content="@kezmorz" />
