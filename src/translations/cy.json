@@ -1,15 +1,15 @@
 {
   "index": {
     "metadata": {
-      "title": "Page Title",
+      "title": "Ceri Morse",
       "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
     },
     "hello": "helo"
   },
   "about": {
     "metadata": {
-      "title": "Page Title",
-      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+      "title": "Amdanaf | Ceri Morse",
+      "description": "Dewch i adnabod fi ar lefel fwy personol."
     },
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
@@ -197,7 +197,7 @@
       "heading": "Llywio",
       "pages": {
         "home": "Cartref",
-        "about": "About",
+        "about": "Amdanaf",
         "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
@@ -227,7 +227,7 @@
       "heading": "Map o'r wefan",
       "pages": {
         "home": "Cartref",
-        "about": "About",
+        "about": "Amdanaf",
         "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
