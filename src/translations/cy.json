@@ -131,7 +131,7 @@
     "social": {
       "tweet": {
         "link": "Tweet y pyt hwn",
-        "text": "I found this {title} snippet by @kezmorz really useful!"
+        "text": "Roedd y pyt {title} gan @kezmorz yn ddefnyddiol iawn!"
       },
       "edit": "Golygu ar GitHub"
     },
