@@ -64,7 +64,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
   return (
     <>
       <Meta
-        title={snippet.title}
+        title={t("metadata.title", { title: snippet.title })}
         description={snippet.description}
         type="article"
         image=""

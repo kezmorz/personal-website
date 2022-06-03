@@ -18,8 +18,6 @@ const Meta = ({ title, description, type, image }) => {
 
   const [pathname] = asPath.split("?");
 
-  console.log(pathname);
-
   return (
     <Head>
       <title>{title}</title>

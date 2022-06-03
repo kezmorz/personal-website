@@ -121,6 +121,9 @@
     "filter": "Filter snippets by tag"
   },
   "snippet": {
+    "metadata": {
+      "title": "{title} - Snippets | Ceri Morse"
+    },
     "information": {
       "button": "Back to snippets",
       "views": "views"

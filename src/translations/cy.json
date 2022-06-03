@@ -121,6 +121,9 @@
     "filter": "Hidlo pytiau yn ôl tag"
   },
   "snippet": {
+    "metadata": {
+      "title": "{title} - Pytiau | Ceri Morse"
+    },
     "information": {
       "button": "Yn ôl i bytiau",
       "views": "o olygfeydd"
