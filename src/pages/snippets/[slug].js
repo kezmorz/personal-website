@@ -24,7 +24,7 @@ import {
   Pre as MdxPre,
 } from "@/components/Markdown";
 import Meta from "@/components/Meta";
-import SnippetCard from "@/components/SnippetCard";
+import { SnippetCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 

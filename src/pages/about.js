@@ -29,8 +29,7 @@ import AwsIcon from "@/icons/Aws";
 import VercelIcon from "@/icons/Vercel";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
-import SkillCard from "@/components/SkillCard";
-import HobbyCard from "@/components/HobbyCard";
+import { HobbyCard, SkillCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
