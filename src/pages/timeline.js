@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
+import Meta from "@/components/Meta";
 import Header from "@/components/Header";
 import TimelineEvent from "@/components/TimelineEvent";
 import Layout from "@/components/Layout";
@@ -66,6 +67,12 @@ const Timeline = () => {
 
   return (
     <>
+      <Meta
+        title={t("metadata.title")}
+        description={t("metadata.description")}
+        type="website"
+        image=""
+      />
       <Header
         heading={t("heading")}
         subheading={t("subheading")}

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
@@ -12,7 +13,7 @@ import {
 } from "@mui/material";
 import { ArrowBackOutlined as ArrowBackOutlinedIcon } from "@mui/icons-material";
 import fetcher from "@/services/fetcher";
-import { pick } from "@/utils/misc";
+import { urlBuilder, pick } from "@/utils/misc";
 import {
   Heading4 as MdxHeading4,
   Paragraph as MdxParagraph,
@@ -22,7 +23,8 @@ import {
   Anchor as MdxAnchor,
   Pre as MdxPre,
 } from "@/components/Markdown";
-import SnippetCard from "@/components/SnippetCard";
+import Meta from "@/components/Meta";
+import { SnippetCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -37,6 +39,7 @@ const components = {
 };
 
 const Snippet = ({ snippet, relatedSnippets }) => {
+  const { defaultLocale } = useRouter();
   const { data: analyticsData } = useSwr(
     `/api/analytics/page-views?slug=/snippets/${snippet.slug}`,
     fetcher
@@ -45,18 +48,27 @@ const Snippet = ({ snippet, relatedSnippets }) => {
   const MdxComponent = useMDXComponent(snippet.body.code);
 
   const tweetUrl = `https://twitter.com/intent/tweet?${new URLSearchParams({
-    url: `https://cerimorse.com/${
-      snippet.locale === "en" ? "" : snippet.locale
-    }/snippets/${snippet.slug}`,
+    url: urlBuilder(
+      "cerimorse.com",
+      snippet.locale,
+      defaultLocale,
+      `/snippets/${snippet.slug}`
+    ),
     text: t("social.tweet.text", { title: snippet.title }),
   })}`;
 
   const editUrl = `https://github.com/kezmorz/personal-website/edit/main/src/content/snippets/${
     snippet.slug
-  }.${snippet.locale === "en" ? "mdx" : `${snippet.locale}.mdx`}`;
+  }.${snippet.locale === defaultLocale ? "mdx" : `${snippet.locale}.mdx`}`;
 
   return (
     <>
+      <Meta
+        title={t("metadata.title", { title: snippet.title })}
+        description={snippet.description}
+        type="article"
+        image=""
+      />
       <Container
         component="section"
         maxWidth="md"

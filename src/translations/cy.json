@@ -1,8 +1,16 @@
 {
   "index": {
+    "metadata": {
+      "title": "Ceri Morse",
+      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+    },
     "hello": "helo"
   },
   "about": {
+    "metadata": {
+      "title": "Amdanaf | Ceri Morse",
+      "description": "Dewch i adnabod fi ar lefel fwy personol."
+    },
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
     "bitesize": {
@@ -51,6 +59,10 @@
     }
   },
   "timeline": {
+    "metadata": {
+      "title": "Llinell Amser | Ceri Morse",
+      "description": "Casgliad o eiliadau arwyddocaol o fy ngyrfa brofessiynol."
+    },
     "heading": "Y stori hyd yn hyn",
     "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
     "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu ddewis is-set o gategorïau.",
@@ -98,6 +110,10 @@
     }
   },
   "snippets": {
+    "metadata": {
+      "title": "Pytiau | Ceri Morse",
+      "description": "Pytiau côd o fy ngwaith personol sy'n cwmpasu'r pentwr technoleg cyfan."
+    },
     "heading": "Pytiau côd o fy ngwaith personol",
     "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
     "description": "Rwyf wedi bod yn ysgrifennu cod ers amser maith. Mae'r pytiau cod hyn yn cwmpasu'r pentwr technoleg cyfan ac maent wedi bod yn ddefnyddiol ar fwy nag un achlysur.",
@@ -105,6 +121,9 @@
     "filter": "Hidlo pytiau yn ôl tag"
   },
   "snippet": {
+    "metadata": {
+      "title": "{title} - Pytiau | Ceri Morse"
+    },
     "information": {
       "button": "Yn ôl i bytiau",
       "views": "o olygfeydd"
@@ -112,7 +131,7 @@
     "social": {
       "tweet": {
         "link": "Tweet y pyt hwn",
-        "text": "I found this {title} snippet by @kezmorz really useful!"
+        "text": "Roedd y pyt {title} gan @kezmorz yn ddefnyddiol iawn!"
       },
       "edit": "Golygu ar GitHub"
     },
@@ -144,6 +163,10 @@
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Cyswllt | Ceri Morse",
+      "description": "Anfonwch neges ataf am brosiect, cyfle am gwaith, neu unrhyw beth yn gyffredinol."
+    },
     "heading": "Croeso i chi anfon neges ataf",
     "subheading": "Weithiau yr hen ffyrdd yw'r ffyrdd gorau",
     "description": {
@@ -174,7 +197,7 @@
       "heading": "Llywio",
       "pages": {
         "home": "Cartref",
-        "about": "About",
+        "about": "Amdanaf",
         "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
@@ -204,7 +227,7 @@
       "heading": "Map o'r wefan",
       "pages": {
         "home": "Cartref",
-        "about": "About",
+        "about": "Amdanaf",
         "timeline": "Llinell Amser",
         "snippets": "Pytiau",
         "contact": "Cyswllt"
