@@ -100,7 +100,7 @@ const Timeline = () => {
           value={categories}
           getOptionLabel={(option) => t(`categories.values.${option}`)}
           onChange={(_, newValue) => {
-            setCategories(newValue); // maybe change this so it's a defined function (same as everything else)
+            setCategories(newValue); // CERI - maybe change this so it's a defined function (same as everything else)
           }}
           renderInput={(params) => (
             <TextField {...params} label={t("categories.label")} />

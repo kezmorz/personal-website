@@ -1,15 +1,21 @@
 import { useTranslations } from "use-intl";
 import { Typography } from "@mui/material";
 import { pick } from "@/utils/misc";
+import Meta from "@/components/Meta";
 import Layout from "@/components/Layout";
 
 const Home = () => {
-  const t = useTranslations("index");
+  const t = useTranslations("home");
 
   return (
-    <div>
-      <Typography variant="h1">{t("hello")}</Typography>
-    </div>
+    <>
+      <Meta
+        title={t("metadata.title")}
+        description={t("metadata.description")}
+        type="website"
+        image=""
+      />
+    </>
   );
 };
 
@@ -21,7 +27,7 @@ Home.getLayout = (page) => {
   );
 };
 
-Home.messages = ["index", ...Layout.messages];
+Home.messages = ["home", ...Layout.messages];
 
 export const getStaticProps = async ({ locale }) => {
   return {
