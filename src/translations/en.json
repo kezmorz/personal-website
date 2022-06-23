@@ -1,10 +1,9 @@
 {
-  "index": {
+  "home": {
     "metadata": {
       "title": "Ceri Morse",
       "description": "Designing and developing full stack software solutions that are responsive and accessible."
-    },
-    "hello": "hello"
+    }
   },
   "about": {
     "metadata": {

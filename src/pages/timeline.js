@@ -59,6 +59,10 @@ const Timeline = () => {
   const [categories, setCategories] = useState([]);
   const t = useTranslations("timeline");
 
+  const handleCategoriesChange = (_, newValue) => {
+    setCategories(newValue);
+  };
+
   const categoryOptions = [...new Set(events.map((event) => event.variant))];
 
   const selectedEvents = events.filter(
@@ -99,9 +103,7 @@ const Timeline = () => {
           options={categoryOptions}
           value={categories}
           getOptionLabel={(option) => t(`categories.values.${option}`)}
-          onChange={(_, newValue) => {
-            setCategories(newValue); // maybe change this so it's a defined function (same as everything else)
-          }}
+          onChange={handleCategoriesChange}
           renderInput={(params) => (
             <TextField {...params} label={t("categories.label")} />
           )}
