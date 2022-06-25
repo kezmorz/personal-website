@@ -1,8 +1,10 @@
 import { useTranslations } from "use-intl";
 import { Container, Button, Typography, Box } from "@mui/material";
 import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
+import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
+import { TestimonialCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -87,7 +89,46 @@ const Home = () => {
         maxWidth="md"
         sx={{ mt: { xs: 8, sm: 16 } }}
       >
-        Testimonials
+        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          {t("testimonials.line1")}
+        </Typography>
+        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          {t("testimonials.line2")}
+        </Typography>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 600,
+            mx: "auto",
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          <TestimonialCard
+            quote="Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page."
+            profile={{
+              name: "Rhian Powell",
+              title: "Head Piggle",
+              company: "Piggle Co.",
+              imageProps: {
+                src: "pages/about/hobbies/adventuring.jpg",
+                alt: "Something something something",
+                loader: cloudinaryImageLoader,
+              },
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: { md: "center" },
+              mt: { xs: 2, md: 4 },
+            }}
+          >
+            <Box>Buttons</Box>
+            <Box>Dots</Box>
+          </Box>
+        </Box>
       </Container>
       <Container
         component="section"

@@ -35,7 +35,7 @@ HobbyCard.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     loader: PropTypes.func,
-  }),
+  }).isRequired,
   sx: PropTypes.oneOfType([
     PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
