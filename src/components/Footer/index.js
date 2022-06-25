@@ -111,12 +111,7 @@ const Footer = () => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  <Link
-                    href={spotifyData.songUrl}
-                    target="_blank"
-                    rel="noopener"
-                    underline="hover"
-                  >
+                  <Link href={spotifyData.songUrl} underline="hover">
                     {spotifyData.title}
                   </Link>
                   {` - ${spotifyData.artist}`}
@@ -242,11 +237,7 @@ const Footer = () => {
               {t("art")}
             </Typography>
             {flickrData && (
-              <Link
-                href={`https://www.flickr.com/photos/${flickrData.owner}`}
-                target="_blank"
-                rel="noopener"
-              >
+              <Link href={`https://www.flickr.com/photos/${flickrData.owner}`}>
                 <Box sx={{ position: "relative", height: 96 }}>
                   <Image
                     src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}

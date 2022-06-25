@@ -3,6 +3,15 @@
     "metadata": {
       "title": "Ceri Morse",
       "description": "Designing and developing full stack software solutions that are responsive and accessible."
+    },
+    "about": {},
+    "timeline": {
+      "line1": "I'm currently working as a Senior Software Developer at Arup.",
+      "line2": {
+        "description": "I lead the development of the award winning {link} product.",
+        "link": "Virtual Engage"
+      },
+      "button": "See full timeline"
     }
   },
   "about": {

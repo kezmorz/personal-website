@@ -3,6 +3,15 @@
     "metadata": {
       "title": "Ceri Morse",
       "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+    },
+    "about": {},
+    "timeline": {
+      "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
+      "line2": {
+        "description": "Rwy'n arwain datblygiad y cynnyrch arobryn {link}.",
+        "link": "Virtual Engage"
+      },
+      "button": "Gweler y llinell amser llawn"
     }
   },
   "about": {
