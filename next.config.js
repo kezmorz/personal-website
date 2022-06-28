@@ -30,6 +30,7 @@ module.exports = withContentlayer({
         transform: "@mui/icons-material/{{member}}",
       },
     },
+    runtime: "experimental-edge",
   },
   swcMinify: true,
 });
