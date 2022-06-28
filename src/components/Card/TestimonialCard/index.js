@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { Typography, Box } from "@mui/material";
+import { Paper, Typography, Box } from "@mui/material";
 
 const TestimonialCard = ({ quote, profile, sx = [] }) => {
   const { name, title, company, imageProps } = profile;
 
   return (
-    <Box sx={[...(Array.isArray(sx) ? sx : [sx])]}>
+    <Paper sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
       <Typography variant="body1">{quote}</Typography>
       <Box sx={{ display: "flex", mt: { xs: 2, md: 4 } }}>
         <Box
@@ -28,7 +28,7 @@ const TestimonialCard = ({ quote, profile, sx = [] }) => {
           <Typography variant="body1">{company}</Typography>
         </Box>
       </Box>
-    </Box>
+    </Paper>
   );
 };
 

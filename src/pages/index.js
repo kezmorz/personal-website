@@ -1,15 +1,73 @@
+import { useState } from "react";
 import { useTranslations } from "use-intl";
-import { Container, Button, Typography, Box } from "@mui/material";
-import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
+import { Container, Button, IconButton, Typography, Box } from "@mui/material";
+import {
+  ArrowForwardOutlined as ArrowForwardOutlinedIcon,
+  ArrowForwardIosOutlined as ArrowForwardIosOutlinedIcon,
+  ArrowBackIosOutlined as ArrowBackIosOutlinedIcon,
+} from "@mui/icons-material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
+import { wrap } from "@/utils/math";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import { TestimonialCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
+const testimonials = [
+  {
+    quote:
+      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
+    profile: {
+      name: "Rhian Powell",
+      title: "Head Piggle",
+      company: "Piggle Co.",
+      imageProps: {
+        src: "pages/about/hobbies/adventuring.jpg",
+        alt: "Something something something",
+        loader: cloudinaryImageLoader,
+      },
+    },
+  },
+  {
+    quote:
+      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
+    profile: {
+      name: "Rhian Powell",
+      title: "Chief Piggle",
+      company: "Piggle Co.",
+      imageProps: {
+        src: "pages/about/hobbies/adventuring.jpg",
+        alt: "Something something something",
+        loader: cloudinaryImageLoader,
+      },
+    },
+  },
+  {
+    quote:
+      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
+    profile: {
+      name: "Rhian Powell",
+      title: "Chef Piggle",
+      company: "Piggle Co.",
+      imageProps: {
+        src: "pages/about/hobbies/adventuring.jpg",
+        alt: "Something something something",
+        loader: cloudinaryImageLoader,
+      },
+    },
+  },
+];
+
 const Home = () => {
+  const [testimonial, setTestimonial] = useState(0);
   const t = useTranslations("home");
+
+  const handleTestimonialChange = (direction) => {
+    setTestimonial((prevTestimonial) =>
+      wrap(0, testimonials.length, prevTestimonial + direction)
+    );
+  };
 
   return (
     <>
@@ -103,30 +161,41 @@ const Home = () => {
             mt: { xs: 4, md: 8 },
           }}
         >
-          <TestimonialCard
-            quote="Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page."
-            profile={{
-              name: "Rhian Powell",
-              title: "Head Piggle",
-              company: "Piggle Co.",
-              imageProps: {
-                src: "pages/about/hobbies/adventuring.jpg",
-                alt: "Something something something",
-                loader: cloudinaryImageLoader,
-              },
-            }}
-          />
+          <Box sx={{ display: "flex" }}>
+            <TestimonialCard
+              quote={testimonials[testimonial].quote}
+              profile={testimonials[testimonial].profile}
+            />
+          </Box>
           <Box
             sx={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: { md: "center" },
+              px: 2,
               mt: { xs: 2, md: 4 },
             }}
           >
-            <Box>Buttons</Box>
-            <Box>Dots</Box>
+            <Box sx={{ display: "flex" }}>
+              <IconButton
+                size="small"
+                aria-label="previous testimonial"
+                onClick={() => handleTestimonialChange(-1)}
+                sx={{ ml: -1 }}
+              >
+                <ArrowBackIosOutlinedIcon fontSize="small" />
+              </IconButton>
+              <IconButton
+                size="small"
+                aria-label="next testimonial"
+                onClick={() => handleTestimonialChange(1)}
+                sx={{ ml: 2 }}
+              >
+                <ArrowForwardIosOutlinedIcon fontSize="small" />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: "flex" }}></Box>
           </Box>
         </Box>
       </Container>
