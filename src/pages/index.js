@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
+import { allSnippets } from "contentlayer/generated";
 import { Container, Button, IconButton, Typography, Box } from "@mui/material";
 import {
   ArrowForwardOutlined as ArrowForwardOutlinedIcon,
@@ -10,7 +11,7 @@ import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { wrap } from "@/utils/math";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
-import { TestimonialCard } from "@/components/Card";
+import { FancySnippetCard, TestimonialCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -31,7 +32,7 @@ const testimonials = [
   },
   {
     quote:
-      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
+      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
     profile: {
       name: "Rhian Powell",
       title: "Chief Piggle",
@@ -59,7 +60,7 @@ const testimonials = [
   },
 ];
 
-const Home = () => {
+const Home = ({ snippets }) => {
   const [testimonial, setTestimonial] = useState(0);
   const t = useTranslations("home");
 
@@ -140,7 +141,50 @@ const Home = () => {
         maxWidth="md"
         sx={{ mt: { xs: 8, sm: 16 } }}
       >
-        Recently released snippets
+        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          {t("snippets.line1")}
+        </Typography>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          {snippets.map(({ title, publishedAt, slug }) => (
+            <FancySnippetCard
+              key={slug}
+              heading={title}
+              date={publishedAt}
+              href={`/snippets/${slug}`}
+              sx={{
+                gridColumn: { xs: "span 12", md: "span 4" },
+                minHeight: { xs: 120, md: 240 },
+              }}
+            />
+          ))}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          <Button
+            component={Link}
+            href="/timeline"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardOutlinedIcon />}
+            sx={{ width: "fit-content" }}
+          >
+            {t("snippets.button")}
+          </Button>
+        </Box>
       </Container>
       <Container
         component="section"
@@ -223,6 +267,24 @@ Home.messages = ["home", ...Layout.messages];
 export const getStaticProps = async ({ locale }) => {
   return {
     props: {
+      snippets: allSnippets
+        .filter(({ locale: snippetLocale }) => snippetLocale === locale)
+        .map(({ title, description, tags, publishedAt, slug }) => ({
+          title,
+          description,
+          tags,
+          publishedAt,
+          slug,
+        }))
+        .sort(
+          (
+            { publishedAt: snippetOnePublishedAt },
+            { publishedAt: snippetTwoPublishedAt }
+          ) =>
+            Number(new Date(snippetTwoPublishedAt)) -
+            Number(new Date(snippetOnePublishedAt))
+        )
+        .slice(0, 3),
       messages: pick(
         await import(`../translations/${locale}.json`),
         Home.messages

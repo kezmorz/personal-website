@@ -2314,6 +2314,46 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cerimorse.com@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "cerimorse.com@workspace:."
+  dependencies:
+    "@emotion/cache": ^11.7.1
+    "@emotion/react": ^11.7.1
+    "@emotion/server": ^11.4.0
+    "@emotion/styled": ^11.6.0
+    "@fontsource/rubik": ^4.5.0
+    "@google-analytics/data": ^2.8.0
+    "@mui/icons-material": ^5.2.5
+    "@mui/material": ^5.2.6
+    "@sendgrid/mail": ^7.6.0
+    clsx: ^1.1.1
+    contentlayer: ^0.2.5
+    date-fns: ^2.28.0
+    eslint: ^8.15.0
+    eslint-config-next: ^12.1.6
+    eslint-config-prettier: ^8.5.0
+    formik: ^2.2.9
+    git-jiggy: ^1.1.1
+    gray-matter: ^4.0.3
+    husky: ^7.0.4
+    lint-staged: ^12.1.4
+    next: ^12.1.6
+    next-contentlayer: ^0.2.5
+    next-intl: ^2.3.3
+    next-mdx-remote: ^3.0.8
+    prettier: ^2.6.2
+    prop-types: ^15.8.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-world-flags: ^1.4.0
+    rehype-prism-plus: ^1.4.0
+    remark-gfm: ^3.0.1
+    swr: ^1.2.2
+    yup: ^0.32.11
+  languageName: unknown
+  linkType: soft
+
 "chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -6813,46 +6853,6 @@ __metadata:
   checksum: 0920ea1b0294c2463b7df858d7f895d0a69f15ec5c7b93d63749e7a8f6d9c065853ebea701305f1756f70310633832cf5c90e43e9363cce51abec44cc2f5c188
   languageName: node
   linkType: hard
-
-"personal-website@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "personal-website@workspace:."
-  dependencies:
-    "@emotion/cache": ^11.7.1
-    "@emotion/react": ^11.7.1
-    "@emotion/server": ^11.4.0
-    "@emotion/styled": ^11.6.0
-    "@fontsource/rubik": ^4.5.0
-    "@google-analytics/data": ^2.8.0
-    "@mui/icons-material": ^5.2.5
-    "@mui/material": ^5.2.6
-    "@sendgrid/mail": ^7.6.0
-    clsx: ^1.1.1
-    contentlayer: ^0.2.5
-    date-fns: ^2.28.0
-    eslint: ^8.15.0
-    eslint-config-next: ^12.1.6
-    eslint-config-prettier: ^8.5.0
-    formik: ^2.2.9
-    git-jiggy: ^1.1.1
-    gray-matter: ^4.0.3
-    husky: ^7.0.4
-    lint-staged: ^12.1.4
-    next: ^12.1.6
-    next-contentlayer: ^0.2.5
-    next-intl: ^2.3.3
-    next-mdx-remote: ^3.0.8
-    prettier: ^2.6.2
-    prop-types: ^15.8.1
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-world-flags: ^1.4.0
-    rehype-prism-plus: ^1.4.0
-    remark-gfm: ^3.0.1
-    swr: ^1.2.2
-    yup: ^0.32.11
-  languageName: unknown
-  linkType: soft
 
 "picocolors@npm:^1.0.0":
   version: 1.0.0

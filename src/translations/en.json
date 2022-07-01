@@ -13,11 +13,15 @@
       },
       "button": "See full timeline"
     },
-    "snippets": {},
+    "snippets": {
+      "line1": "Recently released snippets.",
+      "button": "See all snippets"
+    },
     "testimonials": {
       "line1": "I've worked with some amazing people during my career.",
       "line2": "See what some of them have to say about our time working together."
-    }
+    },
+    "contact": {}
   },
   "about": {
     "metadata": {
@@ -27,10 +31,10 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "bitesize": {
-      "line1": "Born and raised in Wales, the land of dragons",
-      "line2": "Fluent in both Welsh and English",
-      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013",
-      "line4": "Transitioned from developing standalone applications to full stack web development"
+      "line1": "Born and raised in Wales, the land of dragons.",
+      "line2": "Fluent in both Welsh and English.",
+      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013.",
+      "line4": "Transitioned from developing standalone applications to full stack web development."
     },
     "history": {
       "paragraph1": "My interest in creating software solutions started all the way back in secondary school. I built an application for a shop system using Microsoft Access as part of a project. Seeing the interface and experience change through modifying a few lines of code was fascinating to me. I went on to study Mathematics at university but took as many Computer Science modules as possible. I built my first Java application, a hangman game, and used C++ to learn about parallel processing and image processing. I had a really exciting final year project working with the Welsh Rugby Union modelling line-out strategies using game theory, Monte Carlo simulation and Python.",

@@ -13,11 +13,15 @@
       },
       "button": "Gweler y llinell amser llawn"
     },
-    "snippets": {},
+    "snippets": {
+      "line1": "Recently released snippets.",
+      "button": "Gweler holl pytiau"
+    },
     "testimonials": {
       "line1": "Rwyf wedi gweithio gyda rhai pobl anhygoel yn ystod fy ngyrfa.",
       "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd."
-    }
+    },
+    "contact": {}
   },
   "about": {
     "metadata": {
@@ -27,10 +31,10 @@
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
     "bitesize": {
-      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau",
-      "line2": "Rhugl yn y Gymraeg a'r Saesneg",
-      "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013",
-      "line4": "Wedi'i drawsnewid o ddatblygu cymwysiadau annibynnol i ddatblygiad gwe stac llawn"
+      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau.",
+      "line2": "Rhugl yn y Gymraeg a'r Saesneg.",
+      "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013.",
+      "line4": "Wedi'i drawsnewid o ddatblygu cymwysiadau annibynnol i ddatblygiad gwe stac llawn."
     },
     "history": {
       "paragraph1": "Dechreuodd fy niddordeb mewn creu datrysiadau meddalwedd yr holl ffordd yn ôl yn yr ysgol uwchradd. Adeiladais cymwysiad ar gyfer system siop gan ddefnyddio Microsoft Access fel rhan o brosiect. Roedd gweld y rhyngwyneb a'r profiad yn newid trwy addasu ychydig linellau o god yn hynod ddiddorol i mi. Es i ymlaen i astudio Mathemateg yn y brifysgol ond cymerais gymaint o fodiwlau Cyfrifiadureg â phosib. Adeiladais fy cymwys Java cyntaf, gêm hangman, a defnyddio C++ i ddysgu am brosesu cyfochrog a phrosesu delweddau. Cefais brosiect cyffrous yn fy mlwyddyn olaf yn gweithio gydag Undeb Rygbi Cymru yn modelu strategaethau y lein gan ddefnyddio theori gêm, efelychiad Monte Carlo a Python.",
