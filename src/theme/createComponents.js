@@ -1,9 +1,14 @@
+import buttonBase from "./components/buttonBase";
 import button from "./components/button";
 
-const createComponents = (theme) => {
-  const buttonComponent = button(theme);
+const createComponents = () => {
+  const buttonBaseComponent = buttonBase();
+  const buttonComponent = button();
 
   return {
+    MuiButtonBase: {
+      ...buttonBaseComponent,
+    },
     MuiButton: {
       ...buttonComponent,
     },

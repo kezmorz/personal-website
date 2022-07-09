@@ -3,6 +3,10 @@ import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { Container, Button, IconButton, Typography, Box } from "@mui/material";
 import {
+  LayersOutlined as LayersOutlinedIcon,
+  DevicesOutlined as DevicesOutlinedIcon,
+  AccessibilityOutlined as AccessibilityOutlinedIcon,
+  PeopleOutlined as PeopleOutlinedIcon,
   ArrowForwardOutlined as ArrowForwardOutlinedIcon,
   ArrowForwardIosOutlined as ArrowForwardIosOutlinedIcon,
   ArrowBackIosOutlined as ArrowBackIosOutlinedIcon,
@@ -10,10 +14,52 @@ import {
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { wrap } from "@/utils/math";
 import { pick } from "@/utils/misc";
+import HtmlIcon from "@/icons/Html";
+import CssIcon from "@/icons/Css";
+import JavaScriptIcon from "@/icons/JavaScript";
+import ReactIcon from "@/icons/React";
+import NextIcon from "@/icons/Next";
+import NodeIcon from "@/icons/Node";
+import ExpressIcon from "@/icons/Express";
+import PrismaIcon from "@/icons/Prisma";
+import PostgresqlIcon from "@/icons/Postgresql";
+import MongodbIcon from "@/icons/Mongodb";
+import GitHubIcon from "@/icons/GitHub";
+import AwsIcon from "@/icons/Aws";
 import Meta from "@/components/Meta";
-import { FancySnippetCard, TestimonialCard } from "@/components/Card";
+import {
+  CharacteristicCard,
+  FancySnippetCard,
+  TestimonialCard,
+} from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
+
+const characteristics = [
+  { name: "fullstack", Icon: LayersOutlinedIcon },
+  { name: "responsive", Icon: DevicesOutlinedIcon },
+  { name: "accessible", Icon: AccessibilityOutlinedIcon },
+  { name: "mentoring", Icon: PeopleOutlinedIcon },
+];
+
+const technology = {
+  frontend: [
+    { name: "HTML", Icon: HtmlIcon },
+    { name: "CSS", Icon: CssIcon },
+    { name: "JavaScript", Icon: JavaScriptIcon },
+    { name: "React", Icon: ReactIcon },
+    { name: "Next.js", Icon: NextIcon },
+    { name: "GitHub", Icon: GitHubIcon },
+  ],
+  backend: [
+    { name: "Node.js", Icon: NodeIcon },
+    { name: "Express.js", Icon: ExpressIcon },
+    { name: "Prisma", Icon: PrismaIcon },
+    { name: "PostgreSQL", Icon: PostgresqlIcon },
+    { name: "MongoDB", Icon: MongodbIcon },
+    { name: "AWS", Icon: AwsIcon },
+  ],
+};
 
 const testimonials = [
   {
@@ -78,8 +124,127 @@ const Home = ({ snippets }) => {
         type="website"
         image=""
       />
-      <Container component="section" maxWidth="md">
-        About Me
+      <Container
+        component="section"
+        maxWidth="lg"
+        sx={{ mt: { xs: 8, sm: 16 } }}
+      >
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          {characteristics.map(({ name, Icon }) => (
+            <CharacteristicCard
+              key={name}
+              heading={t(`about.characteristics.${name}.heading`)}
+              description={t(`about.characteristics.${name}.description`)}
+              Icon={Icon}
+              sx={{ gridColumn: { xs: "span 12", sm: "span 6", md: "span 3" } }}
+            />
+          ))}
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 852,
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mx: "auto",
+            mt: { xs: 4, md: 8 },
+            boxSizing: "border-box",
+          }}
+        >
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+            Put a picture of me here
+          </Box>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(12, 1fr)",
+              gap: { xs: 0, sm: 2, md: 4 },
+              gridColumn: { xs: "span 12", md: "span 6" },
+            }}
+          >
+            <Box sx={{ gridColumn: { xs: "span 12", sm: "span 6" } }}>
+              {technology.frontend.map(({ name, Icon }) => (
+                <Box key={name} sx={{ width: "100%", display: "inline-flex" }}>
+                  <Box
+                    component="span"
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      display: "inline-flex",
+                      ml: -1,
+                      p: 1,
+                    }}
+                  >
+                    <Icon sx={{ width: "100%", height: "100%" }} />
+                  </Box>
+                  <Typography component="span" variant="h6" sx={{ pl: 1 }}>
+                    {name}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box sx={{ gridColumn: { xs: "span 12", sm: "span 6" } }}>
+              {technology.backend.map(({ name, Icon }) => (
+                <Box key={name} sx={{ width: "100%", display: "inline-flex" }}>
+                  <Box
+                    component="span"
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      display: "inline-flex",
+                      ml: -1,
+                      p: 1,
+                    }}
+                  >
+                    <Icon sx={{ width: "100%", height: "100%" }} />
+                  </Box>
+                  <Typography component="span" variant="h6" sx={{ pl: 1 }}>
+                    {name}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 852,
+            mx: "auto",
+            mt: { xs: 4, md: 8 },
+            boxSizing: "border-box",
+          }}
+        >
+          <Typography variant="h4">{t("about.description")}</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              mt: { xs: 4, md: 8 },
+            }}
+          >
+            <Button
+              component={Link}
+              href="/about"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForwardOutlinedIcon />}
+              sx={{ width: "fit-content" }}
+            >
+              {t("about.button")}
+            </Button>
+          </Box>
+        </Box>
       </Container>
       <Container
         component="section"
@@ -134,56 +299,6 @@ const Home = ({ snippets }) => {
               </Button>
             </Box>
           </Box>
-        </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
-        <Typography variant="h4" sx={{ mb: "0.7em" }}>
-          {t("snippets.line1")}
-        </Typography>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(12, 1fr)",
-            gap: { xs: 2, md: 4 },
-            mt: { xs: 4, md: 8 },
-          }}
-        >
-          {snippets.map(({ title, publishedAt, slug }) => (
-            <FancySnippetCard
-              key={slug}
-              heading={title}
-              date={publishedAt}
-              href={`/snippets/${slug}`}
-              sx={{
-                gridColumn: { xs: "span 12", md: "span 4" },
-                minHeight: { xs: 120, md: 240 },
-              }}
-            />
-          ))}
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            mt: { xs: 4, md: 8 },
-          }}
-        >
-          <Button
-            component={Link}
-            href="/timeline"
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForwardOutlinedIcon />}
-            sx={{ width: "fit-content" }}
-          >
-            {t("snippets.button")}
-          </Button>
         </Box>
       </Container>
       <Container
@@ -248,7 +363,93 @@ const Home = ({ snippets }) => {
         maxWidth="md"
         sx={{ mt: { xs: 8, sm: 16 } }}
       >
-        Collaboration section
+        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          {t("snippets.heading")}
+        </Typography>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          {snippets.map(({ title, publishedAt, slug }) => (
+            <FancySnippetCard
+              key={slug}
+              heading={title}
+              date={publishedAt}
+              href={`/snippets/${slug}`}
+              sx={{
+                gridColumn: { xs: "span 12", md: "span 4" },
+                minHeight: { xs: 120, md: 240 },
+              }}
+            />
+          ))}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            mt: { xs: 4, md: 8 },
+          }}
+        >
+          <Button
+            component={Link}
+            href="/timeline"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardOutlinedIcon />}
+            sx={{ width: "fit-content" }}
+          >
+            {t("snippets.button")}
+          </Button>
+        </Box>
+      </Container>
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+      >
+        <Box
+          sx={{
+            maxWidth: 600,
+            p: 2,
+            mx: "auto",
+            border: 1,
+            borderColor: "primary.main",
+            borderRadius: 1,
+          }}
+        >
+          <Typography variant="h4" sx={{ mb: "0.7em" }}>
+            {t("contact.heading")}
+          </Typography>
+          <Typography variant="body1" sx={{ mb: "0.7em" }}>
+            {t("contact.description")}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              mt: { xs: 2, md: 4 },
+            }}
+          >
+            <Button
+              component={Link}
+              href="/timeline"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForwardOutlinedIcon />}
+              sx={{ width: "fit-content" }}
+            >
+              {t("contact.button")}
+            </Button>
+          </Box>
+        </Box>
       </Container>
     </>
   );

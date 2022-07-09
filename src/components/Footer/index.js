@@ -157,7 +157,7 @@ const Footer = () => {
                         "&.active::after": {
                           transform: "scale(0)",
                         },
-                        "&:hover::after, &:focus::after": {
+                        "&:hover::after, &.Mui-focusVisible::after": {
                           transform: "scale(1)",
                         },
                       }}
@@ -178,7 +178,7 @@ const Footer = () => {
                         "&.active::after": {
                           transform: "scale(0)",
                         },
-                        "&:hover::after, &:focus::after": {
+                        "&:hover::after, &.Mui-focusVisible::after": {
                           transform: "scale(1)",
                         },
                       }}

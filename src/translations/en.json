@@ -4,7 +4,43 @@
       "title": "Ceri Morse",
       "description": "Designing and developing full stack software solutions that are responsive and accessible."
     },
-    "about": {},
+    "about": {
+      "characteristics": {
+        "fullstack": {
+          "heading": "Fullstack",
+          "description": "A short description about fullstack development"
+        },
+        "responsive": {
+          "heading": "Responsive",
+          "description": "A short description about responsive design"
+        },
+        "accessible": {
+          "heading": "Accessible",
+          "description": "A short description about accessible development"
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": "A short description about mentoring other developers"
+        }
+      },
+      "description": "I am passionate",
+      "button": "Learn more about me"
+    },
+    "techstack": {
+      "description": "I really enjoy working across the entire tech stack.",
+      "frontend": {
+        "heading": "Frontend",
+        "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
+      },
+      "backend": {
+        "heading": "Backend",
+        "description": "I value clean and modular design with a focus on code reuse and readability."
+      },
+      "devops": {
+        "heading": "DevOps",
+        "description": "I try to make the developer experience for deploying code as seamless as possible."
+      }
+    },
     "timeline": {
       "line1": "I'm currently working as a Senior Software Developer at Arup.",
       "line2": {
@@ -13,15 +49,19 @@
       },
       "button": "See full timeline"
     },
-    "snippets": {
-      "line1": "Recently released snippets.",
-      "button": "See all snippets"
-    },
     "testimonials": {
       "line1": "I've worked with some amazing people during my career.",
       "line2": "See what some of them have to say about our time working together."
     },
-    "contact": {}
+    "snippets": {
+      "heading": "Recently released snippets.",
+      "button": "See all snippets"
+    },
+    "contact": {
+      "heading": "Let's collaborate.",
+      "description": "I'm always interested in hearing about exciting job opportunities. However, if you have another request or question, please don't hesitate to send me a message.",
+      "button": "Get in touch"
+    }
   },
   "about": {
     "metadata": {

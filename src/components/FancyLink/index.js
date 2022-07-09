@@ -19,7 +19,7 @@ const FancyLinkRoot = styled(Link)(({ activeClassName }) => ({
     transformOrigin: "center",
     transition: "opacity 300ms, transform 300ms",
   },
-  [`&.${activeClassName}::after, &:hover::after, &:focus::after`]: {
+  [`&.${activeClassName}::after, &:hover::after, &.Mui-focusVisible::after`]: {
     transform: "scale(1)",
   },
 }));

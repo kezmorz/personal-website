@@ -4,7 +4,43 @@
       "title": "Ceri Morse",
       "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
     },
-    "about": {},
+    "about": {
+      "characteristics": {
+        "fullstack": {
+          "heading": "Fullstack",
+          "description": "A short description about fullstack development"
+        },
+        "responsive": {
+          "heading": "Responsive",
+          "description": "A short description about responsive design"
+        },
+        "accessible": {
+          "heading": "Accessible",
+          "description": "A short description about accessible development"
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": "A short description about mentoring other developers"
+        }
+      },
+      "description": "I am passionate",
+      "button": "Learn more about me"
+    },
+    "techstack": {
+      "description": "Rwy'n mwynhau gweithio ar draws y pentwr dechnoleg gyfan.",
+      "frontend": {
+        "heading": "Penblaen",
+        "description": "Rwy'n cymryd llawer o falchder mewn creu cymwysiadau hygyrch; mae'r we i bawb."
+      },
+      "backend": {
+        "heading": "Pencefn",
+        "description": "Rwy'n gwerthfawrogi dylunio glân a modiwlaidd gyda ffocws ar ailddefnyddio cod a darllenadwyedd."
+      },
+      "devops": {
+        "heading": "DevOps",
+        "description": "Rwy'n ceisio gwneud profiad y datblygwr ar gyfer lleoli cod mor ddi-dor â phosibl."
+      }
+    },
     "timeline": {
       "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
       "line2": {
@@ -13,15 +49,19 @@
       },
       "button": "Gweler y llinell amser llawn"
     },
-    "snippets": {
-      "line1": "Recently released snippets.",
-      "button": "Gweler holl pytiau"
-    },
     "testimonials": {
       "line1": "Rwyf wedi gweithio gyda rhai pobl anhygoel yn ystod fy ngyrfa.",
       "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd."
     },
-    "contact": {}
+    "snippets": {
+      "heading": "Recently released snippets.",
+      "button": "Gweler holl pytiau"
+    },
+    "contact": {
+      "heading": "Gadewch i ni gydweithio.",
+      "description": "Mae gen i ddiddordeb mewn clywed am gyfleoedd gwaith cyffrous. Fodd bynnag, os oes gennych gais neu gwestiwn arall, peidiwch ag oedi cyn anfon neges ataf.",
+      "button": "Cysylltwch"
+    }
   },
   "about": {
     "metadata": {
