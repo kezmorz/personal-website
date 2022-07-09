@@ -172,7 +172,14 @@ const Home = ({ snippets }) => {
           >
             <Box sx={{ gridColumn: { xs: "span 12", sm: "span 6" } }}>
               {technology.frontend.map(({ name, Icon }) => (
-                <Box key={name} sx={{ width: "100%", display: "inline-flex" }}>
+                <Box
+                  key={name}
+                  sx={{
+                    width: "100%",
+                    display: "inline-flex",
+                    alignItems: "center",
+                  }}
+                >
                   <Box
                     component="span"
                     sx={{
@@ -193,7 +200,14 @@ const Home = ({ snippets }) => {
             </Box>
             <Box sx={{ gridColumn: { xs: "span 12", sm: "span 6" } }}>
               {technology.backend.map(({ name, Icon }) => (
-                <Box key={name} sx={{ width: "100%", display: "inline-flex" }}>
+                <Box
+                  key={name}
+                  sx={{
+                    width: "100%",
+                    display: "inline-flex",
+                    alignItems: "center",
+                  }}
+                >
                   <Box
                     component="span"
                     sx={{
