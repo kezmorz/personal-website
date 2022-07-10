@@ -4,7 +4,7 @@ import { Paper, Typography, Box } from "@mui/material";
 const CharacteristicCard = ({ heading, description, Icon, sx = [] }) => {
   return (
     <Paper square sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
-      <Box sx={{ width: 64, height: 64 }}>
+      <Box component="span" sx={{ width: 64, height: 64, display: "flex" }}>
         <Icon sx={{ width: "100%", height: "100%" }} />
       </Box>
       <Box sx={{ mt: 1 }}>

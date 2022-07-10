@@ -32,6 +32,7 @@ import {
   FancySnippetCard,
   TestimonialCard,
 } from "@/components/Card";
+import StepEvent from "@/components/StepEvent";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -60,6 +61,13 @@ const technology = {
     { name: "AWS", Icon: AwsIcon },
   ],
 };
+
+const events = [
+  { name: "event", Icon: NodeIcon },
+  { name: "event", Icon: NodeIcon },
+  { name: "event", Icon: NodeIcon },
+  { name: "event", Icon: NodeIcon },
+];
 
 const testimonials = [
   {
@@ -241,7 +249,6 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
               justifyContent: "flex-end",
               alignItems: "center",
               mt: { xs: 4, md: 8 },
@@ -266,10 +273,23 @@ const Home = ({ snippets }) => {
         sx={{ mt: { xs: 8, sm: 16 } }}
       >
         <Box
+          sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column" }}
+        >
+          {events.map(({ name, Icon }) => (
+            <StepEvent key={name} position="vertical" description={name} />
+          ))}
+        </Box>
+        <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+          {events.map(({ name, Icon }) => (
+            <StepEvent key={name} position="horizontal" description={name} />
+          ))}
+        </Box>
+        <Box
           sx={{
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
             gap: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
           }}
         >
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
@@ -295,7 +315,6 @@ const Home = ({ snippets }) => {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "row",
                 justifyContent: "flex-end",
                 alignItems: "center",
                 mt: { xs: 4, md: 8 },
@@ -343,7 +362,6 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
               justifyContent: "space-between",
               alignItems: { md: "center" },
               px: 2,
@@ -404,7 +422,6 @@ const Home = ({ snippets }) => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
             justifyContent: "flex-end",
             alignItems: "center",
             mt: { xs: 4, md: 8 },
@@ -446,7 +463,6 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
               justifyContent: "flex-end",
               alignItems: "center",
               mt: { xs: 2, md: 4 },
