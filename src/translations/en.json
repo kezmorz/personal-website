@@ -26,22 +26,13 @@
       "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
       "button": "Learn more about me"
     },
-    "techstack": {
-      "description": "I really enjoy working across the entire tech stack.",
-      "frontend": {
-        "heading": "Frontend",
-        "description": "I take a lot of pride in creating accessible applications; the web is for everyone."
-      },
-      "backend": {
-        "heading": "Backend",
-        "description": "I value clean and modular design with a focus on code reuse and readability."
-      },
-      "devops": {
-        "heading": "DevOps",
-        "description": "I try to make the developer experience for deploying code as seamless as possible."
-      }
-    },
     "timeline": {
+      "events": {
+        "university": "Studied Mathematics and its Applications at Cardiff University",
+        "rugby": "Modelled rugby lineout strategies with the Welsh Rugby Union",
+        "astra": "Software engineer in the retail and online markets at Astra Games",
+        "arup": "Senior software developer and technical lead at Arup"
+      },
       "line1": "I'm currently working as a Senior Software Developer at Arup.",
       "line2": {
         "description": "I lead the development of the award winning {link} product.",

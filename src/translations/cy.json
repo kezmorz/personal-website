@@ -26,22 +26,13 @@
       "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
       "button": "Learn more about me"
     },
-    "techstack": {
-      "description": "Rwy'n mwynhau gweithio ar draws y pentwr dechnoleg gyfan.",
-      "frontend": {
-        "heading": "Penblaen",
-        "description": "Rwy'n cymryd llawer o falchder mewn creu cymwysiadau hygyrch; mae'r we i bawb."
-      },
-      "backend": {
-        "heading": "Pencefn",
-        "description": "Rwy'n gwerthfawrogi dylunio glân a modiwlaidd gyda ffocws ar ailddefnyddio cod a darllenadwyedd."
-      },
-      "devops": {
-        "heading": "DevOps",
-        "description": "Rwy'n ceisio gwneud profiad y datblygwr ar gyfer lleoli cod mor ddi-dor â phosibl."
-      }
-    },
     "timeline": {
+      "events": {
+        "university": "Astudiais Fathemateg a'i Chymwysiadau ym Mhrifysgol Caerdydd",
+        "rugby": "Modelais strategaethau lein rygbi gydag Undeb Rygbi Cymru",
+        "astra": "Peiriannydd meddalwedd yn y marchnadoedd manwerthu ac ar-lein yn Astra Games",
+        "arup": "Uwch ddatblygwr meddalwedd ac arweinydd technegol yn Arup"
+      },
       "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
       "line2": {
         "description": "Rwy'n arwain datblygiad y cynnyrch arobryn {link}.",

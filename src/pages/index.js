@@ -63,10 +63,10 @@ const technology = {
 };
 
 const events = [
-  { name: "event", Icon: NodeIcon },
-  { name: "event", Icon: NodeIcon },
-  { name: "event", Icon: NodeIcon },
-  { name: "event", Icon: NodeIcon },
+  { name: "university", Icon: NodeIcon },
+  { name: "rugby", Icon: NodeIcon },
+  { name: "astra", Icon: NodeIcon },
+  { name: "arup", Icon: NodeIcon },
 ];
 
 const testimonials = [
@@ -276,12 +276,20 @@ const Home = ({ snippets }) => {
           sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column" }}
         >
           {events.map(({ name, Icon }) => (
-            <StepEvent key={name} position="vertical" description={name} />
+            <StepEvent
+              key={name}
+              position="vertical"
+              description={t(`timeline.events.${name}`)}
+            />
           ))}
         </Box>
         <Box sx={{ display: { xs: "none", sm: "flex" } }}>
           {events.map(({ name, Icon }) => (
-            <StepEvent key={name} position="horizontal" description={name} />
+            <StepEvent
+              key={name}
+              position="horizontal"
+              description={t(`timeline.events.${name}`)}
+            />
           ))}
         </Box>
         <Box
