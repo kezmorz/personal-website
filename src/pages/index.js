@@ -7,6 +7,10 @@ import {
   DevicesOutlined as DevicesOutlinedIcon,
   AccessibilityOutlined as AccessibilityOutlinedIcon,
   PeopleOutlined as PeopleOutlinedIcon,
+  SquareFootOutlined as SquareFootOutlinedIcon,
+  SportsRugbyOutlined as SportsRugbyOutlinedIcon,
+  TerminalOutlined as TerminalOutlinedIcon,
+  GroupsOutlined as GroupsOutlinedIcon,
   ArrowForwardOutlined as ArrowForwardOutlinedIcon,
   ArrowForwardIosOutlined as ArrowForwardIosOutlinedIcon,
   ArrowBackIosOutlined as ArrowBackIosOutlinedIcon,
@@ -63,10 +67,10 @@ const technology = {
 };
 
 const events = [
-  { name: "university", Icon: NodeIcon },
-  { name: "rugby", Icon: NodeIcon },
-  { name: "astra", Icon: NodeIcon },
-  { name: "arup", Icon: NodeIcon },
+  { name: "university", Icon: SquareFootOutlinedIcon },
+  { name: "rugby", Icon: SportsRugbyOutlinedIcon },
+  { name: "astra", Icon: TerminalOutlinedIcon },
+  { name: "arup", Icon: GroupsOutlinedIcon },
 ];
 
 const testimonials = [
@@ -280,6 +284,7 @@ const Home = ({ snippets }) => {
               key={name}
               position="vertical"
               description={t(`timeline.events.${name}`)}
+              Icon={Icon}
             />
           ))}
         </Box>
@@ -289,6 +294,7 @@ const Home = ({ snippets }) => {
               key={name}
               position="horizontal"
               description={t(`timeline.events.${name}`)}
+              Icon={Icon}
             />
           ))}
         </Box>
