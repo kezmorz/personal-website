@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
-import { Container, Button, IconButton, Typography, Box } from "@mui/material";
+import {
+  Container,
+  ButtonBase,
+  Button,
+  IconButton,
+  Typography,
+  Box,
+} from "@mui/material";
 import {
   LayersOutlined as LayersOutlinedIcon,
   DevicesOutlined as DevicesOutlinedIcon,
@@ -400,7 +407,34 @@ const Home = ({ snippets }) => {
                 <ArrowForwardIosOutlinedIcon fontSize="small" />
               </IconButton>
             </Box>
-            <Box sx={{ display: "flex" }}></Box>
+            <Box sx={{ display: "flex" }}>
+              {testimonials.map(({ profile: { name } }, index) => (
+                <ButtonBase
+                  key={name}
+                  aria-label={`${name} testimonial`}
+                  onClick={() => setTestimonial(index)} // CERI - change this and maybe combine with other function
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    display: "inline-block",
+                    p: "4px",
+                    ml: 1,
+                    borderRadius: "50%",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: "100%",
+                      borderRadius: "50%",
+                      bgcolor: "action.disabled",
+                      ...(index === testimonial && {
+                        bgcolor: "action.active",
+                      }),
+                    }}
+                  />
+                </ButtonBase>
+              ))}
+            </Box>
           </Box>
         </Box>
       </Container>
@@ -443,7 +477,7 @@ const Home = ({ snippets }) => {
         >
           <Button
             component={Link}
-            href="/timeline"
+            href="/snippets"
             variant="contained"
             size="large"
             endIcon={<ArrowForwardOutlinedIcon />}
@@ -484,7 +518,7 @@ const Home = ({ snippets }) => {
           >
             <Button
               component={Link}
-              href="/timeline"
+              href="/contact"
               variant="contained"
               size="large"
               endIcon={<ArrowForwardOutlinedIcon />}
