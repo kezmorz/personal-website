@@ -426,10 +426,10 @@ const Home = ({ snippets }) => {
                     sx={{
                       height: "100%",
                       borderRadius: "50%",
-                      bgcolor: "action.disabled",
-                      ...(index === testimonial && {
-                        bgcolor: "action.active",
-                      }),
+                      bgcolor:
+                        index === testimonial
+                          ? "action.active"
+                          : "action.disabled",
                     }}
                   />
                 </ButtonBase>
