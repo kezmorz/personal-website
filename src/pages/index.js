@@ -44,6 +44,7 @@ import {
   TestimonialCard,
 } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
+import Carousel from "@/components/Carousel";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -374,12 +375,17 @@ const Home = ({ snippets }) => {
             mt: { xs: 4, md: 8 },
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          {/* <Box sx={{ display: "flex" }}>
             <TestimonialCard
               quote={testimonials[testimonial].quote}
               profile={testimonials[testimonial].profile}
             />
-          </Box>
+          </Box> */}
+          <Carousel>
+            {testimonials.map(({ quote, profile }) => (
+              <TestimonialCard key={quote} quote={quote} profile={profile} />
+            ))}
+          </Carousel>
           <Box
             sx={{
               display: "flex",
