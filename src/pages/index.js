@@ -100,7 +100,7 @@ const testimonials = [
     quote:
       "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
     profile: {
-      name: "Rhian Powell",
+      name: "Rhian Elizabeth Powell",
       title: "Chief Piggle",
       company: "Piggle Co.",
       imageProps: {
@@ -112,9 +112,9 @@ const testimonials = [
   },
   {
     quote:
-      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
+      "This is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
     profile: {
-      name: "Rhian Powell",
+      name: "Rhian DJ Lizzy Powell",
       title: "Chef Piggle",
       company: "Piggle Co.",
       imageProps: {
@@ -134,6 +134,10 @@ const Home = ({ snippets }) => {
     setTestimonial((prevTestimonial) =>
       wrap(0, testimonials.length, prevTestimonial + direction)
     );
+  };
+
+  const handleTestimonialChange2 = (newTestimonial) => {
+    setTestimonial(newTestimonial);
   };
 
   return (
@@ -381,9 +385,16 @@ const Home = ({ snippets }) => {
               profile={testimonials[testimonial].profile}
             />
           </Box> */}
-          <Carousel>
+          <Carousel
+            index={testimonial}
+            onChangeIndex={handleTestimonialChange2}
+          >
             {testimonials.map(({ quote, profile }) => (
-              <TestimonialCard key={quote} quote={quote} profile={profile} />
+              <TestimonialCard
+                key={profile.name}
+                quote={quote}
+                profile={profile}
+              />
             ))}
           </Carousel>
           <Box
@@ -399,7 +410,8 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="previous testimonial"
-                onClick={() => handleTestimonialChange(-1)}
+                // onClick={() => handleTestimonialChange(-1)}
+                onClick={() => handleTestimonialChange2(testimonial - 1)}
                 sx={{ ml: -1 }}
               >
                 <ArrowBackIosOutlinedIcon fontSize="small" />
@@ -407,7 +419,8 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="next testimonial"
-                onClick={() => handleTestimonialChange(1)}
+                // onClick={() => handleTestimonialChange(1)}
+                onClick={() => handleTestimonialChange2(testimonial + 1)}
                 sx={{ ml: 2 }}
               >
                 <ArrowForwardIosOutlinedIcon fontSize="small" />

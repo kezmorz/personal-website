@@ -18,9 +18,9 @@ const CarouselSlide = styled(motion.div)({
   // boxSizing: "border-box"
 });
 
-const Carousel = ({ children }) => {
+const Carousel = ({ index, onChangeIndex, children }) => {
   const carouselEl = useRef(null);
-  const [index, setIndex] = useState(0);
+  const [latestIndex, setLatestIndex] = useState(index || 0);
   const x = useMotionValue(0);
 
   const range = useMemo(
@@ -34,20 +34,27 @@ const Carousel = ({ children }) => {
   );
 
   useEffect(() => {
+    setLatestIndex(index);
+  }, [index]);
+
+  useEffect(() => {
     const controls = animate(
       x,
-      -index * (carouselEl.current?.clientWidth || 0),
+      -latestIndex * (carouselEl.current?.clientWidth || 0),
       { type: "spring", bounce: 0 }
     );
+    if (onChangeIndex) {
+      onChangeIndex(latestIndex);
+    }
     return controls.stop;
-  }, [index]);
+  }, [latestIndex]);
 
   const handleDragEnd = (_, dragProps) => {
     const { offset, velocity } = dragProps;
     const clientWidth = carouselEl.current?.clientWidth || 0;
 
     if (Math.abs(velocity.y) > Math.abs(velocity.x)) {
-      animate(x, -index * (carouselEl.current?.clientWidth || 0), {
+      animate(x, -latestIndex * (carouselEl.current?.clientWidth || 0), {
         type: "spring",
         bounce: 0,
       });
@@ -55,11 +62,11 @@ const Carousel = ({ children }) => {
     }
 
     if (offset.x > clientWidth / 4) {
-      setIndex(index - 1);
+      setLatestIndex(latestIndex - 1);
     } else if (offset.x < -clientWidth / 4) {
-      setIndex(index + 1);
+      setLatestIndex(latestIndex + 1);
     } else {
-      animate(x, -index * (carouselEl.current?.clientWidth || 0), {
+      animate(x, -latestIndex * (carouselEl.current?.clientWidth || 0), {
         type: "spring",
         bounce: 0,
       });
@@ -69,24 +76,23 @@ const Carousel = ({ children }) => {
   return (
     <CarouselRoot ref={carouselEl}>
       {range.map((slide) => {
-        const slideModulo = (index + slide) % Children.count(children);
+        const slideModulo = (latestIndex + slide) % Children.count(children);
         const slideIndex =
           slideModulo < 0
             ? slideModulo + Children.count(children)
             : slideModulo;
         return (
           <CarouselSlide
-            key={index + slide}
+            key={latestIndex + slide}
             draggable
             drag="x"
             dragElastic={1}
             onDragEnd={handleDragEnd}
-            sx={{
-              // x,
-              left: `${(index + slide) * 100}%`,
-              right: `${(index + slide) * 100}%`,
-            }}
             style={{ x }}
+            sx={{
+              left: `${(latestIndex + slide) * 100}%`,
+              right: `${(latestIndex + slide) * 100}%`,
+            }}
           >
             {children[slideIndex]}
           </CarouselSlide>
@@ -97,6 +103,8 @@ const Carousel = ({ children }) => {
 };
 
 Carousel.propTypes = {
+  index: PropTypes.number,
+  onChangeIndex: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
