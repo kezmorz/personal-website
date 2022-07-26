@@ -44,7 +44,9 @@ const Carousel = ({ index, onChangeIndex, children }) => {
   const slideIndex = wrap(0, Children.count(children), index);
 
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "1fr" }}>
+    <Box
+      sx={{ display: "grid", gridTemplateColumns: "1fr", overflowX: "hidden" }}
+    >
       <AnimatePresence initial={false} custom={direction}>
         <CarouselSlide
           key={index}
