@@ -28,20 +28,21 @@ const CarouselSlide = styled(motion.div)({
 });
 
 const Carousel = ({ index, onChangeIndex, children }) => {
-  const [direction, setDirection] = useState(0);
+  const [lastIndex, setLastIndex] = useState(0);
 
   const handleDragEnd = (event, { offset, velocity }) => {
     const swipe = Math.abs(offset.x) * velocity.x;
     if (swipe < -swipeConfidenceThreshold) {
+      setLastIndex(index);
       onChangeIndex(index + 1);
-      setDirection(1);
     } else if (swipe > swipeConfidenceThreshold) {
+      setLastIndex(index);
       onChangeIndex(index - 1);
-      setDirection(-1);
     }
   };
 
   const slideIndex = wrap(0, Children.count(children), index);
+  const direction = index - lastIndex;
 
   return (
     <Box
