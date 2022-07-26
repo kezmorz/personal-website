@@ -1,104 +1,71 @@
-import { useRef, useState, useMemo, useEffect, Children } from "react";
+import { useState, Children } from "react";
 import PropTypes from "prop-types";
-import { motion, animate, useMotionValue } from "framer-motion";
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { motion, AnimatePresence } from "framer-motion";
+import { wrap } from "@/utils/math";
 
-const CarouselRoot = styled(motion.div)({
-  position: "relative",
-  width: "100%",
-  height: "100%",
-  overflowX: "hidden",
-});
+const swipeConfidenceThreshold = 10000;
+
+const variants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+  animate: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+};
 
 const CarouselSlide = styled(motion.div)({
-  position: "absolute",
-  width: "100%",
-  height: "100%",
-  // padding: "12px",
-  // boxSizing: "border-box"
+  gridRowStart: 1,
+  gridColumnStart: 1,
 });
 
 const Carousel = ({ index, onChangeIndex, children }) => {
-  const carouselEl = useRef(null);
-  const [latestIndex, setLatestIndex] = useState(index || 0);
-  const x = useMotionValue(0);
+  const [direction, setDirection] = useState(0);
 
-  const range = useMemo(
-    () => [
-      ...Children.map(children, (_, childIndex) => -childIndex)
-        .filter((childIndex) => childIndex !== -0)
-        .reverse(),
-      ...Children.map(children, (_, childIndex) => childIndex),
-    ],
-    [children]
-  );
-
-  useEffect(() => {
-    setLatestIndex(index);
-  }, [index]);
-
-  useEffect(() => {
-    const controls = animate(
-      x,
-      -latestIndex * (carouselEl.current?.clientWidth || 0),
-      { type: "spring", bounce: 0 }
-    );
-    if (onChangeIndex) {
-      onChangeIndex(latestIndex);
-    }
-    return controls.stop;
-  }, [latestIndex]);
-
-  const handleDragEnd = (_, dragProps) => {
-    const { offset, velocity } = dragProps;
-    const clientWidth = carouselEl.current?.clientWidth || 0;
-
-    if (Math.abs(velocity.y) > Math.abs(velocity.x)) {
-      animate(x, -latestIndex * (carouselEl.current?.clientWidth || 0), {
-        type: "spring",
-        bounce: 0,
-      });
-      return;
-    }
-
-    if (offset.x > clientWidth / 4) {
-      setLatestIndex(latestIndex - 1);
-    } else if (offset.x < -clientWidth / 4) {
-      setLatestIndex(latestIndex + 1);
-    } else {
-      animate(x, -latestIndex * (carouselEl.current?.clientWidth || 0), {
-        type: "spring",
-        bounce: 0,
-      });
+  const handleDragEnd = (event, { offset, velocity }) => {
+    const swipe = Math.abs(offset.x) * velocity.x;
+    if (swipe < -swipeConfidenceThreshold) {
+      onChangeIndex(index + 1);
+      setDirection(1);
+    } else if (swipe > swipeConfidenceThreshold) {
+      onChangeIndex(index - 1);
+      setDirection(-1);
     }
   };
 
+  const slideIndex = wrap(0, Children.count(children), index);
+
   return (
-    <CarouselRoot ref={carouselEl}>
-      {range.map((slide) => {
-        const slideModulo = (latestIndex + slide) % Children.count(children);
-        const slideIndex =
-          slideModulo < 0
-            ? slideModulo + Children.count(children)
-            : slideModulo;
-        return (
-          <CarouselSlide
-            key={latestIndex + slide}
-            draggable
-            drag="x"
-            dragElastic={1}
-            onDragEnd={handleDragEnd}
-            style={{ x }}
-            sx={{
-              left: `${(latestIndex + slide) * 100}%`,
-              right: `${(latestIndex + slide) * 100}%`,
-            }}
-          >
-            {children[slideIndex]}
-          </CarouselSlide>
-        );
-      })}
-    </CarouselRoot>
+    <Box sx={{ display: "grid", gridTemplateColumns: "1fr" }}>
+      <AnimatePresence initial={false} custom={direction}>
+        <CarouselSlide
+          key={index}
+          variants={variants}
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+          initial="enter"
+          animate="animate"
+          exit="exit"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={handleDragEnd}
+          custom={direction}
+        >
+          {children[slideIndex]}
+        </CarouselSlide>
+      </AnimatePresence>
+    </Box>
   );
 };
 
