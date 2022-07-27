@@ -27,30 +27,38 @@ const CarouselSlide = styled(motion.div)({
   gridColumnStart: 1,
 });
 
-const Carousel = ({ index, onChangeIndex, children }) => {
-  const [lastIndex, setLastIndex] = useState(0);
+const Carousel = ({ slide, onChange, children, sx = [] }) => {
+  const [lastSlide, setLastSlide] = useState(0);
 
   const handleDragEnd = (event, { offset, velocity }) => {
     const swipe = Math.abs(offset.x) * velocity.x;
     if (swipe < -swipeConfidenceThreshold) {
-      setLastIndex(index);
-      onChangeIndex(index + 1);
+      setLastSlide(slide);
+      onChange(slide + 1);
     } else if (swipe > swipeConfidenceThreshold) {
-      setLastIndex(index);
-      onChangeIndex(index - 1);
+      setLastSlide(slide);
+      onChange(slide - 1);
     }
   };
 
-  const slideIndex = wrap(0, Children.count(children), index);
-  const direction = index - lastIndex;
+  const slideIndex = wrap(0, Children.count(children), slide);
+  const direction = slide - lastSlide;
 
   return (
     <Box
-      sx={{ display: "grid", gridTemplateColumns: "1fr", overflowX: "hidden" }}
+      sx={[
+        {
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          alignItems: "center",
+          overflowX: "hidden",
+        },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
     >
       <AnimatePresence initial={false} custom={direction}>
         <CarouselSlide
-          key={index}
+          key={slide}
           variants={variants}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
@@ -73,12 +81,19 @@ const Carousel = ({ index, onChangeIndex, children }) => {
 };
 
 Carousel.propTypes = {
-  index: PropTypes.number,
-  onChangeIndex: PropTypes.func,
+  slide: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  sx: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
+    ),
+    PropTypes.func,
+    PropTypes.object,
+  ]),
 };
 
 export default Carousel;

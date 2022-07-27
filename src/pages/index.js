@@ -130,13 +130,7 @@ const Home = ({ snippets }) => {
   const [testimonial, setTestimonial] = useState(0);
   const t = useTranslations("home");
 
-  const handleTestimonialChange = (direction) => {
-    setTestimonial((prevTestimonial) =>
-      wrap(0, testimonials.length, prevTestimonial + direction)
-    );
-  };
-
-  const handleTestimonialChange2 = (newTestimonial) => {
+  const handleTestimonialChange = (newTestimonial) => {
     setTestimonial(newTestimonial);
   };
 
@@ -376,18 +370,12 @@ const Home = ({ snippets }) => {
             width: "100%",
             maxWidth: 600,
             mx: "auto",
-            mt: { xs: 4, md: 8 },
           }}
         >
-          {/* <Box sx={{ display: "flex" }}>
-            <TestimonialCard
-              quote={testimonials[testimonial].quote}
-              profile={testimonials[testimonial].profile}
-            />
-          </Box> */}
           <Carousel
-            index={testimonial}
-            onChangeIndex={handleTestimonialChange2}
+            slide={testimonial}
+            onChange={handleTestimonialChange}
+            sx={{ height: { xs: 368, md: 304 } }}
           >
             {testimonials.map(({ quote, profile }) => (
               <TestimonialCard
@@ -410,8 +398,7 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="previous testimonial"
-                // onClick={() => handleTestimonialChange(-1)}
-                onClick={() => handleTestimonialChange2(testimonial - 1)}
+                onClick={() => handleTestimonialChange(testimonial - 1)}
                 sx={{ ml: -1 }}
               >
                 <ArrowBackIosOutlinedIcon fontSize="small" />
@@ -419,8 +406,7 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="next testimonial"
-                // onClick={() => handleTestimonialChange(1)}
-                onClick={() => handleTestimonialChange2(testimonial + 1)}
+                onClick={() => handleTestimonialChange(testimonial + 1)}
                 sx={{ ml: 2 }}
               >
                 <ArrowForwardIosOutlinedIcon fontSize="small" />
