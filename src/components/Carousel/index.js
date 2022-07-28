@@ -1,4 +1,4 @@
-import { useState, Children } from "react";
+import { useRef, useState, Children, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -28,21 +28,31 @@ const CarouselSlide = styled(motion.div)({
 });
 
 const Carousel = ({ slide, onChange, children, sx = [] }) => {
-  const [lastSlide, setLastSlide] = useState(0);
+  const [{ lastSlide, lastDirection }, setProperties] = useState({
+    lastSlide: slide,
+    lastDirection: 0,
+  });
+
+  useEffect(() => {
+    if (slide !== lastSlide) {
+      setProperties(({ lastSlide: prevLastSlide }) => ({
+        lastSlide: slide,
+        lastDirection: slide - prevLastSlide,
+      }));
+    }
+  }, [slide]);
 
   const handleDragEnd = (event, { offset, velocity }) => {
     const swipe = Math.abs(offset.x) * velocity.x;
     if (swipe < -swipeConfidenceThreshold) {
-      setLastSlide(slide);
       onChange(slide + 1);
     } else if (swipe > swipeConfidenceThreshold) {
-      setLastSlide(slide);
       onChange(slide - 1);
     }
   };
 
-  const slideIndex = wrap(0, Children.count(children), slide);
-  const direction = slide - lastSlide;
+  const direction = slide !== lastSlide ? slide - lastSlide : lastDirection;
+  const slideIndex = wrap(0, Children.count(children), lastSlide);
 
   return (
     <Box
@@ -56,9 +66,9 @@ const Carousel = ({ slide, onChange, children, sx = [] }) => {
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
     >
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false}>
         <CarouselSlide
-          key={slide}
+          key={lastSlide}
           variants={variants}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
