@@ -2,7 +2,8 @@ import { useRef, useState, Children, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
+import { m, domMax, LazyMotion, AnimatePresence } from "framer-motion";
 import { wrap } from "@/utils/math";
 
 const swipeConfidenceThreshold = 10000;
@@ -22,7 +23,7 @@ const variants = {
   }),
 };
 
-const CarouselSlide = styled(motion.div)({
+const CarouselSlide = styled(m.div)({
   gridRowStart: 1,
   gridColumnStart: 1,
 });
@@ -69,26 +70,28 @@ const Carousel = ({ slide, onChange, children, sx = [] }) => {
       ]}
       ref={containerElement}
     >
-      <AnimatePresence initial={false}>
-        <CarouselSlide
-          key={lastSlide}
-          variants={variants}
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          initial="enter"
-          animate="animate"
-          exit="exit"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={handleDragEnd}
-          custom={{ width: width, direction: direction }}
-        >
-          {children[slideIndex]}
-        </CarouselSlide>
-      </AnimatePresence>
+      <LazyMotion features={domMax}>
+        <AnimatePresence initial={false}>
+          <CarouselSlide
+            key={lastSlide}
+            variants={variants}
+            initial="enter"
+            animate="animate"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 350, damping: 35 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={handleDragEnd}
+            custom={{ width: width, direction: direction }}
+          >
+            {children[slideIndex]}
+          </CarouselSlide>
+        </AnimatePresence>
+      </LazyMotion>
     </Box>
   );
 };
