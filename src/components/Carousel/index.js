@@ -1,4 +1,4 @@
-import { useState, Children, useEffect } from "react";
+import { useRef, useState, Children, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -8,16 +8,16 @@ import { wrap } from "@/utils/math";
 const swipeConfidenceThreshold = 10000;
 
 const variants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 1000 : -1000,
+  enter: ({ width, direction }) => ({
+    x: direction > 0 ? width : -width,
     opacity: 0,
   }),
   animate: {
     x: 0,
     opacity: 1,
   },
-  exit: (direction) => ({
-    x: direction < 0 ? 1000 : -1000,
+  exit: ({ width, direction }) => ({
+    x: direction < 0 ? width : -width,
     opacity: 0,
   }),
 };
@@ -28,6 +28,7 @@ const CarouselSlide = styled(motion.div)({
 });
 
 const Carousel = ({ slide, onChange, children, sx = [] }) => {
+  const containerElement = useRef(null);
   const [{ lastSlide, lastDirection }, setProperties] = useState({
     lastSlide: slide,
     lastDirection: 0,
@@ -51,6 +52,7 @@ const Carousel = ({ slide, onChange, children, sx = [] }) => {
     }
   };
 
+  const width = containerElement.current?.offsetWidth || 0;
   const direction = slide !== lastSlide ? slide - lastSlide : lastDirection;
   const slideIndex = wrap(0, Children.count(children), lastSlide);
 
@@ -65,6 +67,7 @@ const Carousel = ({ slide, onChange, children, sx = [] }) => {
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
+      ref={containerElement}
     >
       <AnimatePresence initial={false}>
         <CarouselSlide
@@ -81,7 +84,7 @@ const Carousel = ({ slide, onChange, children, sx = [] }) => {
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}
           onDragEnd={handleDragEnd}
-          custom={direction}
+          custom={{ width: width, direction: direction }}
         >
           {children[slideIndex]}
         </CarouselSlide>
