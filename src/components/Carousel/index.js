@@ -2,7 +2,6 @@ import { useRef, useState, Children, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-// import { motion, AnimatePresence } from "framer-motion";
 import { m, domMax, LazyMotion, AnimatePresence } from "framer-motion";
 import { wrap } from "@/utils/math";
 

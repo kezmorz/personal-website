@@ -127,11 +127,11 @@ const testimonials = [
 ];
 
 const Home = ({ snippets }) => {
-  const [testimonial, setTestimonial] = useState(0);
+  const [testimonialSlide, setTestimonialSlide] = useState(0);
   const t = useTranslations("home");
 
-  const handleTestimonialChange = (newTestimonial) => {
-    setTestimonial(newTestimonial);
+  const handleTestimonialSlideChange = (newTestimonialSlide) => {
+    setTestimonialSlide(newTestimonialSlide);
   };
 
   return (
@@ -373,8 +373,8 @@ const Home = ({ snippets }) => {
           }}
         >
           <Carousel
-            slide={testimonial}
-            onChange={handleTestimonialChange}
+            slide={testimonialSlide}
+            onChange={handleTestimonialSlideChange}
             sx={{ height: { xs: 368, md: 304 } }}
           >
             {testimonials.map(({ quote, profile }) => (
@@ -398,7 +398,9 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="previous testimonial"
-                onClick={() => handleTestimonialChange(testimonial - 1)}
+                onClick={() =>
+                  handleTestimonialSlideChange(testimonialSlide - 1)
+                }
                 sx={{ ml: -1 }}
               >
                 <ArrowBackIosOutlinedIcon fontSize="small" />
@@ -406,7 +408,9 @@ const Home = ({ snippets }) => {
               <IconButton
                 size="small"
                 aria-label="next testimonial"
-                onClick={() => handleTestimonialChange(testimonial + 1)}
+                onClick={() =>
+                  handleTestimonialSlideChange(testimonialSlide + 1)
+                }
                 sx={{ ml: 2 }}
               >
                 <ArrowForwardIosOutlinedIcon fontSize="small" />
@@ -417,7 +421,13 @@ const Home = ({ snippets }) => {
                 <ButtonBase
                   key={name}
                   aria-label={`${name} testimonial`}
-                  onClick={() => setTestimonial(index)} // CERI - change this and maybe combine with other function
+                  onClick={() =>
+                    handleTestimonialSlideChange(
+                      Math.floor(testimonialSlide / testimonials.length) *
+                        testimonials.length +
+                        index
+                    )
+                  }
                   sx={{
                     width: 16,
                     height: 16,
@@ -432,7 +442,7 @@ const Home = ({ snippets }) => {
                       height: "100%",
                       borderRadius: "50%",
                       bgcolor:
-                        index === testimonial
+                        index === wrap(0, testimonials.length, testimonialSlide)
                           ? "action.active"
                           : "action.disabled",
                     }}
