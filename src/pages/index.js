@@ -486,18 +486,66 @@ const Home = ({ snippets }) => {
             gap: { xs: 2, md: 4 },
           }}
         >
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 5" } }}>
+          <Box
+            sx={{
+              gridColumn: { xs: "span 12", md: "span 5" },
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Typography variant="h4" sx={{ mb: "0.7em" }}>
               {t("snippets.heading")}
             </Typography>
-            {snippets.map(({ title }, index) => (
-              <Button key={title} onClick={() => setSnippetPreview(index)}>
-                {title}
-              </Button>
+            {snippets.map(({ title, description, slug }, index) => (
+              <ButtonBase
+                key={title}
+                onClick={() => setSnippetPreview(index)}
+                sx={{
+                  justifyContent: "flex-start",
+                  textAlign: "left",
+                  mt: { xs: 1, md: 2 },
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    p: 2,
+                  }}
+                >
+                  <Typography component="span" variant="h6" gutterBottom>
+                    {title}
+                  </Typography>
+                  <Typography component="span" variant="body1">
+                    {description}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                      mt: { xs: 1, md: 2 },
+                    }}
+                  >
+                    <Button
+                      component={Link}
+                      href={`/snippets/${slug}`}
+                      variant="contained"
+                      size="small"
+                      endIcon={<ArrowForwardOutlinedIcon />}
+                      sx={{ width: "fit-content" }}
+                    >
+                      {t("contact.button")}
+                    </Button>
+                  </Box>
+                </Box>
+              </ButtonBase>
             ))}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>
-            <Box sx={{ maxHeight: 640, overflowY: "auto" }}>
+            <Box sx={{ maxHeight: 680, overflowY: "auto" }}>
               <MdxComponent components={components} />
             </Box>
           </Box>
