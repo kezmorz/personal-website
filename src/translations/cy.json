@@ -46,7 +46,11 @@
     },
     "snippets": {
       "heading": "Recently released snippets.",
-      "button": "Gweler holl pytiau"
+      "preview": "Gweld mwy",
+      "information": {
+        "description": "",
+        "button": "Gweler holl pytiau"
+      }
     },
     "contact": {
       "heading": "Gadewch i ni gydweithio.",

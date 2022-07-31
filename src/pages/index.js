@@ -537,7 +537,7 @@ const Home = ({ snippets }) => {
                       endIcon={<ArrowForwardOutlinedIcon />}
                       sx={{ width: "fit-content" }}
                     >
-                      {t("contact.button")}
+                      {t("snippets.preview")}
                     </Button>
                   </Box>
                 </Box>
@@ -549,6 +549,33 @@ const Home = ({ snippets }) => {
               <MdxComponent components={components} />
             </Box>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 852,
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: { md: "center" },
+            mx: "auto",
+            mt: { xs: 4, md: 8 },
+            boxSizing: "border-box",
+          }}
+        >
+          <Typography variant="h5">
+            {t("snippets.information.description")}
+          </Typography>
+          <Button
+            component={Link}
+            href="/snippets"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardOutlinedIcon />}
+            sx={{ width: "fit-content", mt: { xs: 2, md: 0 } }}
+          >
+            {t("snippets.information.button")}
+          </Button>
         </Box>
       </Container>
       <Container

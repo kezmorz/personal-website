@@ -46,7 +46,11 @@
     },
     "snippets": {
       "heading": "Recently released snippets.",
-      "button": "See all snippets"
+      "preview": "See more",
+      "information": {
+        "description": "",
+        "button": "See all snippets"
+      }
     },
     "contact": {
       "heading": "Let's collaborate.",
