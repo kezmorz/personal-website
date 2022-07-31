@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import {
   Container,
   ButtonBase,
@@ -37,12 +38,17 @@ import PostgresqlIcon from "@/icons/Postgresql";
 import MongodbIcon from "@/icons/Mongodb";
 import GitHubIcon from "@/icons/GitHub";
 import AwsIcon from "@/icons/Aws";
-import Meta from "@/components/Meta";
 import {
-  CharacteristicCard,
-  FancySnippetCard,
-  TestimonialCard,
-} from "@/components/Card";
+  Heading4 as MdxHeading4,
+  Paragraph as MdxParagraph,
+  OrderedList as MdxOrderedList,
+  UnorderedList as MdxUnorderedList,
+  ListItem as MdxListItem,
+  Anchor as MdxAnchor,
+  Pre as MdxPre,
+} from "@/components/Markdown";
+import Meta from "@/components/Meta";
+import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
 import Link from "@/components/Link";
@@ -126,12 +132,28 @@ const testimonials = [
   },
 ];
 
+const components = {
+  h4: (props) => <MdxHeading4 {...props} />,
+  p: (props) => <MdxParagraph {...props} />,
+  ol: (props) => <MdxOrderedList {...props} />,
+  ul: (props) => <MdxUnorderedList {...props} />,
+  li: (props) => <MdxListItem {...props} />,
+  a: (props) => <MdxAnchor {...props} />,
+  pre: (props) => <MdxPre {...props} />,
+};
+
 const Home = ({ snippets }) => {
   const [testimonialSlide, setTestimonialSlide] = useState(0);
+  const [snippetPreview, setSnippetPreview] = useState(0);
   const t = useTranslations("home");
+  const MdxComponent = useMDXComponent(snippets[snippetPreview].body.code);
 
-  const handleTestimonialSlideChange = (newTestimonialSlide) => {
-    setTestimonialSlide(newTestimonialSlide);
+  const handleTestimonialSlideChange = (testimonial) => {
+    setTestimonialSlide(testimonial);
+  };
+
+  const handleSnippetPreviewChange = (snippet) => {
+    setSnippetPreview(snippet);
   };
 
   return (
@@ -152,7 +174,6 @@ const Home = ({ snippets }) => {
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
             gap: { xs: 2, md: 4 },
-            mt: { xs: 4, md: 8 },
           }}
         >
           {characteristics.map(({ name, Icon }) => (
@@ -389,7 +410,7 @@ const Home = ({ snippets }) => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: { md: "center" },
+              alignItems: "center",
               px: 2,
               mt: { xs: 2, md: 4 },
             }}
@@ -455,51 +476,31 @@ const Home = ({ snippets }) => {
       </Container>
       <Container
         component="section"
-        maxWidth="md"
+        maxWidth="lg"
         sx={{ mt: { xs: 8, sm: 16 } }}
       >
-        <Typography variant="h4" sx={{ mb: "0.7em" }}>
-          {t("snippets.heading")}
-        </Typography>
         <Box
           sx={{
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
             gap: { xs: 2, md: 4 },
-            mt: { xs: 4, md: 8 },
           }}
         >
-          {snippets.map(({ title, publishedAt, slug }) => (
-            <FancySnippetCard
-              key={slug}
-              heading={title}
-              date={publishedAt}
-              href={`/snippets/${slug}`}
-              sx={{
-                gridColumn: { xs: "span 12", md: "span 4" },
-                minHeight: { xs: 120, md: 240 },
-              }}
-            />
-          ))}
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            mt: { xs: 4, md: 8 },
-          }}
-        >
-          <Button
-            component={Link}
-            href="/snippets"
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForwardOutlinedIcon />}
-            sx={{ width: "fit-content" }}
-          >
-            {t("snippets.button")}
-          </Button>
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 5" } }}>
+            <Typography variant="h4" sx={{ mb: "0.7em" }}>
+              {t("snippets.heading")}
+            </Typography>
+            {snippets.map(({ title }, index) => (
+              <Button key={title} onClick={() => setSnippetPreview(index)}>
+                {title}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>
+            <Box sx={{ maxHeight: 640, overflowY: "auto" }}>
+              <MdxComponent components={components} />
+            </Box>
+          </Box>
         </Box>
       </Container>
       <Container
@@ -563,11 +564,12 @@ export const getStaticProps = async ({ locale }) => {
     props: {
       snippets: allSnippets
         .filter(({ locale: snippetLocale }) => snippetLocale === locale)
-        .map(({ title, description, tags, publishedAt, slug }) => ({
+        .map(({ title, description, tags, publishedAt, body, slug }) => ({
           title,
           description,
           tags,
           publishedAt,
+          body,
           slug,
         }))
         .sort(
