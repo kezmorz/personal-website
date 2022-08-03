@@ -51,6 +51,7 @@ import Meta from "@/components/Meta";
 import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
+import Highlighter from "@/components/Highlighter";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -497,12 +498,11 @@ const Home = ({ snippets }) => {
               {t("snippets.heading")}
             </Typography>
             {snippets.map(({ title, description, slug }, index) => (
-              <ButtonBase
+              <Highlighter
                 key={title}
+                selected={index === snippetPreview}
                 onClick={() => setSnippetPreview(index)}
                 sx={{
-                  justifyContent: "flex-start",
-                  textAlign: "left",
                   mt: { xs: 1, md: 2 },
                 }}
               >
@@ -541,7 +541,7 @@ const Home = ({ snippets }) => {
                     </Button>
                   </Box>
                 </Box>
-              </ButtonBase>
+              </Highlighter>
             ))}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>
