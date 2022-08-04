@@ -347,7 +347,6 @@ const Home = ({ snippets }) => {
                   <Link
                     key="virtual-engage-link"
                     href="https://www.arup.com/expertise/tools/virtual-engage"
-                    underline="hover"
                   >
                     {t("timeline.line2.link")}
                   </Link>

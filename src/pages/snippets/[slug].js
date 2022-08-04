@@ -113,15 +113,11 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
           <Divider />
           <Box sx={{ display: "flex", mt: { xs: 1, sm: 2 } }}>
-            <Link href={tweetUrl} underline="hover">
-              {t("social.tweet.link")}
-            </Link>
+            <Link href={tweetUrl}>{t("social.tweet.link")}</Link>
             <Typography component="span" variant="body1" sx={{ mx: 1 }}>
               •
             </Typography>
-            <Link href={editUrl} underline="hover">
-              {t("social.edit")}
-            </Link>
+            <Link href={editUrl}>{t("social.edit")}</Link>
           </Box>
         </Box>
       </Container>
