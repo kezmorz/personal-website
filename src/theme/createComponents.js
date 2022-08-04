@@ -10,18 +10,18 @@ const createComponents = () => {
   const buttonComponent = button();
 
   return {
-    // MuiCssBaseline: {
-    //   ...cssBaselineComponent,
-    // },
+    MuiCssBaseline: {
+      ...cssBaselineComponent,
+    },
     MuiAppBar: {
       ...appBarComponent,
     },
-    // MuiButtonBase: {
-    //   ...buttonBaseComponent,
-    // },
-    // MuiButton: {
-    //   ...buttonComponent,
-    // },
+    MuiButtonBase: {
+      ...buttonBaseComponent,
+    },
+    MuiButton: {
+      ...buttonComponent,
+    },
   };
 };
 
