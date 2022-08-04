@@ -98,7 +98,7 @@ const AppBar = () => {
 
   return (
     <>
-      <MuiAppBar position="fixed">
+      <MuiAppBar>
         <Toolbar>
           <Box sx={{ flex: "1 1", display: "flex" }}>
             <Link href="/" underline="none">

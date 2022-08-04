@@ -1,4 +1,4 @@
-const teal = {
+const primary = {
   50: "#D6FFF5",
   100: "#BFF7EA",
   200: "#9DEDDA",
@@ -10,6 +10,20 @@ const teal = {
   700: "#104B65",
   800: "#0D3D59",
   900: "#092B3E",
+};
+
+const secondary = {
+  50: "#FFF0F9",
+  100: "#FBD5EC",
+  200: "#F6BEE2",
+  300: "#ED90CB",
+  400: "#DE63B1",
+  main: "#C83C96",
+  500: "#B31B79",
+  600: "#99075E",
+  700: "#7C044A",
+  800: "#5F0136",
+  900: "#4C012B",
 };
 
 const grey = {
@@ -28,7 +42,10 @@ const grey = {
 const light = {
   mode: "light",
   primary: {
-    ...teal,
+    ...primary,
+  },
+  secondary: {
+    ...secondary,
   },
   grey: {
     ...grey,
@@ -37,7 +54,7 @@ const light = {
     primary: grey[900],
     secondary: grey[800],
   },
-  divider: grey[900],
+  divider: grey[100],
   // background: {
   //   default: grey[50],
   //   paper: grey[100]

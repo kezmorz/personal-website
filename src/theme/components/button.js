@@ -3,6 +3,9 @@ import { alpha } from "@mui/material/styles";
 
 const button = () => {
   return {
+    defaultProps: {
+      color: "secondary",
+    },
     styleOverrides: {
       root: ({ ownerState, theme }) => ({
         ...theme.typography.button,
