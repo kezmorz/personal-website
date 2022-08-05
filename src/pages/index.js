@@ -497,50 +497,92 @@ const Home = ({ snippets }) => {
               {t("snippets.heading")}
             </Typography>
             {snippets.map(({ title, description, slug }, index) => (
-              <Highlighter
+              <Box
                 key={title}
-                selected={index === snippetPreview}
-                onClick={() => setSnippetPreview(index)}
-                sx={{
-                  mt: { xs: 1, md: 2 },
-                }}
+                sx={{ position: "relative", mt: { xs: 1, md: 2 } }}
               >
-                <Box
-                  component="span"
+                <Highlighter
+                  selected={index === snippetPreview}
+                  onClick={() => setSnippetPreview(index)}
                   sx={{
                     width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    p: 2,
+                    pb: 6,
                   }}
                 >
-                  <Typography component="span" variant="h6" gutterBottom>
-                    {title}
-                  </Typography>
-                  <Typography component="span" variant="body1">
-                    {description}
-                  </Typography>
                   <Box
+                    component="span"
                     sx={{
+                      width: "100%",
                       display: "flex",
-                      justifyContent: "flex-end",
-                      alignItems: "center",
-                      mt: { xs: 1, md: 2 },
+                      flexDirection: "column",
+                      p: 2,
                     }}
                   >
-                    <Button
-                      component={Link}
-                      href={`/snippets/${slug}`}
-                      variant="contained"
-                      size="small"
-                      endIcon={<ArrowForwardOutlinedIcon />}
-                      sx={{ width: "fit-content" }}
-                    >
-                      {t("snippets.preview")}
-                    </Button>
+                    <Typography component="span" variant="h6" gutterBottom>
+                      {title}
+                    </Typography>
+                    <Typography component="span" variant="body1">
+                      {description}
+                    </Typography>
                   </Box>
-                </Box>
-              </Highlighter>
+                </Highlighter>
+                <Button
+                  component={Link}
+                  href={`/snippets/${slug}`}
+                  variant="contained"
+                  size="small"
+                  color="secondary"
+                  endIcon={<ArrowForwardOutlinedIcon />}
+                  sx={{ position: "absolute", bottom: 16, right: 16 }}
+                >
+                  {t("snippets.preview")}
+                </Button>
+              </Box>
+
+              // <Highlighter
+              //   key={title}
+              //   selected={index === snippetPreview}
+              //   onClick={() => setSnippetPreview(index)}
+              //   sx={{
+              //     mt: { xs: 1, md: 2 },
+              //   }}
+              // >
+              //   <Box
+              //     component="span"
+              //     sx={{
+              //       width: "100%",
+              //       display: "flex",
+              //       flexDirection: "column",
+              //       p: 2,
+              //     }}
+              //   >
+              //     <Typography component="span" variant="h6" gutterBottom>
+              //       {title}
+              //     </Typography>
+              //     <Typography component="span" variant="body1">
+              //       {description}
+              //     </Typography>
+              //     <Box
+              //       sx={{
+              //         display: "flex",
+              //         justifyContent: "flex-end",
+              //         alignItems: "center",
+              //         mt: { xs: 1, md: 2 },
+              //       }}
+              //     >
+              //       <Button
+              //         component={Link}
+              //         href={`/snippets/${slug}`}
+              //         variant="contained"
+              //         size="small"
+              //         color="secondary"
+              //         endIcon={<ArrowForwardOutlinedIcon />}
+              //       >
+              //         {t("snippets.preview")}
+              //       </Button>
+              //     </Box>
+              //   </Box>
+              // </Highlighter>
             ))}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>

@@ -41,7 +41,7 @@ const Highlighter = ({
           }),
           ...(selected && {
             color: "primary.contrastText",
-            bgcolor: "primary.dark",
+            bgcolor: "primary.main",
             // borderColor: "primary.dark"
           }),
         },

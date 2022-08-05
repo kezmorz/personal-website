@@ -36,7 +36,8 @@ const grey = {
   600: "#767676",
   700: "#575757",
   800: "#424242",
-  900: "#1C1C1C",
+  900: "#353535",
+  950: "#1C1C1C",
 };
 
 const light = {
@@ -55,10 +56,6 @@ const light = {
     secondary: grey[800],
   },
   divider: grey[100],
-  // background: {
-  //   default: grey[50],
-  //   paper: grey[100]
-  // }
 };
 
 export default light;
