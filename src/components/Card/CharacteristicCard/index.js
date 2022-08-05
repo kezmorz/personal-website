@@ -3,7 +3,7 @@ import { Paper, Typography, Box } from "@mui/material";
 
 const CharacteristicCard = ({ heading, description, Icon, sx = [] }) => {
   return (
-    <Paper square sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
+    <Paper sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
       <Box component="span" sx={{ width: 64, height: 64, display: "flex" }}>
         <Icon sx={{ width: "100%", height: "100%" }} />
       </Box>
@@ -11,7 +11,7 @@ const CharacteristicCard = ({ heading, description, Icon, sx = [] }) => {
         <Typography variant="h5" gutterBottom>
           {heading}
         </Typography>
-        <Typography variant="body1" paragraph>
+        <Typography variant="body1" paragraph color="text.secondary">
           {description}
         </Typography>
       </Box>

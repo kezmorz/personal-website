@@ -117,7 +117,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
         </Box>
         <TimelineEventConnector />
       </Box>
-      <Paper square sx={{ flex: 1, mx: 2, my: 1 }}>
+      <Paper sx={{ flex: 1, mx: 2, my: 1 }}>
         <Box sx={{ px: 2, pt: 1, pb: 2 }}>
           <Box
             sx={{

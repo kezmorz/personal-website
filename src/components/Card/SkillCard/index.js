@@ -3,7 +3,7 @@ import { Paper, Divider, Typography, Box } from "@mui/material";
 
 const SkillCard = ({ heading, description, children, sx = [] }) => {
   return (
-    <Paper square sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
+    <Paper sx={[{ p: 2 }, ...(Array.isArray(sx) ? sx : [sx])]}>
       <Typography variant="h6" gutterBottom>
         {heading}
       </Typography>

@@ -521,7 +521,11 @@ const Home = ({ snippets }) => {
                     <Typography component="span" variant="h6" gutterBottom>
                       {title}
                     </Typography>
-                    <Typography component="span" variant="body1">
+                    <Typography
+                      component="span"
+                      variant="body1"
+                      color="text.secondary"
+                    >
                       {description}
                     </Typography>
                   </Box>

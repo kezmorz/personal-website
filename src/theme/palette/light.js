@@ -55,7 +55,10 @@ const light = {
     primary: grey[900],
     secondary: grey[800],
   },
-  divider: grey[100],
+  divider: grey[200],
+  background: {
+    paper: grey[50],
+  },
 };
 
 export default light;

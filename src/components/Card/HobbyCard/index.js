@@ -4,7 +4,7 @@ import { Paper, Typography, Box } from "@mui/material";
 
 const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
   return (
-    <Paper square sx={[...(Array.isArray(sx) ? sx : [sx])]}>
+    <Paper sx={[...(Array.isArray(sx) ? sx : [sx])]}>
       <Box
         sx={{
           position: "relative",

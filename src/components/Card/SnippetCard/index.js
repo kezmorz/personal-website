@@ -15,7 +15,6 @@ const SnippetCard = ({ heading, description, date, href, sx = [] }) => {
   return (
     <SnippetCardRoot
       component={Link}
-      square
       href={href}
       underline="none"
       sx={[...(Array.isArray(sx) ? sx : [sx])]}
