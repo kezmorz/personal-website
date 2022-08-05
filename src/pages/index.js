@@ -538,51 +538,6 @@ const Home = ({ snippets }) => {
                   {t("snippets.preview")}
                 </Button>
               </Box>
-
-              // <Highlighter
-              //   key={title}
-              //   selected={index === snippetPreview}
-              //   onClick={() => setSnippetPreview(index)}
-              //   sx={{
-              //     mt: { xs: 1, md: 2 },
-              //   }}
-              // >
-              //   <Box
-              //     component="span"
-              //     sx={{
-              //       width: "100%",
-              //       display: "flex",
-              //       flexDirection: "column",
-              //       p: 2,
-              //     }}
-              //   >
-              //     <Typography component="span" variant="h6" gutterBottom>
-              //       {title}
-              //     </Typography>
-              //     <Typography component="span" variant="body1">
-              //       {description}
-              //     </Typography>
-              //     <Box
-              //       sx={{
-              //         display: "flex",
-              //         justifyContent: "flex-end",
-              //         alignItems: "center",
-              //         mt: { xs: 1, md: 2 },
-              //       }}
-              //     >
-              //       <Button
-              //         component={Link}
-              //         href={`/snippets/${slug}`}
-              //         variant="contained"
-              //         size="small"
-              //         color="secondary"
-              //         endIcon={<ArrowForwardOutlinedIcon />}
-              //       >
-              //         {t("snippets.preview")}
-              //       </Button>
-              //     </Box>
-              //   </Box>
-              // </Highlighter>
             ))}
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>
