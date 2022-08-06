@@ -59,6 +59,7 @@ const TimelineEventRoot = styled("li", {
       content: '""',
       flex: 1,
       padding: "8px 16px",
+      margin: 1,
     },
     "&:nth-of-type(even)": {
       flexDirection: "row-reverse",

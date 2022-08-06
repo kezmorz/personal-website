@@ -191,7 +191,12 @@ const Footer = () => {
             </Box>
             <Box sx={{ display: { xs: "block", md: "none" } }}>
               <Divider />
-              <Accordion disableGutters square elevation={0}>
+              <Accordion
+                disableGutters
+                variant="elevation"
+                square
+                sx={{ bgcolor: "background.default" }}
+              >
                 <AccordionSummary
                   id="sitemap-header"
                   expandIcon={<ExpandMoreOutlinedIcon />}

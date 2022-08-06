@@ -237,7 +237,11 @@ const AppBar = () => {
               disablePortal
               open={drawerOpen}
               onClose={toggleDrawer(false)}
-              PaperProps={{ sx: { width: "auto", height: "100%" } }}
+              PaperProps={{
+                variant: "elevation",
+                elevation: 0,
+                sx: { width: "auto", height: "100%" },
+              }}
             >
               <Box
                 sx={{

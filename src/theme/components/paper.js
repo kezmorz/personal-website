@@ -2,6 +2,7 @@ const paper = () => {
   return {
     defaultProps: {
       variant: "outlined",
+      elevation: 0,
     },
     styleOverrides: {
       root: {
