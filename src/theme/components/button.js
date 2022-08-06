@@ -74,6 +74,8 @@ const button = () => {
           }),
           ...(ownerState.variant === "contained" &&
             ownerState.color !== "inherit" && {
+              color: (theme.vars || theme).palette[ownerState.color]
+                .contrastText,
               backgroundColor: (theme.vars || theme).palette[ownerState.color]
                 .dark,
               // Reset on touch devices, it doesn't add specificity

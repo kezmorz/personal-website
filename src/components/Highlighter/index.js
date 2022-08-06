@@ -25,24 +25,25 @@ const Highlighter = ({
           justifyContent: "flex-start",
           alignItems: "center",
           textAlign: "left",
+          color: "inhert",
           border: 1,
-          borderColor: "primary.dark",
+          borderColor: (theme) =>
+            theme.palette.mode === "dark" ? "primary.900" : "primary.100",
           borderRadius: 1,
           transitionProperty: "color, background-color, border-color",
           transitionDuration: "150ms",
           ...(!selected && {
             "&:hover, &.Mui-focusVisible": {
-              color: "primary.contrastText",
-              bgcolor: "primary.dark",
+              bgcolor: (theme) =>
+                theme.palette.mode === "dark" ? "primary.950" : "primary.50",
               "@media (hover: none)": {
                 bgcolor: "transparent",
               },
             },
           }),
           ...(selected && {
-            color: "primary.contrastText",
-            bgcolor: "primary.main",
-            // borderColor: "primary.dark"
+            bgcolor: (theme) =>
+              theme.palette.mode === "dark" ? "primary.700" : "primary.200",
           }),
         },
         ...(Array.isArray(sx) ? sx : [sx]),

@@ -8,13 +8,13 @@ const link = () => {
         ...(ownerState.color === "primary" && {
           color:
             theme.palette.mode === "dark"
-              ? theme.palette.primary[300]
+              ? theme.palette.primary[400]
               : theme.palette.primary[600],
-          "&.hover": {
+          "&:hover": {
             color:
               theme.palette.mode === "dark"
                 ? theme.palette.primary[200]
-                : theme.palette.primary[700],
+                : theme.palette.primary[800],
           },
         }),
       }),

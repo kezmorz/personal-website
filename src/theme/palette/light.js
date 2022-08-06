@@ -5,11 +5,11 @@ const primary = {
   300: "#77DCCC",
   400: "#52C4BA",
   500: "#32A4A0",
-  main: "#21808B",
-  600: "#14586B",
-  700: "#104B65",
-  800: "#0D3D59",
-  900: "#092B3E",
+  600: "#21808B",
+  700: "#14586B",
+  800: "#104B65",
+  900: "#0D3D59",
+  950: "#092B3E",
 };
 
 const secondary = {
@@ -18,12 +18,12 @@ const secondary = {
   200: "#F6BEE2",
   300: "#ED90CB",
   400: "#DE63B1",
-  main: "#C83C96",
-  500: "#B31B79",
-  600: "#99075E",
-  700: "#7C044A",
-  800: "#5F0136",
-  900: "#4C012B",
+  500: "#C83C96",
+  600: "#B31B79",
+  700: "#99075E",
+  800: "#7C044A",
+  900: "#5F0136",
+  950: "#4C012B",
 };
 
 const grey = {
@@ -43,9 +43,15 @@ const grey = {
 const light = {
   mode: "light",
   primary: {
+    light: primary[400],
+    main: primary[600],
+    dark: primary[800],
     ...primary,
   },
   secondary: {
+    light: secondary[100],
+    main: secondary[200],
+    dark: secondary[400],
     ...secondary,
   },
   grey: {

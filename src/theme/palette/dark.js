@@ -43,15 +43,15 @@ const grey = {
 const dark = {
   mode: "dark",
   primary: {
-    light: primary[500],
-    main: primary[700],
-    dark: primary[900],
+    light: primary[100],
+    main: primary[300],
+    dark: primary[500],
     ...primary,
   },
   secondary: {
     light: secondary[400],
-    main: secondary[600],
-    dark: secondary[800],
+    main: secondary[500],
+    dark: secondary[700],
     ...secondary,
   },
   grey: {
