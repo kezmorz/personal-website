@@ -64,6 +64,10 @@ const button = () => {
               },
             }),
           ...(ownerState.variant === "contained" && {
+            color: theme.vars
+              ? // this is safe because grey does not change between default light/dark mode
+                theme.vars.palette.text.primary
+              : theme.palette.getContrastText?.(theme.palette.grey[300]),
             backgroundColor: (theme.vars || theme).palette.grey.A100,
             boxShadow: (theme.vars || theme).shadows[4],
             // Reset on touch devices, it doesn't add specificity

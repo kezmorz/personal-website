@@ -129,10 +129,7 @@ const AppBar = () => {
                     sx={{
                       p: 0,
                       mx: 2,
-                      "&.Mui-focusVisible": {
-                        bgcolor: "unset",
-                      },
-                      "&:hover": {
+                      "&:hover, &.Mui-focusVisible": {
                         bgcolor: "unset",
                       },
                     }}
