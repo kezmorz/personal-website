@@ -272,7 +272,11 @@ const AppBar = () => {
                         href={link}
                         underline="none"
                         onClick={toggleDrawer(false)}
-                        sx={{ px: 0, py: 1 }}
+                        sx={{
+                          px: 0,
+                          py: 1,
+                          "&:hover": { color: "currentcolor" },
+                        }}
                       >
                         <ListItemText primary={t(`navigation.pages.${name}`)} />
                       </ListItemButton>

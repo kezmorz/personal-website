@@ -213,7 +213,11 @@ const Footer = () => {
                           component={Link}
                           href={link}
                           underline="none"
-                          sx={{ px: 0, py: 1 }}
+                          sx={{
+                            px: 0,
+                            py: 1,
+                            "&:hover": { color: "currentcolor" },
+                          }}
                         >
                           <ListItemText primary={t(`sitemap.pages.${name}`)} />
                         </ListItemButton>
@@ -225,7 +229,11 @@ const Footer = () => {
                           component={Link}
                           href={link}
                           underline="none"
-                          sx={{ px: 0, py: 1 }}
+                          sx={{
+                            px: 0,
+                            py: 1,
+                            "&:hover": { color: "currentcolor" },
+                          }}
                         >
                           <ListItemText primary={t(`sitemap.pages.${name}`)} />
                         </ListItemButton>
