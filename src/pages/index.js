@@ -4,6 +4,7 @@ import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import {
   Container,
+  Paper,
   ButtonBase,
   Button,
   IconButton,
@@ -488,12 +489,15 @@ const Home = ({ snippets }) => {
         >
           <Box
             sx={{
-              gridColumn: { xs: "span 12", md: "span 5" },
+              gridColumn: { xs: "1 / span 12", md: "1 / span 5" },
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <Typography variant="h4" sx={{ mb: "0.7em" }}>
+            <Typography
+              variant="h4"
+              sx={{ display: { xs: "none", md: "block" }, mb: "0.7em" }}
+            >
               {t("snippets.heading")}
             </Typography>
             {snippets.map(({ title, description, slug }, index) => (
@@ -503,7 +507,7 @@ const Home = ({ snippets }) => {
               >
                 <Highlighter
                   selected={index === snippetPreview}
-                  onClick={() => setSnippetPreview(index)}
+                  onClick={() => handleSnippetPreviewChange(index)}
                   sx={{
                     width: "100%",
                     pb: 6,
@@ -525,6 +529,13 @@ const Home = ({ snippets }) => {
                       component="span"
                       variant="body1"
                       color="text.secondary"
+                      sx={{
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        ...(index !== snippetPreview && {
+                          whiteSpace: { xs: "nowrap", md: "normal" },
+                        }),
+                      }}
                     >
                       {description}
                     </Typography>
@@ -544,10 +555,29 @@ const Home = ({ snippets }) => {
               </Box>
             ))}
           </Box>
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 7" } }}>
-            <Box sx={{ maxHeight: 680, overflowY: "auto" }}>
-              <MdxComponent components={components} />
-            </Box>
+          <Box
+            sx={{
+              gridColumn: { xs: "span 12", md: "6 / span 7" },
+              gridRowStart: { xs: 1 },
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{ display: { md: "none" }, mb: "0.7em" }}
+            >
+              {t("snippets.heading")}
+            </Typography>
+            <Paper
+              variant="outlined"
+              sx={{
+                maxHeight: { xs: 480, md: 680 },
+                p: 2,
+                bgcolor: "unset",
+                overflowY: "auto",
+              }}
+            >
+              <MdxComponent key={snippetPreview} components={components} />
+            </Paper>
           </Box>
         </Box>
         <Box
