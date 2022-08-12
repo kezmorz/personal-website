@@ -5,6 +5,9 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import {
   Container,
   Paper,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   ButtonBase,
   Button,
   IconButton,
@@ -20,6 +23,7 @@ import {
   SportsRugbyOutlined as SportsRugbyOutlinedIcon,
   TerminalOutlined as TerminalOutlinedIcon,
   GroupsOutlined as GroupsOutlinedIcon,
+  ExpandMoreOutlined as ExpandMoreOutlinedIcon,
   ArrowForwardOutlined as ArrowForwardOutlinedIcon,
   ArrowForwardIosOutlined as ArrowForwardIosOutlinedIcon,
   ArrowBackIosOutlined as ArrowBackIosOutlinedIcon,
@@ -133,6 +137,8 @@ const testimonials = [
     },
   },
 ];
+
+const offerings = ["jobs", "mentoring", "questions"];
 
 const components = {
   h4: (props) => <MdxHeading4 {...props} />,
@@ -605,6 +611,64 @@ const Home = ({ snippets }) => {
             sx={{ width: "fit-content", mt: { xs: 2, md: 0 } }}
           >
             {t("snippets.information.button")}
+          </Button>
+        </Box>
+      </Container>
+      <Container
+        component="section"
+        maxWidth="md"
+        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+      >
+        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          {t("contact.heading")}
+        </Typography>
+        {offerings.map((offering) => (
+          <Accordion
+            key={offering}
+            disableGutters
+            sx={{
+              mt: 2,
+              borderRadius: 1,
+              "&:before": {
+                display: "none",
+              },
+            }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreOutlinedIcon />}>
+              <Typography variant="h5">
+                {t(`contact.offerings.${offering}.heading`)}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
+                borderBottomRightRadius: (theme) => theme.shape.borderRadius,
+                bgcolor: "background.default",
+              }}
+            >
+              <Typography variant="body1">
+                {t(`contact.offerings.${offering}.heading`)}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            mt: { xs: 2, md: 4 },
+          }}
+        >
+          <Button
+            component={Link}
+            href="/contact"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardOutlinedIcon />}
+            sx={{ width: "fit-content" }}
+          >
+            {t("contact.button")}
           </Button>
         </Box>
       </Container>

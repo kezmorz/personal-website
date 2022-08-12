@@ -47,14 +47,15 @@ const StepEvent = ({ position, description, Icon, sx = [] }) => {
         <StepEventConnector />
         <Box
           component="span"
-          sx={(theme) => ({
+          sx={{
             width: 56,
             height: 56,
             display: "flex",
             p: 1,
             borderRadius: "50%",
-            background: `linear-gradient(95deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.primary.main} 100%)`,
-          })}
+            background: (theme) =>
+              `linear-gradient(95deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.primary.main} 100%)`,
+          }}
         >
           <Icon sx={{ width: "100%", height: "100%" }} />
         </Box>

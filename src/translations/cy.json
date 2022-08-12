@@ -54,6 +54,20 @@
     },
     "contact": {
       "heading": "Gadewch i ni gydweithio.",
+      "offerings": {
+        "jobs": {
+          "heading": "Job Opportunities",
+          "description": ""
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": ""
+        },
+        "questions": {
+          "heading": "Questions",
+          "description": ""
+        }
+      },
       "description": "Mae gen i ddiddordeb mewn clywed am gyfleoedd gwaith cyffrous. Fodd bynnag, os oes gennych gais neu gwestiwn arall, peidiwch ag oedi cyn anfon neges ataf.",
       "button": "Cysylltwch"
     }

@@ -54,6 +54,20 @@
     },
     "contact": {
       "heading": "Let's collaborate.",
+      "offerings": {
+        "jobs": {
+          "heading": "Job Opportunities",
+          "description": ""
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": ""
+        },
+        "questions": {
+          "heading": "Questions",
+          "description": ""
+        }
+      },
       "description": "I'm always interested in hearing about exciting job opportunities. However, if you have another request or question, please don't hesitate to send me a message.",
       "button": "Get in touch"
     }

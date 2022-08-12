@@ -37,7 +37,7 @@ const variants = {
 
 const TimelineEventRoot = styled("li", {
   shouldForwardProp: (prop) => prop !== "position" && prop !== "sx",
-})(({ position }) => ({
+})(({ theme, position }) => ({
   listStyle: "none",
   position: "relative",
   minHeight: 80,
@@ -58,7 +58,7 @@ const TimelineEventRoot = styled("li", {
     "&:before": {
       content: '""',
       flex: 1,
-      padding: "8px 16px",
+      padding: theme.spacing(1, 2),
       margin: 1,
     },
     "&:nth-of-type(even)": {
