@@ -622,49 +622,51 @@ const Home = ({ snippets }) => {
         <Typography variant="h4" sx={{ mb: "0.7em" }}>
           {t("contact.heading")}
         </Typography>
-        {offerings.map((offering) => (
-          <Accordion
-            key={offering}
-            disableGutters
-            sx={{
-              mt: 2,
-              borderRadius: 1,
-              "&:before": {
-                display: "none",
-              },
-              "&:first-of-type": {
-                mt: 0,
-              },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreOutlinedIcon />}
-              sx={{ minHeight: { sx: 64, md: 80 } }}
-            >
-              <Typography variant="h5">
-                {t(`contact.offerings.${offering}.heading`)}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails
+        <Box sx={{ mt: { xs: 4, md: 8 } }}>
+          {offerings.map((offering) => (
+            <Accordion
+              key={offering}
+              disableGutters
               sx={{
-                p: (theme) => theme.spacing(2),
-                borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
-                borderBottomRightRadius: (theme) => theme.shape.borderRadius,
-                bgcolor: "background.default",
+                mt: 2,
+                borderRadius: 1,
+                "&:before": {
+                  display: "none",
+                },
+                "&:first-of-type": {
+                  mt: 0,
+                },
               }}
             >
-              <Typography variant="body1">
-                {t(`contact.offerings.${offering}.heading`)}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        ))}
+              <AccordionSummary
+                expandIcon={<ExpandMoreOutlinedIcon />}
+                sx={{ minHeight: { sx: 64, md: 80 } }}
+              >
+                <Typography variant="h5">
+                  {t(`contact.offerings.${offering}.heading`)}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails
+                sx={{
+                  p: (theme) => theme.spacing(2),
+                  borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
+                  borderBottomRightRadius: (theme) => theme.shape.borderRadius,
+                  bgcolor: "background.default",
+                }}
+              >
+                <Typography variant="body1">
+                  {t(`contact.offerings.${offering}.heading`)}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "center",
-            mt: { xs: 2, md: 4 },
+            mt: { xs: 4, md: 8 },
           }}
         >
           <Button
