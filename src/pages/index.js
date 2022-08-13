@@ -632,15 +632,22 @@ const Home = ({ snippets }) => {
               "&:before": {
                 display: "none",
               },
+              "&:first-of-type": {
+                mt: 0,
+              },
             }}
           >
-            <AccordionSummary expandIcon={<ExpandMoreOutlinedIcon />}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreOutlinedIcon />}
+              sx={{ minHeight: { sx: 64, md: 80 } }}
+            >
               <Typography variant="h5">
                 {t(`contact.offerings.${offering}.heading`)}
               </Typography>
             </AccordionSummary>
             <AccordionDetails
               sx={{
+                p: (theme) => theme.spacing(2),
                 borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
                 borderBottomRightRadius: (theme) => theme.shape.borderRadius,
                 bgcolor: "background.default",
