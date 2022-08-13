@@ -628,7 +628,7 @@ const Home = ({ snippets }) => {
               key={offering}
               disableGutters
               sx={{
-                mt: 2,
+                mt: { xs: 2, md: 4 },
                 borderRadius: 1,
                 "&:before": {
                   display: "none",
@@ -639,7 +639,9 @@ const Home = ({ snippets }) => {
               }}
             >
               <AccordionSummary
+                id={`contact-${offering}-header`}
                 expandIcon={<ExpandMoreOutlinedIcon />}
+                aria-controls={`contact-${offering}-content`}
                 sx={{ minHeight: { sx: 64, md: 80 } }}
               >
                 <Typography variant="h5">
