@@ -56,19 +56,18 @@
       "heading": "Gadewch i ni gydweithio.",
       "offerings": {
         "jobs": {
-          "heading": "Job Opportunities",
-          "description": ""
+          "heading": "Cyfleoedd Gwaith",
+          "description": "Mae wastad gen i ddiddordeb mewn clywed am gyfleoedd gwaith cyffrous. Gallai hyn fod yn unrhyw beth o brosiect personol yr ydych angen rhywfaint o fewnbwn neu help gyda, i rôl rydych yn ei hysbysebu yr ydych yn meddwl y byddwn yn ffit dda ar ei chyfer. Mae popeth, wrth gwrs, yn dibynnu ar amser ac mae'n rhaid i mi ddweud, rwy'n mwynhau'r hyn rwy'n ei wneud ar hyn o bryd, felly bydd yn rhaid iddo fod yn rhywbeth arbennig!"
         },
         "mentoring": {
-          "heading": "Mentoring",
-          "description": ""
+          "heading": "Mentora",
+          "description": "Rwyf wedi cael mentoriaid da iawn yn ystod fy ngyrfa fel datblygwr meddalwedd. Nid yw bob amser wedi ymwneud â'r agwedd codio. Mae rhai wedi helpu i wella fy nealltwriaeth o'r agweddau busnes dan sylw hefyd. Rwyf wrth fy modd yn rhoi yn ôl i'r gymuned ac yn helpu datblygwyr newydd mewn unrhyw ffordd y gallaf. Os oes gennych chi ddiddordeb mewn cael mentor, hyd yn oed os mai dim ond am gyfnod byr, yna rhowch neges i mi a byddwn yn ceisio sortio rhywbeth allan!"
         },
         "questions": {
-          "heading": "Questions",
-          "description": ""
+          "heading": "Cwestiynau",
+          "description": "Byddaf yn hapus i ateb unrhyw gwestiynau sydd gennych. Os oes gennych chi ddiddordeb mewn gwybod sut y gwnes i adeiladu'r wefan hon neu os oes gennych chi gwestiwn am sut rydw i'n arwain timau i ddarparu datrysiadau meddalwedd hygyrch, yna peidiwch ag oedi cyn cysylltu. Nid oes y fath beth â chwestiwn gwirion!"
         }
       },
-      "description": "Mae gen i ddiddordeb mewn clywed am gyfleoedd gwaith cyffrous. Fodd bynnag, os oes gennych gais neu gwestiwn arall, peidiwch ag oedi cyn anfon neges ataf.",
       "button": "Cysylltwch"
     }
   },

@@ -657,7 +657,7 @@ const Home = ({ snippets }) => {
                 }}
               >
                 <Typography variant="body1">
-                  {t(`contact.offerings.${offering}.heading`)}
+                  {t(`contact.offerings.${offering}.description`)}
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -681,48 +681,6 @@ const Home = ({ snippets }) => {
           >
             {t("contact.button")}
           </Button>
-        </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-      >
-        <Box
-          sx={{
-            maxWidth: 600,
-            p: 2,
-            mx: "auto",
-            border: 1,
-            borderColor: "primary.main",
-            borderRadius: 1,
-          }}
-        >
-          <Typography variant="h4" sx={{ mb: "0.7em" }}>
-            {t("contact.heading")}
-          </Typography>
-          <Typography variant="body1" sx={{ mb: "0.7em" }}>
-            {t("contact.description")}
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
-              mt: { xs: 2, md: 4 },
-            }}
-          >
-            <Button
-              component={Link}
-              href="/contact"
-              variant="contained"
-              size="large"
-              endIcon={<ArrowForwardOutlinedIcon />}
-              sx={{ width: "fit-content" }}
-            >
-              {t("contact.button")}
-            </Button>
-          </Box>
         </Box>
       </Container>
     </>
