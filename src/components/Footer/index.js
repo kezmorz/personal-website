@@ -49,7 +49,8 @@ const Footer = () => {
       <Divider light />
       <Container
         maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 2, sm: 4 } }}
+        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 2, sm: 4 } }}
+        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 3, sm: 6 } }}
       >
         <Box
           sx={{

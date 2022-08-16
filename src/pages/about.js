@@ -157,7 +157,8 @@ const About = () => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{
@@ -200,7 +201,8 @@ const About = () => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
           {/* <Image
@@ -216,7 +218,8 @@ const About = () => {
       <Container
         component="section"
         maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{
@@ -267,7 +270,8 @@ const About = () => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h4">{t("hobbies.description")}</Typography>
         <Box
@@ -292,7 +296,8 @@ const About = () => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
       >
         <Typography>The final section</Typography>
       </Container>

@@ -72,7 +72,8 @@ const Snippet = ({ snippet, relatedSnippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{
@@ -104,7 +105,8 @@ const Snippet = ({ snippet, relatedSnippets }) => {
       <Container
         component="article"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h3">{snippet.title}</Typography>
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
@@ -124,7 +126,8 @@ const Snippet = ({ snippet, relatedSnippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h4">{t("related")}</Typography>
         <Box

@@ -38,7 +38,8 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
     <Box component="header">
       <Container
         maxWidth="lg"
-        sx={{ mt: { xs: 4, sm: 8 }, mb: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 4, sm: 8 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 6, sm: 12 }, mb: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{

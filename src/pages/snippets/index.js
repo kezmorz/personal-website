@@ -64,7 +64,8 @@ const Snippets = ({ snippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mb: { xs: 8, sm: 16 } }}
+        // sx={{ mb: { xs: 8, sm: 16 } }}
+        sx={{ mb: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h4">{t("description")}</Typography>
         <TextField

@@ -309,7 +309,8 @@ const Home = ({ snippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column" }}
@@ -385,7 +386,8 @@ const Home = ({ snippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h4" sx={{ mb: "0.7em" }}>
           {t("testimonials.line1")}
@@ -484,7 +486,8 @@ const Home = ({ snippets }) => {
       <Container
         component="section"
         maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 } }}
       >
         <Box
           sx={{
@@ -617,7 +620,8 @@ const Home = ({ snippets }) => {
       <Container
         component="section"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
       >
         <Typography variant="h4" sx={{ mb: "0.7em" }}>
           {t("contact.heading")}
