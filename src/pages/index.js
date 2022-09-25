@@ -598,69 +598,93 @@ const Home = ({ snippets }) => {
           </Button>
         </Box>
       </Section>
-      <Section maxWidth="md" extendBottomPadding>
-        <Typography variant="h4" sx={{ mb: "0.7em" }}>
-          {t("contact.heading")}
-        </Typography>
-        <Box sx={{ mt: { xs: 4, md: 8 } }}>
-          {offerings.map((offering) => (
-            <Accordion
-              key={offering}
-              disableGutters
-              sx={{
-                mt: { xs: 2, md: 4 },
-                borderRadius: 1,
-                "&:before": {
-                  display: "none",
-                },
-                "&:first-of-type": {
-                  mt: 0,
-                },
-              }}
-            >
-              <AccordionSummary
-                id={`contact-${offering}-header`}
-                expandIcon={<ExpandMoreOutlinedIcon />}
-                aria-controls={`contact-${offering}-content`}
-                sx={{ minHeight: { sx: 64, md: 80 } }}
-              >
-                <Typography variant="h5">
-                  {t(`contact.offerings.${offering}.heading`)}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails
-                sx={{
-                  p: (theme) => theme.spacing(2),
-                  borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
-                  borderBottomRightRadius: (theme) => theme.shape.borderRadius,
-                  bgcolor: "background.default",
-                }}
-              >
-                <Typography variant="body1">
-                  {t(`contact.offerings.${offering}.description`)}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
-        </Box>
+      <Section
+        maxWidth={false}
+        extendBottomPadding
+        sx={{
+          backgroundImage: (theme) =>
+            `linear-gradient(180deg, ${theme.palette.background.default} 0%, ${
+              theme.palette.mode === "dark"
+                ? theme.palette.primary[950]
+                : theme.palette.primary[50]
+            } 40%, ${
+              theme.palette.mode === "dark"
+                ? theme.palette.primary[950]
+                : theme.palette.primary[50]
+            } 70%, ${theme.palette.background.default} 90%)`,
+        }}
+      >
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            mt: { xs: 4, md: 8 },
+            width: "100%",
+            maxWidth: 852,
+            mx: "auto",
           }}
         >
-          <Button
-            component={Link}
-            href="/contact"
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForwardOutlinedIcon />}
-            sx={{ width: "fit-content" }}
+          <Typography variant="h4" sx={{ mb: "0.7em" }}>
+            {t("contact.heading")}
+          </Typography>
+          <Box sx={{ mt: { xs: 4, md: 8 } }}>
+            {offerings.map((offering) => (
+              <Accordion
+                key={offering}
+                disableGutters
+                sx={{
+                  mt: { xs: 2, md: 4 },
+                  borderRadius: 1,
+                  "&:before": {
+                    display: "none",
+                  },
+                  "&:first-of-type": {
+                    mt: 0,
+                  },
+                }}
+              >
+                <AccordionSummary
+                  id={`contact-${offering}-header`}
+                  expandIcon={<ExpandMoreOutlinedIcon />}
+                  aria-controls={`contact-${offering}-content`}
+                  sx={{ minHeight: { sx: 64, md: 80 } }}
+                >
+                  <Typography variant="h5">
+                    {t(`contact.offerings.${offering}.heading`)}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails
+                  sx={{
+                    p: (theme) => theme.spacing(2),
+                    borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
+                    borderBottomRightRadius: (theme) =>
+                      theme.shape.borderRadius,
+                    bgcolor: "background.default",
+                  }}
+                >
+                  <Typography variant="body1">
+                    {t(`contact.offerings.${offering}.description`)}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              mt: { xs: 4, md: 8 },
+            }}
           >
-            {t("contact.button")}
-          </Button>
+            <Button
+              component={Link}
+              href="/contact"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForwardOutlinedIcon />}
+              sx={{ width: "fit-content" }}
+            >
+              {t("contact.button")}
+            </Button>
+          </Box>
         </Box>
       </Section>
     </>
