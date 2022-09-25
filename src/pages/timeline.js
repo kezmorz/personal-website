@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
-import {
-  Container,
-  Autocomplete,
-  TextField,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Autocomplete, TextField, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import TimelineEvent from "@/components/TimelineEvent";
 import Layout from "@/components/Layout";
 
@@ -90,12 +85,7 @@ const Timeline = () => {
         }}
         direction="rtl"
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mb: { xs: 8, sm: 16 } }}
-        sx={{ mb: { xs: 12, sm: 24 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("description")}</Typography>
         <Autocomplete
           id="timeline-categories"
@@ -148,7 +138,7 @@ const Timeline = () => {
             />
           ))}
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };

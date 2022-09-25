@@ -3,7 +3,6 @@ import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import {
-  Container,
   Paper,
   Accordion,
   AccordionSummary,
@@ -53,6 +52,7 @@ import {
   Pre as MdxPre,
 } from "@/components/Markdown";
 import Meta from "@/components/Meta";
+import Section from "@/components/Section";
 import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
@@ -172,11 +172,7 @@ const Home = ({ snippets }) => {
         type="website"
         image=""
       />
-      <Container
-        component="section"
-        maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
+      <Section maxWidth="lg">
         <Box
           sx={{
             display: "grid",
@@ -305,13 +301,8 @@ const Home = ({ snippets }) => {
             </Button>
           </Box>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Box
           sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column" }}
         >
@@ -382,13 +373,8 @@ const Home = ({ snippets }) => {
             </Box>
           </Box>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Typography variant="h4" sx={{ mb: "0.7em" }}>
           {t("testimonials.line1")}
         </Typography>
@@ -482,13 +468,8 @@ const Home = ({ snippets }) => {
             </Box>
           </Box>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="lg"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="lg">
         <Box
           sx={{
             display: "grid",
@@ -616,13 +597,8 @@ const Home = ({ snippets }) => {
             {t("snippets.information.button")}
           </Button>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4" sx={{ mb: "0.7em" }}>
           {t("contact.heading")}
         </Typography>
@@ -686,7 +662,7 @@ const Home = ({ snippets }) => {
             {t("contact.button")}
           </Button>
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };

@@ -4,7 +4,6 @@ import { useTranslations } from "use-intl";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import {
-  Container,
   TextField,
   Button,
   Snackbar,
@@ -16,6 +15,7 @@ import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
@@ -90,12 +90,7 @@ const Contact = () => {
         }}
         direction="rtl"
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mb: { xs: 8, sm: 16 } }}
-        sx={{ mb: { xs: 12, sm: 24 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
         </Typography>
@@ -182,7 +177,7 @@ const Contact = () => {
             )}
           </Box>
         </Box>
-      </Container>
+      </Section>
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={5000}

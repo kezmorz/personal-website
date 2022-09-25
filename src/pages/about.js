@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "use-intl";
-import { Container, Button, Typography, Box } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
@@ -29,6 +29,7 @@ import AwsIcon from "@/icons/Aws";
 import VercelIcon from "@/icons/Vercel";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import { HobbyCard, SkillCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -122,7 +123,7 @@ const About = () => {
         }}
         direction="ltr"
       />
-      <Container component="section" maxWidth="md">
+      <Section maxWidth="md">
         <Box
           sx={{
             display: "grid",
@@ -153,13 +154,8 @@ const About = () => {
             <Typography variant="h4">{t("bitesize.line4")}</Typography>
           </Box>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Box
           sx={{
             display: "grid",
@@ -197,13 +193,8 @@ const About = () => {
             {t("history.timeline.button")}
           </Button>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
           {/* <Image
             src="pages/about/bitesize.jpg"
@@ -214,13 +205,8 @@ const About = () => {
             loader={cloudinaryImageLoader}
           /> */}
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="lg"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="lg">
         <Box
           sx={{
             width: "100%",
@@ -266,13 +252,8 @@ const About = () => {
             </SkillCard>
           ))}
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Typography variant="h4">{t("hobbies.description")}</Typography>
         <Box
           sx={{
@@ -292,15 +273,10 @@ const About = () => {
             />
           ))}
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
-      >
+      </Section>
+      <Section maxWidth="md" extendBottomPadding>
         <Typography>The final section</Typography>
-      </Container>
+      </Section>
     </>
   );
 };

@@ -24,6 +24,7 @@ import {
   Pre as MdxPre,
 } from "@/components/Markdown";
 import Meta from "@/components/Meta";
+import Section from "@/components/Section";
 import { SnippetCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -69,12 +70,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         type="article"
         image=""
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
-      >
+      <Section maxWidth="md" extendTopPadding>
         <Box
           sx={{
             display: "flex",
@@ -101,12 +97,12 @@ const Snippet = ({ snippet, relatedSnippets }) => {
             </Box>
           )}
         </Box>
-      </Container>
+      </Section>
       <Container
         component="article"
         maxWidth="md"
         // sx={{ mt: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 } }}
+        sx={{ pt: { xs: 6, sm: 12 }, pb: { xs: 6, sm: 12 } }}
       >
         <Typography variant="h3">{snippet.title}</Typography>
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
@@ -123,12 +119,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
           </Box>
         </Box>
       </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 12, sm: 24 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("related")}</Typography>
         <Box
           sx={{
@@ -149,7 +140,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
             />
           ))}
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };

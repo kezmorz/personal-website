@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
-import { Container, TextField, Chip, Typography, Box } from "@mui/material";
+import { TextField, Chip, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import { SnippetCard } from "@/components/Card";
 import Layout from "@/components/Layout";
 
@@ -61,12 +62,7 @@ const Snippets = ({ snippets }) => {
         }}
         direction="ltr"
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        // sx={{ mb: { xs: 8, sm: 16 } }}
-        sx={{ mb: { xs: 12, sm: 24 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("description")}</Typography>
         <TextField
           id="snippet-search-value"
@@ -113,7 +109,7 @@ const Snippets = ({ snippets }) => {
             />
           ))}
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };
