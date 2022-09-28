@@ -302,74 +302,101 @@ const Home = ({ snippets }) => {
           </Box>
         </Box>
       </Section>
-      <Section maxWidth="md">
-        <Box
-          sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column" }}
-        >
-          {events.map(({ name, Icon }) => (
-            <StepEvent
-              key={name}
-              position="vertical"
-              description={t(`timeline.events.${name}`)}
-              Icon={Icon}
-            />
-          ))}
-        </Box>
-        <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-          {events.map(({ name, Icon }) => (
-            <StepEvent
-              key={name}
-              position="horizontal"
-              description={t(`timeline.events.${name}`)}
-              Icon={Icon}
-            />
-          ))}
-        </Box>
+      <Section
+        maxWidth="false"
+        sx={{
+          backgroundImage: (theme) =>
+            `radial-gradient(${
+              theme.palette.mode === "dark"
+                ? theme.palette.primary[950]
+                : theme.palette.primary[50]
+            } 24%, transparent 0), radial-gradient(${
+              theme.palette.mode === "dark"
+                ? theme.palette.primary[950]
+                : theme.palette.primary[50]
+            } 24%, transparent 0)`,
+          backgroundPosition: "0 0, 16px 16px",
+          backgroundSize: "32px 32px",
+        }}
+      >
         <Box
           sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(12, 1fr)",
-            gap: { xs: 2, md: 4 },
-            mt: { xs: 4, md: 8 },
+            width: "100%",
+            maxWidth: 852,
+            mx: "auto",
           }}
         >
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-            Image Goes Here
+          <Box
+            sx={{
+              display: { xs: "flex", sm: "none" },
+              flexDirection: "column",
+            }}
+          >
+            {events.map(({ name, Icon }) => (
+              <StepEvent
+                key={name}
+                position="vertical"
+                description={t(`timeline.events.${name}`)}
+                Icon={Icon}
+              />
+            ))}
           </Box>
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-            <Typography variant="h4" sx={{ mb: "0.7em" }}>
-              {t("timeline.line1")}
-            </Typography>
-            <Typography variant="h4" sx={{ mb: "0.7em" }}>
-              {t.rich("timeline.line2.description", {
-                link: (
-                  <Link
-                    key="virtual-engage-link"
-                    href="https://www.arup.com/expertise/tools/virtual-engage"
-                  >
-                    {t("timeline.line2.link")}
-                  </Link>
-                ),
-              })}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "center",
-                mt: { xs: 4, md: 8 },
-              }}
-            >
-              <Button
-                component={Link}
-                href="/timeline"
-                variant="contained"
-                size="large"
-                endIcon={<ArrowForwardOutlinedIcon />}
-                sx={{ width: "fit-content" }}
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+            {events.map(({ name, Icon }) => (
+              <StepEvent
+                key={name}
+                position="horizontal"
+                description={t(`timeline.events.${name}`)}
+                Icon={Icon}
+              />
+            ))}
+          </Box>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(12, 1fr)",
+              gap: { xs: 2, md: 4 },
+              mt: { xs: 4, md: 8 },
+            }}
+          >
+            <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+              Image Goes Here
+            </Box>
+            <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+              <Typography variant="h4" sx={{ mb: "0.7em" }}>
+                {t("timeline.line1")}
+              </Typography>
+              <Typography variant="h4" sx={{ mb: "0.7em" }}>
+                {t.rich("timeline.line2.description", {
+                  link: (
+                    <Link
+                      key="virtual-engage-link"
+                      href="https://www.arup.com/expertise/tools/virtual-engage"
+                    >
+                      {t("timeline.line2.link")}
+                    </Link>
+                  ),
+                })}
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                  mt: { xs: 4, md: 8 },
+                }}
               >
-                {t("timeline.button")}
-              </Button>
+                <Button
+                  component={Link}
+                  href="/timeline"
+                  variant="contained"
+                  size="large"
+                  endIcon={<ArrowForwardOutlinedIcon />}
+                  sx={{ width: "fit-content" }}
+                >
+                  {t("timeline.button")}
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>
