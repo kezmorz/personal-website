@@ -34,7 +34,7 @@ const StepEventRoot = styled("div", {
 const StepEventConnector = styled("span")(({ theme }) => ({
   height: 2,
   flexGrow: 1,
-  background: `linear-gradient(95deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.primary.main} 100%)`,
+  backgroundColor: theme.palette.secondary.main,
 }));
 
 const StepEvent = ({ position, description, Icon, sx = [] }) => {
@@ -53,8 +53,7 @@ const StepEvent = ({ position, description, Icon, sx = [] }) => {
             display: "flex",
             p: 1,
             borderRadius: "50%",
-            background: (theme) =>
-              `linear-gradient(95deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.primary.main} 100%)`,
+            backgroundColor: "secondary.main",
           }}
         >
           <Icon sx={{ width: "100%", height: "100%" }} />
