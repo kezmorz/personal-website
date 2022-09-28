@@ -9,12 +9,12 @@ const link = () => {
           color:
             theme.palette.mode === "dark"
               ? theme.palette.primary[400]
-              : theme.palette.primary[600],
+              : theme.palette.primary[800],
           "&:hover": {
             color:
               theme.palette.mode === "dark"
                 ? theme.palette.primary[200]
-                : theme.palette.primary[800],
+                : theme.palette.primary[700],
           },
         }),
       }),

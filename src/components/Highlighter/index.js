@@ -43,7 +43,7 @@ const Highlighter = ({
           }),
           ...(selected && {
             bgcolor: (theme) =>
-              theme.palette.mode === "dark" ? "primary.700" : "primary.200",
+              theme.palette.mode === "dark" ? "primary.800" : "primary.200",
           }),
         },
         ...(Array.isArray(sx) ? sx : [sx]),

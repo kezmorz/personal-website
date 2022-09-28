@@ -43,9 +43,9 @@ const grey = {
 const light = {
   mode: "light",
   primary: {
-    light: primary[400],
-    main: primary[600],
-    dark: primary[800],
+    light: primary[700],
+    main: primary[800],
+    dark: primary[900],
     ...primary,
   },
   secondary: {
