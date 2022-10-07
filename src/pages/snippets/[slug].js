@@ -101,7 +101,6 @@ const Snippet = ({ snippet, relatedSnippets }) => {
       <Container
         component="article"
         maxWidth="md"
-        // sx={{ mt: { xs: 8, sm: 16 } }}
         sx={{ pt: { xs: 6, sm: 12 }, pb: { xs: 6, sm: 12 } }}
       >
         <Typography variant="h3">{snippet.title}</Typography>
