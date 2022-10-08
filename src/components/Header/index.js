@@ -28,19 +28,6 @@ const textVariants = {
   },
 };
 
-const imageVariants = {
-  // CERI - look at whether this is necessary if we're not using children
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.75,
-    },
-  },
-};
-
 const AnimatedDiv = styled(motion.div)({});
 
 const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
@@ -70,9 +57,9 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
           >
             <Box sx={{ width: "100%", maxWidth: 800, display: "block" }}>
               <AnimatedDiv
-                variants={imageVariants}
-                initial="initial"
-                animate="visible"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.75 }}
               >
                 <Image priority {...imageProps} />
               </AnimatedDiv>
