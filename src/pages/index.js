@@ -52,6 +52,7 @@ import {
   Pre as MdxPre,
 } from "@/components/Markdown";
 import Meta from "@/components/Meta";
+import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
@@ -171,6 +172,19 @@ const Home = ({ snippets }) => {
         description={t("metadata.description")}
         type="website"
         image=""
+      />
+      <Hero
+        heading={t("heading")}
+        subheading={t("subheading")}
+        scroller={t("scroller")}
+        imageProps={{
+          src: "pages/about/bitesize.jpg",
+          alt: "Something something something",
+          width: 827,
+          height: 1410,
+          layout: "responsive",
+          loader: cloudinaryImageLoader,
+        }}
       />
       <Section maxWidth="lg">
         <Box

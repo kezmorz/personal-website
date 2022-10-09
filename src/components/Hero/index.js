@@ -18,10 +18,26 @@ const containerVariants = {
 
 const textVariants = {
   initial: {
-    rotateX: 90,
+    opacity: 0,
+    x: -50,
   },
   visible: {
-    rotateX: 0,
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const scrollerVariants = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
       duration: 0.5,
     },
@@ -30,7 +46,7 @@ const textVariants = {
 
 const AnimatedDiv = styled(motion.div)({});
 
-const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
+const Hero = ({ heading, subheading, scroller, imageProps }) => {
   return (
     <Box component="header">
       <Container
@@ -45,21 +61,18 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
           }}
         >
           <Box
-            sx={[
-              {
-                gridRowStart: { md: 1 },
-                gridColumn: { xs: "1 / span 12", md: "1 / span 6" },
-                display: "flex",
-                justifyContent: "center",
-              },
-              direction === "ltr" && { gridColumnStart: { md: 7 } },
-            ]}
+            sx={{
+              gridRowStart: { md: 1 },
+              gridColumn: { xs: "1 / span 12", md: "8 / span 5" },
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
             <AnimatedDiv
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 48 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75 }}
-              sx={{ width: "100%", maxWidth: 800, display: "block" }}
+              sx={{ width: "100%", maxHeight: 600, display: "block" }}
             >
               <Image priority {...imageProps} />
             </AnimatedDiv>
@@ -69,20 +82,40 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
             initial="initial"
             animate="visible"
             sx={{
-              gridRowStart: { md: "1" },
-              gridColumn: { xs: "span 12", md: "span 6" },
+              gridRowStart: { md: 1 },
+              gridColumn: { xs: "span 12", md: "1 / span 7" },
               pt: { md: 8 },
             }}
           >
             <AnimatedDiv variants={textVariants}>
-              <Typography variant="h3" gutterBottom>
+              <Typography
+                variant="h1"
+                fontWeight={500}
+                gutterBottom
+                sx={{
+                  background: (theme) =>
+                    `-webkit-linear-gradient(315deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 {heading}
               </Typography>
             </AnimatedDiv>
             {subheading && (
               <AnimatedDiv variants={textVariants}>
-                <Typography variant="h4" gutterBottom>
+                <Typography variant="h2" fontWeight={500} gutterBottom>
                   {subheading}
+                </Typography>
+              </AnimatedDiv>
+            )}
+            {scroller && (
+              <AnimatedDiv
+                variants={scrollerVariants}
+                sx={{ pt: { xs: 4, md: 8 } }}
+              >
+                <Typography variant="h4" gutterBottom>
+                  {scroller}
                 </Typography>
               </AnimatedDiv>
             )}
@@ -93,9 +126,10 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
   );
 };
 
-Header.propTypes = {
+Hero.propTypes = {
   heading: PropTypes.string.isRequired,
   subheading: PropTypes.string,
+  scroller: PropTypes.string,
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
@@ -104,7 +138,6 @@ Header.propTypes = {
     layout: PropTypes.string,
     loader: PropTypes.func,
   }),
-  direction: PropTypes.oneOf(["ltr", "rtl"]),
 };
 
-export default Header;
+export default Hero;
