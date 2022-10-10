@@ -176,7 +176,9 @@ const Home = ({ snippets }) => {
       <Hero
         heading={t("heading")}
         subheading={t("subheading")}
-        scroller={t("scroller")}
+        scroller={{ url: "#about-section", label: t("scroller") }}
+        scrollerUrl=""
+        scrollerLabel={t("scroller")}
         imageProps={{
           src: "pages/about/bitesize.jpg",
           alt: "Something something something",
@@ -186,7 +188,7 @@ const Home = ({ snippets }) => {
           loader: cloudinaryImageLoader,
         }}
       />
-      <Section maxWidth="lg">
+      <Section id="about-section" maxWidth="lg">
         <Box
           sx={{
             display: "grid",

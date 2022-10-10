@@ -7,6 +7,7 @@ const Section = ({
   extendBottomPadding,
   sx = [],
   children,
+  ...props
 }) => {
   return (
     <Container
@@ -21,6 +22,7 @@ const Section = ({
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
+      {...props}
     >
       {children}
     </Container>

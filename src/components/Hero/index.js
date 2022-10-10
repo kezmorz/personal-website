@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, IconButton, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { ArrowDownwardOutlined as ArrowDownwardOutlinedIcon } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -19,7 +20,7 @@ const containerVariants = {
 const textVariants = {
   initial: {
     opacity: 0,
-    x: -50,
+    x: -48,
   },
   visible: {
     opacity: 1,
@@ -33,7 +34,7 @@ const textVariants = {
 const scrollerVariants = {
   initial: {
     opacity: 0,
-    y: 50,
+    y: 48,
   },
   visible: {
     opacity: 1,
@@ -47,6 +48,8 @@ const scrollerVariants = {
 const AnimatedDiv = styled(motion.div)({});
 
 const Hero = ({ heading, subheading, scroller, imageProps }) => {
+  const { url: scrollerUrl, label: scrollerLabel } = scroller ?? {};
+
   return (
     <Box component="header">
       <Container
@@ -112,11 +115,21 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
             {scroller && (
               <AnimatedDiv
                 variants={scrollerVariants}
-                sx={{ pt: { xs: 4, md: 8 } }}
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  alignItems: "center",
+                  pt: { md: 8 },
+                }}
               >
-                <Typography variant="h4" gutterBottom>
-                  {scroller}
-                </Typography>
+                <Typography variant="h4">{scrollerLabel}</Typography>
+                <IconButton
+                  href={scrollerUrl}
+                  size="large"
+                  aria-label="scroll to element"
+                  sx={{ ml: 2 }}
+                >
+                  <ArrowDownwardOutlinedIcon />
+                </IconButton>
               </AnimatedDiv>
             )}
           </AnimatedDiv>
@@ -129,7 +142,10 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
 Hero.propTypes = {
   heading: PropTypes.string.isRequired,
   subheading: PropTypes.string,
-  scroller: PropTypes.string,
+  scroller: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
