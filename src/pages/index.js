@@ -176,14 +176,14 @@ const Home = ({ snippets }) => {
       <Hero
         heading={t("heading")}
         subheading={t("subheading")}
-        scroller={{ url: "#about-section", label: t("scroller") }}
+        scroller={{ url: "/#about-section", label: t("scroller") }}
         scrollerUrl=""
         scrollerLabel={t("scroller")}
         imageProps={{
-          src: "pages/about/bitesize.jpg",
+          src: "pages/home/hero",
           alt: "Something something something",
-          width: 827,
-          height: 1410,
+          width: 2429,
+          height: 3402,
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

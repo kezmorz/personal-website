@@ -4,6 +4,7 @@ import { Container, IconButton, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { ArrowDownwardOutlined as ArrowDownwardOutlinedIcon } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import Link from "@/components/Link";
 
 const containerVariants = {
   initial: {
@@ -75,7 +76,13 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
               initial={{ opacity: 0, y: 48 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75 }}
-              sx={{ width: "100%", maxHeight: 600, display: "block" }}
+              sx={{
+                width: "100%",
+                maxHeight: 600,
+                display: "block",
+                filter: (theme) =>
+                  `drop-shadow(0 0 128px ${theme.palette.primary.main})`,
+              }}
             >
               <Image priority {...imageProps} />
             </AnimatedDiv>
@@ -123,10 +130,11 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
               >
                 <Typography variant="h4">{scrollerLabel}</Typography>
                 <IconButton
+                  component={Link}
                   href={scrollerUrl}
                   size="large"
                   aria-label="scroll to element"
-                  sx={{ ml: 2 }}
+                  sx={{ ml: 2, "&:hover": { color: "currentcolor" } }}
                 >
                   <ArrowDownwardOutlinedIcon />
                 </IconButton>
