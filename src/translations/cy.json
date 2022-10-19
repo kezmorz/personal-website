@@ -5,29 +5,29 @@
       "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
     },
     "heading": "Ceri Morse",
-    "subheading": "Full Stack Developer",
-    "scroller": "Let's get started",
+    "subheading": "Dylunio. Datblygu. Defnyddio.",
+    "scroller": "Gadewch i ni ddechrau",
     "about": {
       "characteristics": {
         "fullstack": {
           "heading": "Fullstack",
-          "description": "A short description about fullstack development"
+          "description": "Rwy'n mwynhau'r her o weithio ar draws y pentwr technoleg cyfan."
         },
         "responsive": {
           "heading": "Responsive",
-          "description": "A short description about responsive design"
+          "description": "Mae pob gwefan rwy'n ei chreu yn addasol i'r cyfryngau sy'n eu rendro."
         },
         "accessible": {
-          "heading": "Accessible",
-          "description": "A short description about accessible development"
+          "heading": "Hygyrch",
+          "description": "Dylai pawb allu defnyddio'r gwefannau rwy'n eu hadeiladu heb gŵyn."
         },
         "mentoring": {
-          "heading": "Mentoring",
-          "description": "A short description about mentoring other developers"
+          "heading": "Mentora",
+          "description": "Rwyf wrth fy modd yn helpu cyd-ddatblygwyr i wella a thyfu eu sgiliau."
         }
       },
-      "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
-      "button": "Learn more about me"
+      "description": "Rwy'n angerddol am ddatblygu datrysiadau meddalwedd sy'n ymatebol ac yn hygyrch. Rwy'n credu bod y we ar gyfer pawb ac yn cymryd hynny i ystyriaeth wrth adeiladu cymhwysiad.",
+      "button": "Dysgwch fwy amdanaf"
     },
     "timeline": {
       "events": {

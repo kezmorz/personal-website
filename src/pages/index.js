@@ -177,8 +177,6 @@ const Home = ({ snippets }) => {
         heading={t("heading")}
         subheading={t("subheading")}
         scroller={{ url: "/#about-section", label: t("scroller") }}
-        scrollerUrl=""
-        scrollerLabel={t("scroller")}
         imageProps={{
           src: "pages/home/hero",
           alt: "Something something something",

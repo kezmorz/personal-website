@@ -5,25 +5,25 @@
       "description": "Designing and developing full stack software solutions that are responsive and accessible."
     },
     "heading": "Ceri Morse",
-    "subheading": "Full Stack Developer",
+    "subheading": "Design. Develop. Deploy.",
     "scroller": "Let's get started",
     "about": {
       "characteristics": {
         "fullstack": {
           "heading": "Fullstack",
-          "description": "A short description about fullstack development"
+          "description": "I enjoy the challenge of working across the entire technology stack."
         },
         "responsive": {
           "heading": "Responsive",
-          "description": "A short description about responsive design"
+          "description": "All websites I create are adaptive to the media that renders them."
         },
         "accessible": {
           "heading": "Accessible",
-          "description": "A short description about accessible development"
+          "description": "Everyone should to be able to use the websites that I build without complaint."
         },
         "mentoring": {
           "heading": "Mentoring",
-          "description": "A short description about mentoring other developers"
+          "description": "I love helping fellow developers improve and grow their skillset."
         }
       },
       "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
