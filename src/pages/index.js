@@ -320,17 +320,15 @@ const Home = ({ snippets }) => {
         maxWidth="false"
         sx={{
           backgroundImage: (theme) =>
-            `radial-gradient(${
+            `linear-gradient(180deg, ${theme.palette.background.default} 0%, ${
               theme.palette.mode === "dark"
                 ? theme.palette.primary[950]
                 : theme.palette.primary[50]
-            } 24%, transparent 0), radial-gradient(${
+            } 40%, ${
               theme.palette.mode === "dark"
                 ? theme.palette.primary[950]
                 : theme.palette.primary[50]
-            } 24%, transparent 0)`,
-          backgroundPosition: "0 0, 16px 16px",
-          backgroundSize: "32px 32px",
+            } 70%, ${theme.palette.background.default} 90%)`,
         }}
       >
         <Box
