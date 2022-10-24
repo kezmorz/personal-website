@@ -298,7 +298,7 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: { xs: "flex-start", md: "flex-end" },
               alignItems: "center",
               mt: { xs: 4, md: 8 },
             }}
@@ -393,7 +393,7 @@ const Home = ({ snippets }) => {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "flex-end",
+                  justifyContent: { xs: "flex-start", md: "flex-end" },
                   alignItems: "center",
                   mt: { xs: 4, md: 8 },
                 }}
@@ -708,7 +708,7 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: { xs: "flex-start", md: "flex-end" },
               alignItems: "center",
               mt: { xs: 4, md: 8 },
             }}
