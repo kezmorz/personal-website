@@ -182,7 +182,6 @@ const Home = ({ snippets }) => {
           alt: "Something something something",
           width: 2429,
           height: 3402,
-          layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
       />

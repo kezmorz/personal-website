@@ -77,14 +77,20 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75 }}
               sx={{
+                position: "relative",
                 width: "100%",
-                maxHeight: 600,
+                height: 576,
                 display: "block",
                 filter: (theme) =>
-                  `drop-shadow(0 0 128px ${theme.palette.primary.main})`,
+                  `drop-shadow(0 -16px 32px ${theme.palette.primary.main})`,
               }}
             >
-              <Image priority {...imageProps} />
+              <Image
+                priority
+                layout="fill"
+                objectFit="contain"
+                {...imageProps}
+              />
             </AnimatedDiv>
           </Box>
           <AnimatedDiv
@@ -159,7 +165,6 @@ Hero.propTypes = {
     alt: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-    layout: PropTypes.string,
     loader: PropTypes.func,
   }),
 };
