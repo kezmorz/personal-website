@@ -114,10 +114,10 @@ const About = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-sitting-with-chart-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
+          width: 965,
+          height: 748,
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

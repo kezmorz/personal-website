@@ -76,10 +76,10 @@ const Timeline = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-viewing-events-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
+          width: 1160,
+          height: 727,
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

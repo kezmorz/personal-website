@@ -53,10 +53,10 @@ const Snippets = ({ snippets }) => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-coding-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
+          width: 1167,
+          height: 760,
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

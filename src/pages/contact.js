@@ -81,10 +81,10 @@ const Contact = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-posting-mail-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
+          width: 1048,
+          height: 873,
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
