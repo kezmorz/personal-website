@@ -152,7 +152,7 @@ const Contact = () => {
             {formik.status.submissionSent ? (
               <Typography variant="body1">
                 {`${t("form.success")} `}
-                <Emoji symbol="🥳" label="party face emoji" />
+                <Emoji symbol="🥳" label="partying face emoji" />
               </Typography>
             ) : (
               <>

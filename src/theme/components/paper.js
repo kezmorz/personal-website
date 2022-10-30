@@ -10,6 +10,7 @@ const paper = () => {
       },
       outlined: {
         boxSizing: "border-box",
+        overflow: "hidden",
       },
     },
   };

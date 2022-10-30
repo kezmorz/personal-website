@@ -131,7 +131,13 @@ const About = () => {
             gap: { xs: 2, md: 4 },
           }}
         >
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+          <Box
+            sx={{
+              gridColumn: { xs: "span 12", md: "span 6" },
+              borderRadius: 1,
+              overflow: "hidden",
+            }}
+          >
             <Image
               src="pages/about/bitesize.jpg"
               alt="Something something something"

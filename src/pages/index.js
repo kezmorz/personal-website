@@ -58,6 +58,7 @@ import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
 import Highlighter from "@/components/Highlighter";
+import Emoji from "@/components/Emoji";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
 
@@ -175,7 +176,12 @@ const Home = ({ snippets }) => {
       />
       <Hero
         heading={t("heading")}
-        subheading={t("subheading")}
+        subheading={
+          <>
+            {`${t("subheading")} `}
+            <Emoji symbol="🐉" label="dragon emoji" />
+          </>
+        }
         scroller={{ url: "/#about-section", label: t("scroller") }}
         imageProps={{
           src: "pages/home/hero",
@@ -293,11 +299,13 @@ const Home = ({ snippets }) => {
             boxSizing: "border-box",
           }}
         >
-          <Typography variant="h4">{t("about.description")}</Typography>
+          <Typography variant="h4" textAlign={{ xs: "left", md: "center" }}>
+            {t("about.description")}
+          </Typography>
           <Box
             sx={{
               display: "flex",
-              justifyContent: { xs: "flex-start", md: "flex-end" },
+              justifyContent: { xs: "flex-start", md: "center" },
               alignItems: "center",
               mt: { xs: 4, md: 8 },
             }}
@@ -413,10 +421,18 @@ const Home = ({ snippets }) => {
         </Box>
       </Section>
       <Section maxWidth="md">
-        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+        <Typography
+          variant="h4"
+          textAlign={{ xs: "left", md: "center" }}
+          sx={{ mb: "0.7em" }}
+        >
           {t("testimonials.line1")}
         </Typography>
-        <Typography variant="h4" sx={{ mb: "0.7em" }}>
+        <Typography
+          variant="h4"
+          textAlign={{ xs: "left", md: "center" }}
+          sx={{ mb: "0.7em" }}
+        >
           {t("testimonials.line2")}
         </Typography>
         <Box
@@ -659,7 +675,11 @@ const Home = ({ snippets }) => {
             mx: "auto",
           }}
         >
-          <Typography variant="h4" sx={{ mb: "0.7em" }}>
+          <Typography
+            variant="h4"
+            textAlign={{ xs: "left", md: "center" }}
+            sx={{ mb: "0.7em" }}
+          >
             {t("contact.heading")}
           </Typography>
           <Box sx={{ mt: { xs: 4, md: 8 } }}>
@@ -707,7 +727,7 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: { xs: "flex-start", md: "flex-end" },
+              justifyContent: { xs: "flex-start", md: "center" },
               alignItems: "center",
               mt: { xs: 4, md: 8 },
             }}

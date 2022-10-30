@@ -155,7 +155,7 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
 
 Hero.propTypes = {
   heading: PropTypes.string.isRequired,
-  subheading: PropTypes.string,
+  subheading: PropTypes.node,
   scroller: PropTypes.shape({
     url: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
