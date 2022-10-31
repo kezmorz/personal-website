@@ -157,7 +157,6 @@ const AppBar = () => {
               >
                 <Flag
                   code={LANGUAGE_OPTIONS[activeLocale].flag}
-                  height="24"
                   width="24"
                   alt={LANGUAGE_OPTIONS[activeLocale].label}
                 />
@@ -187,7 +186,6 @@ const AppBar = () => {
                   <ListItemIcon>
                     <Flag
                       code={LANGUAGE_OPTIONS[locale].flag}
-                      height="24"
                       width="24"
                       alt={LANGUAGE_OPTIONS[locale].label}
                     />
@@ -313,7 +311,6 @@ const AppBar = () => {
                       <ListItemIcon sx={{ minWidth: 36 }}>
                         <Flag
                           code={LANGUAGE_OPTIONS[locale].flag}
-                          height="24"
                           width="24"
                           alt={LANGUAGE_OPTIONS[locale].label}
                         />
