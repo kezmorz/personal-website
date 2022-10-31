@@ -80,6 +80,7 @@ const Timeline = () => {
           alt: "Something something something",
           width: 1160,
           height: 727,
+          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

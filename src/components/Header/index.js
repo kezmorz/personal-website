@@ -101,6 +101,7 @@ Header.propTypes = {
     alt: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
+    sizes: PropTypes.string,
     layout: PropTypes.string,
     loader: PropTypes.func,
   }),

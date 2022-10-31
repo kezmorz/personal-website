@@ -118,6 +118,7 @@ const About = () => {
           alt: "Something something something",
           width: 965,
           height: 748,
+          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}

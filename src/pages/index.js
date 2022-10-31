@@ -188,6 +188,7 @@ const Home = ({ snippets }) => {
           alt: "Something something something",
           width: 2429,
           height: 3402,
+          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           loader: cloudinaryImageLoader,
         }}
       />

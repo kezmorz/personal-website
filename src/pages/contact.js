@@ -85,6 +85,7 @@ const Contact = () => {
           alt: "Something something something",
           width: 1048,
           height: 873,
+          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
