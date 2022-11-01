@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -222,8 +223,22 @@ const Home = ({ snippets }) => {
             boxSizing: "border-box",
           }}
         >
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-            Put a picture of me here
+          <Box
+            sx={{
+              gridColumn: { xs: "span 12", md: "span 6" },
+              borderRadius: 1,
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src="pages/home/coding"
+              alt="Something something something"
+              width={1920}
+              height={1440}
+              layout="responsive"
+              sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+              loader={cloudinaryImageLoader}
+            />
           </Box>
           <Box
             sx={{
@@ -379,8 +394,22 @@ const Home = ({ snippets }) => {
               mt: { xs: 4, md: 8 },
             }}
           >
-            <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-              Image Goes Here
+            <Box
+              sx={{
+                gridColumn: { xs: "span 12", md: "span 6" },
+                borderRadius: 1,
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src="pages/home/working"
+                alt="Something something something"
+                width={1920}
+                height={1440}
+                layout="responsive"
+                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                loader={cloudinaryImageLoader}
+              />
             </Box>
             <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
               <Typography variant="h4" sx={{ mb: "0.7em" }}>

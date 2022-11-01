@@ -254,9 +254,9 @@ const Footer = () => {
                 <Box sx={{ position: "relative", height: 96 }}>
                   <Image
                     src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
+                    alt={flickrData.title}
                     layout="fill"
                     objectFit="cover"
-                    alt={flickrData.title}
                     loader={flickrImageLoader}
                   />
                 </Box>
