@@ -2429,7 +2429,6 @@ __metadata:
     react: 17.0.2
     react-country-flag: ^3.0.2
     react-dom: 17.0.2
-    react-world-flags: ^1.4.0
     rehype-prism-plus: ^1.4.0
     remark-gfm: ^3.0.1
     swr: ^1.2.2
@@ -7251,18 +7250,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-world-flags@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "react-world-flags@npm:1.4.0"
-  dependencies:
-    svg-country-flags: ^1.2.7
-    world-countries: ^4.0.0
-  peerDependencies:
-    react: ">=0.14"
-  checksum: 21fcd6837d781b5d704f27b875c467a9c8469c79d7b404c67eea9709c5a3179643a597ba5c338684852fcf336f6b1e7b09e136138652f4e1902d3cd5d2387cdd
-  languageName: node
-  linkType: hard
-
 "react@npm:17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -8220,13 +8207,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg-country-flags@npm:^1.2.7":
-  version: 1.2.10
-  resolution: "svg-country-flags@npm:1.2.10"
-  checksum: 52e8a946d5f9edb8f52b2b98754943604e82b465009a01774310b15be018b749ffa8b600b0c78ad18a4efd7c247e80c0cee33ef3930a60b18f751c587706cbdd
-  languageName: node
-  linkType: hard
-
 "swr@npm:^1.2.2":
   version: 1.2.2
   resolution: "swr@npm:1.2.2"
@@ -8896,13 +8876,6 @@ __metadata:
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
   checksum: 30b48f91fcf12106ed3186ae4fa86a6a1842416df425be7b60485de14bec665a54a68e4b5156647dec3a70f25e84d270ca8bc8cd23182ed095f5c7206a938c1f
-  languageName: node
-  linkType: hard
-
-"world-countries@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "world-countries@npm:4.0.0"
-  checksum: 2c66e29f7e99d8dbc0fe6cb46a9a9fd039c1c3ed531cae234aa07585b75b2af545741ba669f455123dd6a99c06b61c61177d8a6bf342b6403456e8dea9801c8f
   languageName: node
   linkType: hard
 

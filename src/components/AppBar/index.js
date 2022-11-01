@@ -28,7 +28,6 @@ import {
   MenuOutlined as MenuOutlinedIcon,
   CloseOutlined as CloseOutlinedIcon,
 } from "@mui/icons-material";
-import Flag from "react-world-flags";
 import CountryFlag from "react-country-flag";
 import { LANGUAGE_OPTIONS } from "@/constants/languages";
 import useThemeMode from "@/hooks/useThemeMode";
@@ -156,11 +155,6 @@ const AppBar = () => {
                 aria-haspopup="true"
                 onClick={handleLanguageMenuClick}
               >
-                {/* <Flag
-                  code={LANGUAGE_OPTIONS[activeLocale].flag}
-                  width="24"
-                  alt={LANGUAGE_OPTIONS[activeLocale].label}
-                /> */}
                 <CountryFlag
                   countryCode={LANGUAGE_OPTIONS[activeLocale].flag}
                   svg
@@ -190,11 +184,6 @@ const AppBar = () => {
                   onClick={handleLanguageMenuClose}
                 >
                   <ListItemIcon>
-                    {/* <Flag
-                      code={LANGUAGE_OPTIONS[locale].flag}
-                      width="24"
-                      alt={LANGUAGE_OPTIONS[locale].label}
-                    /> */}
                     <CountryFlag
                       countryCode={LANGUAGE_OPTIONS[locale].flag}
                       svg
@@ -320,11 +309,6 @@ const AppBar = () => {
                       role="option"
                     >
                       <ListItemIcon sx={{ minWidth: 36 }}>
-                        {/* <Flag
-                          code={LANGUAGE_OPTIONS[locale].flag}
-                          width="24"
-                          alt={LANGUAGE_OPTIONS[locale].label}
-                        /> */}
                         <CountryFlag
                           countryCode={LANGUAGE_OPTIONS[locale].flag}
                           svg
