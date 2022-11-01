@@ -29,6 +29,7 @@ import {
   CloseOutlined as CloseOutlinedIcon,
 } from "@mui/icons-material";
 import Flag from "react-world-flags";
+import CountryFlag from "react-country-flag";
 import { LANGUAGE_OPTIONS } from "@/constants/languages";
 import useThemeMode from "@/hooks/useThemeMode";
 import FancyLink from "@/components/FancyLink";
@@ -155,9 +156,14 @@ const AppBar = () => {
                 aria-haspopup="true"
                 onClick={handleLanguageMenuClick}
               >
-                <Flag
+                {/* <Flag
                   code={LANGUAGE_OPTIONS[activeLocale].flag}
                   width="24"
+                  alt={LANGUAGE_OPTIONS[activeLocale].label}
+                /> */}
+                <CountryFlag
+                  countryCode={LANGUAGE_OPTIONS[activeLocale].flag}
+                  svg
                   alt={LANGUAGE_OPTIONS[activeLocale].label}
                 />
               </IconButton>
@@ -184,9 +190,14 @@ const AppBar = () => {
                   onClick={handleLanguageMenuClose}
                 >
                   <ListItemIcon>
-                    <Flag
+                    {/* <Flag
                       code={LANGUAGE_OPTIONS[locale].flag}
                       width="24"
+                      alt={LANGUAGE_OPTIONS[locale].label}
+                    /> */}
+                    <CountryFlag
+                      countryCode={LANGUAGE_OPTIONS[locale].flag}
+                      svg
                       alt={LANGUAGE_OPTIONS[locale].label}
                     />
                   </ListItemIcon>
@@ -309,9 +320,14 @@ const AppBar = () => {
                       role="option"
                     >
                       <ListItemIcon sx={{ minWidth: 36 }}>
-                        <Flag
+                        {/* <Flag
                           code={LANGUAGE_OPTIONS[locale].flag}
                           width="24"
+                          alt={LANGUAGE_OPTIONS[locale].label}
+                        /> */}
+                        <CountryFlag
+                          countryCode={LANGUAGE_OPTIONS[locale].flag}
+                          svg
                           alt={LANGUAGE_OPTIONS[locale].label}
                         />
                       </ListItemIcon>
