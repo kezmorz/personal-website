@@ -226,6 +226,9 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               gridColumn: { xs: "span 12", md: "span 6" },
+              position: "relative",
+              width: "100%",
+              height: { xs: 240, md: 304 },
               borderRadius: 1,
               overflow: "hidden",
             }}
@@ -233,9 +236,8 @@ const Home = ({ snippets }) => {
             <Image
               src="pages/home/coding"
               alt="Something something something"
-              width={1920}
-              height={1440}
-              layout="responsive"
+              layout="fill"
+              objectFit="cover"
               sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
               loader={cloudinaryImageLoader}
             />
@@ -397,6 +399,9 @@ const Home = ({ snippets }) => {
             <Box
               sx={{
                 gridColumn: { xs: "span 12", md: "span 6" },
+                position: "relative",
+                width: "100%",
+                height: { xs: 272, md: 336 },
                 borderRadius: 1,
                 overflow: "hidden",
               }}
@@ -404,9 +409,8 @@ const Home = ({ snippets }) => {
               <Image
                 src="pages/home/working"
                 alt="Something something something"
-                width={1920}
-                height={1440}
-                layout="responsive"
+                layout="fill"
+                objectFit="cover"
                 sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                 loader={cloudinaryImageLoader}
               />
