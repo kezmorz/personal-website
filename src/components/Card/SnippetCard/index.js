@@ -22,7 +22,7 @@ const SnippetCard = ({ heading, description, date, href, sx = [] }) => {
       <Typography component="time" variant="caption" dateTime={date}>
         {formatDate(new Date(date), "PPP", locale)}
       </Typography>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" component="div" gutterBottom>
         {heading}
       </Typography>
       <Typography variant="body1" paragraph>

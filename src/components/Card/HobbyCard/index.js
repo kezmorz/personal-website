@@ -15,7 +15,7 @@ const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
         <Image layout="fill" objectFit="cover" {...imageProps} />
       </Box>
       <Box sx={{ px: 2, pt: 4, pb: 2 }}>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" component="div" gutterBottom>
           {heading}
         </Typography>
         {description && (

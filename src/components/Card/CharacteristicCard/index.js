@@ -8,7 +8,7 @@ const CharacteristicCard = ({ heading, description, Icon, sx = [] }) => {
         <Icon sx={{ width: "100%", height: "100%" }} />
       </Box>
       <Box sx={{ mt: 1 }}>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" component="div" gutterBottom>
           {heading}
         </Typography>
         <Typography variant="body1" paragraph color="text.secondary">
