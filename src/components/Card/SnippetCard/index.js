@@ -19,7 +19,7 @@ const SnippetCard = ({ heading, description, date, href, sx = [] }) => {
       underline="none"
       sx={[...(Array.isArray(sx) ? sx : [sx])]}
     >
-      <Typography component="time" variant="caption" dateTime={date}>
+      <Typography variant="caption" component="time" dateTime={date}>
         {formatDate(new Date(date), "PPP", locale)}
       </Typography>
       <Typography variant="h6" component="div" gutterBottom>
