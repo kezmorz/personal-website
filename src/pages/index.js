@@ -648,24 +648,33 @@ const Home = ({ snippets }) => {
             <Paper
               variant="outlined"
               sx={{
+                width: "100%",
+                height: "100%",
                 maxHeight: { xs: 480, md: 680 },
-                p: 2,
                 bgcolor: "unset",
-                overflowY: "auto",
-                "&::-webkit-scrollbar": {
-                  width: 8,
-                  height: 8,
-                  background: "red",
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  background: "blue",
-                },
-                "&::-webkit-scrollbar-thumb:hover": {
-                  background: "green",
-                },
+                overflowY: "hidden",
               }}
             >
-              <MdxComponent key={snippetPreview} components={components} />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  p: 2,
+                  overflowY: "auto",
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "scrollbar",
+                  "&::-webkit-scrollbar": {
+                    width: 8,
+                    height: 8,
+                    backgroundColor: "transparent",
+                  },
+                  "&::-webkit-scrollbar-thumb": {
+                    backgroundColor: "scrollbar",
+                  },
+                }}
+              >
+                <MdxComponent key={snippetPreview} components={components} />
+              </Box>
             </Paper>
           </Box>
         </Box>

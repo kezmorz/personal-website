@@ -62,6 +62,7 @@ const light = {
     secondary: grey[800],
   },
   divider: grey[200],
+  scrollbar: grey[100],
   background: {
     paper: grey[50],
   },

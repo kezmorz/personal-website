@@ -62,6 +62,7 @@ const dark = {
     secondary: grey[100],
   },
   divider: grey[700],
+  scrollbar: grey[800],
   background: {
     default: grey[950],
     paper: grey[900],

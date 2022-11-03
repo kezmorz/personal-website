@@ -3,17 +3,14 @@ import { styled } from "@mui/material/styles";
 const PreRoot = styled("pre")(({ theme }) => ({
   overflowX: "auto",
   scrollbarWidth: "thin",
-  scrollbarColor: "blue red",
+  scrollbarColor: `${theme.palette.divider} transparent`,
   "&::-webkit-scrollbar": {
     width: 8,
     height: 8,
-    background: "red",
+    backgroundColor: "transparent",
   },
   "&::-webkit-scrollbar-thumb": {
-    background: "blue",
-  },
-  "&::-webkit-scrollbar-thumb:hover": {
-    background: "green",
+    backgroundColor: theme.palette.divider,
   },
   '&[class*="language-"], & code[class*="language-"]': {
     color: theme.palette.mode === "dark" ? "#D6DEEB" : "#403F53",
