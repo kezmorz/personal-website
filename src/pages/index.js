@@ -652,6 +652,17 @@ const Home = ({ snippets }) => {
                 p: 2,
                 bgcolor: "unset",
                 overflowY: "auto",
+                "&::-webkit-scrollbar": {
+                  width: 8,
+                  height: 8,
+                  background: "red",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "blue",
+                },
+                "&::-webkit-scrollbar-thumb:hover": {
+                  background: "green",
+                },
               }}
             >
               <MdxComponent key={snippetPreview} components={components} />
