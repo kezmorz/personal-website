@@ -187,8 +187,6 @@ const Home = ({ snippets }) => {
         imageProps={{
           src: "pages/home/hero",
           alt: "Something something something",
-          width: 2429,
-          height: 3402,
           sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           loader: cloudinaryImageLoader,
         }}
@@ -637,6 +635,8 @@ const Home = ({ snippets }) => {
             sx={{
               gridColumn: { xs: "span 12", md: "6 / span 7" },
               gridRowStart: { xs: 1 },
+              width: "100%",
+              height: "100%",
             }}
           >
             <Typography

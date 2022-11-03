@@ -163,8 +163,6 @@ Hero.propTypes = {
   imageProps: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
     sizes: PropTypes.string,
     loader: PropTypes.func,
   }),
