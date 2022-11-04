@@ -140,10 +140,10 @@ const About = () => {
             }}
           >
             <Image
-              src="pages/about/bitesize.jpg"
+              src="pages/about/bitesize"
               alt="Something something something"
-              width={827}
-              height={1410}
+              width={633}
+              height={1080}
               layout="responsive"
               loader={cloudinaryImageLoader}
             />
@@ -202,15 +202,15 @@ const About = () => {
         </Box>
       </Section>
       <Section maxWidth="md">
-        <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
-          {/* <Image
-            src="pages/about/bitesize.jpg"
+        <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
+          <Image
+            src="pages/about/horizon"
             alt="Something something something"
-            width={827}
-            height={1410}
+            width={1080}
+            height={721}
             layout="responsive"
             loader={cloudinaryImageLoader}
-          /> */}
+          />
         </Box>
       </Section>
       <Section maxWidth="lg">
