@@ -340,7 +340,7 @@ const Home = ({ snippets }) => {
         </Box>
       </Section>
       <Section
-        maxWidth="false"
+        maxWidth={false}
         sx={{
           backgroundImage: (theme) =>
             `linear-gradient(180deg, ${theme.palette.background.default} 0%, ${
@@ -566,6 +566,7 @@ const Home = ({ snippets }) => {
           <Box
             sx={{
               gridColumn: { xs: "1 / span 12", md: "1 / span 5" },
+              width: "100%",
               display: "flex",
               flexDirection: "column",
             }}

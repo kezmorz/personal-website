@@ -25,7 +25,7 @@ const Highlighter = ({
           justifyContent: "flex-start",
           alignItems: "center",
           textAlign: "left",
-          color: "inhert",
+          color: "inherit",
           border: 1,
           borderColor: (theme) =>
             theme.palette.mode === "dark" ? "primary.900" : "primary.100",
