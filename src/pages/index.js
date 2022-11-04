@@ -663,7 +663,8 @@ const Home = ({ snippets }) => {
                   p: 2,
                   overflowY: "auto",
                   scrollbarWidth: "thin",
-                  scrollbarColor: "scrollbar",
+                  scrollbarColor: (theme) =>
+                    `${theme.palette.divider} transparent`,
                   "&::-webkit-scrollbar": {
                     width: 8,
                     height: 8,
@@ -765,7 +766,7 @@ const Home = ({ snippets }) => {
                 </AccordionSummary>
                 <AccordionDetails
                   sx={{
-                    p: (theme) => theme.spacing(2),
+                    p: 2,
                     borderBottomLeftRadius: (theme) => theme.shape.borderRadius,
                     borderBottomRightRadius: (theme) =>
                       theme.shape.borderRadius,
