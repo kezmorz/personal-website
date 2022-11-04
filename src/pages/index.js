@@ -757,7 +757,7 @@ const Home = ({ snippets }) => {
                   id={`contact-${offering}-header`}
                   expandIcon={<ExpandMoreOutlinedIcon />}
                   aria-controls={`contact-${offering}-content`}
-                  sx={{ minHeight: { sx: 64, md: 80 } }}
+                  sx={{ minHeight: { xs: 64, md: 80 } }}
                 >
                   <Typography variant="h5">
                     {t(`contact.offerings.${offering}.heading`)}
