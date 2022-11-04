@@ -134,7 +134,9 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
                   pt: { md: 8 },
                 }}
               >
-                <Typography variant="h4">{scrollerLabel}</Typography>
+                <Typography variant="h4" component="span">
+                  {scrollerLabel}
+                </Typography>
                 <IconButton
                   component={Link}
                   href={scrollerUrl}
