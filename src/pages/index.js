@@ -537,6 +537,14 @@ const Home = ({ snippets }) => {
                     p: "4px",
                     ml: 1,
                     borderRadius: "50%",
+                    "&:hover": {
+                      boxShadow: (theme) =>
+                        `0px 0px 0px 2px ${theme.palette.action.hover}`,
+                    },
+                    "&.Mui-focusVisible": {
+                      boxShadow: (theme) =>
+                        `0px 0px 0px 2px ${theme.palette.action.focus}`,
+                    },
                   }}
                 >
                   <Box
