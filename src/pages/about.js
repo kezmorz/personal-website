@@ -79,21 +79,28 @@ const hobbies = [
   {
     name: "adventuring",
     image: {
-      src: "pages/about/hobbies/adventuring.jpg",
+      src: "pages/about/hobbies/adventuring",
       loader: cloudinaryImageLoader,
     },
   },
   {
     name: "sport",
     image: {
-      src: "pages/about/hobbies/sport.jpg",
+      src: "pages/about/hobbies/sport",
       loader: cloudinaryImageLoader,
     },
   },
   {
     name: "gaming",
     image: {
-      src: "pages/about/hobbies/gaming.jpg",
+      src: "pages/about/hobbies/gaming",
+      loader: cloudinaryImageLoader,
+    },
+  },
+  {
+    name: "gardening",
+    image: {
+      src: "pages/about/hobbies/gardening",
       loader: cloudinaryImageLoader,
     },
   },
@@ -260,7 +267,7 @@ const About = () => {
           ))}
         </Box>
       </Section>
-      <Section maxWidth="md">
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("hobbies.description")}</Typography>
         <Box
           sx={{
@@ -280,9 +287,6 @@ const About = () => {
             />
           ))}
         </Box>
-      </Section>
-      <Section maxWidth="md" extendBottomPadding>
-        <Typography>The final section</Typography>
       </Section>
     </>
   );

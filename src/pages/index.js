@@ -105,7 +105,7 @@ const testimonials = [
       title: "Head Piggle",
       company: "Piggle Co.",
       imageProps: {
-        src: "pages/about/hobbies/adventuring.jpg",
+        src: "pages/about/hobbies/adventuring",
         alt: "Something something something",
         loader: cloudinaryImageLoader,
       },
@@ -119,7 +119,7 @@ const testimonials = [
       title: "Chief Piggle",
       company: "Piggle Co.",
       imageProps: {
-        src: "pages/about/hobbies/adventuring.jpg",
+        src: "pages/about/hobbies/adventuring",
         alt: "Something something something",
         loader: cloudinaryImageLoader,
       },
@@ -133,7 +133,7 @@ const testimonials = [
       title: "Chef Piggle",
       company: "Piggle Co.",
       imageProps: {
-        src: "pages/about/hobbies/adventuring.jpg",
+        src: "pages/about/hobbies/adventuring",
         alt: "Something something something",
         loader: cloudinaryImageLoader,
       },
