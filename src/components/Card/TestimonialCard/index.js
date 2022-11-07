@@ -14,6 +14,7 @@ const TestimonialCard = ({ quote, profile, sx = [] }) => {
             position: "relative",
             width: 56,
             height: 56,
+            flexShrink: 0,
             borderRadius: "50%",
             overflow: "hidden",
           }}
