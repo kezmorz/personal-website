@@ -14,8 +14,10 @@ const mail = async (req, res) => {
           name: "Personal Website Contact Form",
           email: "contact@cerimorse.com",
         },
+        name: name,
+        email: email,
         subject: subject,
-        text: `Name: ${name} Email: ${email} Message: ${message}`,
+        message: message,
       });
       res.status(response[0].statusCode);
       res.end();

@@ -4,12 +4,17 @@ const apiKey = process.env.SENDGRID_API_KEY;
 
 sendgrid.setApiKey(apiKey);
 
-export const sendMail = async ({ to, from, subject, text }) => {
+export const sendMail = async ({ to, from, name, email, subject, message }) => {
   const payload = {
     to: to,
     from: from,
     subject: subject,
-    text: text,
+    templateId: "d-9591e5e9ee81442abfc42df800c2b41d",
+    dynamicTemplateData: {
+      name: name,
+      email: email,
+      message: message,
+    },
   };
 
   return sendgrid.send(payload);
