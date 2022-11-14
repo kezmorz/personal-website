@@ -55,6 +55,7 @@ import {
 import Meta from "@/components/Meta";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
+import Tilt from "@/components/Tilt";
 import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
@@ -221,24 +222,27 @@ const Home = ({ snippets }) => {
             boxSizing: "border-box",
           }}
         >
-          <Box
-            sx={{
-              gridColumn: { xs: "span 12", md: "span 6" },
-              position: "relative",
-              width: "100%",
-              height: { xs: 240, md: 304 },
-              borderRadius: 1,
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              src="pages/home/coding"
-              alt="Something something something"
-              layout="fill"
-              objectFit="cover"
-              sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
-              loader={cloudinaryImageLoader}
-            />
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+            <Tilt perspective={1600} angle={8}>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "100%",
+                  height: { xs: 240, md: 304 },
+                  borderRadius: 1,
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src="pages/home/coding"
+                  alt="Something something something"
+                  layout="fill"
+                  objectFit="cover"
+                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                  loader={cloudinaryImageLoader}
+                />
+              </Box>
+            </Tilt>
           </Box>
           <Box
             sx={{
@@ -394,24 +398,27 @@ const Home = ({ snippets }) => {
               mt: { xs: 4, md: 8 },
             }}
           >
-            <Box
-              sx={{
-                gridColumn: { xs: "span 12", md: "span 6" },
-                position: "relative",
-                width: "100%",
-                height: { xs: 272, md: 336 },
-                borderRadius: 1,
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src="pages/home/working"
-                alt="Something something something"
-                layout="fill"
-                objectFit="cover"
-                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
-                loader={cloudinaryImageLoader}
-              />
+            <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+              <Tilt perspective={1600} angle={8}>
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: 272, md: 336 },
+                    borderRadius: 1,
+                    overflow: "hidden",
+                  }}
+                >
+                  <Image
+                    src="pages/home/working"
+                    alt="Something something something"
+                    layout="fill"
+                    objectFit="cover"
+                    sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                    loader={cloudinaryImageLoader}
+                  />
+                </Box>
+              </Tilt>
             </Box>
             <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
               <Typography variant="h4" sx={{ mb: "0.7em" }}>
