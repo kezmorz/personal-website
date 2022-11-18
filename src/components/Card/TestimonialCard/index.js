@@ -19,7 +19,7 @@ const TestimonialCard = ({ quote, profile, sx = [] }) => {
             overflow: "hidden",
           }}
         >
-          <Image layout="fill" objectFit="cover" {...imageProps} />
+          <Image layout="fill" objectFit="cover" sizes="56px" {...imageProps} />
         </Box>
         <Box sx={{ ml: 2 }}>
           <Typography variant="body1">

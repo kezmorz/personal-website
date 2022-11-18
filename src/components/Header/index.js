@@ -61,7 +61,12 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
               transition={{ duration: 0.75 }}
               sx={{ width: "100%", maxWidth: 800, display: "block" }}
             >
-              <Image priority {...imageProps} />
+              <Image
+                priority
+                layout="responsive"
+                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                {...imageProps}
+              />
             </AnimatedDiv>
           </Box>
           <AnimatedDiv
@@ -101,8 +106,6 @@ Header.propTypes = {
     alt: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-    sizes: PropTypes.string,
-    layout: PropTypes.string,
     loader: PropTypes.func,
   }),
   direction: PropTypes.oneOf(["ltr", "rtl"]),

@@ -57,8 +57,6 @@ const Snippets = ({ snippets }) => {
           alt: "Something something something",
           width: 1167,
           height: 760,
-          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
-          layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
         direction="ltr"

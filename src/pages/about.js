@@ -119,8 +119,6 @@ const About = () => {
           alt: "Something something something",
           width: 965,
           height: 748,
-          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
-          layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
         direction="ltr"
@@ -146,6 +144,7 @@ const About = () => {
                   width={633}
                   height={1080}
                   layout="responsive"
+                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                   loader={cloudinaryImageLoader}
                 />
               </Box>
@@ -213,6 +212,7 @@ const About = () => {
               width={1080}
               height={721}
               layout="responsive"
+              sizes="100vw"
               loader={cloudinaryImageLoader}
             />
           </Box>
@@ -280,7 +280,11 @@ const About = () => {
               key={name}
               heading={t(`hobbies.${name}.heading`)}
               description={t(`hobbies.${name}.description`)}
-              imageProps={{ ...image, alt: "Something something something" }}
+              imageProps={{
+                ...image,
+                alt: "Something something something",
+                sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
+              }}
               sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
             />
           ))}
