@@ -24,6 +24,7 @@ import {
   Pre as MdxPre,
 } from "@/components/Markdown";
 import Meta from "@/components/Meta";
+import Section from "@/components/Section";
 import { SnippetCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -69,15 +70,10 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         type="article"
         image=""
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
+      <Section maxWidth="md" extendTopPadding>
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -101,11 +97,11 @@ const Snippet = ({ snippet, relatedSnippets }) => {
             </Box>
           )}
         </Box>
-      </Container>
+      </Section>
       <Container
         component="article"
         maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
+        sx={{ pt: { xs: 6, sm: 12 }, pb: { xs: 6, sm: 12 } }}
       >
         <Typography variant="h3">{snippet.title}</Typography>
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
@@ -114,33 +110,15 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         <Box sx={{ mt: { xs: 4, sm: 8 } }}>
           <Divider />
           <Box sx={{ display: "flex", mt: { xs: 1, sm: 2 } }}>
-            <Link
-              href={tweetUrl}
-              target="_blank"
-              rel="noopener"
-              underline="hover"
-            >
-              {t("social.tweet.link")}
-            </Link>
+            <Link href={tweetUrl}>{t("social.tweet.link")}</Link>
             <Typography component="span" variant="body1" sx={{ mx: 1 }}>
               •
             </Typography>
-            <Link
-              href={editUrl}
-              target="_blank"
-              rel="noopener"
-              underline="hover"
-            >
-              {t("social.edit")}
-            </Link>
+            <Link href={editUrl}>{t("social.edit")}</Link>
           </Box>
         </Box>
       </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("related")}</Typography>
         <Box
           sx={{
@@ -161,7 +139,7 @@ const Snippet = ({ snippet, relatedSnippets }) => {
             />
           ))}
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };

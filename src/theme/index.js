@@ -8,19 +8,14 @@ import zIndex from "./zIndex";
 const theme = ({ mode: modeInput = "light" }) => {
   const palette = createPalette(modeInput);
   const typography = createTypography();
-
-  const defaultSystemTheme = createTheme({
-    palette: { ...palette },
-    typography: { ...typography },
-    shape: { ...shape },
-    zIndex: { ...zIndex },
-  });
-
-  const components = createComponents(defaultSystemTheme);
+  const components = createComponents();
 
   const systemTheme = responsiveFontSizes(
     createTheme({
-      ...defaultSystemTheme,
+      palette: { ...palette },
+      typography: { ...typography },
+      shape: { ...shape },
+      zIndex: { ...zIndex },
       components: { ...components },
     })
   );

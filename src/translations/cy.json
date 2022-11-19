@@ -3,6 +3,93 @@
     "metadata": {
       "title": "Ceri Morse",
       "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+    },
+    "heading": "Ceri Morse",
+    "subheading": "Dylunio. Datblygu. Defnyddio.",
+    "scroller": "Gadewch i ni ddechrau",
+    "image": "",
+    "about": {
+      "characteristics": {
+        "fullstack": {
+          "heading": "Fullstack",
+          "description": "Rwy'n mwynhau'r her o weithio ar draws y pentwr technoleg cyfan."
+        },
+        "responsive": {
+          "heading": "Responsive",
+          "description": "Mae pob gwefan rwy'n ei chreu yn addasol i'r cyfryngau sy'n eu rendro."
+        },
+        "accessible": {
+          "heading": "Hygyrch",
+          "description": "Dylai pawb allu defnyddio'r gwefannau rwy'n eu hadeiladu heb gŵyn."
+        },
+        "mentoring": {
+          "heading": "Mentora",
+          "description": "Rwyf wrth fy modd yn helpu cyd-ddatblygwyr i wella a thyfu eu sgiliau."
+        }
+      },
+      "image": "",
+      "description": "Rwy'n angerddol am ddatblygu datrysiadau meddalwedd sy'n ymatebol ac yn hygyrch. Rwy'n credu bod y we ar gyfer pawb ac yn cymryd hynny i ystyriaeth wrth adeiladu cymhwysiad.",
+      "button": "Dysgwch fwy amdanaf"
+    },
+    "timeline": {
+      "events": {
+        "university": "Astudiais Fathemateg a'i Chymwysiadau ym Mhrifysgol Caerdydd",
+        "rugby": "Modelais strategaethau lein rygbi gydag Undeb Rygbi Cymru",
+        "astra": "Peiriannydd meddalwedd yn y marchnadoedd manwerthu ac ar-lein yn Astra Games",
+        "arup": "Uwch ddatblygwr meddalwedd ac arweinydd technegol yn Arup"
+      },
+      "image": "",
+      "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
+      "line2": {
+        "description": "Rwy'n arwain datblygiad y cynnyrch arobryn {link}.",
+        "link": "Virtual Engage"
+      },
+      "button": "Gweler y llinell amser llawn"
+    },
+    "testimonials": {
+      "line1": "Rwyf wedi gweithio gyda rhai pobl anhygoel yn ystod fy ngyrfa.",
+      "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd.",
+      "jacques": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "christina": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "piotr": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      }
+    },
+    "snippets": {
+      "heading": "Recently released snippets.",
+      "preview": "Gweler pyt",
+      "information": {
+        "description": "Cymerwch olwg ar weddill fy nghasgliad o bytiau",
+        "button": "Gweler holl pytiau"
+      }
+    },
+    "contact": {
+      "heading": "Gadewch i ni gydweithio.",
+      "offerings": {
+        "jobs": {
+          "heading": "Cyfleoedd Gwaith",
+          "description": "Mae wastad gen i ddiddordeb mewn clywed am gyfleoedd gwaith cyffrous. Gallai hyn fod yn unrhyw beth o brosiect personol yr ydych angen rhywfaint o fewnbwn neu help gyda, i rôl rydych yn ei hysbysebu yr ydych yn meddwl y byddwn yn ffit dda ar ei chyfer. Mae popeth, wrth gwrs, yn dibynnu ar amser ac mae'n rhaid i mi ddweud, rwy'n mwynhau'r hyn rwy'n ei wneud ar hyn o bryd, felly bydd yn rhaid iddo fod yn rhywbeth arbennig!"
+        },
+        "mentoring": {
+          "heading": "Mentora",
+          "description": "Rwyf wedi cael mentoriaid da iawn yn ystod fy ngyrfa fel datblygwr meddalwedd. Nid yw bob amser wedi ymwneud â'r agwedd codio. Mae rhai wedi helpu i wella fy nealltwriaeth o'r agweddau busnes dan sylw hefyd. Rwyf wrth fy modd yn rhoi yn ôl i'r gymuned ac yn helpu datblygwyr newydd mewn unrhyw ffordd y gallaf. Os oes gennych chi ddiddordeb mewn cael mentor, hyd yn oed os mai dim ond am gyfnod byr, yna rhowch neges i mi a byddwn yn ceisio sortio rhywbeth allan!"
+        },
+        "questions": {
+          "heading": "Cwestiynau",
+          "description": "Byddaf yn hapus i ateb unrhyw gwestiynau sydd gennych. Os oes gennych chi ddiddordeb mewn gwybod sut y gwnes i adeiladu'r wefan hon neu os oes gennych chi gwestiwn am sut rydw i'n arwain timau i ddarparu datrysiadau meddalwedd hygyrch, yna peidiwch ag oedi cyn cysylltu. Nid oes y fath beth â chwestiwn gwirion!"
+        }
+      },
+      "button": "Cysylltwch"
     }
   },
   "about": {
@@ -13,10 +100,10 @@
     "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
     "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
     "bitesize": {
-      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau",
-      "line2": "Rhugl yn y Gymraeg a'r Saesneg",
-      "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013",
-      "line4": "Wedi'i drawsnewid o ddatblygu cymwysiadau annibynnol i ddatblygiad gwe stac llawn"
+      "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau.",
+      "line2": "Rhugl yn y Gymraeg a'r Saesneg.",
+      "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013.",
+      "line4": "Wedi'i drawsnewid o ddatblygu cymwysiadau annibynnol i ddatblygiad gwe stac llawn."
     },
     "history": {
       "paragraph1": "Dechreuodd fy niddordeb mewn creu datrysiadau meddalwedd yr holl ffordd yn ôl yn yr ysgol uwchradd. Adeiladais cymwysiad ar gyfer system siop gan ddefnyddio Microsoft Access fel rhan o brosiect. Roedd gweld y rhyngwyneb a'r profiad yn newid trwy addasu ychydig linellau o god yn hynod ddiddorol i mi. Es i ymlaen i astudio Mathemateg yn y brifysgol ond cymerais gymaint o fodiwlau Cyfrifiadureg â phosib. Adeiladais fy cymwys Java cyntaf, gêm hangman, a defnyddio C++ i ddysgu am brosesu cyfochrog a phrosesu delweddau. Cefais brosiect cyffrous yn fy mlwyddyn olaf yn gweithio gydag Undeb Rygbi Cymru yn modelu strategaethau y lein gan ddefnyddio theori gêm, efelychiad Monte Carlo a Python.",
@@ -135,31 +222,6 @@
       "edit": "Golygu ar GitHub"
     },
     "related": "Os oedd y pyt hwn yn ddefnyddiol i chi, dylech edrych ar rai o'r rhain hefyd!"
-  },
-  "resume": {
-    "heading": "Edrychwch are fy nghrynodeb proffesiynol",
-    "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",
-    "description": {
-      "heading": "Crynodeb",
-      "paragraph": {
-        "line1": "Roeddwn i eisiau rhywle hygyrch i gadw fy nghrynodeb generig a pha le gwell nag ar fy ngwefan fy hun! Ar gyfer rhai ceisiadau efallai y byddaf yn ei deilwra i weddu i'r rôl ond mae llawer o'r wybodaeth graidd yn aros yr un fath.",
-        "line2": "Put something here"
-      },
-      "update": "Diweddarwyd",
-      "info": "Rwyf am bwysleisio mai fformat 2 dudalen yn unig yw hwn. Fe’i bwriedir fel trosolwg ac i annog trafodaethau."
-    },
-    "formats": {
-      "heading": "Fformatau Arall",
-      "paragraph": "You can download my cv here",
-      "word": {
-        "title": "Microsoft Word",
-        "description": ""
-      },
-      "pdf": {
-        "title": "PDF",
-        "description": ""
-      }
-    }
   },
   "contact": {
     "metadata": {

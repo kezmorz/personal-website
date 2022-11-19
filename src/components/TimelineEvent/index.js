@@ -37,7 +37,7 @@ const variants = {
 
 const TimelineEventRoot = styled("li", {
   shouldForwardProp: (prop) => prop !== "position" && prop !== "sx",
-})(({ position }) => ({
+})(({ theme, position }) => ({
   listStyle: "none",
   position: "relative",
   minHeight: 80,
@@ -58,7 +58,8 @@ const TimelineEventRoot = styled("li", {
     "&:before": {
       content: '""',
       flex: 1,
-      padding: "8px 16px",
+      padding: theme.spacing(1, 2),
+      margin: 1,
     },
     "&:nth-of-type(even)": {
       flexDirection: "row-reverse",
@@ -117,7 +118,7 @@ const TimelineEvent = ({ variant, position, description, date, sx = [] }) => {
         </Box>
         <TimelineEventConnector />
       </Box>
-      <Paper square sx={{ flex: 1, mx: 2, my: 1 }}>
+      <Paper sx={{ flex: 1, mx: 2, my: 1 }}>
         <Box sx={{ px: 2, pt: 1, pb: 2 }}>
           <Box
             sx={{

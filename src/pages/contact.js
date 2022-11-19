@@ -4,7 +4,6 @@ import { useTranslations } from "use-intl";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import {
-  Container,
   TextField,
   Button,
   Snackbar,
@@ -16,6 +15,7 @@ import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import Emoji from "@/components/Emoji";
 import Layout from "@/components/Layout";
 
@@ -81,20 +81,15 @@ const Contact = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-posting-mail-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
-          layout: "responsive",
+          width: 1048,
+          height: 873,
           loader: cloudinaryImageLoader,
         }}
         direction="rtl"
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mb: { xs: 8, sm: 16 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h3" gutterBottom>
           {t("description.heading")}
         </Typography>
@@ -156,7 +151,7 @@ const Contact = () => {
             {formik.status.submissionSent ? (
               <Typography variant="body1">
                 {`${t("form.success")} `}
-                <Emoji symbol="🥳" label="party face emoji" />
+                <Emoji symbol="🥳" label="partying face emoji" />
               </Typography>
             ) : (
               <>
@@ -181,7 +176,7 @@ const Contact = () => {
             )}
           </Box>
         </Box>
-      </Container>
+      </Section>
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={5000}

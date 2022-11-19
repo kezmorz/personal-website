@@ -72,11 +72,27 @@ const Link = forwardRef(
     if (isExternal) {
       if (noLinkStyle) {
         return (
-          <Anchor href={href} className={className} ref={ref} {...props} />
+          <Anchor
+            href={href}
+            className={className}
+            target="_blank"
+            rel="noopener"
+            ref={ref}
+            {...props}
+          />
         );
       }
 
-      return <MuiLink href={href} className={className} ref={ref} {...props} />;
+      return (
+        <MuiLink
+          href={href}
+          className={className}
+          target="_blank"
+          rel="noopener"
+          ref={ref}
+          {...props}
+        />
+      );
     }
 
     if (noLinkStyle) {

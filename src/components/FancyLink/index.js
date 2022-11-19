@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import Link from "@/components/Link";
 
-const FancyLinkRoot = styled(Link)(({ activeClassName }) => ({
+const FancyLinkRoot = styled(Link)(({ activeClassName, theme }) => ({
   position: "relative",
   display: "block",
+  color: theme.palette.text.primary,
   outline: 0,
   "&::after": {
     position: "absolute",
@@ -19,7 +20,10 @@ const FancyLinkRoot = styled(Link)(({ activeClassName }) => ({
     transformOrigin: "center",
     transition: "opacity 300ms, transform 300ms",
   },
-  [`&.${activeClassName}::after, &:hover::after, &:focus::after`]: {
+  [`&.${activeClassName}, &:hover, &.Mui-focusVisible`]: {
+    color: theme.palette.text.primary,
+  },
+  [`&.${activeClassName}::after, &:hover::after, &.Mui-focusVisible::after`]: {
     transform: "scale(1)",
   },
 }));

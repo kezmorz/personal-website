@@ -4,7 +4,7 @@ import { Paper, Typography, Box } from "@mui/material";
 
 const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
   return (
-    <Paper square sx={[...(Array.isArray(sx) ? sx : [sx])]}>
+    <Paper sx={[...(Array.isArray(sx) ? sx : [sx])]}>
       <Box
         sx={{
           position: "relative",
@@ -15,7 +15,7 @@ const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
         <Image layout="fill" objectFit="cover" {...imageProps} />
       </Box>
       <Box sx={{ px: 2, pt: 4, pb: 2 }}>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" component="div" gutterBottom>
           {heading}
         </Typography>
         {description && (
@@ -35,7 +35,7 @@ HobbyCard.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     loader: PropTypes.func,
-  }),
+  }).isRequired,
   sx: PropTypes.oneOfType([
     PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])

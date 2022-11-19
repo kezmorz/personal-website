@@ -3,6 +3,93 @@
     "metadata": {
       "title": "Ceri Morse",
       "description": "Designing and developing full stack software solutions that are responsive and accessible."
+    },
+    "heading": "Ceri Morse",
+    "subheading": "Design. Develop. Deploy.",
+    "scroller": "Let's get started",
+    "image": "",
+    "about": {
+      "characteristics": {
+        "fullstack": {
+          "heading": "Fullstack",
+          "description": "I enjoy the challenge of working across the entire technology stack."
+        },
+        "responsive": {
+          "heading": "Responsive",
+          "description": "All websites I create are adaptive to the media that renders them."
+        },
+        "accessible": {
+          "heading": "Accessible",
+          "description": "Everyone should to be able to use the websites that I build without complaint."
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": "I love helping fellow developers improve and grow their skillset."
+        }
+      },
+      "image": "",
+      "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
+      "button": "Learn more about me"
+    },
+    "timeline": {
+      "events": {
+        "university": "Studied Mathematics and its Applications at Cardiff University",
+        "rugby": "Modelled rugby lineout strategies with the Welsh Rugby Union",
+        "astra": "Software engineer in the retail and online markets at Astra Games",
+        "arup": "Senior software developer and technical lead at Arup"
+      },
+      "image": "",
+      "line1": "I'm currently working as a Senior Software Developer at Arup.",
+      "line2": {
+        "description": "I lead the development of the award winning {link} product.",
+        "link": "Virtual Engage"
+      },
+      "button": "See full timeline"
+    },
+    "testimonials": {
+      "line1": "I've worked with some amazing people during my career.",
+      "line2": "See what some of them have to say about our time working together.",
+      "jacques": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "christina": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "piotr": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      }
+    },
+    "snippets": {
+      "heading": "Recently released snippets.",
+      "preview": "See snippet",
+      "information": {
+        "description": "Take a look at the rest of my collection of snippets",
+        "button": "See all snippets"
+      }
+    },
+    "contact": {
+      "heading": "Let's collaborate.",
+      "offerings": {
+        "jobs": {
+          "heading": "Job Opportunities",
+          "description": "I'm always interested in hearing about exciting job opportunities. This could be anything from a personal project you need some input or help with, to a role you're advertising that you think I'd be a good fit for. Everything is, of course, time-dependent and I have to say, I enjoy what I'm doing right now, so it'll have to be something special!"
+        },
+        "mentoring": {
+          "heading": "Mentoring",
+          "description": "I've had some really good mentors during my career as a software developer. It hasn't always been about the coding aspect. Some have helped improve my understanding of the business aspects involved too. I love giving back to the community and helping new developers in any way that I can. If you're interested in having a mentor, even if it's just for a short period of time, then give me a message and we'll try to sort something out!"
+        },
+        "questions": {
+          "heading": "Questions",
+          "description": "I'll happily answer any questions you may have. If you're interested in knowing how I built this site or if you have a question about how I lead teams in delivering accessible software solutions, then don't hesitate to get in touch. There is no such thing as a stupid question!"
+        }
+      },
+      "button": "Get in touch"
     }
   },
   "about": {
@@ -13,10 +100,10 @@
     "heading": "Hi, I'm Ceri Morse, a full stack developer",
     "subheading": "I design and develop software solutions for everyone",
     "bitesize": {
-      "line1": "Born and raised in Wales, the land of dragons",
-      "line2": "Fluent in both Welsh and English",
-      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013",
-      "line4": "Transitioned from developing standalone applications to full stack web development"
+      "line1": "Born and raised in Wales, the land of dragons.",
+      "line2": "Fluent in both Welsh and English.",
+      "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013.",
+      "line4": "Transitioned from developing standalone applications to full stack web development."
     },
     "history": {
       "paragraph1": "My interest in creating software solutions started all the way back in secondary school. I built an application for a shop system using Microsoft Access as part of a project. Seeing the interface and experience change through modifying a few lines of code was fascinating to me. I went on to study Mathematics at university but took as many Computer Science modules as possible. I built my first Java application, a hangman game, and used C++ to learn about parallel processing and image processing. I had a really exciting final year project working with the Welsh Rugby Union modelling line-out strategies using game theory, Monte Carlo simulation and Python.",
@@ -135,31 +222,6 @@
       "edit": "Edit on GitHub"
     },
     "related": "If you found this snippet helpful, you should check out some of these too!"
-  },
-  "resume": {
-    "heading": "Check out my professional résumé",
-    "subheading": "You'll find my relevant skills, work experience and more",
-    "description": {
-      "heading": "Résumé",
-      "paragraph": {
-        "line1": "I wanted somewhere accessible to keep my generic résumé and what better place than on my own website! For certain applications I may tailor it to suit the role but a lot of the core information remains the same.",
-        "line2": "Put something here"
-      },
-      "update": "Updated",
-      "info": "I want to stress that this is purely a 2 page format. It’s intended as an overview and to encourage discussions."
-    },
-    "formats": {
-      "heading": "Alternative Formats",
-      "paragraph": "You can find alternative formats of my cv below",
-      "word": {
-        "title": "Microsoft Word",
-        "description": "This is a description for the word document"
-      },
-      "pdf": {
-        "title": "PDF",
-        "description": ""
-      }
-    }
   },
   "contact": {
     "metadata": {

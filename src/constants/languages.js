@@ -4,7 +4,7 @@ export const LANGUAGE_OPTIONS = {
     label: "English",
   },
   cy: {
-    flag: "GB_WLS",
+    flag: "GB-WLS",
     label: "Cymraeg",
   },
 };

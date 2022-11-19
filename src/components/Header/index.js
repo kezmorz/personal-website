@@ -2,43 +2,40 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
 
-const AnimatedTypography = styled(Typography)({
-  animationName: "rotatein",
-  animationDuration: "0.75s",
-  animationFillMode: "both",
-  "@keyframes rotatein": {
-    "0%": {
-      opacity: 0,
-      transform: "rotateX(90deg)",
-    },
-    "100%": {
-      opacity: 1,
-      transform: "rotateX(0deg)",
+const containerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
     },
   },
-});
+};
 
-const AnimatedImage = styled(Image)({
-  animationName: "fadein",
-  animationDuration: "0.75s",
-  animationFillMode: "both",
-  "@keyframes fadein": {
-    "0%": {
-      opacity: 0,
-    },
-    "100%": {
-      opacity: 1,
+const textVariants = {
+  initial: {
+    rotateX: 90,
+  },
+  visible: {
+    rotateX: 0,
+    transition: {
+      duration: 0.5,
     },
   },
-});
+};
+
+const AnimatedDiv = styled(motion.div)({});
 
 const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
   return (
     <Box component="header">
       <Container
         maxWidth="lg"
-        sx={{ mt: { xs: 4, sm: 8 }, mb: { xs: 8, sm: 16 } }}
+        sx={{ mt: { xs: 6, sm: 12 }, mb: { xs: 6, sm: 12 } }}
       >
         <Box
           sx={{
@@ -50,7 +47,7 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
           <Box
             sx={[
               {
-                gridRowStart: { md: "1" },
+                gridRowStart: { md: 1 },
                 gridColumn: { xs: "1 / span 12", md: "1 / span 6" },
                 display: "flex",
                 justifyContent: "center",
@@ -58,30 +55,43 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
               direction === "ltr" && { gridColumnStart: { md: 7 } },
             ]}
           >
-            <Box sx={{ width: "100%", maxWidth: 800, display: "block" }}>
-              <AnimatedImage
+            <AnimatedDiv
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.75 }}
+              sx={{ width: "100%", maxWidth: 800, display: "block" }}
+            >
+              <Image
                 priority
-                sx={{ animationDelay: { md: "0.5s" } }}
+                layout="responsive"
+                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                 {...imageProps}
               />
-            </Box>
+            </AnimatedDiv>
           </Box>
-          <Box
+          <AnimatedDiv
+            variants={containerVariants}
+            initial="initial"
+            animate="visible"
             sx={{
               gridRowStart: { md: "1" },
               gridColumn: { xs: "span 12", md: "span 6" },
               pt: { md: 8 },
             }}
           >
-            <AnimatedTypography variant="h3" gutterBottom>
-              {heading}
-            </AnimatedTypography>
+            <AnimatedDiv variants={textVariants}>
+              <Typography variant="h3" gutterBottom>
+                {heading}
+              </Typography>
+            </AnimatedDiv>
             {subheading && (
-              <AnimatedTypography variant="h4" sx={{ animationDelay: "0.25s" }}>
-                {subheading}
-              </AnimatedTypography>
+              <AnimatedDiv variants={textVariants}>
+                <Typography variant="h4" gutterBottom>
+                  {subheading}
+                </Typography>
+              </AnimatedDiv>
             )}
-          </Box>
+          </AnimatedDiv>
         </Box>
       </Container>
     </Box>
@@ -96,7 +106,6 @@ Header.propTypes = {
     alt: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-    layout: PropTypes.string,
     loader: PropTypes.func,
   }),
   direction: PropTypes.oneOf(["ltr", "rtl"]),

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "use-intl";
-import { Container, Button, Typography, Box } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
@@ -29,6 +29,8 @@ import AwsIcon from "@/icons/Aws";
 import VercelIcon from "@/icons/Vercel";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
+import Tilt from "@/components/Tilt";
 import { HobbyCard, SkillCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -78,6 +80,7 @@ const hobbies = [
   {
     name: "adventuring",
     image: {
+      // maybe change this image to imageProps for consistency
       src: "pages/about/hobbies/adventuring.jpg",
       loader: cloudinaryImageLoader,
     },
@@ -113,16 +116,15 @@ const About = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-sitting-with-chart-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
-          layout: "responsive",
+          width: 965,
+          height: 748,
           loader: cloudinaryImageLoader,
         }}
         direction="ltr"
       />
-      <Container component="section" maxWidth="md">
+      <Section maxWidth="md">
         <Box
           sx={{
             display: "grid",
@@ -130,15 +132,24 @@ const About = () => {
             gap: { xs: 2, md: 4 },
           }}
         >
-          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-            <Image
-              src="pages/about/bitesize.jpg"
-              alt="Something something something"
-              width={827}
-              height={1410}
-              layout="responsive"
-              loader={cloudinaryImageLoader}
-            />
+          <Box
+            sx={{
+              gridColumn: { xs: "span 12", md: "span 6" },
+            }}
+          >
+            <Tilt perspective={1600} angle={8}>
+              <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
+                <Image
+                  src="pages/about/bitesize"
+                  alt="Something something something"
+                  width={633}
+                  height={1080}
+                  layout="responsive"
+                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                  loader={cloudinaryImageLoader}
+                />
+              </Box>
+            </Tilt>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
             <Typography variant="h4" sx={{ mt: { xs: 2, sm: 4 }, mb: "0.7em" }}>
@@ -153,12 +164,8 @@ const About = () => {
             <Typography variant="h4">{t("bitesize.line4")}</Typography>
           </Box>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Box
           sx={{
             display: "grid",
@@ -196,28 +203,23 @@ const About = () => {
             {t("history.timeline.button")}
           </Button>
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
-        <Box sx={{ width: "100%", maxHeight: { xs: 200, md: 300 } }}>
-          {/* <Image
-            src="pages/about/bitesize.jpg"
-            alt="Something something something"
-            width={827}
-            height={1410}
-            layout="responsive"
-            loader={cloudinaryImageLoader}
-          /> */}
-        </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
+        <Tilt perspective={1600} angle={8}>
+          <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
+            <Image
+              src="pages/about/horizon"
+              alt="Something something something"
+              width={1080}
+              height={721}
+              layout="responsive"
+              sizes="100vw"
+              loader={cloudinaryImageLoader}
+            />
+          </Box>
+        </Tilt>
+      </Section>
+      <Section maxWidth="lg">
         <Box
           sx={{
             width: "100%",
@@ -263,12 +265,8 @@ const About = () => {
             </SkillCard>
           ))}
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 } }}
-      >
+      </Section>
+      <Section maxWidth="md">
         <Typography variant="h4">{t("hobbies.description")}</Typography>
         <Box
           sx={{
@@ -283,19 +281,19 @@ const About = () => {
               key={name}
               heading={t(`hobbies.${name}.heading`)}
               description={t(`hobbies.${name}.description`)}
-              imageProps={{ ...image, alt: "Something something something" }}
+              imageProps={{
+                ...image,
+                alt: "Something something something",
+                sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
+              }}
               sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
             />
           ))}
         </Box>
-      </Container>
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 8, sm: 16 } }}
-      >
+      </Section>
+      <Section maxWidth="md" extendBottomPadding>
         <Typography>The final section</Typography>
-      </Container>
+      </Section>
     </>
   );
 };

@@ -28,7 +28,7 @@ import {
   MenuOutlined as MenuOutlinedIcon,
   CloseOutlined as CloseOutlinedIcon,
 } from "@mui/icons-material";
-import Flag from "react-world-flags";
+import CountryFlag from "react-country-flag";
 import { LANGUAGE_OPTIONS } from "@/constants/languages";
 import useThemeMode from "@/hooks/useThemeMode";
 import FancyLink from "@/components/FancyLink";
@@ -98,7 +98,7 @@ const AppBar = () => {
 
   return (
     <>
-      <MuiAppBar position="fixed">
+      <MuiAppBar>
         <Toolbar>
           <Box sx={{ flex: "1 1", display: "flex" }}>
             <Link href="/" underline="none">
@@ -129,10 +129,7 @@ const AppBar = () => {
                     sx={{
                       p: 0,
                       mx: 2,
-                      "&.Mui-focusVisible": {
-                        bgcolor: "unset",
-                      },
-                      "&:hover": {
+                      "&:hover, &.Mui-focusVisible": {
                         bgcolor: "unset",
                       },
                     }}
@@ -158,10 +155,9 @@ const AppBar = () => {
                 aria-haspopup="true"
                 onClick={handleLanguageMenuClick}
               >
-                <Flag
-                  code={LANGUAGE_OPTIONS[activeLocale].flag}
-                  height="24"
-                  width="24"
+                <CountryFlag
+                  countryCode={LANGUAGE_OPTIONS[activeLocale].flag}
+                  svg
                   alt={LANGUAGE_OPTIONS[activeLocale].label}
                 />
               </IconButton>
@@ -188,10 +184,9 @@ const AppBar = () => {
                   onClick={handleLanguageMenuClose}
                 >
                   <ListItemIcon>
-                    <Flag
-                      code={LANGUAGE_OPTIONS[locale].flag}
-                      height="24"
-                      width="24"
+                    <CountryFlag
+                      countryCode={LANGUAGE_OPTIONS[locale].flag}
+                      svg
                       alt={LANGUAGE_OPTIONS[locale].label}
                     />
                   </ListItemIcon>
@@ -237,7 +232,11 @@ const AppBar = () => {
               disablePortal
               open={drawerOpen}
               onClose={toggleDrawer(false)}
-              PaperProps={{ sx: { width: "auto", height: "100%" } }}
+              PaperProps={{
+                variant: "elevation",
+                elevation: 0,
+                sx: { width: "auto", height: "100%" },
+              }}
             >
               <Box
                 sx={{
@@ -271,7 +270,11 @@ const AppBar = () => {
                         href={link}
                         underline="none"
                         onClick={toggleDrawer(false)}
-                        sx={{ px: 0, py: 1 }}
+                        sx={{
+                          px: 0,
+                          py: 1,
+                          "&:hover": { color: "currentcolor" },
+                        }}
                       >
                         <ListItemText primary={t(`navigation.pages.${name}`)} />
                       </ListItemButton>
@@ -306,10 +309,9 @@ const AppBar = () => {
                       role="option"
                     >
                       <ListItemIcon sx={{ minWidth: 36 }}>
-                        <Flag
-                          code={LANGUAGE_OPTIONS[locale].flag}
-                          height="24"
-                          width="24"
+                        <CountryFlag
+                          countryCode={LANGUAGE_OPTIONS[locale].flag}
+                          svg
                           alt={LANGUAGE_OPTIONS[locale].label}
                         />
                       </ListItemIcon>

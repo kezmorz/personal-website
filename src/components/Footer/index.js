@@ -49,7 +49,7 @@ const Footer = () => {
       <Divider light />
       <Container
         maxWidth="lg"
-        sx={{ mt: { xs: 8, sm: 16 }, mb: { xs: 2, sm: 4 } }}
+        sx={{ mt: { xs: 12, sm: 24 }, mb: { xs: 3, sm: 6 } }}
       >
         <Box
           sx={{
@@ -111,12 +111,7 @@ const Footer = () => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  <Link
-                    href={spotifyData.songUrl}
-                    target="_blank"
-                    rel="noopener"
-                    underline="hover"
-                  >
+                  <Link href={spotifyData.songUrl} underline="hover">
                     {spotifyData.title}
                   </Link>
                   {` - ${spotifyData.artist}`}
@@ -162,7 +157,7 @@ const Footer = () => {
                         "&.active::after": {
                           transform: "scale(0)",
                         },
-                        "&:hover::after, &:focus::after": {
+                        "&:hover::after, &.Mui-focusVisible::after": {
                           transform: "scale(1)",
                         },
                       }}
@@ -183,7 +178,7 @@ const Footer = () => {
                         "&.active::after": {
                           transform: "scale(0)",
                         },
-                        "&:hover::after, &:focus::after": {
+                        "&:hover::after, &.Mui-focusVisible::after": {
                           transform: "scale(1)",
                         },
                       }}
@@ -196,7 +191,12 @@ const Footer = () => {
             </Box>
             <Box sx={{ display: { xs: "block", md: "none" } }}>
               <Divider />
-              <Accordion disableGutters square elevation={0}>
+              <Accordion
+                disableGutters
+                variant="elevation"
+                square
+                sx={{ bgcolor: "background.default" }}
+              >
                 <AccordionSummary
                   id="sitemap-header"
                   expandIcon={<ExpandMoreOutlinedIcon />}
@@ -213,7 +213,11 @@ const Footer = () => {
                           component={Link}
                           href={link}
                           underline="none"
-                          sx={{ px: 0, py: 1 }}
+                          sx={{
+                            px: 0,
+                            py: 1,
+                            "&:hover": { color: "currentcolor" },
+                          }}
                         >
                           <ListItemText primary={t(`sitemap.pages.${name}`)} />
                         </ListItemButton>
@@ -225,7 +229,11 @@ const Footer = () => {
                           component={Link}
                           href={link}
                           underline="none"
-                          sx={{ px: 0, py: 1 }}
+                          sx={{
+                            px: 0,
+                            py: 1,
+                            "&:hover": { color: "currentcolor" },
+                          }}
                         >
                           <ListItemText primary={t(`sitemap.pages.${name}`)} />
                         </ListItemButton>
@@ -242,17 +250,14 @@ const Footer = () => {
               {t("art")}
             </Typography>
             {flickrData && (
-              <Link
-                href={`https://www.flickr.com/photos/${flickrData.owner}`}
-                target="_blank"
-                rel="noopener"
-              >
+              <Link href={`https://www.flickr.com/photos/${flickrData.owner}`}>
                 <Box sx={{ position: "relative", height: 96 }}>
                   <Image
                     src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
+                    alt={flickrData.title}
                     layout="fill"
                     objectFit="cover"
-                    alt={flickrData.title}
+                    sizes="(min-width: 0px) 100vw, (min-width: 900px) 20vw"
                     loader={flickrImageLoader}
                   />
                 </Box>

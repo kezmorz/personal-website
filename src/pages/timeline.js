@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
-import {
-  Container,
-  Autocomplete,
-  TextField,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Autocomplete, TextField, Typography, Box } from "@mui/material";
 import { loader as cloudinaryImageLoader } from "@/lib/cloudinary";
 import { pick } from "@/utils/misc";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
+import Section from "@/components/Section";
 import TimelineEvent from "@/components/TimelineEvent";
 import Layout from "@/components/Layout";
 
@@ -81,20 +76,15 @@ const Timeline = () => {
         heading={t("heading")}
         subheading={t("subheading")}
         imageProps={{
-          src: "samples/cloudinary-icon.png",
+          src: "illustrations/dragon-viewing-events-alpha",
           alt: "Something something something",
-          width: 480,
-          height: 350,
-          layout: "responsive",
+          width: 1160,
+          height: 727,
           loader: cloudinaryImageLoader,
         }}
         direction="rtl"
       />
-      <Container
-        component="section"
-        maxWidth="md"
-        sx={{ mb: { xs: 8, sm: 16 } }}
-      >
+      <Section maxWidth="md" extendBottomPadding>
         <Typography variant="h4">{t("description")}</Typography>
         <Autocomplete
           id="timeline-categories"
@@ -147,7 +137,7 @@ const Timeline = () => {
             />
           ))}
         </Box>
-      </Container>
+      </Section>
     </>
   );
 };
