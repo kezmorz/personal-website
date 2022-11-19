@@ -7,6 +7,7 @@
     "heading": "Ceri Morse",
     "subheading": "Design. Develop. Deploy.",
     "scroller": "Let's get started",
+    "image": "",
     "about": {
       "characteristics": {
         "fullstack": {
@@ -26,6 +27,7 @@
           "description": "I love helping fellow developers improve and grow their skillset."
         }
       },
+      "image": "",
       "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
       "button": "Learn more about me"
     },
@@ -36,6 +38,7 @@
         "astra": "Software engineer in the retail and online markets at Astra Games",
         "arup": "Senior software developer and technical lead at Arup"
       },
+      "image": "",
       "line1": "I'm currently working as a Senior Software Developer at Arup.",
       "line2": {
         "description": "I lead the development of the award winning {link} product.",
@@ -45,7 +48,22 @@
     },
     "testimonials": {
       "line1": "I've worked with some amazing people during my career.",
-      "line2": "See what some of them have to say about our time working together."
+      "line2": "See what some of them have to say about our time working together.",
+      "jacques": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "christina": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "piotr": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      }
     },
     "snippets": {
       "heading": "Recently released snippets.",
@@ -204,31 +222,6 @@
       "edit": "Edit on GitHub"
     },
     "related": "If you found this snippet helpful, you should check out some of these too!"
-  },
-  "resume": {
-    "heading": "Check out my professional résumé",
-    "subheading": "You'll find my relevant skills, work experience and more",
-    "description": {
-      "heading": "Résumé",
-      "paragraph": {
-        "line1": "I wanted somewhere accessible to keep my generic résumé and what better place than on my own website! For certain applications I may tailor it to suit the role but a lot of the core information remains the same.",
-        "line2": "Put something here"
-      },
-      "update": "Updated",
-      "info": "I want to stress that this is purely a 2 page format. It’s intended as an overview and to encourage discussions."
-    },
-    "formats": {
-      "heading": "Alternative Formats",
-      "paragraph": "You can find alternative formats of my cv below",
-      "word": {
-        "title": "Microsoft Word",
-        "description": "This is a description for the word document"
-      },
-      "pdf": {
-        "title": "PDF",
-        "description": ""
-      }
-    }
   },
   "contact": {
     "metadata": {

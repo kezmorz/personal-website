@@ -80,6 +80,7 @@ const hobbies = [
   {
     name: "adventuring",
     image: {
+      // maybe change this image to imageProps for consistency
       src: "pages/about/hobbies/adventuring.jpg",
       loader: cloudinaryImageLoader,
     },
