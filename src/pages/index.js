@@ -55,6 +55,7 @@ import {
 import Meta from "@/components/Meta";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
+import Tilt from "@/components/Tilt";
 import { CharacteristicCard, TestimonialCard } from "@/components/Card";
 import StepEvent from "@/components/StepEvent";
 import Carousel from "@/components/Carousel";
@@ -98,45 +99,30 @@ const events = [
 
 const testimonials = [
   {
-    quote:
-      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
-    profile: {
-      name: "Rhian Powell",
-      title: "Head Piggle",
-      company: "Piggle Co.",
-      imageProps: {
-        src: "pages/about/hobbies/adventuring",
-        alt: "Something something something",
-        loader: cloudinaryImageLoader,
-      },
+    name: "jacques",
+    person: "Jacques Coetzee",
+    company: "",
+    imageProps: {
+      src: "pages/home/testimonials/jacques",
+      loader: cloudinaryImageLoader,
     },
   },
   {
-    quote:
-      "Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
-    profile: {
-      name: "Rhian Elizabeth Powell",
-      title: "Chief Piggle",
-      company: "Piggle Co.",
-      imageProps: {
-        src: "pages/about/hobbies/adventuring",
-        alt: "Something something something",
-        loader: cloudinaryImageLoader,
-      },
+    name: "christina",
+    person: "Christina Meggs",
+    company: "",
+    imageProps: {
+      src: "pages/home/testimonials/christina",
+      loader: cloudinaryImageLoader,
     },
   },
   {
-    quote:
-      "This is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page. Hello there, this is a very long quote that will take up quite a bit of the page.",
-    profile: {
-      name: "Rhian DJ Lizzy Powell",
-      title: "Chef Piggle",
-      company: "Piggle Co.",
-      imageProps: {
-        src: "pages/about/hobbies/adventuring",
-        alt: "Something something something",
-        loader: cloudinaryImageLoader,
-      },
+    name: "piotr",
+    person: "Piotr Buda",
+    company: "",
+    imageProps: {
+      src: "pages/home/testimonials/piotr",
+      loader: cloudinaryImageLoader,
     },
   },
 ];
@@ -186,7 +172,7 @@ const Home = ({ snippets }) => {
         scroller={{ url: "/#about-section", label: t("scroller") }}
         imageProps={{
           src: "pages/home/hero",
-          alt: "Something something something",
+          alt: t("image"),
           sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
           loader: cloudinaryImageLoader,
         }}
@@ -221,24 +207,27 @@ const Home = ({ snippets }) => {
             boxSizing: "border-box",
           }}
         >
-          <Box
-            sx={{
-              gridColumn: { xs: "span 12", md: "span 6" },
-              position: "relative",
-              width: "100%",
-              height: { xs: 240, md: 304 },
-              borderRadius: 1,
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              src="pages/home/coding"
-              alt="Something something something"
-              layout="fill"
-              objectFit="cover"
-              sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
-              loader={cloudinaryImageLoader}
-            />
+          <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+            <Tilt perspective={1600} angle={8}>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "100%",
+                  height: { xs: 240, md: 304 },
+                  borderRadius: 1,
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src="pages/home/coding"
+                  alt={t("about.image")}
+                  layout="fill"
+                  objectFit="cover"
+                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                  loader={cloudinaryImageLoader}
+                />
+              </Box>
+            </Tilt>
           </Box>
           <Box
             sx={{
@@ -394,24 +383,27 @@ const Home = ({ snippets }) => {
               mt: { xs: 4, md: 8 },
             }}
           >
-            <Box
-              sx={{
-                gridColumn: { xs: "span 12", md: "span 6" },
-                position: "relative",
-                width: "100%",
-                height: { xs: 272, md: 336 },
-                borderRadius: 1,
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src="pages/home/working"
-                alt="Something something something"
-                layout="fill"
-                objectFit="cover"
-                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
-                loader={cloudinaryImageLoader}
-              />
+            <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
+              <Tilt perspective={1600} angle={8}>
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: 272, md: 336 },
+                    borderRadius: 1,
+                    overflow: "hidden",
+                  }}
+                >
+                  <Image
+                    src="pages/home/working"
+                    alt={t("timeline.image")}
+                    layout="fill"
+                    objectFit="cover"
+                    sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                    loader={cloudinaryImageLoader}
+                  />
+                </Box>
+              </Tilt>
             </Box>
             <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
               <Typography variant="h4" sx={{ mb: "0.7em" }}>
@@ -479,11 +471,19 @@ const Home = ({ snippets }) => {
             onChange={handleTestimonialSlideChange}
             sx={{ height: { xs: 368, md: 304 } }}
           >
-            {testimonials.map(({ quote, profile }) => (
+            {testimonials.map(({ name, person, company, imageProps }) => (
               <TestimonialCard
-                key={profile.name}
-                quote={quote}
-                profile={profile}
+                key={name}
+                quote={t(`testimonials.${name}.quote`)}
+                profile={{
+                  name: person,
+                  title: t(`testimonials.${name}.title`),
+                  company: company,
+                  imageProps: {
+                    ...imageProps,
+                    alt: t(`testimonials.${name}.image`),
+                  },
+                }}
               />
             ))}
           </Carousel>
@@ -519,10 +519,10 @@ const Home = ({ snippets }) => {
               </IconButton>
             </Box>
             <Box sx={{ display: "flex" }}>
-              {testimonials.map(({ profile: { name } }, index) => (
+              {testimonials.map(({ name, person }, index) => (
                 <ButtonBase
                   key={name}
-                  aria-label={`${name} testimonial`}
+                  aria-label={`${person} testimonial`}
                   onClick={() =>
                     handleTestimonialSlideChange(
                       Math.floor(testimonialSlide / testimonials.length) *

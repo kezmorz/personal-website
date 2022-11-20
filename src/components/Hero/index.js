@@ -89,6 +89,7 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
                 priority
                 layout="fill"
                 objectFit="contain"
+                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                 {...imageProps}
               />
             </AnimatedDiv>

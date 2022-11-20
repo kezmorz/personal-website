@@ -5,8 +5,8 @@ const Section = ({
   maxWidth,
   extendTopPadding,
   extendBottomPadding,
-  sx = [],
   children,
+  sx = [],
   ...props
 }) => {
   return (
@@ -36,16 +36,16 @@ Section.propTypes = {
   ]),
   extendTopPadding: PropTypes.bool,
   extendBottomPadding: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   sx: PropTypes.oneOfType([
     PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])
     ),
     PropTypes.func,
     PropTypes.object,
-  ]),
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
   ]),
 };
 

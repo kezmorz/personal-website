@@ -7,6 +7,7 @@
     "heading": "Ceri Morse",
     "subheading": "Dylunio. Datblygu. Defnyddio.",
     "scroller": "Gadewch i ni ddechrau",
+    "image": "",
     "about": {
       "characteristics": {
         "fullstack": {
@@ -26,6 +27,7 @@
           "description": "Rwyf wrth fy modd yn helpu cyd-ddatblygwyr i wella a thyfu eu sgiliau."
         }
       },
+      "image": "",
       "description": "Rwy'n angerddol am ddatblygu datrysiadau meddalwedd sy'n ymatebol ac yn hygyrch. Rwy'n credu bod y we ar gyfer pawb ac yn cymryd hynny i ystyriaeth wrth adeiladu cymhwysiad.",
       "button": "Dysgwch fwy amdanaf"
     },
@@ -36,6 +38,7 @@
         "astra": "Peiriannydd meddalwedd yn y marchnadoedd manwerthu ac ar-lein yn Astra Games",
         "arup": "Uwch ddatblygwr meddalwedd ac arweinydd technegol yn Arup"
       },
+      "image": "",
       "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
       "line2": {
         "description": "Rwy'n arwain datblygiad y cynnyrch arobryn {link}.",
@@ -45,7 +48,22 @@
     },
     "testimonials": {
       "line1": "Rwyf wedi gweithio gyda rhai pobl anhygoel yn ystod fy ngyrfa.",
-      "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd."
+      "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd.",
+      "jacques": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "christina": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      },
+      "piotr": {
+        "quote": "",
+        "title": "",
+        "image": ""
+      }
     },
     "snippets": {
       "heading": "Recently released snippets.",
@@ -208,31 +226,6 @@
       "edit": "Golygu ar GitHub"
     },
     "related": "Os oedd y pyt hwn yn ddefnyddiol i chi, dylech edrych ar rai o'r rhain hefyd!"
-  },
-  "resume": {
-    "heading": "Edrychwch are fy nghrynodeb proffesiynol",
-    "subheading": "Fe welwch fy sgiliau perthnasol, profiad gwaith a mwy",
-    "description": {
-      "heading": "Crynodeb",
-      "paragraph": {
-        "line1": "Roeddwn i eisiau rhywle hygyrch i gadw fy nghrynodeb generig a pha le gwell nag ar fy ngwefan fy hun! Ar gyfer rhai ceisiadau efallai y byddaf yn ei deilwra i weddu i'r rôl ond mae llawer o'r wybodaeth graidd yn aros yr un fath.",
-        "line2": "Put something here"
-      },
-      "update": "Diweddarwyd",
-      "info": "Rwyf am bwysleisio mai fformat 2 dudalen yn unig yw hwn. Fe’i bwriedir fel trosolwg ac i annog trafodaethau."
-    },
-    "formats": {
-      "heading": "Fformatau Arall",
-      "paragraph": "You can download my cv here",
-      "word": {
-        "title": "Microsoft Word",
-        "description": ""
-      },
-      "pdf": {
-        "title": "PDF",
-        "description": ""
-      }
-    }
   },
   "contact": {
     "metadata": {

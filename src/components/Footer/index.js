@@ -257,6 +257,7 @@ const Footer = () => {
                     alt={flickrData.title}
                     layout="fill"
                     objectFit="cover"
+                    sizes="(min-width: 0px) 100vw, (min-width: 900px) 20vw"
                     loader={flickrImageLoader}
                   />
                 </Box>

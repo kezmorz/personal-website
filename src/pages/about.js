@@ -30,6 +30,7 @@ import VercelIcon from "@/icons/Vercel";
 import Meta from "@/components/Meta";
 import Header from "@/components/Header";
 import Section from "@/components/Section";
+import Tilt from "@/components/Tilt";
 import { HobbyCard, SkillCard } from "@/components/Card";
 import Link from "@/components/Link";
 import Layout from "@/components/Layout";
@@ -125,8 +126,6 @@ const About = () => {
           alt: "Something something something",
           width: 965,
           height: 748,
-          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
-          layout: "responsive",
           loader: cloudinaryImageLoader,
         }}
         direction="ltr"
@@ -142,18 +141,21 @@ const About = () => {
           <Box
             sx={{
               gridColumn: { xs: "span 12", md: "span 6" },
-              borderRadius: 1,
-              overflow: "hidden",
             }}
           >
-            <Image
-              src="pages/about/bitesize"
-              alt="Something something something"
-              width={633}
-              height={1080}
-              layout="responsive"
-              loader={cloudinaryImageLoader}
-            />
+            <Tilt perspective={1600} angle={8}>
+              <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
+                <Image
+                  src="pages/about/bitesize"
+                  alt="Something something something"
+                  width={633}
+                  height={1080}
+                  layout="responsive"
+                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                  loader={cloudinaryImageLoader}
+                />
+              </Box>
+            </Tilt>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
             <Typography variant="h4" sx={{ mt: { xs: 2, sm: 4 }, mb: "0.7em" }}>
@@ -209,16 +211,19 @@ const About = () => {
         </Box>
       </Section>
       <Section maxWidth="md">
-        <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
-          <Image
-            src="pages/about/horizon"
-            alt="Something something something"
-            width={1080}
-            height={721}
-            layout="responsive"
-            loader={cloudinaryImageLoader}
-          />
-        </Box>
+        <Tilt perspective={1600} angle={8}>
+          <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
+            <Image
+              src="pages/about/horizon"
+              alt="Something something something"
+              width={1080}
+              height={721}
+              layout="responsive"
+              sizes="100vw"
+              loader={cloudinaryImageLoader}
+            />
+          </Box>
+        </Tilt>
       </Section>
       <Section maxWidth="lg">
         <Box
@@ -282,7 +287,11 @@ const About = () => {
               key={name}
               heading={t(`hobbies.${name}.heading`)}
               description={t(`hobbies.${name}.description`)}
-              imageProps={{ ...image, alt: "Something something something" }}
+              imageProps={{
+                ...image,
+                alt: "Something something something",
+                sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
+              }}
               sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
             />
           ))}

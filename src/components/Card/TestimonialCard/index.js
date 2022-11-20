@@ -14,11 +14,12 @@ const TestimonialCard = ({ quote, profile, sx = [] }) => {
             position: "relative",
             width: 56,
             height: 56,
+            flexShrink: 0,
             borderRadius: "50%",
             overflow: "hidden",
           }}
         >
-          <Image layout="fill" objectFit="cover" {...imageProps} />
+          <Image layout="fill" objectFit="cover" sizes="56px" {...imageProps} />
         </Box>
         <Box sx={{ ml: 2 }}>
           <Typography variant="body1">
