@@ -97,35 +97,7 @@ const events = [
   { name: "arup", Icon: GroupsOutlinedIcon },
 ];
 
-const testimonials = [
-  {
-    name: "jacques",
-    person: "Jacques Coetzee",
-    company: "",
-    imageProps: {
-      src: "pages/home/testimonials/jacques",
-      loader: cloudinaryImageLoader,
-    },
-  },
-  {
-    name: "christina",
-    person: "Christina Meggs",
-    company: "",
-    imageProps: {
-      src: "pages/home/testimonials/christina",
-      loader: cloudinaryImageLoader,
-    },
-  },
-  {
-    name: "piotr",
-    person: "Piotr Buda",
-    company: "",
-    imageProps: {
-      src: "pages/home/testimonials/piotr",
-      loader: cloudinaryImageLoader,
-    },
-  },
-];
+const testimonials = ["jacques", "christina", "piotr"];
 
 const offerings = ["jobs", "mentoring", "questions"];
 
@@ -159,21 +131,20 @@ const Home = ({ snippets }) => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image=""
+        image={t("metadata.image")}
       />
       <Hero
-        heading={t("heading")}
+        heading={t("hero.heading")}
         subheading={
           <>
-            {`${t("subheading")} `}
+            {`${t("hero.subheading")} `}
             <Emoji symbol="🐉" label="dragon emoji" />
           </>
         }
-        scroller={{ url: "/#about-section", label: t("scroller") }}
+        scroller={{ url: "/#about-section", label: t("hero.scroller") }}
         imageProps={{
-          src: "pages/home/hero",
-          alt: t("image"),
-          sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
+          src: t("hero.image.src"),
+          alt: t("hero.image.alt"),
           loader: cloudinaryImageLoader,
         }}
       />
@@ -219,8 +190,8 @@ const Home = ({ snippets }) => {
                 }}
               >
                 <Image
-                  src="pages/home/coding"
-                  alt={t("about.image")}
+                  src={t("about.image.src")}
+                  alt={t("about.image.alt")}
                   layout="fill"
                   objectFit="cover"
                   sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
@@ -395,8 +366,8 @@ const Home = ({ snippets }) => {
                   }}
                 >
                   <Image
-                    src="pages/home/working"
-                    alt={t("timeline.image")}
+                    src={t("timeline.image.src")}
+                    alt={t("timeline.image.alt")}
                     layout="fill"
                     objectFit="cover"
                     sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
@@ -471,17 +442,24 @@ const Home = ({ snippets }) => {
             onChange={handleTestimonialSlideChange}
             sx={{ height: { xs: 368, md: 304 } }}
           >
-            {testimonials.map(({ name, person, company, imageProps }) => (
+            {testimonials.map((testimonial) => (
               <TestimonialCard
-                key={name}
-                quote={t(`testimonials.${name}.quote`)}
+                key={testimonial}
+                quote={t(`testimonials.people.${testimonial}.quote`)}
                 profile={{
-                  name: person,
-                  title: t(`testimonials.${name}.title`),
-                  company: company,
+                  name: t(`testimonials.people.${testimonial}.profile.name`),
+                  title: t(`testimonials.people.${testimonial}.profile.title`),
+                  company: t(
+                    `testimonials.people.${testimonial}.profile.company`
+                  ),
                   imageProps: {
-                    ...imageProps,
-                    alt: t(`testimonials.${name}.image`),
+                    src: t(
+                      `testimonials.people.${testimonial}.profile.image.src`
+                    ),
+                    alt: t(
+                      `testimonials.people.${testimonial}.profile.image.alt`
+                    ),
+                    loader: cloudinaryImageLoader,
                   },
                 }}
               />
@@ -519,10 +497,12 @@ const Home = ({ snippets }) => {
               </IconButton>
             </Box>
             <Box sx={{ display: "flex" }}>
-              {testimonials.map(({ name, person }, index) => (
+              {testimonials.map((person, index) => (
                 <ButtonBase
-                  key={name}
-                  aria-label={`${person} testimonial`}
+                  key={person}
+                  aria-label={`${t(
+                    `testimonials.people.${person}.profile.name`
+                  )} testimonial`}
                   onClick={() =>
                     handleTestimonialSlideChange(
                       Math.floor(testimonialSlide / testimonials.length) *

@@ -50,11 +50,11 @@ const Snippets = ({ snippets }) => {
         image=""
       />
       <Header
-        heading={t("heading")}
-        subheading={t("subheading")}
+        heading={t("header.heading")}
+        subheading={t("header.subheading")}
         imageProps={{
-          src: "illustrations/dragon-coding-alpha",
-          alt: "Something something something",
+          src: t("header.image.src"),
+          alt: t("header.image.alt"),
           width: 1167,
           height: 760,
           loader: cloudinaryImageLoader,

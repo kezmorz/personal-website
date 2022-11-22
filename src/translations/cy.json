@@ -2,12 +2,18 @@
   "home": {
     "metadata": {
       "title": "Ceri Morse",
-      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch."
+      "description": "Dylunio a datblygu datrysiadau meddalwedd stac llawn sy'n ymatebol ac yn hygyrch.",
+      "image": "og image generation"
     },
-    "heading": "Ceri Morse",
-    "subheading": "Dylunio. Datblygu. Defnyddio.",
-    "scroller": "Gadewch i ni ddechrau",
-    "image": "",
+    "hero": {
+      "heading": "Ceri Morse",
+      "subheading": "Dylunio. Datblygu. Defnyddio.",
+      "scroller": "Gadewch i ni ddechrau",
+      "image": {
+        "src": "pages/home/hero",
+        "alt": "Something something something"
+      }
+    },
     "about": {
       "characteristics": {
         "fullstack": {
@@ -27,7 +33,10 @@
           "description": "Rwyf wrth fy modd yn helpu cyd-ddatblygwyr i wella a thyfu eu sgiliau."
         }
       },
-      "image": "",
+      "image": {
+        "src": "pages/home/coding",
+        "alt": "Something something something"
+      },
       "description": "Rwy'n angerddol am ddatblygu datrysiadau meddalwedd sy'n ymatebol ac yn hygyrch. Rwy'n credu bod y we ar gyfer pawb ac yn cymryd hynny i ystyriaeth wrth adeiladu cymhwysiad.",
       "button": "Dysgwch fwy amdanaf"
     },
@@ -38,7 +47,10 @@
         "astra": "Peiriannydd meddalwedd yn y marchnadoedd manwerthu ac ar-lein yn Astra Games",
         "arup": "Uwch ddatblygwr meddalwedd ac arweinydd technegol yn Arup"
       },
-      "image": "",
+      "image": {
+        "src": "pages/home/working",
+        "alt": "Something something something"
+      },
       "line1": "Ar hyn o bryd rwy'n gweithio fel Uwch Ddatblygwr Meddalwedd yn Arup.",
       "line2": {
         "description": "Rwy'n arwain datblygiad y cynnyrch arobryn {link}.",
@@ -49,20 +61,43 @@
     "testimonials": {
       "line1": "Rwyf wedi gweithio gyda rhai pobl anhygoel yn ystod fy ngyrfa.",
       "line2": "Gweler beth sydd gan rai ohonyn nhw i'w ddweud am ein hamser yn gweithio gyda'n gilydd.",
-      "jacques": {
-        "quote": "",
-        "title": "",
-        "image": ""
-      },
-      "christina": {
-        "quote": "",
-        "title": "",
-        "image": ""
-      },
-      "piotr": {
-        "quote": "",
-        "title": "",
-        "image": ""
+      "people": {
+        "jacques": {
+          "quote": "",
+          "profile": {
+            "name": "Jacques Coetzee",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/jacques",
+              "alt": "Something something something"
+            }
+          }
+        },
+        "christina": {
+          "quote": "",
+          "profile": {
+            "name": "Christina Meggs",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/christina",
+              "alt": "Something something something"
+            }
+          }
+        },
+        "piotr": {
+          "quote": "",
+          "profile": {
+            "name": "Piotr Buda",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/piotr",
+              "alt": "Something something something"
+            }
+          }
+        }
       }
     },
     "snippets": {
@@ -95,11 +130,22 @@
   "about": {
     "metadata": {
       "title": "Amdanaf | Ceri Morse",
-      "description": "Dewch i adnabod fi ar lefel fwy personol."
+      "description": "Dewch i adnabod fi ar lefel fwy personol.",
+      "image": "og image generation"
     },
-    "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
-    "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
+    "header": {
+      "heading": "Helo, fi yw Ceri Morse, datblygwr stac llawn",
+      "subheading": "Rwy'n dylunio ac yn datblygu datrysiadau meddalwedd i bawb",
+      "image": {
+        "src": "illustrations/dragon-sitting-with-chart-alpha",
+        "alt": "Something something something"
+      }
+    },
     "bitesize": {
+      "image": {
+        "src": "pages/about/bitesize",
+        "alt": "Something something something"
+      },
       "line1": "Wedi'i eni a'i fagu yng Nghymru, gwlad y dreigiau.",
       "line2": "Rhugl yn y Gymraeg a'r Saesneg.",
       "line3": "Wedi'i graddio o Brifysgol Caerdydd gyda gradd Baglor yn y Gwyddorau mewn Mathemateg a'i Chymwysiadau yn 2013.",
@@ -111,6 +157,12 @@
       "timeline": {
         "description": "Mae mwy o wybodaeth ar gael ar fy llinell amser",
         "button": "Ymweld â'r llinell amser"
+      }
+    },
+    "horizon": {
+      "image": {
+        "src": "pages/about/horizon",
+        "alt": "Something something something"
       }
     },
     "techstack": {
@@ -132,29 +184,52 @@
       "description": "Nid yw bywyd i gyd yn ymwneud â gwaith. Dyma rai pethau rwy'n hoffi eu gwneud yn fy amser segur i gael hwyl ac ymlacio.",
       "adventuring": {
         "heading": "Anturio",
-        "description": "Dwi wir yn mwynhau mynd ar anturiaethau! Gallai hyn fod yn unrhyw beth o heicio llwybrau lleol i deithio hanner ffordd o amgylch y byd i archwilio ardaloedd newydd."
+        "description": "Dwi wir yn mwynhau mynd ar anturiaethau! Gallai hyn fod yn unrhyw beth o heicio llwybrau lleol i deithio hanner ffordd o amgylch y byd i archwilio ardaloedd newydd.",
+        "image": {
+          "src": "pages/about/hobbies/adventuring",
+          "alt": "Something something something"
+        }
       },
       "sport": {
         "heading": "Chwaraeon",
-        "description": "With dyfu i fyny cymerais ran mewn nifer o wahanol chwaraeon unigol a thîm fel karate, golff a phêl-droed. Y dyddiau hyn dwi'n dringo ac yn chwarae amryw o chwaraeon raced fel modd o gadw'n heini."
+        "description": "With dyfu i fyny cymerais ran mewn nifer o wahanol chwaraeon unigol a thîm fel karate, golff a phêl-droed. Y dyddiau hyn dwi'n dringo ac yn chwarae amryw o chwaraeon raced fel modd o gadw'n heini.",
+        "image": {
+          "src": "pages/about/hobbies/sport",
+          "alt": "Something something something"
+        }
       },
       "gaming": {
         "heading": "Gemau Fideo",
-        "description": "Ers chwarae Duck Hunt ar fy nghonsol cyntaf, y NES, rydw i wedi mwynhau gemau fideo. Rwy'n chwarae gemau RPG yn bennaf, gyda The Elder Scrolls III: Morrowind yn ffefryn personol i mi. Team Fortress 2 ac Overwatch yw’r gemau FPS dwi'n dewis mwyaf amlaf."
+        "description": "Ers chwarae Duck Hunt ar fy nghonsol cyntaf, y NES, rydw i wedi mwynhau gemau fideo. Rwy'n chwarae gemau RPG yn bennaf, gyda The Elder Scrolls III: Morrowind yn ffefryn personol i mi. Team Fortress 2 ac Overwatch yw’r gemau FPS dwi'n dewis mwyaf amlaf.",
+        "image": {
+          "src": "pages/about/hobbies/gaming",
+          "alt": "Something something something"
+        }
       },
       "gardening": {
         "heading": "Garddio",
-        "description": "Mae cael man gwyrdd fy hun i ddianc o dechnoleg wedi bod yn fuddiol mewn llawer o wahanol ffyrdd. Mae yna hefyd rywbeth eithaf boddhaol am dyfu eich ffrwythau a'ch llysiau eich hun."
+        "description": "Mae cael man gwyrdd fy hun i ddianc o dechnoleg wedi bod yn fuddiol mewn llawer o wahanol ffyrdd. Mae yna hefyd rywbeth eithaf boddhaol am dyfu eich ffrwythau a'ch llysiau eich hun.",
+        "image": {
+          "src": "pages/about/hobbies/gardening",
+          "alt": "Something something something"
+        }
       }
     }
   },
   "timeline": {
     "metadata": {
       "title": "Llinell Amser | Ceri Morse",
-      "description": "Casgliad o eiliadau arwyddocaol o fy ngyrfa brofessiynol."
+      "description": "Casgliad o eiliadau arwyddocaol o fy ngyrfa brofessiynol.",
+      "image": "og image generation"
     },
-    "heading": "Y stori hyd yn hyn",
-    "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
+    "header": {
+      "heading": "Y stori hyd yn hyn",
+      "subheading": "Edrychwch ar rai o fy eiliadau arwyddocaol",
+      "image": {
+        "src": "illustrations/dragon-viewing-events-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": "Dyma gasgliad o ddigwyddiadau o fy ngyrfa broffesiynol. Gallwch bori drwyddynt yn eu cyfanrwydd, neu ddewis is-set o gategorïau.",
     "categories": {
       "label": "Dewis categorïau",
@@ -202,10 +277,17 @@
   "snippets": {
     "metadata": {
       "title": "Pytiau | Ceri Morse",
-      "description": "Pytiau côd o fy ngwaith personol sy'n cwmpasu'r pentwr technoleg cyfan."
+      "description": "Pytiau côd o fy ngwaith personol sy'n cwmpasu'r pentwr technoleg cyfan.",
+      "image": "og image generation"
     },
-    "heading": "Pytiau côd o fy ngwaith personol",
-    "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
+    "header": {
+      "heading": "Pytiau côd o fy ngwaith personol",
+      "subheading": "Pam ailddyfeisio'r olwyn pan allwch chi gopïo a gludo?",
+      "image": {
+        "src": "illustrations/dragon-coding-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": "Rwyf wedi bod yn ysgrifennu cod ers amser maith. Mae'r pytiau cod hyn yn cwmpasu'r pentwr technoleg cyfan ac maent wedi bod yn ddefnyddiol ar fwy nag un achlysur.",
     "search": "Chwilio pytiau",
     "filter": "Hidlo pytiau yn ôl tag"
@@ -230,10 +312,17 @@
   "contact": {
     "metadata": {
       "title": "Cyswllt | Ceri Morse",
-      "description": "Anfonwch neges ataf am brosiect, cyfle am gwaith, neu unrhyw beth yn gyffredinol."
+      "description": "Anfonwch neges ataf am brosiect, cyfle am gwaith, neu unrhyw beth yn gyffredinol.",
+      "image": "og image generation"
     },
-    "heading": "Croeso i chi anfon neges ataf",
-    "subheading": "Weithiau yr hen ffyrdd yw'r ffyrdd gorau",
+    "header": {
+      "heading": "Croeso i chi anfon neges ataf",
+      "subheading": "Weithiau yr hen ffyrdd yw'r ffyrdd gorau",
+      "image": {
+        "src": "illustrations/dragon-posting-mail-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": {
       "heading": "Ebostiwch fi",
       "paragraph": "Os hoffech chi sgwrsio am prosiect, gyfle gwaith posib, neu unrhyw beth yn gyffredinol, llenwch y ffurflen isod a gwnaf fy ngorau i ymateb o fewn 1-2 ddiwrnod."

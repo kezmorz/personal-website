@@ -75,14 +75,14 @@ const Contact = () => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image=""
+        image={t("metadata.image")}
       />
       <Header
-        heading={t("heading")}
-        subheading={t("subheading")}
+        heading={t("header.heading")}
+        subheading={t("header.subheading")}
         imageProps={{
-          src: "illustrations/dragon-posting-mail-alpha",
-          alt: "Something something something",
+          src: t("header.image.src"),
+          alt: t("header.image.alt"),
           width: 1048,
           height: 873,
           loader: cloudinaryImageLoader,
