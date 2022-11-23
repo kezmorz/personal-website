@@ -76,36 +76,7 @@ const technology = [
   },
 ];
 
-const hobbies = [
-  {
-    name: "adventuring",
-    image: {
-      src: "pages/about/hobbies/adventuring",
-      loader: cloudinaryImageLoader,
-    },
-  },
-  {
-    name: "sport",
-    image: {
-      src: "pages/about/hobbies/sport",
-      loader: cloudinaryImageLoader,
-    },
-  },
-  {
-    name: "gaming",
-    image: {
-      src: "pages/about/hobbies/gaming",
-      loader: cloudinaryImageLoader,
-    },
-  },
-  {
-    name: "gardening",
-    image: {
-      src: "pages/about/hobbies/gardening",
-      loader: cloudinaryImageLoader,
-    },
-  },
-];
+const hobbies = ["adventuring", "sport", "gaming", "gardening"];
 
 const About = () => {
   const t = useTranslations("about");
@@ -116,14 +87,14 @@ const About = () => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image=""
+        image={t("metadata.image")}
       />
       <Header
-        heading={t("heading")}
-        subheading={t("subheading")}
+        heading={t("header.heading")}
+        subheading={t("header.subheading")}
         imageProps={{
-          src: "illustrations/dragon-sitting-with-chart-alpha",
-          alt: "Something something something",
+          src: t("header.image.src"),
+          alt: t("header.image.alt"),
           width: 965,
           height: 748,
           loader: cloudinaryImageLoader,
@@ -146,8 +117,8 @@ const About = () => {
             <Tilt perspective={1600} angle={8}>
               <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
                 <Image
-                  src="pages/about/bitesize"
-                  alt="Something something something"
+                  src={t("bitesize.image.src")}
+                  alt={t("bitesize.image.alt")}
                   width={633}
                   height={1080}
                   layout="responsive"
@@ -214,8 +185,8 @@ const About = () => {
         <Tilt perspective={1600} angle={8}>
           <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
             <Image
-              src="pages/about/horizon"
-              alt="Something something something"
+              src={t("horizon.image.src")}
+              alt={t("horizon.image.alt")}
               width={1080}
               height={721}
               layout="responsive"
@@ -282,15 +253,16 @@ const About = () => {
             mt: { xs: 4, md: 8 },
           }}
         >
-          {hobbies.map(({ name, image }) => (
+          {hobbies.map((hobby) => (
             <HobbyCard
-              key={name}
-              heading={t(`hobbies.${name}.heading`)}
-              description={t(`hobbies.${name}.description`)}
+              key={hobby}
+              heading={t(`hobbies.${hobby}.heading`)}
+              description={t(`hobbies.${hobby}.description`)}
               imageProps={{
-                ...image,
-                alt: "Something something something",
+                src: t(`hobbies.${hobby}.image.src`),
+                alt: t(`hobbies.${hobby}.image.alt`),
                 sizes: "(min-width: 0px) 100vw, (min-width: 900px) 50vw",
+                loader: cloudinaryImageLoader,
               }}
               sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}
             />

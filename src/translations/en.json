@@ -2,12 +2,18 @@
   "home": {
     "metadata": {
       "title": "Ceri Morse",
-      "description": "Designing and developing full stack software solutions that are responsive and accessible."
+      "description": "Designing and developing full stack software solutions that are responsive and accessible.",
+      "image": "og image generation"
     },
-    "heading": "Ceri Morse",
-    "subheading": "Design. Develop. Deploy.",
-    "scroller": "Let's get started",
-    "image": "",
+    "hero": {
+      "heading": "Ceri Morse",
+      "subheading": "Design. Develop. Deploy.",
+      "scroller": "Let's get started",
+      "image": {
+        "src": "pages/home/hero",
+        "alt": "Something something something"
+      }
+    },
     "about": {
       "characteristics": {
         "fullstack": {
@@ -27,7 +33,10 @@
           "description": "I love helping fellow developers improve and grow their skillset."
         }
       },
-      "image": "",
+      "image": {
+        "src": "pages/home/coding",
+        "alt": "Something something something"
+      },
       "description": "I am passionate about developing software solutions that are responsive and accessible. I believe the web is for everyone and take that into consideration when building an application.",
       "button": "Learn more about me"
     },
@@ -38,7 +47,10 @@
         "astra": "Software engineer in the retail and online markets at Astra Games",
         "arup": "Senior software developer and technical lead at Arup"
       },
-      "image": "",
+      "image": {
+        "src": "pages/home/working",
+        "alt": "Something something something"
+      },
       "line1": "I'm currently working as a Senior Software Developer at Arup.",
       "line2": {
         "description": "I lead the development of the award winning {link} product.",
@@ -49,20 +61,43 @@
     "testimonials": {
       "line1": "I've worked with some amazing people during my career.",
       "line2": "See what some of them have to say about our time working together.",
-      "jacques": {
-        "quote": "",
-        "title": "",
-        "image": ""
-      },
-      "christina": {
-        "quote": "",
-        "title": "",
-        "image": ""
-      },
-      "piotr": {
-        "quote": "",
-        "title": "",
-        "image": ""
+      "people": {
+        "jacques": {
+          "quote": "",
+          "profile": {
+            "name": "Jacques Coetzee",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/jacques",
+              "alt": "Something something something"
+            }
+          }
+        },
+        "christina": {
+          "quote": "",
+          "profile": {
+            "name": "Christina Meggs",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/christina",
+              "alt": "Something something something"
+            }
+          }
+        },
+        "piotr": {
+          "quote": "",
+          "profile": {
+            "name": "Piotr Buda",
+            "title": "",
+            "company": "",
+            "image": {
+              "src": "pages/home/testimonials/piotr",
+              "alt": "Something something something"
+            }
+          }
+        }
       }
     },
     "snippets": {
@@ -95,11 +130,22 @@
   "about": {
     "metadata": {
       "title": "About | Ceri Morse",
-      "description": "Get to know me on a more personal level."
+      "description": "Get to know me on a more personal level.",
+      "image": "og image generation"
     },
-    "heading": "Hi, I'm Ceri Morse, a full stack developer",
-    "subheading": "I design and develop software solutions for everyone",
+    "header": {
+      "heading": "Hi, I'm Ceri Morse, a full stack developer",
+      "subheading": "I design and develop software solutions for everyone",
+      "image": {
+        "src": "illustrations/dragon-sitting-with-chart-alpha",
+        "alt": "Something something something"
+      }
+    },
     "bitesize": {
+      "image": {
+        "src": "pages/about/bitesize",
+        "alt": "Something something something"
+      },
       "line1": "Born and raised in Wales, the land of dragons.",
       "line2": "Fluent in both Welsh and English.",
       "line3": "Graduated from Cardiff University with a Bachelor of Science in Mathematics and its Applications degree in 2013.",
@@ -111,6 +157,12 @@
       "timeline": {
         "description": "You'll find more information available on my timeline",
         "button": "Visit timeline"
+      }
+    },
+    "horizon": {
+      "image": {
+        "src": "pages/about/horizon",
+        "alt": "Something something something"
       }
     },
     "techstack": {
@@ -132,29 +184,52 @@
       "description": "Life isn’t all about work. Here are some things I like to do in my downtime to have fun and relax.",
       "adventuring": {
         "heading": "Adventuring",
-        "description": "I really enjoy going on adventures! This could be anything from hiking local routes to travelling half way around the world to explore new areas."
+        "description": "I really enjoy going on adventures! This could be anything from hiking local routes to travelling half way around the world to explore new areas.",
+        "image": {
+          "src": "pages/about/hobbies/adventuring",
+          "alt": "Something something something"
+        }
       },
       "sport": {
         "heading": "Sport",
-        "description": "Growing up I participated in many different individual and team sports such as karate, golf and football. These days I only really climb and play various racquet sports as a means to keep fit."
+        "description": "Growing up I participated in many different individual and team sports such as karate, golf and football. These days I only really climb and play various racquet sports as a means to keep fit.",
+        "image": {
+          "src": "pages/about/hobbies/sport",
+          "alt": "Something something something"
+        }
       },
       "gaming": {
         "heading": "Gaming",
-        "description": "Ever since playing Duck Hunt on my very first console, the NES, I've enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games."
+        "description": "Ever since playing Duck Hunt on my very first console, the NES, I've enjoyed video games. I mostly play RPG games, with The Elder Scrolls III: Morrowind a personal favourite of mine. Team Fortress 2 and Overwatch have been my go to FPS games.",
+        "image": {
+          "src": "pages/about/hobbies/gaming",
+          "alt": "Something something something"
+        }
       },
       "gardening": {
         "heading": "Gardening",
-        "description": "Having my own green space to get away from technology has been beneficial in many different ways. There's also something quite satisfying about growing your own fruit and vegetables."
+        "description": "Having my own green space to get away from technology has been beneficial in many different ways. There's also something quite satisfying about growing your own fruit and vegetables.",
+        "image": {
+          "src": "pages/about/hobbies/gardening",
+          "alt": "Something something something"
+        }
       }
     }
   },
   "timeline": {
     "metadata": {
       "title": "Timeline | Ceri Morse",
-      "description": "A collection of significant moments from my professional career."
+      "description": "A collection of significant moments from my professional career.",
+      "image": "og image generation"
     },
-    "heading": "The story so far",
-    "subheading": "Check out some of my significant moments",
+    "header": {
+      "heading": "The story so far",
+      "subheading": "Check out some of my significant moments",
+      "image": {
+        "src": "illustrations/dragon-viewing-events-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": "Here are a collection of events from my professional career. You can browse through them in their entirety, or filter them by category.",
     "categories": {
       "label": "Select categories",
@@ -202,17 +277,25 @@
   "snippets": {
     "metadata": {
       "title": "Snippets | Ceri Morse",
-      "description": "Code snippets from my personal work that cover the entire tech stack."
+      "description": "Code snippets from my personal work that cover the entire tech stack.",
+      "image": "og image generation"
     },
-    "heading": "Code snippets from my personal work",
-    "subheading": "Why reinvent the wheel when you can copy and paste?",
+    "header": {
+      "heading": "Code snippets from my personal work",
+      "subheading": "Why reinvent the wheel when you can copy and paste?",
+      "image": {
+        "src": "illustrations/dragon-coding-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": "I've been writing code for a long time. These code snippets cover the entire tech stack and have been useful on more than one occasion.",
     "search": "Search snippets",
     "filter": "Filter snippets by tag"
   },
   "snippet": {
     "metadata": {
-      "title": "{title} - Snippets | Ceri Morse"
+      "title": "{title} - Snippets | Ceri Morse",
+      "image": "og image generation"
     },
     "information": {
       "button": "Back to snippets",
@@ -230,10 +313,17 @@
   "contact": {
     "metadata": {
       "title": "Contact | Ceri Morse",
-      "description": "Send me a message about a project, job opportunity, or anything in general."
+      "description": "Send me a message about a project, job opportunity, or anything in general.",
+      "image": "og image generation"
     },
-    "heading": "Feel free to send me a message",
-    "subheading": "Sometimes the old school ways are the best",
+    "header": {
+      "heading": "Feel free to send me a message",
+      "subheading": "Sometimes the old school ways are the best",
+      "image": {
+        "src": "illustrations/dragon-posting-mail-alpha",
+        "alt": "Something something something"
+      }
+    },
     "description": {
       "heading": "Email me",
       "paragraph": "If you'd like to chat about a project, a potential job opportunity, or just anything in general really, then please fill in the form below and I'll do my best to respond within 1-2 days."
