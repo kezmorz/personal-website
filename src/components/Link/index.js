@@ -10,7 +10,18 @@ const Anchor = styled("a")({});
 
 const NextLinkComposed = forwardRef(
   (
-    { to, linkAs, href, replace, scroll, shallow, prefetch, locale, ...props },
+    {
+      to,
+      linkAs,
+      href,
+      replace,
+      scroll,
+      shallow,
+      prefetch,
+      legacyBehavior = true,
+      locale,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -22,6 +33,7 @@ const NextLinkComposed = forwardRef(
         scroll={scroll}
         shallow={shallow}
         passHref
+        legacyBehavior={legacyBehavior}
         locale={locale}
       >
         <Anchor ref={ref} {...props} />
@@ -41,6 +53,7 @@ NextLinkComposed.propTypes = {
   shallow: PropTypes.bool,
   prefetch: PropTypes.bool,
   locale: PropTypes.string,
+  legacyBehavior: PropTypes.bool,
   passHref: PropTypes.bool,
 };
 

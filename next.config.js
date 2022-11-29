@@ -31,5 +31,4 @@ module.exports = withContentlayer({
       },
     },
   },
-  swcMinify: true,
 });

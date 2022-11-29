@@ -5,14 +5,9 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import { createEmotionCache } from "@/lib/emotion";
-import systemTheme from "@/theme/index";
+import brandingTheme from "@/modules/brandingTheme";
 import useThemeMode from "@/hooks/useThemeMode";
 import Analytics from "@/components/Analytics";
-
-import "@fontsource/rubik/300.css";
-import "@fontsource/rubik/400.css";
-import "@fontsource/rubik/500.css";
-import "@fontsource/rubik/700.css";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,7 +19,7 @@ const MyApp = ({
   const { isDarkMode } = useThemeMode();
 
   const theme = useMemo(
-    () => systemTheme({ mode: isDarkMode ? "dark" : "light" }),
+    () => brandingTheme(isDarkMode ? "dark" : "light"),
     [isDarkMode]
   );
 
@@ -34,7 +29,7 @@ const MyApp = ({
     <CacheProvider value={emotionCache}>
       <Analytics />
       <NextIntlProvider
-        // formats={{
+        // formats={{           // CERI - look at this
         //   dateTime: {
         //     short: {
         //       day: "numeric",

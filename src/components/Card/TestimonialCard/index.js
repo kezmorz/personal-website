@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { Paper, Typography, Box } from "@mui/material";
+import Image from "@/components/Image";
 
 const TestimonialCard = ({ quote, profile, sx = [] }) => {
   const { name, title, company, imageProps } = profile;
@@ -19,7 +19,12 @@ const TestimonialCard = ({ quote, profile, sx = [] }) => {
             overflow: "hidden",
           }}
         >
-          <Image layout="fill" objectFit="cover" sizes="56px" {...imageProps} />
+          <Image
+            fill
+            sizes="56px"
+            sx={{ objectFit: "cover" }}
+            {...imageProps}
+          />
         </Box>
         <Box sx={{ ml: 2 }}>
           <Typography variant="body1">

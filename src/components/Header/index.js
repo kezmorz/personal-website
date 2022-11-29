@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import Image from "@/components/Image";
 
 const containerVariants = {
   initial: {
@@ -63,8 +63,14 @@ const Header = ({ heading, subheading, imageProps, direction = "ltr" }) => {
             >
               <Image
                 priority
-                layout="responsive"
                 sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: 1,
+                  overflow: "hidden",
+                }}
                 {...imageProps}
               />
             </AnimatedDiv>

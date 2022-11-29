@@ -36,7 +36,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>{this.props.emotionStyleTags}</Head>
+        <Head>
+          <meta name="emotion-insertion-point" content="" />
+          {this.props.emotionStyleTags}
+        </Head>
         <body>
           <Main />
           <NextScript />

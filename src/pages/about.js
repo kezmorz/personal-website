@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useTranslations } from "use-intl";
 import { Button, Typography, Box } from "@mui/material";
 import { ArrowForwardOutlined as ArrowForwardOutlinedIcon } from "@mui/icons-material";
@@ -33,6 +32,7 @@ import Section from "@/components/Section";
 import Tilt from "@/components/Tilt";
 import { HobbyCard, SkillCard } from "@/components/Card";
 import Link from "@/components/Link";
+import Image from "@/components/Image";
 import Layout from "@/components/Layout";
 
 const technology = [
@@ -115,17 +115,21 @@ const About = () => {
             }}
           >
             <Tilt perspective={1600} angle={8}>
-              <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
-                <Image
-                  src={t("bitesize.image.src")}
-                  alt={t("bitesize.image.alt")}
-                  width={633}
-                  height={1080}
-                  layout="responsive"
-                  sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
-                  loader={cloudinaryImageLoader}
-                />
-              </Box>
+              <Image
+                src={t("bitesize.image.src")}
+                alt={t("bitesize.image.alt")}
+                width={633}
+                height={1080}
+                sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                loader={cloudinaryImageLoader}
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: 1,
+                  overflow: "hidden",
+                }}
+              />
             </Tilt>
           </Box>
           <Box sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
@@ -183,17 +187,21 @@ const About = () => {
       </Section>
       <Section maxWidth="md">
         <Tilt perspective={1600} angle={8}>
-          <Box sx={{ borderRadius: 1, overflow: "hidden" }}>
-            <Image
-              src={t("horizon.image.src")}
-              alt={t("horizon.image.alt")}
-              width={1080}
-              height={721}
-              layout="responsive"
-              sizes="100vw"
-              loader={cloudinaryImageLoader}
-            />
-          </Box>
+          <Image
+            src={t("horizon.image.src")}
+            alt={t("horizon.image.alt")}
+            width={1080}
+            height={720}
+            sizes="100vw"
+            loader={cloudinaryImageLoader}
+            sx={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              borderRadius: 1,
+              overflow: "hidden",
+            }}
+          />
         </Tilt>
       </Section>
       <Section maxWidth="lg">

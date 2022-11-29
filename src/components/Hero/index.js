@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { Container, IconButton, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { ArrowDownwardOutlined as ArrowDownwardOutlinedIcon } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import Link from "@/components/Link";
+import Image from "@/components/Image";
 
 const containerVariants = {
   initial: {
@@ -87,9 +87,9 @@ const Hero = ({ heading, subheading, scroller, imageProps }) => {
             >
               <Image
                 priority
-                layout="fill"
-                objectFit="contain"
+                fill
                 sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
+                sx={{ objectFit: "contain" }}
                 {...imageProps}
               />
             </AnimatedDiv>
