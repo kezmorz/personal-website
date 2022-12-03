@@ -49,6 +49,7 @@ const Meta = ({ title, description, type, image }) => {
         )}
         hrefLang="x-default"
       />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Ceri Morse" />
       <meta property="og:title" content={title} />
