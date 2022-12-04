@@ -22,6 +22,7 @@ const Meta = ({ title, description, type, image }) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link
         rel="canonical"
         href={urlBuilder("cerimorse.com", locale, defaultLocale, pathname)}
@@ -49,7 +50,6 @@ const Meta = ({ title, description, type, image }) => {
         )}
         hrefLang="x-default"
       />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Ceri Morse" />
       <meta property="og:title" content={title} />

@@ -15,6 +15,7 @@ module.exports = withContentlayer({
       "src/hooks",
       "src/icons",
       "src/lib",
+      "src/modules",
       "src/pages",
       "src/services",
       "src/theme",

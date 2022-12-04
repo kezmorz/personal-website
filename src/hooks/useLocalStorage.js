@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
+import { parseJSON } from "@/utils/misc";
 import useEnhancedEffect from "@/hooks/useEnhancedEffect";
 import useEventListener from "@/hooks/useEventListener";
-import { parseJSON } from "@/utils/misc";
 
 const data = {};
 
