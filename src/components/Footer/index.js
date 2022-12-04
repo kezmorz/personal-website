@@ -1,4 +1,3 @@
-import Image from "next/image";
 import useSwr from "swr";
 import { useTranslations } from "use-intl";
 import {
@@ -26,6 +25,7 @@ import LinkedInIcon from "@/icons/LinkedIn";
 import SpotifyIcon from "@/icons/Spotify";
 import Link from "@/components/Link";
 import FancyLink from "@/components/FancyLink";
+import Image from "@/components/Image";
 
 const pages = {
   info: [
@@ -255,10 +255,10 @@ const Footer = () => {
                   <Image
                     src={`${flickrData.server}/${flickrData.id}_${flickrData.secret}.jpg`}
                     alt={flickrData.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     sizes="(min-width: 0px) 100vw, (min-width: 900px) 20vw"
                     loader={flickrImageLoader}
+                    sx={{ objectFit: "cover" }}
                   />
                 </Box>
               </Link>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "use-intl";
 import { allSnippets } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -62,6 +61,7 @@ import Carousel from "@/components/Carousel";
 import Highlighter from "@/components/Highlighter";
 import Emoji from "@/components/Emoji";
 import Link from "@/components/Link";
+import Image from "@/components/Image";
 import Layout from "@/components/Layout";
 
 const characteristics = [
@@ -192,10 +192,10 @@ const Home = ({ snippets }) => {
                 <Image
                   src={t("about.image.src")}
                   alt={t("about.image.alt")}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
                   sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                   loader={cloudinaryImageLoader}
+                  sx={{ objectFit: "cover" }}
                 />
               </Box>
             </Tilt>
@@ -368,10 +368,10 @@ const Home = ({ snippets }) => {
                   <Image
                     src={t("timeline.image.src")}
                     alt={t("timeline.image.alt")}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     sizes="(min-width: 0px) 100vw, (min-width: 900px) 50vw"
                     loader={cloudinaryImageLoader}
+                    sx={{ objectFit: "cover" }}
                   />
                 </Box>
               </Tilt>

@@ -22,6 +22,7 @@ const Meta = ({ title, description, type, image }) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link
         rel="canonical"
         href={urlBuilder("cerimorse.com", locale, defaultLocale, pathname)}

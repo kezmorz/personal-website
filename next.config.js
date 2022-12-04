@@ -7,7 +7,12 @@ module.exports = withContentlayer({
     defaultLocale: "en",
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com/cerimorse-com/**",
+      },
+    ],
   },
   eslint: {
     dirs: [
@@ -15,6 +20,7 @@ module.exports = withContentlayer({
       "src/hooks",
       "src/icons",
       "src/lib",
+      "src/modules",
       "src/pages",
       "src/services",
       "src/theme",
@@ -31,5 +37,4 @@ module.exports = withContentlayer({
       },
     },
   },
-  swcMinify: true,
 });

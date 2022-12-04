@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import Image from "next/image";
 import { Paper, Typography, Box } from "@mui/material";
+import Image from "@/components/Image";
 
 const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
   return (
@@ -12,7 +12,7 @@ const HobbyCard = ({ heading, description, imageProps, sx = [] }) => {
           height: { xs: 304, md: 368 },
         }}
       >
-        <Image layout="fill" objectFit="cover" {...imageProps} />
+        <Image fill sx={{ objectFit: "cover" }} {...imageProps} />
       </Box>
       <Box sx={{ px: 2, pt: 4, pb: 2 }}>
         <Typography variant="h6" component="div" gutterBottom>

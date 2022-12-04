@@ -1,6 +1,6 @@
-import { useMediaQuery } from "@mui/material";
 import { useMemo } from "react";
-import useLocalStorage from "./useLocalStorage";
+import { useMediaQuery } from "@mui/material";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const useThemeMode = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
