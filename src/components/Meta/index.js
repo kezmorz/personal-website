@@ -13,7 +13,7 @@ const openGraphLocaleAlternate = {
   cy: ["en_US", "en_GB"],
 };
 
-const Meta = ({ title, description, type, image }) => {
+const Meta = ({ title, description, type }) => {
   const { asPath, locale, locales, defaultLocale } = useRouter();
 
   const [pathname] = asPath.split("?");
@@ -58,7 +58,15 @@ const Meta = ({ title, description, type, image }) => {
         property="og:url"
         content={urlBuilder("cerimorse.com", locale, defaultLocale, pathname)}
       />
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content={urlBuilder(
+          "cerimorse.com",
+          locale,
+          defaultLocale,
+          `/api/og?description=${description}`
+        )}
+      />
       <meta property="og:locale" content={openGraphLocale[locale]} />
       {openGraphLocaleAlternate[locale].map((ogLocaleAlternate) => (
         <meta
@@ -72,7 +80,15 @@ const Meta = ({ title, description, type, image }) => {
       <meta name="twitter:creator" content="@kezmorz" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta
+        name="twitter:image"
+        content={urlBuilder(
+          "cerimorse.com",
+          locale,
+          defaultLocale,
+          `/api/og?description=${description}`
+        )}
+      />
     </Head>
   );
 };
@@ -81,7 +97,6 @@ Meta.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   type: PropTypes.string,
-  image: PropTypes.string,
 };
 
 export default Meta;

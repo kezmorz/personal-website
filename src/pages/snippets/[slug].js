@@ -68,7 +68,6 @@ const Snippet = ({ snippet, relatedSnippets }) => {
         title={t("metadata.title", { title: snippet.title })}
         description={snippet.description}
         type="article"
-        image={t("metadate.image")}
       />
       <Section maxWidth="md" extendTopPadding>
         <Box

@@ -131,7 +131,6 @@ const Home = ({ snippets }) => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image={t("metadata.image")}
       />
       <Hero
         heading={t("hero.heading")}

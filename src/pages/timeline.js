@@ -70,7 +70,6 @@ const Timeline = () => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image={t("metadata.image")}
       />
       <Header
         heading={t("header.heading")}

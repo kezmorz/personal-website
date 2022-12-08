@@ -11,6 +11,8 @@ export const loader = ({ src, width, quality }) => {
   return `https://res.cloudinary.com/cerimorse-com/image/upload/${paramsString}${source}`;
 };
 
+// CERI
+
 // maybe add a function here that takes parameters and produces a url
 // for the social media images
 // we can add text to an image so maybe have a generic social media

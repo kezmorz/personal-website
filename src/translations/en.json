@@ -2,8 +2,7 @@
   "home": {
     "metadata": {
       "title": "Ceri Morse",
-      "description": "Designing and developing full stack software solutions that are responsive and accessible.",
-      "image": "og image generation"
+      "description": "Designing and developing full stack software solutions that are responsive and accessible."
     },
     "hero": {
       "heading": "Ceri Morse",
@@ -130,8 +129,7 @@
   "about": {
     "metadata": {
       "title": "About | Ceri Morse",
-      "description": "Get to know me on a more personal level.",
-      "image": "og image generation"
+      "description": "Get to know me on a more personal level."
     },
     "header": {
       "heading": "Hi, I'm Ceri Morse, a full stack developer",
@@ -219,8 +217,7 @@
   "timeline": {
     "metadata": {
       "title": "Timeline | Ceri Morse",
-      "description": "A collection of significant moments from my professional career.",
-      "image": "og image generation"
+      "description": "A collection of significant moments from my professional career."
     },
     "header": {
       "heading": "The story so far",
@@ -277,8 +274,7 @@
   "snippets": {
     "metadata": {
       "title": "Snippets | Ceri Morse",
-      "description": "Code snippets from my personal work that cover the entire tech stack.",
-      "image": "og image generation"
+      "description": "Code snippets from my personal work that cover the entire tech stack."
     },
     "header": {
       "heading": "Code snippets from my personal work",
@@ -294,8 +290,7 @@
   },
   "snippet": {
     "metadata": {
-      "title": "{title} - Snippets | Ceri Morse",
-      "image": "og image generation"
+      "title": "{title} - Snippets | Ceri Morse"
     },
     "information": {
       "button": "Back to snippets",
@@ -313,8 +308,7 @@
   "contact": {
     "metadata": {
       "title": "Contact | Ceri Morse",
-      "description": "Send me a message about a project, job opportunity, or anything in general.",
-      "image": "og image generation"
+      "description": "Send me a message about a project, job opportunity, or anything in general."
     },
     "header": {
       "heading": "Feel free to send me a message",

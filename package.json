@@ -12,6 +12,7 @@
     "@mui/material": "^5.10.15",
     "@next/font": "^13.0.5",
     "@sendgrid/mail": "^7.6.0",
+    "@vercel/og": "^0.0.21",
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.5",
     "date-fns": "^2.28.0",

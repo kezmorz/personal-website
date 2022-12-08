@@ -47,7 +47,6 @@ const Snippets = ({ snippets }) => {
         title={t("metadata.title")}
         description={t("metadata.description")}
         type="website"
-        image=""
       />
       <Header
         heading={t("header.heading")}
